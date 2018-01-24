@@ -1,0 +1,36 @@
+body{
+  perspective: 800px;
+  -webkit-perspective: 800px;
+  transform-style: preserve-3d;
+}
+#box{
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+  transform-style: preserve-3d;
+  position: relative;/* 相对body定位 */
+  transition: 2s;/*运动时间*/
+  -webkit-transition: 2s;
+}
+#box:hover{
+  transform:rotateY(180deg);/*当鼠标移动到上面时让他旋转180°*/
+}
+#box .bian{
+  width: 400px;
+  height: 400px;
+  text-align: center;
+  line-height: 400px;
+  font-size: 100px;
+  position: absolute; /* .bian相对与#box绝对定位 */
+}
+.zhi1{
+  background-color: #F73F11;
+  transform:rotateY(180deg);
+}
+.zhi2{
+    background-color: yellow;
+    backface-visibility: hidden;/* 设置后面的可适度为看不见*/
+}
+img{
+  vertical-align: middle;
+}

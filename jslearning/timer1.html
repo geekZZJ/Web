@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定时器的进度条</title>
+	<style>
+		#loading{
+			width: 100%;
+			height: 100%;
+			position: fixed;
+			top: 0px;
+			left: 0px;
+			z-index: 100;
+			background-color: #fff;
+		}
+		#loading .pic{
+			width: 64px;
+			height: 64px;
+			background-image: url('images/loading.gif');
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			bottom: 0px;
+			right: 0px;
+			margin: auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="loading">
+		<div class="pic"></div>
+	</div>
+	<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1516626795590&di=58c56e51cf88869acb24474757a13936&imgtype=0&src=http%3A%2F%2Fpic14.nipic.com%2F20110501%2F7042377_225517140120_2.jpg" alt="">
+	<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1516626846741&di=427d6ea143cc00c6fbc0ed77a872fad5&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fforum%2Fpic%2Fitem%2F08f790529822720e7f851b5f7bcb0a46f31fabc8.jpg" alt="">
+	<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1516626847042&di=b70d7516160c30bf6b8665b3a7e4f08c&imgtype=0&src=http%3A%2F%2Fimg2.niutuku.com%2Fdesk%2F1208%2F1523%2Fntk-1523-42488.jpg" alt="">
+	<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1516626847039&di=c5d73a293e3c2c8efa3023859aed15d7&imgtype=0&src=http%3A%2F%2Fimg2.niutuku.com%2Fdesk%2F1208%2F1510%2Fntk-1510-17962.jpg" alt="">
+	<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1516626887865&di=7f7825c7227cf48a813d038466280179&imgtype=jpg&src=http%3A%2F%2Fimg0.imgtn.bdimg.com%2Fit%2Fu%3D2508000515%2C1914913882%26fm%3D214%26gp%3D0.jpg" alt="">
+	<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1516626847037&di=e287dce10b69b5e0b97de7ae12cff03e&imgtype=0&src=http%3A%2F%2Fwww.pp3.cn%2Fuploads%2F201405%2F1386555616418.jpg" alt="">
+	<script src="jquery-3.3.1.min.js"></script>
+	<script>
+		$(function(){
+			setInterval(function(){
+				$("#loading").fadeOut();
+			}, 3000)
+		})
+	</script>
+</body>
+</html>

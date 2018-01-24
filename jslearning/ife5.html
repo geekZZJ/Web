@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>任务四</title>
+	<style type="text/css">
+		span{
+			background-color: #F02412;
+			width: 20px;
+			cursor: pointer;
+			color: #fff;
+			margin: 5px;
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" name="number" id="inNum">
+	<button id="btnLeftIn">左侧入</button>
+	<button id="btnRightIn">右侧入</button>
+	<button id="btnLeftOut">左侧出</button>
+	<button id="btnRightOut">右侧出</button>
+	<button id="sort">排序</button>
+	<!-- 数字队列 -->
+	<div id="outNum"><i><i></div>
+	<script type="text/javascript">
+		var inNum = document.getElementById("inNum");
+		var outNum = document.getElementById("outNum");
+		var btnLeftIn = document.getElementById("btnLeftIn");
+		var btnRightIn = document.getElementById("btnRightIn");
+		var btnLeftOut = document.getElementById("btnLeftOut");
+		var btnRightOut = document.getElementById("btnRightOut");
+		// console.log(inNum);
+		// 测试非数字的判断
+		// inNum.value = "123";
+		function insert(direction){
+			if (inNum.value<10||inNum.value>100) {
+				alert("请输入1-100的数！");
+				inNum.value = "";
+				inNum.focus();
+			}
+			else if (isNaN(inNum.value)) {
+				console.log(isNaN(inNum.value))//判断输入是否为非数字值，是数字返回false
+				alert("只能输入数字");
+				inNum.value = "";
+				inNum.focus();
+			}
+			else{
+				var divSpan = document.createElement("span");
+				divSpan.innerHTML = inNum.value;
+				var spanNum = outNum.childNodes.length;
+				if (spanNum<=3) {
+					console.log(spanNum);
+					//下面的direction==="left"不太理解
+					if (direction === "left") {
+						outNum.insertBefore(divSpan,outNum.firstChild);
+						//将生成的span标签从前方插入
+						inNum.value = "";
+						//插入后将inNum的值置为空
+						// console.log(outNum.childNodes.length);判定span标签个数
+					}else if (direction === "right") {
+						outNum.appendChild(divSpan);
+						inNum.value = "";
+					}
+				}
+				else{
+					alert("输入的元素已超过60个！");
+				}
+			}
+		}
+		// function my(){
+		// 	var txt="";
+		// 	var c = document.body.childNodes;
+		// 	for (var i = 0; i < c.length; i++) {
+		// 		txt=txt+c[i].nodeName+"<br>";
+		// 	};
+		// 	outNum.innerHTML= txt;
+		// 	var d = c.length;
+		// 	alert(d);
+		// }测试childNodes.length
+		// console.log(outNum.value);
+		function dele(direction){
+			// console.log(outNum.childNodes.length);
+			//if里面的条件不能用outNum.value=""
+			if (outNum.childNodes.length == 0) {
+				alert("不存在元素可以删除")	;
+				return false;
+			}
+			else{
+				if (direction === "left") {
+					alert("删除数字："+outNum.firstChild.innerText+"！");
+					outNum.removeChild(outNum.firstChild);
+				}
+				else if (direction === "right") {
+					alert("删除数字："+outNum.lastChild.innerText+"！");
+					outNum.removeChild(outNum.lastChild);
+				}
+				else{
+					alert("删除数字："+ outNum.removeChild(event.target).innerText+"！");
+					outNum.removeChild(event.target);
+				}
+			}
+		}
+		// function showElement(e){
+		// 	if (!e) {
+		// 		var e = window.event;
+		// 	}
+		// 	else{
+		// 		var targ = e.target;
+		// 		var tname = targ.tagName;
+		// 		alert(tname);
+		// 	}
+		// }测试获取点击元素name
+
+
+		btnLeftIn.onclick = function(){
+			insert("left");};
+		btnRightIn.onclick = function(){
+			insert("right");};
+		btnLeftOut.onclick = function(){dele("left");};
+		btnRightOut.onclick = function(){dele("right");};
+		outNum.onclick = function(){dele(event.target)};
+	</script>
+</body>
+</html>
