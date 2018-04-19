@@ -5,17 +5,17 @@ var connection = mysql.createConnection({
   user     : 'root',              
   password : '2461927976',       
   port: '3306',                   
-  database: 'websites', 
+  database: 'stu', 
 }); 
  
 connection.connect();
-console.log(123);
+// console.log(123);
 
 // var addSql = 'INSERT INTO websites(ID,name,url,alexa,country)values(0,?,?,?,?)';
-// var addSqlParams = ['菜鸟工具','https://c.runoob.com','23453','CN'];
+// var addSqlParams = ['菜鸟工具','https://c.runo ob.com','23453','CN'];
 //增
 
-var sql = 'select * from websites';
+var sql = 'select Id,姓名,密码,性别 from 员工表';
 //查
 
 // var modSql = 'update websites set name = ?,url = ? where id = ?';
@@ -33,7 +33,7 @@ connection.query(sql,function (err, result) {
         return;
     }
  
-    console.log('--------------------------DELETE----------------------------');
+    console.log('--------------------------SELECT----------------------------');
     console.log(result);
     console.log('------------------------------------------------------------\n\n');  
 });
