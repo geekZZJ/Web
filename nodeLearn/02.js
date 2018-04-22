@@ -9,9 +9,12 @@ var server = http.createServer(function(req,res){
 			// req表示请求，request;res表示响应，response
 			// 设置http头部，状态码是200，文件类型是html,字符集是uf-8
 			res.writeHead(200,{"Content-type":"text/html;charset=utf-8"});
+
 			// res.end("哈哈哈哈,我买了三个iphone"+(1+2+3)+"s");
 			res.end(data);
+
 		});
+
 	}
 	else if(req.url == "/yuan"){
 		fs.readFile("./haha.html",function(err,data){
