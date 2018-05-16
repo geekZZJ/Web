@@ -44,7 +44,7 @@
 		    <input type="checkbox" class="form-check-input" id="exampleCheck1">
 		    <label class="form-check-label" for="exampleCheck1">记住密码</label>
 		  </div>
-		  <button type="button" class="btn btn-primary mar1" style="background-color: #00b16a;border: 1px solid #00b16a;" @click="login">登录</button>
+		  <button type="button" class="btn btn-primary mar1" style="background-color: #00b16a;border: 1px solid #00b16a;" @click="login" id="login3">登录</button>
 		  <button type="submit" class="btn btn-secondary mar2">注册</button>
 		</form>
     </div>
@@ -56,7 +56,7 @@
 				<div class="wrap">
 					<div class="col-md-4">
 						<div class="logo">
-							<a href="#">
+							<a href="index.html">
 								<img src="../images/logo2.png" alt="">
 								<!-- <span>Team +</span> -->
 							</a>
@@ -70,7 +70,7 @@
 										<a href="leaveMess.html">留言板</a>
 									</li>
 									<li>
-										<input type="text" class="form-control" placeholder="Search">
+										<input type="text" class="form-control" placeholder="Search" id="search1">
 									</li>
 									<li>
 										<a href="#" class="login" id="login1" @click="login2(
@@ -137,8 +137,8 @@
 						    活动 <span class="caret"></span>
 						  </button>
 						  <ul class="dropdown-menu">
-						    <li><a href="#">校级活动</a></li>
-						    <li><a href="#">班级活动</a></li>
+						    <li><a href="javascript:void(0)">校级活动</a></li>
+						    <li><a href="javascript:void(0)">班级活动</a></li>
 						  </ul>
 						</div>
 						<div class="btn-group">
@@ -146,9 +146,9 @@
 						    赛事 <span class="caret"></span>
 						  </button>
 						  <ul class="dropdown-menu">
-						    <li><a href="#">国家级比赛</a></li>
-						    <li><a href="#">省级比赛</a></li>
-						    <li><a href="#">校级比赛</a></li>
+						    <li><a href="javascript:void(0)">国家级比赛</a></li>
+						    <li><a href="javascript:void(0)">省级比赛</a></li>
+						    <li><a href="javascript:void(0)">校级比赛</a></li>
 						  </ul>
 						</div>
 						<div class="btn-group">
@@ -156,9 +156,9 @@
 						    团队 <span class="caret"></span>
 						  </button>
 						  <ul class="dropdown-menu">
-						    <li><a href="#">学校团队</a></li>
-						    <li><a href="#">学院团队</a></li>
-						    <li><a href="#">自组团队</a></li>
+						    <li><a href="javascript:void(0)">学校团队</a></li>
+						    <li><a href="javascript:void(0)">学院团队</a></li>
+						    <li><a href="javascript:void(0)">自组团队</a></li>
 						  </ul>
 						</div>
 					</div>
@@ -332,10 +332,10 @@
 				<nav aria-label="...">
 				  <ul class="pagination">
 				    <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+				    <li><a href="javascript:void(0)">首页</a></li>
+				    <li><a href="javascript:void(0)">上一页</a></li>
 				    <li class="active"><a href="javascript:void(0)" style="color: #fff;">1 <span class="sr-only">(current)</span></a></li>
-				    <li><a href="javascript:void(0)">2</a></li>
-				    <li><a href="javascript:void(0)">3</a></li>
-				    <li><a href="javascript:void(0)">...</a></li>
+				    <li><a href="javascript:void(0)">下一页</a></li>
 				    <li><a href="javascript:void(0)">尾页</a></li>
 				    <li>
 				      <a href="javascript:void(0)" aria-label="Next">
@@ -361,29 +361,6 @@
 
 	<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
-	<script type="text/javascript">
-		document.onreadystatechange=function(){
-			if (document.readyState=='complete') {
-				$('.loading').fadeOut();
-			}
-		}
-		$("#first").mouseover(function(){
-			$("#first").addClass('rubberBand');
-		});
-		$("#first").mouseout(function(){
-			$("#first").removeClass('rubberBand');
-		});
-		$("#top").click(function(){
-			$("html,body").animate({scrollTop:0},600);
-		});
-		
-		$("#join").click(function(){
-			$("#mark1").css('display', 'block');
-		});
-		$("#join").click(function(){
-			$("#form1").css('display', 'block');
-		});
-	</script>
 	<script src="../js/index.js"></script>
 	<script src="../js/vue.js"></script>
 </body>

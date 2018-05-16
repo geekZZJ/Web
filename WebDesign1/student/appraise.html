@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>修改个人信息</title>
+	<link rel="shortcut icon" href="images/bitbug_favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="appraise.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+	<!-- 等待窗口 -->
+	<div class="loading">
+		<div class="pic">
+			<i></i>
+			<i></i>
+			<i></i>
+			<i></i>
+		</div>
+	</div>
+	<!-- 等待窗口结束 -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+	  	<a class="navbar-brand" href="#"><img src="images/logo.png"></a>
+	  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+	    	<span class="navbar-toggler-icon"></span>
+	 	</button>
+
+	 	<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+	    	<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+	      		<li class="nav-item">
+	        		<a class="nav-link active" href="character.html">个人成绩 </a>
+	      		</li>
+	      		<li class="nav-item">
+	        		<a class="nav-link active" href="modify.html">修改个人信息 </a>
+	      		</li>
+	      		<li class="nav-item">
+	        		<a class="nav-link disabled" href="#">评价 </a>
+	      		</li>
+	    	</ul>
+	    	<span class="center">软件工程</span>
+	    	<form class="form-inline my-2 my-lg-0">
+	      		<input class="form-control mr-sm-2" type="search" placeholder="Search">
+	      		<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+	      		<button type="button" class="btn btn-outline-warning" id="zhuxiao">注销</button>
+	      		<button type="button" class="btn btn-outline-info">个人中心</button>
+	    	</form>
+	  	</div>
+	</nav>
+	<!-- 导航栏结束 -->
+
+	<div class="martop">
+		<div class="alert alert-secondary text-center" role="alert">同学评价</div>
+		<div class="row">
+		  <div class="col-2 setwidth">
+		  	<div class="center1">
+		  		<a href="appraise.html"><p class="p1">张灵安</p></a>
+				<a href="appraise.html"><p class="p2">张梓莹</p></a>
+				<a href="appraise.html"><p class="p1">张宏恺</p></a>
+				<a href="appraise.html"><p class="p2">张慧心</p></a>
+				<a href="appraise.html"><p class="p1">张运锋</p></a>
+				<a href="appraise.html"><p class="p2">张飞驰</p></a>
+				<a href="appraise.html"><p class="p1">张俊茂</p></a>
+				<a href="appraise.html"><p class="p2">张嘉谊</p></a>
+				<a href="appraise.html"><p class="p1">张诗兰</p></a>
+				<a href="appraise.html"><p class="p2">张辰阳</p></a>
+				<a href="appraise.html"><p class="p1">李俊雅</p></a>
+				<a href="appraise.html"><p class="p2">李河灵</p></a>
+				<a href="appraise.html"><p class="p1">李鸿远</p></a>
+				<a href="appraise.html"><p class="p2">李绮南</p></a>
+				<a href="appraise.html"><p class="p1">李乐志</p></a>
+				<a href="appraise.html"><p class="p2">李苑博</p></a>
+				<a href="appraise.html"><p class="p1">李智美</p></a>
+				<a href="appraise.html"><p class="p2">李初然</p></a>
+				<a href="appraise.html"><p class="p1">李芷琪</p></a>
+				<a href="appraise.html"><p class="p2">李飞珍</p></a>
+				<a href="appraise.html"><p class="p1">李舒怀</p></a>
+				<a href="appraise.html"><p class="p2">李夏彤</p></a>
+		  	</div>
+		  </div>
+		  <div class="col-4">
+		    <div class="list-group" id="list-tab" role="tablist">
+		      <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home1" role="tab" aria-controls="home">学习</a>
+		      <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile1" role="tab" aria-controls="profile">生活</a>
+		      <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages1" role="tab" aria-controls="messages">组织能力</a>
+		      <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings1" role="tab" aria-controls="settings">个人能力</a>
+		    </div>
+		  </div>
+		  <div class="col-6 dingwei">
+		    <div class="tab-content" id="nav-tabContent">
+		      <div class="tab-pane fade show active" id="list-home1" role="tabpanel" aria-labelledby="list-home-list">
+				<div class="custom-control custom-checkbox fuxuan">
+				  <input type="checkbox" class="custom-control-input" id="customCheck1">
+				  <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
+				</div>
+				<div class="custom-control custom-checkbox fuxuan">
+				  <input type="checkbox" class="custom-control-input" id="customCheck2">
+				  <label class="custom-control-label" for="customCheck2">Check this custom checkbox</label>
+				</div>
+				<div class="custom-control custom-checkbox fuxuan">
+				  <input type="checkbox" class="custom-control-input" id="customCheck3">
+				  <label class="custom-control-label" for="customCheck3">Check this custom checkbox</label>
+				</div>
+				<div class="custom-control custom-checkbox fuxuan">
+				  <input type="checkbox" class="custom-control-input" id="customCheck4">
+				  <label class="custom-control-label" for="customCheck4">Check this custom checkbox</label>
+				</div>
+		      </div>
+		      <div class="tab-pane fade" id="list-profile1" role="tabpanel" aria-labelledby="list-profile-list">
+		      	<div class="custom-control custom-checkbox fuxuan">
+				  <input type="checkbox" class="custom-control-input" id="customCheck5">
+				  <label class="custom-control-label" for="customCheck5">Check this custom checkbox</label>
+				</div>
+				<div class="custom-control custom-checkbox fuxuan">
+				  <input type="checkbox" class="custom-control-input" id="customCheck6">
+				  <label class="custom-control-label" for="customCheck6">Check this custom checkbox</label>
+				</div>
+				<div class="custom-control custom-checkbox fuxuan">
+				  <input type="checkbox" class="custom-control-input" id="customCheck7">
+				  <label class="custom-control-label" for="customCheck7">Check this custom checkbox</label>
+				</div>
+				<div class="custom-control custom-checkbox fuxuan">
+				  <input type="checkbox" class="custom-control-input" id="customCheck8">
+				  <label class="custom-control-label" for="customCheck8">Check this custom checkbox</label>
+				</div>
+				<div class="custom-control custom-checkbox fuxuan">
+				  <input type="checkbox" class="custom-control-input" id="customCheck9">
+				  <label class="custom-control-label" for="customCheck9">Check this custom checkbox</label>
+				</div>
+		      </div>
+		      <div class="tab-pane fade" id="list-messages1" role="tabpanel" aria-labelledby="list-messages-list">
+		      	<div class="custom-control custom-checkbox fuxuan">
+				  <input type="checkbox" class="custom-control-input" id="customCheck10">
+				  <label class="custom-control-label" for="customCheck10">Check this custom checkbox</label>
+				</div>
+				<div class="custom-control custom-checkbox fuxuan">
+				  <input type="checkbox" class="custom-control-input" id="customCheck11">
+				  <label class="custom-control-label" for="customCheck11">Check this custom checkbox</label>
+				</div>
+				<div class="custom-control custom-checkbox fuxuan">
+				  <input type="checkbox" class="custom-control-input" id="customCheck12">
+				  <label class="custom-control-label" for="customCheck12">Check this custom checkbox</label>
+				</div>
+				<div class="custom-control custom-checkbox fuxuan">
+				  <input type="checkbox" class="custom-control-input" id="customCheck13">
+				  <label class="custom-control-label" for="customCheck13">Check this custom checkbox</label>
+				</div>
+				<div class="custom-control custom-checkbox fuxuan">
+				  <input type="checkbox" class="custom-control-input" id="customCheck14">
+				  <label class="custom-control-label" for="customCheck14">Check this custom checkbox</label>
+				</div>
+				<div class="custom-control custom-checkbox fuxuan">
+				  <input type="checkbox" class="custom-control-input" id="customCheck15">
+				  <label class="custom-control-label" for="customCheck15">Check this custom checkbox</label>
+				</div>
+		      </div>
+		      <div class="tab-pane fade" id="list-settings1" role="tabpanel" aria-labelledby="list-settings-list">
+		      	<div class="custom-control custom-checkbox fuxuan">
+				  <input type="checkbox" class="custom-control-input" id="customCheck16">
+				  <label class="custom-control-label" for="customCheck16">Check this custom checkbox</label>
+				</div>
+				<div class="custom-control custom-checkbox fuxuan">
+				  <input type="checkbox" class="custom-control-input" id="customCheck17">
+				  <label class="custom-control-label" for="customCheck17">Check this custom checkbox</label>
+				</div>
+				<div class="custom-control custom-checkbox fuxuan">
+				  <input type="checkbox" class="custom-control-input" id="customCheck18">
+				  <label class="custom-control-label" for="customCheck18">Check this custom checkbox</label>
+				</div>
+				<div class="custom-control custom-checkbox fuxuan">
+				  <input type="checkbox" class="custom-control-input" id="customCheck19">
+				  <label class="custom-control-label" for="customCheck19">Check this custom checkbox</label>
+				</div>
+				<div class="custom-control custom-checkbox fuxuan">
+				  <input type="checkbox" class="custom-control-input" id="customCheck20">
+				  <label class="custom-control-label" for="customCheck20">Check this custom checkbox</label>
+				</div>
+		      </div>
+		    </div>
+		    <input class="btn btn-primary tijiao" type="submit" id="refresh" value="Submit">
+		  </div>
+		</div>
+	</div>
+
+	<!-- 教师评价 -->
+	<div class="martop">
+		<div class="alert alert-secondary text-center" role="alert">教师评价</div>
+		<div class="row">
+		  <div class="col-2 setwidth">
+		  	<div class="center1">
+		  		<a href="appraise.html"><p class="p1">张灵安</p></a>
+				<a href="appraise.html"><p class="p2">张梓莹</p></a>
+				<a href="appraise.html"><p class="p1">张宏恺</p></a>
+				<a href="appraise.html"><p class="p2">张慧心</p></a>
+				<a href="appraise.html"><p class="p1">张运锋</p></a>
+				<a href="appraise.html"><p class="p2">张飞驰</p></a>
+				<a href="appraise.html"><p class="p1">张俊茂</p></a>
+				<a href="appraise.html"><p class="p2">张嘉谊</p></a>
+				<a href="appraise.html"><p class="p1">张诗兰</p></a>
+				<a href="appraise.html"><p class="p2">张辰阳</p></a>
+				<a href="appraise.html"><p class="p1">李俊雅</p></a>
+				<a href="appraise.html"><p class="p2">李河灵</p></a>
+				<a href="appraise.html"><p class="p1">李鸿远</p></a>
+				<a href="appraise.html"><p class="p2">李绮南</p></a>
+				<a href="appraise.html"><p class="p1">李乐志</p></a>
+				<a href="appraise.html"><p class="p2">李苑博</p></a>
+				<a href="appraise.html"><p class="p1">李智美</p></a>
+				<a href="appraise.html"><p class="p2">李初然</p></a>
+				<a href="appraise.html"><p class="p1">李芷琪</p></a>
+				<a href="appraise.html"><p class="p2">李飞珍</p></a>
+				<a href="appraise.html"><p class="p1">李舒怀</p></a>
+				<a href="appraise.html"><p class="p2">李夏彤</p></a>
+		  	</div>
+		  </div>
+		  <div class="col-4">
+		    <div class="list-group" id="list-tab" role="tablist">
+		      <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">教学</a>
+		      <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">待人</a>
+		      <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">组织能力</a>
+		      <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">个人能力</a>
+		    </div>
+		  </div>
+		  <div class="col-6 dingwei">
+		    <div class="tab-content" id="nav-tabContent">
+		      <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+				<div class="custom-control custom-checkbox fuxuan">
+				  <input type="checkbox" class="custom-control-input" id="customCheck21">
+				  <label class="custom-control-label" for="customCheck21">Check this custom checkbox</label>
+				</div>
+				<div class="custom-control custom-checkbox fuxuan">
+				  <input type="checkbox" class="custom-control-input" id="customCheck22">
+				  <label class="custom-control-label" for="customCheck22">Check this custom checkbox</label>
+				</div>
+				<div class="custom-control custom-checkbox fuxuan">
+				  <input type="checkbox" class="custom-control-input" id="customCheck23">
+				  <label class="custom-control-label" for="customCheck23">Check this custom checkbox</label>
+				</div>
+				<div class="custom-control custom-checkbox fuxuan">
+				  <input type="checkbox" class="custom-control-input" id="customCheck24">
+				  <label class="custom-control-label" for="customCheck24">Check this custom checkbox</label>
+				</div>
+		      </div>
+		      <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+		      	<div class="custom-control custom-checkbox fuxuan">
+				  <input type="checkbox" class="custom-control-input" id="customCheck25">
+				  <label class="custom-control-label" for="customCheck25">Check this custom checkbox</label>
+				</div>
+				<div class="custom-control custom-checkbox fuxuan">
+				  <input type="checkbox" class="custom-control-input" id="customCheck26">
+				  <label class="custom-control-label" for="customCheck26">Check this custom checkbox</label>
+				</div>
+				<div class="custom-control custom-checkbox fuxuan">
+				  <input type="checkbox" class="custom-control-input" id="customCheck27">
+				  <label class="custom-control-label" for="customCheck27">Check this custom checkbox</label>
+				</div>
+				<div class="custom-control custom-checkbox fuxuan">
+				  <input type="checkbox" class="custom-control-input" id="customCheck28">
+				  <label class="custom-control-label" for="customCheck28">Check this custom checkbox</label>
+				</div>
+				<div class="custom-control custom-checkbox fuxuan">
+				  <input type="checkbox" class="custom-control-input" id="customCheck29">
+				  <label class="custom-control-label" for="customCheck29">Check this custom checkbox</label>
+				</div>
+		      </div>
+		      <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+		      	<div class="custom-control custom-checkbox fuxuan">
+				  <input type="checkbox" class="custom-control-input" id="customCheck30">
+				  <label class="custom-control-label" for="customCheck30">Check this custom checkbox</label>
+				</div>
+				<div class="custom-control custom-checkbox fuxuan">
+				  <input type="checkbox" class="custom-control-input" id="customCheck31">
+				  <label class="custom-control-label" for="customCheck31">Check this custom checkbox</label>
+				</div>
+				<div class="custom-control custom-checkbox fuxuan">
+				  <input type="checkbox" class="custom-control-input" id="customCheck32">
+				  <label class="custom-control-label" for="customCheck32">Check this custom checkbox</label>
+				</div>
+				<div class="custom-control custom-checkbox fuxuan">
+				  <input type="checkbox" class="custom-control-input" id="customCheck33">
+				  <label class="custom-control-label" for="customCheck33">Check this custom checkbox</label>
+				</div>
+				<div class="custom-control custom-checkbox fuxuan">
+				  <input type="checkbox" class="custom-control-input" id="customCheck34">
+				  <label class="custom-control-label" for="customCheck34">Check this custom checkbox</label>
+				</div>
+				<div class="custom-control custom-checkbox fuxuan">
+				  <input type="checkbox" class="custom-control-input" id="customCheck35">
+				  <label class="custom-control-label" for="customCheck35">Check this custom checkbox</label>
+				</div>
+		      </div>
+		      <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
+		      	<div class="custom-control custom-checkbox fuxuan">
+				  <input type="checkbox" class="custom-control-input" id="customCheck36">
+				  <label class="custom-control-label" for="customCheck36">Check this custom checkbox</label>
+				</div>
+				<div class="custom-control custom-checkbox fuxuan">
+				  <input type="checkbox" class="custom-control-input" id="customCheck37">
+				  <label class="custom-control-label" for="customCheck37">Check this custom checkbox</label>
+				</div>
+				<div class="custom-control custom-checkbox fuxuan">
+				  <input type="checkbox" class="custom-control-input" id="customCheck38">
+				  <label class="custom-control-label" for="customCheck38">Check this custom checkbox</label>
+				</div>
+				<div class="custom-control custom-checkbox fuxuan">
+				  <input type="checkbox" class="custom-control-input" id="customCheck39">
+				  <label class="custom-control-label" for="customCheck39">Check this custom checkbox</label>
+				</div>
+				<div class="custom-control custom-checkbox fuxuan">
+				  <input type="checkbox" class="custom-control-input" id="customCheck40">
+				  <label class="custom-control-label" for="customCheck40">Check this custom checkbox</label>
+				</div>
+		      </div>
+		    </div>
+		    <input class="btn btn-primary tijiao" type="submit" id="refresh1" value="Submit">
+		  </div>
+		</div>
+	</div>
+	<footer class="fixed-bottom">
+		<p>微力实验室</p>
+	</footer>
+	<script src="jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="bootstrap/dist/js/bootstrap.min.js"></script>
+	<script>
+		var zhuxiao = document.getElementById("zhuxiao");
+		var refresh = document.getElementById("refresh");
+		var refresh1 = document.getElementById("refresh1");
+		refresh.onclick = function(){
+			var q = confirm("Li Hua,are you sure you want to submit?");
+			if (q==true) {
+				window.open("appraise.html","_self");
+				//修改为首页地址
+			}
+			else {
+				// window.open("appraise.html","_self");
+				return false;
+			}
+		}
+		refresh1.onclick = function(){
+			var m = confirm("Li Hua,are you sure you want to submit?");
+			if (m==true) {
+				window.open("appraise.html","_self");
+				//修改为首页地址
+			}
+			else {
+				// window.open("appraise.html","_self");
+				return false;
+			}
+		}
+		document.onreadystatechange=function(){
+			if (document.readyState=='complete') {
+				$('.loading').fadeOut();
+			}
+		}
+		zhuxiao.onclick = function(){
+			// alert("Mr. Li,are you sure you want to quit?");
+			var r = confirm("Li Hua,are you sure you want to quit?");
+			if (r==true) {
+				window.open("../index.html","_self");
+				//修改为首页地址
+			}
+			else {
+				window.open("appraise.html","_self");
+			}
+		}
+	</script>
+</body>
+</html>

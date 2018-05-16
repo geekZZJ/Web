@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>学生性格</title>
+	<link rel="shortcut icon" href="images/bitbug_favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="character.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+	<!-- 等待窗口 -->
+	<div class="loading">
+		<div class="pic">
+			<i></i>
+			<i></i>
+			<i></i>
+			<i></i>
+		</div>
+	</div>
+	<!-- 等待窗口结束 -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+	  	<a class="navbar-brand" href="#"><img src="images/logo.png"></a>
+	  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+	    	<span class="navbar-toggler-icon"></span>
+	 	</button>
+
+	 	<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+	    	<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+	      		<li class="nav-item">
+	        		<a class="nav-link disabled" href="#">个人成绩 </a>
+	      		</li>
+	      		<li class="nav-item">
+	        		<a class="nav-link active" href="modify.html">修改个人信息 </a>
+	      		</li>
+	      		<li class="nav-item">
+	        		<a class="nav-link active" href="appraise.html">评价 </a>
+	      		</li>
+	    	</ul>
+	    	<span class="center">软件工程</span>
+	    	<form class="form-inline my-2 my-lg-0">
+	      		<input class="form-control mr-sm-2" type="search" placeholder="Search">
+	      		<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+	      		<button type="button" class="btn btn-outline-warning" id="zhuxiao">注销</button>
+	      		<button type="button" class="btn btn-outline-info">个人中心</button>
+	    	</form>
+	  	</div>
+	</nav>
+	<!-- 导航栏结束 -->
+
+	<div class="martop">
+		<div id="accordion">
+		  <div class="card">
+		    <div class="card-header" id="headingOne">
+		      <h5 class="mb-0">
+		        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+		          学科基础课程
+		        </button>
+		      </h5>
+		    </div>
+
+		    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+		      <div class="card-body">
+		      	<button type="button" class="btn btn-secondary">现代密码学</button>
+		      	<button type="button" class="btn btn-light">微机原理与接口技术</button>
+	      		<button type="button" class="btn btn-secondary">信息检索</button>
+	      		<button type="button" class="btn btn-light">软件工程</button>
+	      		<button type="button" class="btn btn-secondary">数据分析方法及应用</button>
+	      		<button type="button" class="btn btn-light">网页设计与训练</button>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="card">
+		    <div class="card-header" id="headingTwo">
+		      <h5 class="mb-0">
+		        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+		          专业课程
+		        </button>
+		      </h5>
+		    </div>
+		    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+		      <div class="card-body">
+		        <button type="button" class="btn btn-secondary">计算机网络</button>
+	      		<button type="button" class="btn btn-light">数据库原理与应用</button>
+	      		<button type="button" class="btn btn-secondary">传感器原理与应用</button>
+	      		<button type="button" class="btn btn-light">Java程序设计</button>
+	      		<button type="button" class="btn btn-secondary">中间件技术</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	</div>
+
+
+  	<!-- 用于放各科成绩分析图 -->
+  	<div class="grades">
+		<div class="jumbotron jumbotron-fluid">
+	  		<div class="container">
+	    		<img src="images/156e328cc7f31ef2.jpg">
+	  		</div>
+		</div>
+	</div>
+	<footer class="navbar navbar-expand-lg navbar-light bg-light">
+		<p>蜀ICP备16030061号</p>
+	</footer>
+	<script src="jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="bootstrap/dist/js/bootstrap.min.js"></script>
+	<script>
+		var zhuxiao = document.getElementById("zhuxiao");
+		document.onreadystatechange=function(){
+			if (document.readyState=='complete') {
+				$('.loading').fadeOut();
+			}
+		}
+		zhuxiao.onclick = function(){
+			// alert("Mr. Li,are you sure you want to quit?");
+			var r = confirm("Li Hua,are you sure you want to quit?");
+			if (r==true) {
+				window.open("wan/tupian.html","_self");
+				//修改为首页地址
+			}
+			else {
+				window.open("character.html","_self");
+			}
+		}
+	</script>
+</body>
+</html>

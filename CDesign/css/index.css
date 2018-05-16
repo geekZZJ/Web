@@ -517,9 +517,9 @@ header .container1 .slider .laptop-screen{
 
 .content .page{
 	clear: both;
-	width: 255px;
 	margin: 0 auto;
 	position: relative;
+	text-align: center;
 }
 
 .content .page .pagination li a{

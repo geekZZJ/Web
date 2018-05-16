@@ -1,0 +1,228 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+header{
+	height: 75px;
+	line-height: 75px;
+	border-bottom: 1px solid #9A9A9A;
+	box-shadow: #9A9A9A 5px 5px 50px;
+	background-color: rgba(247, 247, 247, 1.0);
+	position: relative;
+}
+header .logo{
+	height: 75px;
+	float: left;
+	margin-left: 50px;
+}
+header .logo img{
+	height: 75px;
+	width: 80%;
+}
+header .theme{
+	text-align: center;
+	line-height: 75px;
+	font-size: 21px;
+	color: #3c3c3c;
+	position: absolute;
+	left: 50%;
+	font-weight: bold;
+}
+header .zhuxiao{
+	float: right;
+	width: 40px;
+	height: 25px;
+	line-height: 25px;
+	margin-top: 45px;
+	margin-right: 10px;
+	text-align: center;
+	border: 1px solid #9a9a9a;
+	border-radius: 5px;
+}
+header .zhuxiao a{
+	color: #000;
+	text-decoration: none;
+}
+header .pcenter{
+	float: right;
+	width: 75px;
+	height: 25px;
+	line-height: 25px;
+	margin-top: 45px;
+	margin-right: 10px;
+	text-align: center;
+	border: 1px solid #01A0EA;
+	border-radius: 5px;
+	background-color: #01a0ea;
+	color: #fff;
+}
+header .pcenter a{
+	color: #fff;
+	text-decoration: none;
+}
+.banner{
+	width: 100%;
+	position: relative;
+	margin-top: 50px;
+	height: 150px;
+}
+.banner .pic1{
+	position: absolute;
+	width: 25%;
+	height: 150px;
+	line-height: 150px;
+	left: 0%;
+	text-align: center;
+}
+.banner .pic1 span{
+	width: 142px;
+	height: 142px;
+	position: relative;
+}
+.banner .pic1 .icon-zg-index-collection1{
+	font-size: 80px;
+	margin-left: -117px;
+	bottom: 30%;
+	color: #33CCFF;
+}
+.banner .pic2{
+	position: absolute;
+	width: 25%;
+	left: 25%;
+	height: 150px;
+	line-height: 150px;
+	text-align: center;
+}
+.banner .pic2 span{
+	width: 142px;
+	height: 142px;
+	position: relative;
+}
+.banner .pic2 .icon-zg-index-user1-cur{
+	font-size: 80px;
+	margin-left: -117px;
+	bottom: 30%;
+	color: #5d5151;
+}
+.banner .pic2 .icon-zg-index-user1-cur:hover{
+	color: #33CCFF;
+}
+.banner .pic3{
+	position: absolute;
+	width: 25%;
+	left: 50%;
+	height: 150px;
+	line-height: 150px;
+	text-align: center;
+}
+.banner .pic3 span{
+	width: 142px;
+	height: 142px;
+	position: relative;
+}
+.banner .pic3 .icon-zg-index-scene1-cur{
+	font-size: 80px;
+	margin-left: -117px;
+	bottom: 30%;
+	color: #5d5151;
+}
+.banner .pic3 .icon-zg-index-scene1-cur:hover{
+	color: #33CCFF;
+}
+.banner .pic4{
+	position: absolute;
+	width: 25%;
+	left: 75%;
+	height: 150px;
+	line-height: 150px;
+	text-align: center;
+}
+.banner .pic4 span{
+	width: 142px;
+	height: 142px;
+	position: relative;
+}
+.banner .pic4 .icon-zg-index-platform1-cur{
+	font-size: 80px;
+	margin-left: -117px;
+	bottom: 30%;
+	color: #5d5151;
+}
+.banner .pic4 .icon-zg-index-platform1-cur:hover{
+	color: #33CCFF;
+}
+.title{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+}
+.title .titleStyle{
+	width: 25%;
+	text-align: center;
+	float: left;
+	font-size: 18px;
+}
+.title .titleStyle a{
+	color: #000;
+	text-decoration: none;
+}
+.title .titleStyle a:hover{
+	color: #5d5151;
+}
+.clear{
+	overflow: hidden;
+}
+.data{
+	height: 550px;
+	background-color: #f1faff;
+}
+.data .left{
+	float: left;
+	width: 70%;
+	/* border-right: 1px solid red; */
+}
+.data .right{
+	float: left;
+	margin-left: 80px;
+	margin-top: 90px;
+}
+.data .right .ex{
+	padding-bottom: 50px;
+	font-size: 20px;
+	font-family: "幼圆";
+	font-weight: bold;
+	cursor: pointer;
+}
+.pp{
+	font-weight: bold;
+	font-size: 24px;
+	font-family: "微软雅黑";
+	margin-top: 10px;
+	color: #454555;
+	opacity: 0.8;
+	
+}
+.aaa{
+	width: 70%;
+	/* height: 500px; */
+}
+.chart{
+	width: 30%;
+	height: 50%;
+	margin-left: 40px;
+	margin-top: 5%;
+	display:block;
+}
+footer{
+	height: 70px;
+	line-height: 70px;
+	text-align: center;
+	font-size: 15px;
+	background-color:#9a9a9a;
+	color: #A5A7A8;
+	padding-top: 10px;
+}
+footer p{
+	text-align: center;
+	color: rgb(253, 253, 253)
+}

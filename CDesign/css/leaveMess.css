@@ -157,11 +157,23 @@ ul a {
     -ms-transition: -ms-transform .15s linear;
     transition: transform .15s linear;
 }
-ul a:hover{
-	text-decoration: none;
-	color: #000;
+ul a:link{
+    text-decoration: none;
+    color: #000;
 }
-ul a:before {
+/*ul a:active{
+    text-decoration: none;
+    color: #000;
+}*/
+ul a:hover{
+    text-decoration: none;
+    color: #000;
+}
+/*ul a:visited{
+    text-decoration: none;
+    color: #000;
+}
+*/ul a:before {
     content:'';
     position:absolute;
     top:-20px; 
