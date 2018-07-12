@@ -2,19 +2,11 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>初识vue</title>
+	<title>vue基础事件</title>
 </head>
 <body>
 	<div id="box">
-		<ul>
-			<!-- vue2.0与vue1.0中使用index不同 -->
-			<li v-for="(value,index) in arr">{{value}} {{index}}</li>
-			<!-- {{value}}中的value是一个变量，同value in arr中的value -->
-		</ul>
-		<hr>
-		<ul>
-			<li v-for="(item,key) in json">{{item}} {{key}}</li>
-		</ul>
+		<input type="button" name="" value="按钮" v-on:click="show()">
 	</div>
 <script type="text/javascript" src="vue.js"></script>
 <script type="text/javascript">
@@ -25,6 +17,11 @@
 			data:{
 				arr:['apple','banana','orange','pear'],
 				json:{a:'apple',b:'banana',c:'orange'}
+			},
+			methods:{
+				show:function(){
+					alert(1);
+				}
 			}
 		});
 	}
