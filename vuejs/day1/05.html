@@ -6,19 +6,19 @@
 	<link rel="stylesheet" type="text/css" href="lib/bootstrap.css">
 </head>
 <body>
-	<div class="container">
+	<div class="container" id="box">
 		<form role="form">
 			<div class="form-group">
 				<label for="username">用户名：</label>
-				<input type="text" name="" id="username" class="form-control" placeholder="请输入用户名...">
+				<input type="text" name="" id="username" class="form-control" placeholder="请输入用户名..." v-model="username">
 			</div>
 			<div class="form-group">
 				<label for="age">年 龄：</label>
-				<input type="text" name="" id="age" class="form-control" placeholder="请输入年龄...">
+				<input type="text" name="" id="age" class="form-control" placeholder="请输入年龄..." v-model="age">
 			</div>
 			<div class="form-group">
-				<input type="button" name="" value="添加" class="btn btn-primary">
-				<input type="button" name="" value="重置" class="btn btn-danger">
+				<input type="button" name="" value="添加" class="btn btn-primary" v-on:click="add()">
+				<input type="reset" name="" value="重置" class="btn btn-danger">
 			</div>
 		</form>
 		<hr>
@@ -33,31 +33,25 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr class="text-center">
-					<td>1</td>
-					<td>blue</td>
-					<td>50</td>
-					<td><button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#layer">删除</button></td>
+				<tr class="text-center" v-for="(item,index) in myData">
+					<td>{{index+1}}</td>
+					<td>{{item.name}}</td>
+					<td>{{item.age}}</td>
+					<td><button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#layer" v-on:click="nowIndex=index">删除</button></td>
 				</tr>
-				<tr class="text-center">
-					<td>1</td>
-					<td>blue</td>
-					<td>50</td>
-					<td><button class="btn btn-primary btn-xs">删除</button></td>
-				</tr>
-				<tr>
+				<tr v-show="myData.length!=0">
 					<td colspan="4" class="text-center">
-						<button class="btn btn-danger btn-sm">全部删除</button>
+						<button class="btn btn-danger btn-sm" v-on:click="nowIndex=-2" data-toggle="modal" data-target="#layer">全部删除</button>
 					</td>
 				</tr>
-				<tr>
+				<tr v-show="myData.length==0">
 					<td colspan="4" class="text-center">
 						<p>暂无数据...</p>
 					</td>
 				</tr>
 			</tbody>
 		</table>
-		<div role="dialog" class="modal fade" id="layer">
+		<div role="dialog" class="modal fade" id="layer" :data-index="nowIndex">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -67,8 +61,8 @@
 						<h4 class="modal-title">确认删除么？</h4>
 					</div>
 					<div class="modal-body text-right">
-						<button class="btn btn-primary btn-sm">取消</button>
-						<button class="btn btn-danger btn-sm">确认</button>
+						<button class="btn btn-primary btn-sm" data-dismiss="modal">取消</button>
+						<button class="btn btn-danger btn-sm" data-dismiss="modal" v-on:click="deleteMsg()">确认</button>
 					</div>
 				</div>
 			</div>
@@ -77,5 +71,6 @@
 	<script type="text/javascript" src="lib/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="vue.js"></script>
 	<script type="text/javascript" src="lib/bootstrap.js"></script>
+	<script type="text/javascript" src="05.js"></script>
 </body>
 </html>
