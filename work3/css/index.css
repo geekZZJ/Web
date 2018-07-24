@@ -1,0 +1,388 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+header{
+	width: 100%;
+	height: 120px;
+}
+.headC{
+	width: 1200px;
+	height: 120px;
+	margin: 0 auto;
+	position: relative;
+}
+header .headC .title{
+	position: absolute;
+	top: 25px;
+	left: 14px;
+}
+header .headC .title .liquors{
+	font-weight: bold;
+	font-size: 32px;
+	color: rgb(7, 108, 224);
+}
+header .headC .title .design{
+	font-weight: bold;
+	font-size: 32px;
+    color: rgb(204, 204, 204);
+}
+header .headC .nav{
+	width: 586px;
+	height: 100px;
+	line-height: 100px;
+	position: relative;
+	left: 613px;
+	top: 7px;
+}
+header .headC .nav .float{
+	float: left;
+}
+header .headC .nav .float a{
+	display: block;
+	width: 100px;
+	padding: 0 10px;
+	text-align: center;
+	color: rgb(76, 76, 76);
+	text-decoration: none;
+	font-size: 18px;
+	font-family: SimSun;
+}
+header .headC .nav .float a:hover{
+	color: #076ce0;
+	border-top: 2px solid #076ce0;
+}
+header .headC .nav .float .first{
+	color: #076ce0;
+	border-top: 2px solid #076ce0;
+}
+header .headC .nav .line{
+	width: 15px;
+	height: 100px;
+}
+.content{
+	width: 100%;
+}
+.content .name1{
+	position: absolute;
+	top: 60px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 999;
+}
+.content .name2{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 170px;
+	z-index: 999;
+	display: none;
+}
+.clear{
+	clear: both;
+}
+.story{
+	width: 100%;
+	height: 920px;
+}
+.story .content1{
+	width: 1200px;
+	height: 920px;
+	margin: 0 auto;
+	position: relative;
+}
+.story .content1 .storyT{
+	background-image: url(../images/03.png);
+	position: absolute;
+	top: 55px;
+	left: 501px;
+	width: 215px;
+	height: 90px;
+	text-align: center;
+	line-height: 90px;
+	color: rgb(26, 26, 26);
+    font-size: 36px;
+    font-family: SimSun;
+    display: none;
+}
+.story .content1 .storyTxt{
+	width: 953px;
+	position: absolute;
+    top: 186px;
+    left: 132px;
+    color: rgb(76, 76, 76);
+    font-size: 14px;
+    line-height: 24px;
+    font-family: SimSun;
+    display: none;
+}
+.story .content1 .storyImg{
+	position: absolute;
+    top: 321px;
+    left: 398px;
+    display: none;
+}
+.story .content1 .storyBtn{
+    position: absolute;
+    top: 772px;
+    left: 544px;
+    width: 128px;
+    height: 42px;
+    background-color: rgba(7,108,224,1);
+    text-align: center;
+    line-height: 42px;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+.culture{
+	height: 628px;
+	width: 100%;
+	background-color: #f5f5f5;
+}
+.culture .content2{
+	width: 1200px;
+	height: 628px;
+	margin: 0 auto;
+	position: relative;
+}
+.culture .content2 .cultureT{
+	background-image: url(../images/03.png);
+	position: absolute;
+	top: 55px;
+	left: 501px;
+	width: 215px;
+	height: 90px;
+	text-align: center;
+	line-height: 90px;
+	color: rgb(26, 26, 26);
+    font-size: 36px;
+    font-family: SimSun;
+    display: none;
+}
+.culture .content2 .cultureImg{
+    position: absolute;
+    top: 207px;
+    left: 3px;
+    display: none;
+}
+.culture .content2 .cultureTxt{
+    position: absolute;
+    top: 214px;
+    left: 603px;
+    width: 589px;
+    font-size: 14px;
+    line-height: 30px;
+    color: rgb(76, 76, 76);
+    font-family: SimSun;
+    display: none;
+}
+.classic{
+	height: 685px;
+	width: 100%;
+}
+.classic .content3{
+	width: 1200px;
+	height: 685px;
+	margin: 0 auto;
+	position: relative;
+}
+.classic .content3 .classicT{
+	background-image: url(../images/03.png);
+	position: absolute;
+	top: 55px;
+	left: 501px;
+	width: 215px;
+	height: 90px;
+	text-align: center;
+	line-height: 90px;
+	color: rgb(26, 26, 26);
+    font-size: 36px;
+    font-family: SimSun;
+    display: none;
+}
+.classic .content3 .classicImg{
+    position: absolute;
+    top: 212px;
+    left: 0px;
+    width: 1200px;
+    display: none;
+    justify-content: space-around;
+}
+.classic .content3 .classicImg img{
+	border: 1px solid #d5cece;
+}
+.classic .content3 .classicTxt{
+    position: absolute;
+    top: 570px;
+    left: 0px;
+    width: 1200px;
+    display: none;
+    justify-content: space-around;
+}
+.news{
+	width: 100%;
+	height: 642px;
+	background-color: rgb(245, 245, 245);
+}
+.news .content4{
+	width: 1200px;
+	height: 642px;
+	margin: 0 auto;
+	position: relative;
+}
+.news .content4 .newsT{
+	background-image: url(../images/03.png);
+	position: absolute;
+	top: 55px;
+	left: 501px;
+	width: 215px;
+	height: 90px;
+	text-align: center;
+	line-height: 90px;
+	color: rgb(26, 26, 26);
+    font-size: 36px;
+    font-family: SimSun;
+    /*display: none;*/
+}
+.news .content4 .newsTxt1{
+    position: absolute;
+    top: 185px;
+    left: 0px;
+    width: 588px;
+}
+.news .content4 .newsTxt1 .date{
+	display: inline-block;
+	width: 84px;
+	height: 84px;
+	background-color: #f2f2f2;
+	text-align: center;
+	font-family: SimSun;
+	padding-top: 13px;
+}
+.news .content4 .newsTxt1 .date .day{
+	font-size: 25px;
+}
+.news .content4 .newsTxt1 .date .month{
+	font-size: 14px;
+}
+.news .content4 .newsTxt1 .newsD{
+	width: 484px;
+	display: inline-block;
+	padding-left: 10px;
+}
+.news .content4 .newsTxt1 .newsD .shen{
+	font-size: 20px;
+	font-family: SimSun;
+	color: #1a1a1a;
+	cursor: pointer;
+}
+.news .content4 .newsTxt1 .newsD .shen:hover{
+	color: #3084eb;
+}
+.news .content4 .newsTxt1 .newsD .shenSay{
+	font-family: SimSun;
+}
+
+.news .content4 .newsTxt2{
+    position: absolute;
+    top: 300px;
+    left: 0px;
+    width: 588px;
+}
+.news .content4 .newsTxt2 .date{
+	display: inline-block;
+	width: 84px;
+	height: 84px;
+	background-color: #f2f2f2;
+	text-align: center;
+	font-family: SimSun;
+	padding-top: 13px;
+}
+.news .content4 .newsTxt2 .date .day{
+	font-size: 25px;
+}
+.news .content4 .newsTxt2 .date .month{
+	font-size: 14px;
+}
+.news .content4 .newsTxt2 .newsD{
+	width: 484px;
+	display: inline-block;
+	padding-left: 10px;
+}
+.news .content4 .newsTxt2 .newsD .shen{
+	font-size: 20px;
+	font-family: SimSun;
+	color: #1a1a1a;
+	cursor: pointer;
+}
+.news .content4 .newsTxt2 .newsD .shen:hover{
+	color: #3084eb;
+}
+.news .content4 .newsTxt2 .newsD .shenSay{
+	font-family: SimSun;
+}
+
+.news .content4 .newsTxt3{
+    position: absolute;
+    top: 415px;
+    left: 0px;
+    width: 588px;
+}
+.news .content4 .newsTxt3 .date{
+	display: inline-block;
+	width: 84px;
+	height: 84px;
+	background-color: #f2f2f2;
+	text-align: center;
+	font-family: SimSun;
+	padding-top: 13px;
+}
+.news .content4 .newsTxt3 .date .day{
+	font-size: 25px;
+}
+.news .content4 .newsTxt3 .date .month{
+	font-size: 14px;
+}
+.news .content4 .newsTxt3 .newsD{
+	width: 484px;
+	display: inline-block;
+	padding-left: 10px;
+}
+.news .content4 .newsTxt3 .newsD .shen{
+	font-size: 20px;
+	font-family: SimSun;
+	color: #1a1a1a;
+	cursor: pointer;
+}
+.news .content4 .newsTxt3 .newsD .shen:hover{
+	color: #3084eb;
+}
+.news .content4 .newsTxt3 .newsD .shenSay{
+	font-family: SimSun;
+}
+.news .content4 .newsImg{
+	position: absolute;
+	top: 180px;
+	right: 0px;
+}
+footer{
+	width: 100%;
+	height: 104px;
+    background: #424242;
+    text-align: center;
+    color: #9a9a9a;
+    padding-top: 30px;
+}
+.back{
+	width: 50;
+	height: 50px;
+	position: fixed;
+	bottom: 50px;
+	right: 50px;
+	cursor: pointer;
+	transition: opacity 2s;
+}
+.back:hover{
+	opacity: 0.5;
+}

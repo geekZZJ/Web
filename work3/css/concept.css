@@ -1,0 +1,264 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+header{
+	width: 100%;
+	height: 120px;
+}
+.headC{
+	width: 1200px;
+	height: 120px;
+	margin: 0 auto;
+	position: relative;
+}
+header .headC .title{
+	position: absolute;
+	top: 25px;
+	left: 14px;
+}
+header .headC .title .liquors{
+	font-weight: bold;
+	font-size: 32px;
+	color: rgb(7, 108, 224);
+}
+header .headC .title .design{
+	font-weight: bold;
+	font-size: 32px;
+    color: rgb(204, 204, 204);
+}
+header .headC .nav{
+	width: 586px;
+	height: 100px;
+	line-height: 100px;
+	position: relative;
+	left: 613px;
+	top: 7px;
+}
+header .headC .nav .float{
+	float: left;
+}
+header .headC .nav .float a{
+	display: block;
+	width: 100px;
+	padding: 0 10px;
+	text-align: center;
+	color: rgb(76, 76, 76);
+	text-decoration: none;
+	font-size: 18px;
+	font-family: SimSun;
+}
+header .headC .nav .float a:hover{
+	color: #076ce0;
+	border-top: 2px solid #076ce0;
+}
+header .headC .nav .float .first{
+	color: #076ce0;
+	border-top: 2px solid #076ce0;
+}
+header .headC .nav .line{
+	width: 15px;
+	height: 100px;
+}
+.content{
+	width: 100%;
+	height: 300px;
+	background-image: url(../images/11.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.category{
+	width: 100%;
+	height: 241px;
+}
+.category .content2{
+	width: 1200px;
+	height: 181px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-around;
+	padding-top: 60px;
+}
+.category .content2 .float{
+	width: 260px;
+	height: 100px;
+	background-image: url(../images/12.jpg);
+	text-align: center;
+	line-height: 100px;
+	color: rgb(255, 255, 255);
+    font-size: 36px;
+    font-family: SimSun;
+}
+.story{
+	width: 100%;
+	height: 920px;
+}
+.story .content1{
+	width: 1200px;
+	height: 920px;
+	margin: 0 auto;
+	position: relative;
+}
+.story .content1 .storyT{
+	background-image: url(../images/03.png);
+	position: absolute;
+	top: 55px;
+	left: 501px;
+	width: 215px;
+	height: 90px;
+	text-align: center;
+	line-height: 90px;
+	color: rgb(26, 26, 26);
+    font-size: 36px;
+    font-family: SimSun;
+    display: none;
+}
+.story .content1 .storyTxt{
+	width: 953px;
+	position: absolute;
+    top: 186px;
+    left: 132px;
+    color: rgb(76, 76, 76);
+    font-size: 14px;
+    line-height: 24px;
+    font-family: SimSun;
+    display: none;
+}
+.story .content1 .storyImg{
+	position: absolute;
+    top: 321px;
+    left: 398px;
+    display: none;
+}
+.story .content1 .storyBtn{
+    position: absolute;
+    top: 772px;
+    left: 544px;
+    width: 128px;
+    height: 42px;
+    background-color: rgba(7,108,224,1);
+    text-align: center;
+    line-height: 42px;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+.us{
+	width: 100%;
+	height: 533px;
+}
+.us .content3{
+	width: 1200px;
+	height: 533px;
+	margin: 0 auto;
+	position: relative;
+}
+.us .usLeft{
+	position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 357px;
+    height: 426px;
+    display: none;
+}
+.us .usLeft .misson{
+	color: rgb(51, 51, 51);
+    font-size: 20px;
+    font-weight: bold;
+}
+.us .usLeft .missonD{
+	font-size: 14px;
+    line-height: 30px;
+    font-family: SimSun;
+}
+.us .usLeft .jingshen{
+	margin-top: 30px;
+}
+.us .usLeft .jing{
+	color: rgb(51, 51, 51);
+    font-size: 20px;
+    font-weight: bold;
+}
+.us .usLeft .jingD{
+	font-size: 14px;
+    line-height: 30px;
+    font-family: SimSun;
+}
+.us .usLeft .hexin{
+	margin-top: 30px;
+}
+.us .usLeft .hexin .heart{
+	color: rgb(51, 51, 51);
+    font-size: 20px;
+    font-weight: bold;
+}
+.us .usLeft .hexin .heartD{
+	font-size: 14px;
+    line-height: 30px;
+    font-family: SimSun;
+}
+.us .usRight{
+	position: absolute;
+    top: 0px;
+    left: 563px;
+    width: 633px;
+    height: 484px;
+    display: none;
+}
+.us .usRight .zhan{
+	color: rgb(51, 51, 51);
+    font-size: 20px;
+    font-weight: bold;
+}
+.us .usRight .zhanD{
+	font-size: 14px;
+    line-height: 30px;
+    font-family: SimSun;
+}
+.us .usRight .ji{
+	margin-top: 30px;
+}
+.us .usRight .ji .jituan{
+	color: rgb(51, 51, 51);
+    font-size: 20px;
+    font-weight: bold;
+}
+.us .usRight .ji .jituanD{
+	font-size: 14px;
+    line-height: 30px;
+    font-family: SimSun;
+}
+.us .usRight .kou{
+	margin-top: 30px;
+}
+.us .usRight .kou .kouhao{
+	color: rgb(51, 51, 51);
+    font-size: 20px;
+    font-weight: bold;
+}
+.us .usRight .kou .kouhaoD{
+	font-size: 14px;
+    line-height: 30px;
+    font-family: SimSun;
+}
+
+.footer{
+	width: 100%;
+	height: 104px;
+    background: #424242;
+    text-align: center;
+    color: #9a9a9a;
+    padding-top: 30px;
+}
+.back{
+	width: 50;
+	height: 50px;
+	position: fixed;
+	bottom: 50px;
+	right: 50px;
+	cursor: pointer;
+	transition: opacity 2s;
+}
+.back:hover{
+	opacity: 0.5;
+}
