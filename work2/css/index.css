@@ -1,0 +1,341 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+.firstPart{
+	width: 100%;
+	height: 1000px;
+	background-image: url(../images/01.jpg);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: cover;
+}
+.firstPart .content1{
+	width: 1200px;
+	height: 1000px;
+	margin: 0 auto;
+	position: relative;
+}
+.firstPart .title{
+	font-size: 32px;
+	font-weight: bold;
+	position: absolute;
+	top: 46px;
+	left: 30px;
+}
+.firstPart .title .hotel{
+	color: rgb(255,101,55);
+}
+.firstPart .title .design{
+	color: rgb(204,204,204);
+}
+.firstPart .head{
+	width: 499px;
+	height: 50px;
+	line-height: 50px;
+	background-color: #fff;
+	position: fixed;
+	top: 39px;
+	right: 230px;
+	z-index: 222;
+}
+.firstPart .head ol{
+	float: left;
+	width: 121px;
+	text-align: center;
+	font-size: 16px;
+}
+.firstPart .head .current{
+	border-bottom: 2px solid #ff6637;
+}
+.firstPart .head ol:hover{
+	border-bottom: 2px solid #ff6637;
+}
+.firstPart .head ol a{
+	color: #656565;
+	text-decoration: none;
+}
+.firstPart .head ol a:hover{
+	color: #ff6637;
+}
+.firstPart .head span{
+	display: block;
+	width: 1px;
+	height: 14px;
+	float: left;
+	background-color: #1c1b1b30;
+	margin-top: 18px;
+}
+.firstPart .cha{
+	position: absolute;
+	top: 224px;
+	left: 26px;
+	height: 224px;
+}
+.firstPart .cha .you{
+	font-size: 60px;
+	color: rgb(255,101,55);
+}
+.firstPart .cha .invited{
+	font-size: 110px;
+	color: rgb(255,101,55);
+}
+.firstPart .know{
+	width: 574px;
+	height: 62px;
+	position: absolute;
+	left: 26px;
+	top: 458px;
+}
+.firstPart .know .line1{
+	width: 496px;
+	height: 2px;
+	display: block;
+	background-color: rgba(252, 98, 55, 0.404);
+}
+.firstPart .know .how{
+	font-size: 32px;
+	font-family: "方正舒体";
+	color: #666;
+}
+.firstPart .content1 .btn1{
+	width: 240px;
+	height: 80px;
+	line-height: 80px;
+	text-align: center;
+	position: absolute;
+	top: 605px;
+	left: 36px;
+	background-color: #ff6637;
+	border: 1px solid #ff6637;
+	border-radius: 39px;
+	color: #fff;
+	font-size: 24px;
+}
+.secondPart{
+	width: 100%;
+	height: 958px;
+	background: url(../images/02.jpg) no-repeat top;
+}
+.secondPart .content2{
+	width: 1200px;
+	height: 958px;
+	margin: 0 auto;
+	position: relative;
+}
+.secondPart .content2 img{
+	position: absolute;
+	top: 52px;
+	left: 34px;
+}
+.secondPart .content2 .biao{
+	position: absolute;
+	top: 250px;
+	left: 653px;
+	font-size: 60px;
+	font-weight: bold;
+	color: rgb(255,101,55);
+}
+.secondPart .content2 .hao{
+	position: absolute;
+	top: 349px;
+	left: 653px;
+	font-size: 28px;
+	color: rgb(255,131,94);
+}
+.secondPart .content2 .detail{
+	width: 546px;
+	height: 77px;
+	position: absolute;
+	left: 653px;
+	top: 428px;
+	font-size: 14px;
+	line-height: 36px;
+    color: rgb(136, 136, 136);
+}
+.secondPart .content2 .btn2{
+	width: 240px;
+	height: 80px;
+	line-height: 80px;
+	position: absolute;
+	top: 604px;
+	left: 659px;
+	font-size: 24px;
+	color: #ff6537;
+	text-align: center;
+	border: 1px solid #ff6537;
+	border-radius: 39px;
+}
+.threePart{
+	width: 100%;
+	height: 957px;
+	background: url(../images/03.jpg) no-repeat top;
+}
+.threePart .content3{
+	width: 1200px;
+	height: 957px;
+	margin: 0 auto;
+	position: relative;
+}
+.threePart .content3 img{
+	position: absolute;
+	top: 54px;
+	left: 393px;
+}
+.threePart .content3 .eat{
+	position: absolute;
+	top: 261px;
+	left: 3px;
+	font-size: 60px;
+	font-weight: bold;
+	color: rgb(255, 101, 55);
+}
+.threePart .content3 .mei{
+	position: absolute;
+	top: 356px;
+	left: 3px;
+	font-size: 28px;
+	color: rgb(255, 101, 55);
+}
+.threePart .content3 .detail3{
+	font-size: 14px;
+	color: rgb(102, 102, 102);
+	width: 510px;
+	position: absolute;
+	top: 430px;
+	left: 3px;
+	line-height: 36px;
+}
+.threePart .content3 .btn3{
+	width: 240px;
+	height: 80px;
+	line-height: 80px;
+	position: absolute;
+	top: 659px;
+	left: 13px;
+	font-size: 24px;
+	color: #ff6537;
+	text-align: center;
+	border: 1px solid #ff6537;
+	border-radius: 39px;
+}
+.fourPart{
+	width: 100%;
+	height: 958px;
+	background: url(../images/04.jpg) no-repeat top;
+}
+.fourPart .content4{
+	width: 1200px;
+	height: 958px;
+	margin: 0 auto;
+	position: relative;
+}
+.fourPart .content4 img{
+	position: absolute;
+	top: 101px;
+	left: -1px;
+}
+.fourPart .content4 .xiu{
+	position: absolute;
+	top: 257px;
+	left: 657px;
+	font-size: 60px;
+	font-weight: bold;
+	color: rgb(255,101,55);
+}
+.fourPart .content4 .wan{
+	position: absolute;
+	top: 354px;
+	left: 658px;
+	font-size: 28px;
+	color: rgb(255,131,94);
+}
+.fourPart .content4 .detail4{
+	width: 546px;
+	height: 77px;
+	position: absolute;
+	left: 658px;
+	top: 444px;
+	font-size: 14px;
+	line-height: 36px;
+    color: rgb(136, 136, 136);
+}
+.fourPart .content4 .btn4{
+	width: 240px;
+	height: 80px;
+	line-height: 80px;
+	position: absolute;
+	top: 645px;
+	left: 663px;
+	font-size: 24px;
+	color: #ff6537;
+	text-align: center;
+	border: 1px solid #ff6537;
+	border-radius: 39px;
+}
+footer{
+	width: 100%;
+	height: 231px;
+	background-color: #2b2b2b;
+}
+footer .content5{
+	width: 1200px;
+	height: 231px;
+	margin: 0 auto;
+	position: relative;
+}
+footer .content5 .telImg1{
+	position: absolute;
+	top: 64px;
+	left: 9px;
+}
+footer .content5 .telText1{
+	position: absolute;
+	top: 63px;
+	left: 70px;
+	font-size: 14px;
+	color: rgb(216, 216, 216);
+	line-height: 24px;
+}
+footer .content5 .telImg2{
+	position: absolute;
+	top: 69px;
+	left: 362px;
+}
+footer .content5 .telText2{
+	position: absolute;
+	top: 62px;
+	left: 430px;
+	font-size: 14px;
+	color: rgb(216, 216, 216);
+	line-height: 24px;
+}
+footer .content5 .telImg3{
+	position: absolute;
+	top: 61px;
+	left: 699px;
+}
+footer .content5 .telText3{
+	position: absolute;
+	top: 62px;
+	left: 768px;
+	font-size: 14px;
+	color: rgb(216, 216, 216);
+	line-height: 24px;
+}
+footer .content5 .ban{
+	width: 100%;
+	position: absolute;
+	text-align: center;
+	bottom: 40px;
+	color: #d8d8d8;
+	font-size: 14px;
+}
+footer .content5 .other{
+	width: 100%;
+	text-align: center;
+	position: absolute;
+	bottom: 15px;
+	color: #d8d8d8;
+	font-size: 14px;
+}
