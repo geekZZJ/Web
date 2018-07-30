@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>属性</title>
+	<style type="text/css" media="screen">
+		.red{
+			color: red;
+		}
+		.blue{
+			background-color: blue;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<strong :class="[r,b]">文字...</strong>
+		<img :src="url" alt="">
+		<!-- 这个是v-bind的简写 -->
+		<br>
+		<img v-bind:src="url" alt="" :width="w" :title="t">
+	</div>
+	<script type="text/javascript" src="vue.js"></script>
+	<script type="text/javascript">
+		window.onload = function(){
+			new Vue({
+				el:'#box',
+				data:{
+					url:'https://www.baidu.com/img/bd_logo1.png',
+					w:'200px',
+					t:'百度图片',
+					r:'red',
+					b:'blue'
+				},
+				methods:{
+				}
+			});
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>过滤器</title>
+</head>
+<body>
+	<div id="box">
+		<!-- {{'welcome' | uppercase}} -->
+		<!-- vue2.0已经废除了上面的写法，全部需要自己定义 -->
+		<!-- {{12|currency '￥'}} -->
+	</div>
+	<script type="text/javascript" src="vue.js"></script>
+	<script type="text/javascript">
+		window.onload = function(){
+			new Vue({
+				el:'#box',
+				data:{
+				}
+			});
+		}
+	</script>
+</body>
+</html>
