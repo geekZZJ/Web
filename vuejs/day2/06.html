@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>过滤器</title>
+	<style type="text/css" media="screen">
+		[v-cloak]{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="box" v-cloak>
+		<ul>
+			<li v-for="val in arr | limitBy 2 arr.length-2">
+				{{val}}
+			</li>
+		</ul>
+	</div>
+	<script type="text/javascript" src="vue.js"></script>
+	<script type="text/javascript">
+		var vm = new Vue({
+			data:{
+				arr:[1,2,3,4,5]
+			},
+			methods:{
+			}
+		}).$mount('#box');
+	</script>
+</body>
+</html>
