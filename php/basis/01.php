@@ -1,20 +1,18 @@
-<?php 
-	header("Content-type:text/html;charset=utf-8");
-	if ($con = mysql_connect('localhost','root','')) {
-		echo "连接成功";
-	}else{
-		echo "连接失败";
-	}
-	if (mysql_select_db('test')) {
-		echo "选择数据库成功";
-	}else{
-		echo "选择数据库失败";
-	}
-	if (mysql_query('insert into stu(sno,sname) values(3,"asdf")')) {
-		echo "插入成功";
-	}else{
-		echo mysql_error();
-		echo "插入失败";
-	}
-	mysql_close($con);
- ?>
+<?php
+/**
+ * Created by PhpStorm.
+ * User: asus
+ * Date: 2018/8/3
+ * Time: 14:35
+ */
+if ($con = mysqli_connect('localhost','root','2461927976')){
+    echo "连接成功";
+}else{
+    echo "连接失败";
+}
+if (mysqli_select_db($con,'stu')){
+    echo "选择数据库成功";
+}else{
+    echo "选择数据库失败";
+}
+mysqli_close($con);
