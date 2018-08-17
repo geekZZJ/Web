@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue动画</title>
+	<style type="text/css" media="screen">
+		[v-cloak]{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="box" v-cloak>
+		<aaa></aaa>
+	</div>
+	<script type="text/javascript" src="vue.js"></script>
+	<script type="text/javascript">
+		var Aaa = Vue.extend({
+			data(){
+				return{
+					msg:'我是标题123'
+				};
+			},
+			methods:{
+				change(){
+					this.msg = 'changed'
+				}
+			},
+			template:'<h3 @click="change">{{msg}}</h3>'
+		});
+		Vue.component('aaa',Aaa);
+		var vm = new Vue({
+			el:'#box',
+			data:{
+				bSign:true
+			}
+		});
+	</script>
+</body>
+</html>
