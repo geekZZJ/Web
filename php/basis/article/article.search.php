@@ -1,12 +1,13 @@
 <?php
-    require_once ('connect.php');
-    $sql = "select * from article order by datetime desc";
-    $query = mysqli_query($con,$sql);
-    if ($query&&mysqli_num_rows($query)){
-        while ($row = mysqli_fetch_assoc($query)){
-            $data[] = $row;
-        }
+require_once ('connect.php');
+$key = $_GET['key'];
+$sql = "select * from article where title like '$key%' order by datetime desc";
+$query = mysqli_query($con,$sql);
+if ($query&&mysqli_num_rows($query)){
+    while ($row = mysqli_fetch_assoc($query)){
+        $data[] = $row;
     }
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -41,23 +42,23 @@
     <!-- start content -->
     <div id="content">
         <?php
-            if(empty($data)){
-                echo "当前没有文章，请管理员在后台添加文章";
-            }else{
-                foreach($data as $value){
-        ?>
-        <div class="post">
-            <h1 class="title"><?php echo $value['title']?><span style="color:#ccc;font-size:14px;">　　作者：<!--作者放置到这里--><?php echo $value['author']?></span></h1>
-            <div class="entry">
-                <?php echo $value['description']?>
-            </div>
-            <div class="meta">
-                <p class="links"><a href="article.show.php?id=<?php echo $value['id']?>" class="more">查看详细</a>&nbsp;&nbsp;&raquo;&nbsp;&nbsp;</p>
-            </div>
-        </div>
-        <?php
-                }
+        if(empty($data)){
+            echo "当前没有文章，请管理员在后台添加文章";
+        }else{
+            foreach($data as $value){
+                ?>
+                <div class="post">
+                    <h1 class="title"><?php echo $value['title']?><span style="color:#ccc;font-size:14px;">　　作者：<!--作者放置到这里--><?php echo $value['author']?></span></h1>
+                    <div class="entry">
+                        <?php echo $value['description']?>
+                    </div>
+                    <div class="meta">
+                        <p class="links"><a href="article.show.php?id=<?php echo $value['id']?>" class="more">查看详细</a>&nbsp;&nbsp;&raquo;&nbsp;&nbsp;</p>
+                    </div>
+                </div>
+                <?php
             }
+        }
         ?>
     </div>
     <!-- end content -->
