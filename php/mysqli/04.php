@@ -14,10 +14,11 @@ $mysqli->set_charset('utf8');
 
 //执行sql查询
 //添加记录
-$sql = "INSERT mysqli(id,username) VALUES(12,'king');";
+$sql = "INSERT mysqli(id,username) VALUES(1,'king');";
 $res = $mysqli->query($sql);
 if ($res){
     echo '恭喜你注册成功，你是网站的第'.$mysqli->insert_id.'位用户<br/>';
+    echo '有'.$mysqli->affected_rows.'记录被影响';
 }else{
     echo "error".$mysqli->errno.':'.$mysqli->error;
 }
