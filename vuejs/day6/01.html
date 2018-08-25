@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01</title>
+	<style type="text/css" media="screen">
+		p{
+			width: 300px;
+			height: 300px;
+			background-color: red;
+		}
+		.fade-enter-active, .fade-leave-active{
+			/*变化成什么样*/
+			transition: 1s all ease;
+		}
+		.fade-enter-active{
+			opacity: 1;
+			width: 300px;
+			height: 300px;
+		}
+		.fade-leave-active{
+			opacity: 0px;
+			width: 100px;
+			height: 100px;
+		}
+		.fade-enter{
+			/*初始状态*/
+			opacity: 0;
+			width: 100px;
+			height: 100px;
+		}
+		.fade-
+	</style>
+</head>
+<body>
+	<div id="box">
+		<input type="button" name="" value="点击显示隐藏" @click = "show=!show">
+		<transition name="fade" @before-enter="beforeEnter" @enter="enter" @after-Enter="afterEnter">
+			<p v-show="show"></p>
+		</transition>
+	</div>
+	<script type="text/javascript" src="vue.js"></script>
+	<script type="text/javascript">
+		window.onload = function(){
+			new Vue({
+				el:'#box',
+				data:{
+					show:false
+				},
+				methods:{
+					beforeEnter(){
+						console.log('前');
+					},
+					enter(){
+						console.log('进入');
+					},
+					afterEnter(el){
+						console.log('后');
+						el.style.backgroundColor = 'blue';
+					}
+				}
+			});
+		}
+	</script>
+</body>
+</html>
