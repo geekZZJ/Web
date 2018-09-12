@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>七夕主题</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+	<div id="content">
+		<ul class="content-wrap">
+			<li>页面一</li>
+			<li>页面二</li>
+			<li>页面三</li>
+		</ul>
+		<div class="button">
+			<button>点击切换页面</button>
+		</div>
+	</div>
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="swipe.js"></script>
+	<script type="text/javascript">
+		// var container = $("#content");
+		var swipe = Swipe($("#content"));
+		$('button').click(function(){
+			swipe.scrollTo($("#content").width()*2,5000);
+		})
+	</script>
+</body>
+</html>
