@@ -4,26 +4,49 @@
 	<meta charset="UTF-8">
 	<title>七夕主题</title>
 	<link rel="stylesheet" type="text/css" href="index.css">
+	<link rel="stylesheet" type="text/css" href="pageA.css">
 </head>
 <body>
 	<div id="content">
 		<ul class="content-wrap">
-			<li>页面一</li>
+			<li>
+				<div class="a_background">
+					<div class="a_background_top"></div>
+					<div class="a_background_middle"></div>
+					<div class="a_background_botton"></div>
+				</div>
+			</li>
 			<li>页面二</li>
 			<li>页面三</li>
 		</ul>
-		<div class="button">
-			<button>点击切换页面</button>
-		</div>
+		<div id="boy" class="character"></div>
 	</div>
 	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="swipe.js"></script>
 	<script type="text/javascript">
 		// var container = $("#content");
 		var swipe = Swipe($("#content"));
-		$('button').click(function(){
-			swipe.scrollTo($("#content").width()*2,5000);
-		})
+		//获取数据
+		var getValue = function(className){
+			var $elem = $(''+className+'');
+			return {
+				height:$elem.height(),
+				top:$elem.position().top
+			};
+		}
+
+		var pathY = function(){
+			var data = getValue('.a_background_middle');
+			return data.top + data.height/2;
+		}();
+
+		var $boy = $("#boy");
+		var boyHeight = $boy.height();
+		// console.log(boyHeight);
+
+		$boy.css({
+			top:pathY - boyHeight + 25
+		});
 	</script>
 </body>
 </html>
