@@ -59,6 +59,9 @@ function gameloop(){
 	deltaTime = now - lastTime;
 	// console.log(deltaTime)
 	lastTime = now;
+	if (deltaTime > 40) {
+		deltaTime = 40
+	}
 
 	drawBackground();
 	ane.draw();
@@ -66,6 +69,7 @@ function gameloop(){
 	fruit.draw();
 	ctx1.clearRect(0,0,canWidth,canHeight);
 	mom.draw();
+	momFruitsCollision();
 }
 function onMouseMove(e){
 	if (e.offSetX || e.layerX) {
