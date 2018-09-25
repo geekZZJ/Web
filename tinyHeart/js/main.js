@@ -19,6 +19,9 @@ var fruit;
 
 var mom;
 var baby;
+var babyTail = [];
+var babyEye = [];
+var babyBody = [];
 
 document.body.onload = game;
 function game(){
@@ -55,6 +58,21 @@ function init(){
 
 	mx = canWidth * 0.5;
 	my = canHeight *0.5;
+
+	for(var i = 0 ; i < 8 ; i++){
+		babyTail[i] = new Image();
+		babyTail[i].src = "./images/babyTail" + i + ".png";
+	}
+
+	for(var i = 0;i < 2 ; i++){
+		babyEye[i] = new Image();
+		babyEye[i].src = "./images/babyEye" + i + ".png";
+	}
+
+	for(var i = 0; i < 20; i++){
+		babyBody[i] = new Image();
+		babyBody[i].src = "./images/babyFade" + i + ".png";
+	}
 }
 function gameloop(){
 	window.requestAnimFrame(gameloop);
