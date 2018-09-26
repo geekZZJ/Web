@@ -23,6 +23,13 @@ var babyTail = [];
 var babyEye = [];
 var babyBody = [];
 
+var momTail = [];
+var momEye = [];
+var momBodyOra = [];
+var momBodyBlue = [];
+
+var data;
+
 document.body.onload = game;
 function game(){
 	init();
@@ -73,6 +80,21 @@ function init(){
 		babyBody[i] = new Image();
 		babyBody[i].src = "./images/babyFade" + i + ".png";
 	}
+	for(var i = 0 ; i< 8;i++){
+		momTail[i] = new Image();
+		momTail[i].src = "./images/bigTail" + i + ".png";
+	}
+	for(var i = 0 ; i < 2 ;i++){
+		momEye[i] = new Image();
+		momEye[i].src = "./images/bigEye" + i + ".png";
+	}
+	data = new dataObj();
+	for(var i = 0 ;i<8;i++){
+		momBodyOra[i] = new Image();
+		momBodyBlue[i] = new Image();
+		momBodyOra[i].src = "./images/bigSwim" + i + ".png";
+		momBodyBlue[i].src = "./images/bigSwimBlue" + i + ".png";
+	}
 }
 function gameloop(){
 	window.requestAnimFrame(gameloop);
@@ -91,8 +113,11 @@ function gameloop(){
 	fruit.draw();
 	ctx1.clearRect(0,0,canWidth,canHeight);
 	mom.draw();
-	momFruitsCollision();
 	baby.draw();
+	momFruitsCollision();
+	momBabyCollision();
+
+	data.draw();
 }
 function onMouseMove(e){
 	if (e.offSetX || e.layerX) {
