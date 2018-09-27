@@ -95,6 +95,9 @@ function init(){
 		momBodyOra[i].src = "./images/bigSwim" + i + ".png";
 		momBodyBlue[i].src = "./images/bigSwimBlue" + i + ".png";
 	}
+	ctx1.fillStyle = "white";
+	ctx1.font = "30px Verdana";
+	ctx1.textAlign = "center";
 }
 function gameloop(){
 	window.requestAnimFrame(gameloop);
@@ -120,8 +123,10 @@ function gameloop(){
 	data.draw();
 }
 function onMouseMove(e){
-	if (e.offSetX || e.layerX) {
-		mx = e.offSetX  == undefined ?e.layerX : e.offSetX;
-		my = e.offSetY == undefined ? e.layerY : e.offSetY;
+	if (!data.gameOver) {
+		if (e.offSetX || e.layerX) {
+			mx = e.offSetX  == undefined ?e.layerX : e.offSetX;
+			my = e.offSetY == undefined ? e.layerY : e.offSetY;
+		}
 	}
 }
