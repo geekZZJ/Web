@@ -1,34 +1,25 @@
 const Koa = require('koa')
 const logger = require('koa-logger')
+const session = require('koa-session')
 const app = new Koa()
 
-const mid1 = async(ctx,next)=>{
-    ctx.type = 'text/html;charset=utf-8'
-    await next()
-}
-const mid2 = async(ctx,next)=>{
-    ctx.body = 'Hi '
-    await next()
-}
-const mid3 = async(ctx,next)=>{
-    ctx.body = ctx.body + 'Luke'
-    await next()
-}
-
-// app.use(async(ctx,next)=>{
-//     // console.log(ctx.href)
-//     // console.log(ctx.path)
-//     // console.log(ctx.url)
-//     // console.log(ctx.method)
-//     // console.log(ctx)
-//     ctx.type = 'text/html;charset=utf-8'
-//     ctx.body = 'Hi Luke'
-// })
+app.keys = ['Hi Luke']
 
 app.use(logger())
+app.use(session(app))
 
-app.use(mid1)
-app.use(mid2)
-app.use(mid3)
+
+app.use(ctx=>{
+    if (ctx.path === '/favicon.ico') return;
+    if (ctx.path === '/'){
+        let n = ctx.session.views || 0
+        ctx.session.views = ++n
+        ctx.body = n + ' 次'
+    }else if (ctx.path == '/hi') {
+        ctx.body = 'Hi Luke'
+    }else {
+        ctx.body = '404'
+    }
+})
 
 app.listen(2333)
