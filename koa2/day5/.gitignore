@@ -1,9 +1,10 @@
 node_modules
-
-npm-debug.log
-
-dist
-
 .DS_Store
-
-build
+.vscode
+.cache
+package-lock.json
+yarn-error.log
+jsconfig.json
+npm-debug.log
+dist
+__dir__
