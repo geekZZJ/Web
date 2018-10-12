@@ -3,10 +3,77 @@ extends ./layout/default
 block title
     title Koa Douban 首页
 block content
-    .container
-        .row
-            .col-md-8
-                h1 Hi #{you}
-                p This is #{me}
-            .col-md-4
-                p 测试动态pug模板页面
+    include ./includes/header
+
+    .container-fluid
+        .col-12.col-md-1.col-xl-1.sidebar
+            .collapse.cat-links
+                .sidebar-item.active
+                    a.sidebar-link(href='/link1') 2018 年
+                    a.sidebar-link(href='/link1') 2019 年
+        .content
+            .row
+                .col-md-6
+                    .card
+                        img.card-img-top(src='' data-video='')
+                        .card-body
+                            h4.card-title 这是电影标题
+                            p.card-desc 这是电影描述
+                        .card-footer
+                            small.text-muted 1天前更新
+                .col-md-6
+                    .card
+                        img.card-img-top(src='' data-video='')
+                        .card-body
+                            h4.card-title 这是电影标题
+                            p.card-desc 这是电影描述
+                        .card-footer
+                            small.text-muted 1天前更新
+            .row
+                .col-md-6
+                    .card
+                        img.card-img-top(src='' data-video='')
+                        .card-body
+                            h4.card-title 这是电影标题
+                            p.card-desc 这是电影描述
+                        .card-footer
+                            small.text-muted 1天前更新
+                .col-md-6
+                    .card
+                        img.card-img-top(src='' data-video='')
+                        .card-body
+                            h4.card-title 这是电影标题
+                            p.card-desc 这是电影描述
+                        .card-footer
+                            small.text-muted 1天前更新
+    #myModal.modal.fade.bd-example-modal-lg(tabindex="-1",role="dialog")
+    include ./includes/script
+    script.
+        var player = null
+        $(document).ready(function () {
+            $('#myModal').on('hidden.bs.modal',function (e) {
+                if (player&&player.pause) player.pause
+            $('.card-img-top').click(function (e) {
+                var video = $(this).data('video')
+                var image = $(this).attr('src')
+                $('#myModal').modal('show')
+
+                if (!player){
+                    player = new DPlayer({
+                        container:document.getElementById('videoModal'),
+                        screenshot:true,
+                        video:{
+                            url:video,
+                            pic:image,
+                            thumbnails:image
+                        }
+                    })
+                }else {
+                    player.switchVideo({
+                        url:video,
+                        pic:image,
+                        type:'auto'
+                    })
+                }
+            })
+        })
