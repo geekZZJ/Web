@@ -3,16 +3,10 @@
 		<div class="content">
 		    <div class="newsList">
 		    	<ul>
-		            <li>
+		            <li v-for="(item,index) in arrList">
 		                <a href="conText.html">
-		                	<h2>这是关注的组件</h2>
-		                    <p>扎看好你分数段发快速大家来大咖啡机考零分是打飞机刻录机的十六年放接口谁拉的减肥了</p>
-		                </a>
-		            </li>
-		            <li>
-		                <a href="conText.html">
-		                	<h2>这是关注的组件</h2>
-		                    <p>扎看好你分数段发快速大家来大咖啡机考零分是打飞机刻录机的十六年放接口谁拉的减肥了</p>
+		                	<h2>{{index}}.{{item.title}}</h2>
+		                    <p>{{item.detail}}</p>
 		                </a>
 		            </li>
 		        </ul>
@@ -20,3 +14,30 @@
 		</div>
 	</div>
 </template>
+<script type="text/javascript">
+	import BannerView from './Banner.vue'
+	export default{
+		data(){
+			return{
+				arrList:[]
+			}
+		},
+		components:{
+			BannerView
+		},
+		mounted(){
+			//获取数据
+			this.fetchData();
+		},
+		methods:{
+			fetchData(){
+				var _this = this;
+				this.$http.get('src/data/follow.data').then(function(res){
+					_this.arrList = res.data
+				}).catch(function(err){
+					console.log('Follow',err);
+				})
+			}
+		}
+	}
+</script>

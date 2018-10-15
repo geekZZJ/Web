@@ -4,11 +4,15 @@
 			<BannerView></BannerView>
 		    <div class="newsList">
 		    	<ul>
-		            <li>
-		                <a href="conText.html">
-		                	<h2>还可以降低收腹的看法就考虑到胜负就看的叫法达康书记付快递费的房价时空裂缝就发到卡司机肥来的</h2>
-		                    <p>扎看好你分数段发快速大家来大咖啡机考零分是打飞机刻录机的十六年放接口谁拉的减肥了</p>
-		                </a>
+		            <li v-for="(item,index) in arrList">
+<!-- 		                <a href="conText.html">
+		                	<h2>{{index}}.{{item.title}}</h2>
+		                    <p>{{item.detail}}</p>
+		                </a> -->
+		                <router-link :to="'/article/'+item.id">
+		                	<h2>{{index}}.{{item.title}}</h2>
+		                    <p>{{item.detail}}</p>
+		                </router-link>
 		            </li>
 		        </ul>
 		    </div>
@@ -18,8 +22,27 @@
 <script type="text/javascript">
 	import BannerView from './Banner.vue'
 	export default{
+		data(){
+			return{
+				arrList:[]
+			}
+		},
 		components:{
 			BannerView
+		},
+		mounted(){
+			//获取数据
+			this.fetchData();
+		},
+		methods:{
+			fetchData(){
+				var _this = this;
+				this.$http.get('src/data/index.data').then(function(res){
+					_this.arrList = res.data
+				}).catch(function(err){
+					console.log('Home',err);
+				})
+			}
 		}
 	}
 </script>

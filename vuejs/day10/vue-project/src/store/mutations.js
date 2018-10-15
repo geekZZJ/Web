@@ -2,7 +2,8 @@ import getters from './getters'
 
 
 const state = {
-	header:true
+	header:true,
+	loading:false
 };
 
 const mutations = {
@@ -11,6 +12,12 @@ const mutations = {
 	},
 	hideHeader(state){
 		state.header = false
+	},
+	showLoading(state){
+		state.loading = true
+	},
+	hideLoading(state){
+		state.loading = false
 	}
 }
 
