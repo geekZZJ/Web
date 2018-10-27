@@ -5,6 +5,8 @@
     <title>箭头函数</title>
 </head>
 <body>
+    <button id="btn1">测试箭头函数this1</button>
+    <button id="btn2">测试箭头函数this2</button>
 <script>
 
     //没有形参的时候
@@ -30,6 +32,18 @@
         return x+y;
     }
     console.log(fun5(35,49));
+
+
+
+    //测试箭头函数this
+    let btn1 = document.getElementById('btn1');
+    let btn2 = document.getElementById('btn2');
+    btn1.onclick = function () {
+        alert(this);
+    };
+    btn2.onclick = ()=>{
+        alert(this);
+    }
 </script>
 </body>
 </html>
