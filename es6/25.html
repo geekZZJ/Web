@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>set和map数据结构</title>
+</head>
+<body>
+<script>
+    let arr = [1,2,4,5,6,9,2];
+    let arr1 = arr;
+    arr = [];
+    let set = new Set(arr1);
+    for (let i of set){
+        arr.push(i);
+    }
+    console.log(arr);
+    //  遍历字符串
+    let str = "LOVE";
+    for (let i of str){
+        console.log(i);
+    }
+</script>
+</body>
+</html>
