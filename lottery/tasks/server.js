@@ -12,7 +12,7 @@ gulp.task('serve',(cb)=>{
 
     gulp.watch(['server/public/**/*.js','server/views/**/*.ejs'],function (file) {
         server.notify.apply(server,[file]);
-    })
+    });
     gulp.watch(['server/routes/**/*.js','server/app.js'],function () {
         server.start.bind(server)()
     })
