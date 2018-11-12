@@ -15,16 +15,17 @@ export function getRecommend() {
 }
 
 export function getDiscList() {
-  const url = 'https://c.y.qq.com/splcloud/fcgi-bin/fcg_get_diss_tag_conf.fcg'
+  const url = 'https://c.y.qq.com/musichall/fcgi-bin/fcg_yqqhomepagerecommend.fcg'
   const data = Object.assign({}, commonParams, {
-    platform: 'yqq',
-    hostUin: 0,
-    sin: 0,
-    ein: 29,
-    sortId: 5,
-    needNewCode: 0,
-    categoryId: 10000000,
-    rnd: Math.random()
+    platform: 'h5',
+    // hostUin: 0,
+    // sin: 0,
+    // ein: 29,
+    // sortId: 5,
+    needNewCode: 1,
+    // categoryId: 10000000,
+    // rnd: Math.random()
+    uin: 0
   })
 
   return jsonp(url, data, options)
