@@ -49,10 +49,10 @@ export default {
         if (!map[key]) {
           map[key] = {
             title: key,
-            item: []
+            items: []
           }
         }
-        map[key].item.push(new Singer({
+        map[key].items.push(new Singer({
           id: item.Fsinger_mid,
           name: item.Fsinger_name
         }))
