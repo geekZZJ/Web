@@ -69,7 +69,7 @@ export default {
     }
   },
   methods: {
-    select(item) {
+    selectItem(item) {
       this.$emit('select', item)
     },
     onShortcutTouchStart(e) {
