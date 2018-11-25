@@ -3,7 +3,7 @@
     <div class="back">
       <i class="icon-back"></i>
     </div>
-    <h1 class="title"></h1>
+    <h1 class="title" v-html="title"></h1>
     <div class="bg-image">
       <div class="filter"></div>
     </div>
@@ -11,7 +11,22 @@
 </template>
 
 <script>
-
+export default {
+  props: {
+    bgImage: {
+      type: String,
+      default: ''
+    },
+    songs: {
+      type: Array,
+      default: () => []
+    },
+    title: {
+      type: String,
+      default: ''
+    }
+  }
+}
 </script>
 
 <style scoped lang="stylus" rel="stylesheet/stylus">
