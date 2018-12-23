@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>进制转换</title>
+    <link rel="shortcut icon" href="./images/logo.ico">
+    <link rel="stylesheet" href="./cal.css">
+</head>
+<body>
+    <div class="main">
+        <div class="cal">
+            <div class="title">进制转换</div>
+            <div class="transform">
+                <div class="leftPart">
+                    <select name="" class="leftSelect" id="leftSelect">
+                        <option value="B">二进制</option>
+                        <option value="O">八进制</option>
+                        <option value="D">十进制</option>
+                        <option value="H">十六进制</option>
+                    </select>
+                </div>
+                <div class="transformImg">
+                    <img src="./images/exchange.png" alt="">
+                </div>
+                <div class="rightPart">
+                    <select name="" class="rightSelect" id="rightSelect">
+                        <option value="B">二进制</option>
+                        <option value="O">八进制</option>
+                        <option value="D">十进制</option>
+                        <option value="H">十六进制</option>
+                    </select>
+                </div>
+            </div>
+            <div class="inAndOut">
+                <div class="leftIn">
+                    请输入要转换的数:<br/>
+                    <input type="text" class="inputStyle" id="leftIn">
+                </div>
+                <div class="rightIn">
+                    转换的结果:<br/>
+                    <input type="text" class="inputStyle" id="output">
+                </div>
+                <div class="btn" id="btn">确定</div>
+            </div>
+        </div>
+        <div class="explain">
+            <h2>转换算法教学</h2>
+            <br>
+            <div id="twoChange">
+                <h3>二进制转换为八进制</h3>
+                方法为：3位二进制数按权展开相加得到1位八进制数。（注意事项，3位二进制转成八进制是从右到左开始转换，不足时补0）。<br>
+                列：11001拆分为 001和011，001=1，011=2+1=3;<br>
+                那么11001转换为八进制就是31. <br><br>
+                <h3>二进制转十进制</h3>
+                方法为：把二进制数按权展开、相加即得十进制数。<br><br>
+                <h3>二进制转十六进制</h3>
+                方法为：与二进制转八进制方法近似，八进制是取三合一，十六进制是取四合一。（注意事项，4位二进制转成十六进制是从右到左开始转换，不足时补0）。<br>
+                参照二进制转八进制，但是它是从右往左，四位一组，不够补0br <br>
+                例子：1101101拆分为1101、0110 <br>
+                分别计算两个二进制的值，1101=8+4+0+1=13，十六进制中13为D <br>
+                0110=4+2=6，那么二进制1101101转换为十六进制就是6D。
+            </div>
+            <div id="eightChange">
+                <h3>八进制转换为二进制</h3>
+                方法1为：八进制数通过除2取余法，得到二进制数，对每个八进制为3个二进制，不足时在最左边补零。<br>
+                例子：77，拆分开7=4+2+1=111 <br>
+                所以八进制的77转换位二进制得111111
+                方法为：3位二进制数按权展开相加得到1位八进制数。（注意事项，3位二进制转成八进制是从右到左开始转换，不足时补0）。 <br>
+                列：11001拆分为 001和011，001=1，011=2+1=3; <br>
+                那么11001转换为八进制就是31 <br><br>
+
+                方法2为：八进制数通过除2取余法，得到二进制数，对每个八进制为3个二进制，不足时在最左边补零。<br>
+                例子：77，拆分开7=4+2+1=111 <br>
+                所以八进制的77转换位二进制得111111<br><br>
+                <h3>八进制转换为十进制</h3>
+                方法为：把八进制数按权展开、相加即得十进制数。<br>
+                例子：555=5*8的2次方+5*8的一次方+5=320+40+5=365 <br><br>
+                <h3>八进制转化为十六进制</h3>
+                先要把八进制转换位2进制，然后在把二进制转换位十六进制 <br>
+                例如：八进制721先转换为二进制，把一个个拆开 <br>
+                7=111，2=010，1=001，<br>
+                得到二77进制111010001，然后转换为16进制，从右往左，四个一组，不够补0 <br>
+                111010001 拆开为 0001，1101，0001 <br>
+                0001=1，1101=8+4+1=13，十六进制的话，就为D，0001=1，那么转换为十六进制就是1D1
+            </div>
+            <div id="tenChange">
+                <h3>十进制转二进制</h3>
+                方法为：十进制数除2取余法，即十进制数除2，余数为权位上的数，得到的商值继续除2，依此步骤继续向下运算直到商为0为止。<br>
+                例： 十进制要转二进制 <br>
+                就拿55除以2 <br>
+                55/2=27余1，在拿27除以2，27/2=13余1，在拿13除以2，13/2=6余1，在拿6除以2，6/2=3余下0，在拿3除以2，3/2=1余1，<br>
+                那么十进制55转换成二进制就是110111 <br><br>
+                <h3>十进制转换为八进制</h3>
+                十进制转八进制有两种方法 <br>
+                第一：间接法—把十进制转成二进制，然后再由二进制转成八进制。 <br>
+                例：拿534除以8，534/8=66余6，在拿66除以8等于8余2，在拿8除以8等于1余0，那么十进制534转八进制就是1026. <br><br>
+                第二：直接法—把十进制转八进制或者十六进制按照除8或者16取余，直到商为0为止。<br><br>
+                <h3>十进制转十六进制</h3>
+                第一：间接法—把十进制转成二进制，然后再由二进制转成八进制或者十六进制。<br>
+                例子：拿300除以16的等于18余12（12在16进制中以C表示，10为A，B为11，一直到F为15），在拿18除以16等于1余下2，在拿1除以16，等于0，不用表示，那么十进制300转换为十六进制的结果为12C。<br>
+                第二：直接法—把十进制转八进制,按照除8取余，直到商为0为止。
+            </div>
+            <div id="sixteenChange">
+                <h3>十六进制转换为二进制</h3>
+                方法为：十六进制数通过除2取余法，得到二进制数，对每个十六进制为4个二进制，不足时在最左边补零。<br>
+                例子：2FD，分别拆开，2=0010，F=15=1111，D=13=1101 <br>
+                那么转换为二进制就得到 1011111101 <br><br>
+                <h3>十六进制转换为八进制</h3>
+                先将十六进制转换成二进制，（原则一位十六进制转四位二进制）,在将二进制转换成八进制，（原则是从右往左三个，不够补0）<br>
+                例子： 十六进制的2FD转换二进制得1011111101，在将二进制1011111101转换为八进制，从右边往左，四个一拆分，不够补0 <br>
+                1011111101拆分为 001，011，111，101，分别计算 <br>
+                001=1，011=2+1=3，111=4+2+1=7，101=4+1=5，那么最后转换为八进制就得到1375 <br><br>
+                <h3>十六进制转十进制</h3>
+                跟八进制转换为十进制类似 <br>
+                例子：2D=2*16的一次方+13=2*16+13=45 <br>
+                十六进制的2D转换为十进制得到十进制45
+            </div>
+        </div>
+        <div class="end">
+            <div class="author">
+                <span>天麻火腿鸡团队荣誉出品</span>
+                <br>
+                <span>团队成员：罗忠孝 张中俊 郭逸峰 马骋</span>
+            </div>
+        </div>
+    </div>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+        window.onload = function () {
+            let offWidth = document.documentElement.clientWidth - 300;
+            $(".explain").css('width',offWidth)
+        }
+
+        $("#btn").click(function () {
+
+            if ($("#leftSelect").val() == "B"){
+                $("#twoChange").css("display","block")
+                $("#eightChange").css("display","none")
+                $("#tenChange").css("display","none")
+                $("#sixteenChange").css("display","none")
+            }
+            if ($("#leftSelect").val() == "O"){
+                $("#eightChange").css("display","block")
+                $("#twoChange").css("display","none")
+                $("#tenChange").css("display","none")
+                $("#sixteenChange").css("display","none")
+            }
+            if ($("#leftSelect").val() == "D"){
+                $("#eightChange").css("display","none")
+                $("#twoChange").css("display","none")
+                $("#tenChange").css("display","block")
+                $("#sixteenChange").css("display","none")
+            }
+            if ($("#leftSelect").val() == "H"){
+                $("#eightChange").css("display","none")
+                $("#twoChange").css("display","none")
+                $("#tenChange").css("display","none")
+                $("#sixteenChange").css("display","block")
+            }
+
+            $.ajax({
+                type:"post",
+                url:"http:localhost:8080/work/Test",
+                dataType:"json",
+                data:{
+                    'in': $("#leftSelect").val(),
+                    'out': $("#rightSelect").val(),
+                    'nums': $("#leftIn").val()
+                },
+                async:true,
+                success:function (info) {
+                    console.log(info);
+                    let result = info[0].nums
+                    $("#output").attr("value",result)
+                },
+                error: function () {
+                    alert("转换失败")
+                    return false
+                }
+            })
+        })
+
+    </script>
+</body>
+</html>
