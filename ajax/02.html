@@ -8,21 +8,15 @@
     <title>ajax2</title>
 </head>
 <body>
-<h1>this is a list</h1>
-<ul>
-    <li><a href="#">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-</ul>
-<div id="details"></div>
+<a href="01.txt">Hello</a>
 <div id="content"></div>
 <script src="jquery-3.3.1.min.js"></script>
 <script>
     $(function () {
         $("a").click(function () {
-            var url = this.href
-            console.log(url)
-            $("#details").load(url)
+            let url = this.href
+            let args = {"time":new Date()}
+            $("#content").load(url,args)
             return false
         })
     })
