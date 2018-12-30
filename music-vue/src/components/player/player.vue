@@ -1,6 +1,6 @@
 <template>
   <div class="player" v-show="playList.length>0">
-    <transition name="normal" @enter="enter" @after-enter="afterEnter" @leave="leave" @after-leave="leaveEnter">
+    <transition name="normal" @enter="enter" @after-enter="afterEnter" @leave="leave" @after-leave="afterLeave">
       <div class="normal-player" v-show="fullScreen">
         <div class="background">
           <img width="100%" height="100%" :src="currentSong.image">
@@ -15,7 +15,7 @@
         <div class="middle">
           <div class="middle-l">
             <div class="cd-wrapper" ref="cdWrapper">
-              <div class="cd">
+              <div class="cd" :class="cdCls">
                 <img class="image" :src="currentSong.image">
               </div>
             </div>
@@ -45,7 +45,7 @@
     <transition name="mini">
       <div class="mini-player" v-show="!fullScreen" @click="open">
         <div class="icon">
-          <img width="40" height="40" :src="currentSong.image">
+          <img width="40" height="40" :src="currentSong.image" :class="cdCls">
         </div>
         <div class="text">
           <h2 class="name" v-html="currentSong.name"></h2>
@@ -77,6 +77,9 @@ export default {
     },
     miniIcon() {
       return this.playing ? 'icon-pause-mini' : 'icon-play-mini'
+    },
+    cdCls() {
+      return this.playing ? 'play' : 'play pause'
     },
     ...mapGetters([
       'fullScreen',
@@ -134,7 +137,7 @@ export default {
       this.$refs.cdWrapper.style[transform] = `translate3d(${x}px,${y}px,0) scale(${scale})`
       this.$refs.cdWrapper.addEventListener('transitionennd', done)
     },
-    leaveEnter() {
+    afterLeave() {
       this.$refs.cdWrapper.style.transition = ''
       this.$refs.cdWrapper.style[transform] = ''
     },
