@@ -30,7 +30,7 @@
               <i class="icon-prev"></i>
             </div>
             <div class="icon i-center">
-              <i class="icon-play" @click="togglePlay"></i>
+              <i :class="playIcon" @click="togglePlay"></i>
             </div>
             <div class="icon i-right">
               <i class="icon-next"></i>
@@ -51,7 +51,9 @@
           <h2 class="name" v-html="currentSong.name"></h2>
           <p class="desc" v-html="currentSong.singer"></p>
         </div>
-        <div class="control"></div>
+        <div class="control">
+          <i :class="miniIcon" @click.stop="togglePlay"></i>
+        </div>
         <div class="control">
           <i class="icon-playlist"></i>
         </div>
@@ -70,6 +72,12 @@ const transform = prefixStyle('transform')
 
 export default {
   computed: {
+    playIcon() {
+      return this.playing ? 'icon-pause' : 'icon-play'
+    },
+    miniIcon() {
+      return this.playing ? 'icon-pause-mini' : 'icon-play-mini'
+    },
     ...mapGetters([
       'fullScreen',
       'playList',
