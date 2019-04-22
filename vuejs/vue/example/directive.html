@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>directive自定义指令</title>
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+<h1>directive自定义指令</h1>
+<hr>
+<div id="app">
+    <div v-zzj="color">{{num}}</div>
+    <div><button @click="add">ADD</button></div>
+</div>
+<script type="text/javascript">
+    Vue.directive("zzj",function (el,binding) {
+        console.log(el)
+        console.log(binding)
+        el.style="color:"+binding.value
+    })
+    var app = new Vue({
+        el:'#app',
+        data:{
+            num:10,
+            color:'red'
+        },
+        methods:{
+            add:function () {
+                this.num++
+            }
+        }
+    })
+</script>
+</body>
+</html>
