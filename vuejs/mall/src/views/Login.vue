@@ -5,7 +5,7 @@
         <span class="logo">燕</span>
       </div>
       <div class="body">
-        <div class="error"><i class="el-icon-error"></i>用户名或密码错误</div>
+        <div class="error" v-show="errorTip"><i class="el-icon-error"></i>用户名或密码错误</div>
         <div class="username">
           <el-input placeholder="请输入用户名" v-model="username">
             <i slot="prefix" class="el-input__icon el-icon-user-solid"></i>
@@ -20,7 +20,7 @@
           <span>注册</span>
         </div>
         <div class="submit">
-          <el-button type="success" round style="padding: 10px 87px">登录</el-button>
+          <el-button type="success" round style="padding: 10px 87px" @click="login">登录</el-button>
         </div>
       </div>
       <div class="footer">
@@ -41,12 +41,25 @@ export default {
   data () {
     return {
       username: '',
-      psd: ''
+      psd: '',
+      errorTip: false
     }
   },
   methods: {
     login () {
-      console.log(123)
+      axios.post('/api/user', {
+        username: this.username,
+        psd: this.psd
+      }).then((response) => {
+        let res = response.data
+        console.log(res)
+        if (res.status === '0') {
+          console.log(res.data)
+          this.errorTip = false
+        } else {
+          this.errorTip = true
+        }
+      })
     }
   }
 }
