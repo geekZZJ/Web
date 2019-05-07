@@ -12,8 +12,15 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "^2.6.1",
     "element-ui": "^2.8.2",
     "express": "^4.16.4",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "mongoose": "^5.5.5",
+    "morgan": "~1.9.1",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },

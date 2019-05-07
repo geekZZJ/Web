@@ -5,7 +5,7 @@
         <span class="logo">燕</span>
       </div>
       <div class="body">
-        <div class="error" v-show="errorTip"><i class="el-icon-error"></i>用户名或密码错误</div>
+        <div class="error" v-show="errorTip"><i class="el-icon-error"></i>{{tip}}</div>
         <div class="username">
           <el-input placeholder="请输入用户名" v-model="username">
             <i slot="prefix" class="el-input__icon el-icon-user-solid"></i>
@@ -42,24 +42,36 @@ export default {
     return {
       username: '',
       psd: '',
-      errorTip: false
+      errorTip: false,
+      tip: ''
     }
   },
   methods: {
     login () {
-      axios.post('/api/user', {
-        username: this.username,
-        psd: this.psd
-      }).then((response) => {
-        let res = response.data
-        console.log(res)
-        if (res.status === '0') {
-          console.log(res.data)
-          this.errorTip = false
-        } else {
-          this.errorTip = true
-        }
-      })
+      if (this.username === '') {
+        this.tip = '用户名不能为空'
+        this.errorTip = true
+        return false
+      }
+      if (this.psd === '') {
+        this.tip = '密码不能为空'
+        this.errorTip = true
+        return false
+      } else {
+        axios.post('/users/login', {
+          username: this.username,
+          psd: this.psd
+        }).then((response) => {
+          let res = response.data
+          console.log(res)
+          if (res.status === '0') {
+            console.log(res)
+            this.errorTip = false
+          } else {
+            this.errorTip = true
+          }
+        })
+      }
     }
   }
 }
