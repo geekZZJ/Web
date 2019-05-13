@@ -46,7 +46,19 @@ export default {
       tip: ''
     }
   },
+  mounted () {
+    this.checkLogin()
+  },
   methods: {
+    checkLogin () {
+      axios.get('/users/checkLogin').then((response) => {
+        let res = response.data
+        console.log(res)
+        if (res.status === '0') {
+          console.log(res.result)
+        }
+      })
+    },
     login () {
       if (this.username === '') {
         this.tip = '用户名不能为空'
@@ -65,7 +77,6 @@ export default {
           let res = response.data
           console.log(res)
           if (res.status === '0') {
-            console.log(res)
             this.errorTip = false
           } else {
             this.errorTip = true
