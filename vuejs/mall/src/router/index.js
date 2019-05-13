@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '@/views/Login'
-import Header from '@/components/Header'
+import ThingList from '@/views/ThingList'
+import Edit from '@/views/Edit'
 
 Vue.use(Router)
 
@@ -9,14 +10,19 @@ export default new Router({
   mode: 'history',
   routes: [
     {
-      path: '/546',
-      name: 'Header',
-      component: Header
+      path: '/list',
+      name: 'ThingList',
+      component: ThingList
     },
     {
       path: '/',
       name: 'Login',
       component: Login
+    },
+    {
+      path: '/edit',
+      name: 'Edit',
+      component: Edit
     }
   ]
 })
