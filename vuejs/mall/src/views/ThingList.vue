@@ -21,6 +21,11 @@ import NavHeader from '@/components/Header'
 import ThingItem from '@/components/ThingItem'
 import New from '@/components/New'
 export default {
+  data () {
+    return {
+      list: []
+    }
+  },
   components: {
     NavHeader,
     ThingItem,
@@ -28,6 +33,7 @@ export default {
   },
   mounted () {
     this.checkLogin()
+    this.init()
   },
   methods: {
     checkLogin () {
@@ -35,12 +41,19 @@ export default {
         let res = response.data
         console.log(res)
         if (res.status === '0') {
-          console.log(res.result)
+          // console.log(res.result)
         }
       })
     },
     edit () {
       this.$router.push({path: '/edit'})
+    },
+    init () {
+      axios.get('/users/list').then((response) => {
+        let res = response.data
+        this.list = res.result
+        console.log(this.list)
+      })
     }
   }
 }

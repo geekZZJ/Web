@@ -12,7 +12,7 @@
           </el-input>
         </div>
         <div class="password">
-          <el-input placeholder="请输入密码" v-model="psd" show-password>
+          <el-input placeholder="请输入密码" v-model="psd" show-password @keyup.enter.native="login">
             <i slot="prefix" class="el-input__icon el-icon-lock"></i>
           </el-input>
         </div>
@@ -48,6 +48,7 @@ export default {
   },
   methods: {
     login () {
+      console.log(123)
       if (this.username === '') {
         this.tip = '用户名不能为空'
         this.errorTip = true

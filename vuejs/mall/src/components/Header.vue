@@ -15,10 +15,17 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   methods: {
     logout () {
-      console.log(123456)
+      axios.post('/users/logout').then((response) => {
+        let res = response.data
+        if (res.status === '0') {
+          console.log('登出成功')
+          this.$router.push({path: '/'})
+        }
+      })
     }
   }
 }
