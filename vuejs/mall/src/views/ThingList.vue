@@ -3,13 +3,6 @@
     <nav-header class="nav"></nav-header>
     <div class="list">
       <thing-item></thing-item>
-      <thing-item></thing-item>
-      <thing-item></thing-item>
-      <thing-item></thing-item>
-      <thing-item></thing-item>
-      <thing-item></thing-item>
-      <thing-item></thing-item>
-      <thing-item></thing-item>
     </div>
     <New class="edit" @click.native="edit"></New>
   </div>
@@ -33,7 +26,6 @@ export default {
   },
   mounted () {
     this.checkLogin()
-    this.init()
   },
   methods: {
     checkLogin () {
@@ -47,13 +39,6 @@ export default {
     },
     edit () {
       this.$router.push({path: '/edit'})
-    },
-    init () {
-      axios.get('/users/list').then((response) => {
-        let res = response.data
-        this.list = res.result
-        console.log(this.list)
-      })
     }
   }
 }

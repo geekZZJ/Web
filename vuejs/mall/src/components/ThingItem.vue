@@ -1,20 +1,38 @@
 <template>
-  <div class="item">
-    <div class="title">123</div>
-    <div class="time">123456</div>
-    <el-dropdown class="more" trigger="click">
-      <i class="el-icon-more"></i>
-      <el-dropdown-menu slot="dropdown">
-        <el-dropdown-item><i class="el-icon-edit-outline"></i>编辑</el-dropdown-item>
-        <el-dropdown-item><i class="el-icon-delete"></i>删除</el-dropdown-item>
-      </el-dropdown-menu>
-    </el-dropdown>
+  <div>
+    <div class="item" v-for="item in list" :key="item.thingId">
+      <div class="title">{{item.thingTitle}}</div>
+      <div class="time">{{item.thingTime}}</div>
+      <el-dropdown class="more" trigger="click">
+        <i class="el-icon-more"></i>
+        <el-dropdown-menu slot="dropdown">
+          <el-dropdown-item><i class="el-icon-edit-outline"></i>编辑</el-dropdown-item>
+          <el-dropdown-item><i class="el-icon-delete"></i>删除</el-dropdown-item>
+        </el-dropdown-menu>
+      </el-dropdown>
+    </div>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
 export default {
+  data () {
+    return {
+      list: []
+    }
+  },
+  mounted () {
+    this.init()
+  },
   methods: {
+    init () {
+      axios.get('/users/list').then((response) => {
+        let res = response.data
+        this.list = res.result
+        console.log(this.list)
+      })
+    }
   }
 }
 </script>

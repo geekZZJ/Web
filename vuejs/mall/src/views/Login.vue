@@ -48,7 +48,6 @@ export default {
   },
   methods: {
     login () {
-      console.log(123)
       if (this.username === '') {
         this.tip = '用户名不能为空'
         this.errorTip = true
