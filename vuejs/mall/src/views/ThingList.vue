@@ -2,7 +2,7 @@
   <div>
     <nav-header class="nav"></nav-header>
     <div class="list">
-      <thing-item></thing-item>
+      <thing-item @click.native="detail"></thing-item>
     </div>
     <New class="edit" @click.native="edit"></New>
   </div>
@@ -39,6 +39,9 @@ export default {
     },
     edit () {
       this.$router.push({path: '/edit'})
+    },
+    detail () {
+      this.$router.push({path: '/detail'})
     }
   }
 }
