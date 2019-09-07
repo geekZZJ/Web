@@ -2,7 +2,7 @@
   <div>
     <nav-header class="nav"></nav-header>
     <div class="list">
-      <thing-item @click.native="detail"></thing-item>
+      <thing-item></thing-item>
     </div>
     <New class="edit" @click.native="edit"></New>
   </div>
@@ -31,7 +31,7 @@ export default {
     checkLogin () {
       axios.get('/users/checkLogin').then((response) => {
         let res = response.data
-        console.log(res)
+        // console.log(res)
         if (res.status === '0') {
           // console.log(res.result)
         }
@@ -39,9 +39,6 @@ export default {
     },
     edit () {
       this.$router.push({path: '/edit'})
-    },
-    detail () {
-      this.$router.push({path: '/detail'})
     }
   }
 }

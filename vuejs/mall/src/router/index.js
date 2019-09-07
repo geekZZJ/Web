@@ -26,7 +26,7 @@ export default new Router({
       component: Edit
     },
     {
-      path: '/detail',
+      path: '/detail/:thingId',
       name: 'Detail',
       component: Detail
     }

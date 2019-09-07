@@ -1,26 +1,26 @@
-var express = require('express');
-var router = express.Router();
-var mongoose = require('mongoose');
+var express = require('express')
+var router = express.Router()
+var mongoose = require('mongoose')
 var User = require('../models/user')
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+router.get('/', function (req, res, next) {
+  res.send('respond with a resource')
 })
 
-//连接MongoDB数据库
-mongoose.connect('mongodb://root:root@134.175.48.227:27017/test');
+// 连接MongoDB数据库
+mongoose.connect('mongodb://root:root@134.175.48.227:27017/test')
 
-mongoose.connection.on("connected", function () {
-  console.log("MongoDB connected success.")
+mongoose.connection.on('connected', function () {
+  console.log('MongoDB connected success.')
 })
 
-mongoose.connection.on("error", function () {
-  console.log("MongoDB connected fail.")
+mongoose.connection.on('error', function () {
+  console.log('MongoDB connected fail.')
 })
 
-mongoose.connection.on("disconnected", function () {
-  console.log("MongoDB connected disconnected.")
+mongoose.connection.on('disconnected', function () {
+  console.log('MongoDB connected disconnected.')
 })
 
 // 登录接口
@@ -117,4 +117,4 @@ router.get('/list', function (req, res, next) {
   })
 })
 
-module.exports = router;
+module.exports = router

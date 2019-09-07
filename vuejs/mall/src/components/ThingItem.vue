@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="item" v-for="item in list" :key="item.thingId">
+    <div class="item" v-for="(item,index) in list" :key="item.thingId" v-on:click="detail(index)">
       <div class="title">{{item.thingTitle}}</div>
       <div class="time">{{item.thingTime}}</div>
       <el-dropdown class="more" trigger="click">
@@ -13,7 +13,6 @@
     </div>
   </div>
 </template>
-
 <script>
 import axios from 'axios'
 export default {
@@ -30,8 +29,11 @@ export default {
       axios.get('/users/list').then((response) => {
         let res = response.data
         this.list = res.result
-        console.log(this.list)
+        // console.log(this.list)
       })
+    },
+    detail (index) {
+      this.$router.push({path: '/detail/' + (index + 1)})
     }
   }
 }
