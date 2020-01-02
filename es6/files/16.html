@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>symbol</title>
+</head>
+<body>
+    <script>
+        let symbol = Symbol();
+        console.log(symbol);
+        let obj = {username:'kobe',age:39};
+        obj[symbol] = 'hello';
+        console.log(obj);
+
+        let symbol2 = Symbol();
+        let symbol3 = Symbol();
+        console.log(symbol2 == symbol3);
+        console.log(symbol2,symbol3)
+    </script>
+</body>
+</html>

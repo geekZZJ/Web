@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iterator</title>
+</head>
+<body>
+<script>
+    //模拟指针对象（遍历器对象）
+    function myIterator(arr) {
+        let nextIndex = 0;
+        return{
+            next:function () {
+                return nextIndex<arr.length?{value:arr[nextIndex++],done:false}:{value:undefined,done:true}
+            }
+        }
+    }
+    let arr = [1,4,65,'abc'];
+    let iteratorObj = myIterator(arr);
+    console.log(iteratorObj.next());
+    console.log(iteratorObj.next());
+    console.log(iteratorObj.next());
+    console.log(iteratorObj.next());
+    console.log(iteratorObj.next());
+    console.log(iteratorObj.next());
+    console.log(iteratorObj.next());
+
+
+    for (let i of arr){
+       console.log(i);
+    }
+    let str = 'abcdefg';
+    for (let i of str){
+        console.log(i);
+    }
+    function fun() {
+        for (let i of arguments){
+            console.log(i)
+        }
+    }
+    fun(1,4,5,'abc');
+
+    let targetData = {
+        [Symbol.iterator]:function () {
+            let nextIndex = 0;
+            return{
+                next:function () {
+                    return nextIndex<this.length?{value:this[nextIndex++],done:false}:{value:undefined,done:true}
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>
