@@ -1,4 +1,4 @@
-import './lottery/base.js';
-import './lottery/timer.js';
-import './lottery/calculate.js';
-import './lottery/interface.js';
+import './lottery/base'
+import './lottery/timer'
+import './lottery/calculate'
+import './lottery/interface'
