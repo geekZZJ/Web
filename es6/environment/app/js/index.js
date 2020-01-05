@@ -1,4 +1,6 @@
 import 'babel-polyfill'
-// import Lottery from './lottery'
+import Lottery from './lottery'
 
-import lesson18 from './class/18'
+const syy = new Lottery()
+
+console.log(syy)
