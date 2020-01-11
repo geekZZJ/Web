@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模板语法</title>
+</head>
+<body>
+<div id="app">
+    <h2>双大括号表达式</h2>
+    <p>{{msg}}</p>
+    <p>{{msg.toUpperCase()}}</p>
+    <p v-text="link"></p>
+    <p v-html="link"></p>
+
+    <h2>强制数据绑定</h2>
+    <img v-bind:src="imgUrl" alt="">
+    <img :src="imgUrl" alt="">
+
+    <h2>绑定事件监听</h2>
+    <button v-on:click="test">test</button>
+    <button @click="test('zzj')">test</button>
+</div>
+<script src="vue.js"></script>
+<script>
+    let app = new Vue({
+        el: '#app',
+        data: {
+            msg: 'zzj',
+            link:'<a href="http://baidu.com">百度</a>',
+            imgUrl:'http://t8.baidu.com/it/u=3571592872,3353494284&fm=79&app=86&size=h300&n=0&g=4n&f=jpeg?sec=1579318394&t=2843f4b56ea73654a7aebc2c7cac20ba'
+        },
+        methods: {
+            test(content){
+                console.log(content)
+            }
+        }
+    })
+</script>
+</body>
+</html>
