@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>条件渲染</title>
+</head>
+<body>
+<div id="app">
+    <p v-if="ok">成功了</p>
+    <p v-else>失败了</p>
+
+    <p v-show="ok">表达成功</p>
+    <p v-show="!ok">表达失败</p>
+
+    <button @click="ok = !ok">切换</button>
+</div>
+<script src="vue.js"></script>
+<script>
+    let app = new Vue({
+        el: '#app',
+        data: {
+            ok: true
+        }
+    })
+</script>
+</body>
+</html>
