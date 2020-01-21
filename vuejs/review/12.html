@@ -16,8 +16,8 @@
 <script src="https://cdn.bootcss.com/moment.js/2.24.0/moment.min.js"></script>
 <script>
     //自定义过滤器
-    Vue.filter('dateString',(value,format)=>{
-        return moment(value).format(format || 'YYYY-MM-DD HH:mm:ss')
+    Vue.filter('dateString',(value,format = 'YYYY-MM-DD HH:mm:ss')=>{
+        return moment(value).format(format)
     })
     let app = new Vue({
         el: '#app',
