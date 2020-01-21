@@ -16,6 +16,17 @@
         data: {
             isShow: false
         },
+
+        //初始化
+        beforeCreate(){
+          console.log('beforeCreate')
+        },
+        created(){
+            console.log('created')
+        },
+        beforeMount(){
+            console.log('beforeMount')
+        },
         mounted(){
             //初始化显示之后立即调用
             this.intervalId = setInterval( () => {
@@ -23,10 +34,25 @@
                 this.isShow = !this.isShow
             },1000)
         },
+        //更新阶段
+        beforeUpdate(){
+            console.log('beforeUpdate')
+        },
+        updated(){
+            console.log('updated')
+        },
+        //死亡阶段
+
         beforeDestroy(){
           //清除定时器
           clearInterval(this.intervalId)   //否则引起内存泄漏
         },
+        destroyed(){
+          console.log('destroyed')
+        },
+
+
+
         methods:{
             destroyVM() {
                 //干掉VM
