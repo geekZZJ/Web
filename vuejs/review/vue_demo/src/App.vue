@@ -1,17 +1,47 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+  <div>
+    <header class="site-header jumbotron">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <h1>请发表对Vue的评论</h1>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <Add/>
+      <List :comments="comments"/>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import Add from './components/Add'
+import List from './components/List'
 
 export default {
-  name: 'App',
+  data () {
+    return {
+      comments: [
+        {
+          name: 'Bob',
+          content: 'Vue还不错'
+        },
+        {
+          name: 'Cat',
+          content: 'Vue so easy'
+        },
+        {
+          name: 'BZ',
+          content: 'Vue so so'
+        }
+      ]
+    }
+  },
   components: {
-    HelloWorld
+    Add,
+    List
   }
 }
 </script>
