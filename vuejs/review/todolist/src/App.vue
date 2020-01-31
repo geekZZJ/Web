@@ -2,8 +2,8 @@
   <div id="root">
     <div class="todo-container">
       <div class="todo-wrap">
-        <TodoHeader/>
-        <TodoList/>
+        <TodoHeader :addTodo="addTodo"/>
+        <TodoList :todos="todos"/>
         <TodoFooter/>
       </div>
     </div>
@@ -16,10 +16,24 @@ import TodoList from './components/TodoList'
 import TodoFooter from './components/TodoFooter'
 
 export default {
+  data () {
+    return {
+      todos: [
+        {title: '吃饭', complete: false},
+        {title: '睡觉', complete: true},
+        {title: 'coding', complete: false}
+      ]
+    }
+  },
   components: {
     TodoHeader,
     TodoList,
     TodoFooter
+  },
+  methods: {
+    addTodo (todo) {
+      this.todos.unshift(todo)
+    }
   }
 }
 </script>
