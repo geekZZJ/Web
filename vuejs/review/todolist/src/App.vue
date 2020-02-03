@@ -4,7 +4,11 @@
       <div class="todo-wrap">
         <TodoHeader @addTodo="addTodo"/>
         <TodoList :todos="todos" :deleteTodo="deleteTodo"/>
-        <TodoFooter :todos="todos" :deleteCompleteTodos="deleteCompleteTodos" :selectAllTodos="selectAllTodos"/>
+        <todo-footer>
+          <input type="checkbox" v-model="isAllCheck" slot="checkAll"/>
+          <span slot="count">已完成{{completeSize}} / 全部{{todos.length}}</span>
+          <button slot="delete" class="btn btn-danger" v-show="completeSize" @click="deleteCompleteTodos">清除已完成任务</button>
+        </todo-footer>
       </div>
     </div>
   </div>
@@ -20,6 +24,20 @@ export default {
     return {
       // 从localStorage中读取todos
       todos: JSON.parse(window.localStorage.getItem('todos_key') || '[]')
+    }
+  },
+  computed: {
+    completeSize () {
+      return this.todos.reduce((preTotal, todo) => preTotal + (todo.complete ? 1 : 0), 0)
+    },
+    isAllCheck: {
+      get () {
+        return this.completeSize === this.todos.length && this.completeSize > 0
+      },
+      set (value) {
+        // value是当前checkbox最新的值
+        this.selectAllTodos(value)
+      }
     }
   },
   watch: {

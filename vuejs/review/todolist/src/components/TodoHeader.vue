@@ -32,7 +32,6 @@ export default {
       // this.addTodo(todo)
       // 触发自定义事件addTodo
       this.$emit('addTodo', todo)
-
       // 4.清除输入
       this.title = ''
     }
