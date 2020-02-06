@@ -18,12 +18,13 @@
 import TodoHeader from './components/TodoHeader'
 import TodoList from './components/TodoList'
 import TodoFooter from './components/TodoFooter'
+import storageUtil from './util/storageUtil'
 
 export default {
   data () {
     return {
       // 从localStorage中读取todos
-      todos: JSON.parse(window.localStorage.getItem('todos_key') || '[]')
+      todos: storageUtil.readTodos()
     }
   },
   computed: {
@@ -44,10 +45,11 @@ export default {
     // 深度监视
     todos: {
       deep: true,
-      handler: function (value) {
+      /* handler: function (value) {
         // 将todos最新的值的json数据，保存到localStorage
-        window.localStorage.setItem('todos_key', JSON.stringify(value))
-      }
+        storageUtil.saveTodos(value)
+      } */
+      handler: storageUtil.saveTodos
     }
   },
   components: {
