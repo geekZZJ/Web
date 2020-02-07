@@ -4,6 +4,7 @@ import Home from '@/components/Home'
 import About from '@/components/About'
 import News from '@/components/News'
 import Message from '@/components/Message'
+import MessageDetail from '@/components/MessageDetail'
 
 Vue.use(Router)
 
@@ -19,7 +20,13 @@ export default new Router({
         },
         {
           path: 'message',
-          component: Message
+          component: Message,
+          children: [
+            {
+              path: '/home/message/detail/:id',
+              component: MessageDetail
+            }
+          ]
         },
         {
           path: '',
