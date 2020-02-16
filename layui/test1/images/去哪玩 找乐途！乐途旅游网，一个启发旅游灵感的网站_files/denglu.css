@@ -1,0 +1,228 @@
+@charset "utf-8";
+/* CSS Document */
+/*base*/
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,
+
+th,td{margin:0;padding:0}
+body,button,input,select,textarea{font-size:12px;font-family:\5b8b\4f53}
+h1,h2,h3,h4,h5,h6{font-size:100%}
+html,body{height:100%}
+b,strong{font-weight:bold}
+input{vertical-align:middle}
+img{color:transparent;font-size:0;vertical-align:middle;-ms-interpolation-mode:bicubic;border:0}
+address,cite,dfn,em,var{font-style:normal}
+code,kbd,pre,samp{font-family:courier new,courier,monospace}
+small{font-size:12px}
+ul,ol{list-style:none}
+sup{vertical-align:text-top}
+sub{vertical-align:text-bottom}
+fieldset,img{border:0}
+button,input,select,textarea{font-size:100%}
+table{border-collapse:collapse;border-spacing:0}
+a{text-decoration:none}
+a:hover{text-decoration:none}
+.clearfix:before, .clearfix:after{content:'.';display:block;overflow:hidden;visibility:hidden;font-
+
+size:0;line-height:0;width:0;height:0}
+.clearfix:after{clear:both}
+.clearfix{zoom:1}
+.fl{float:left}
+.fr{float:right}
+.none{display:none}
+* html,* html body{background-image:url(http://img1.lotour.net/blank.png) repeat;background-
+
+attachment:fixed} /* 修正IE6振动bug */
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,vi
+
+deo{display:block;margin:0;padding:0}
+
+
+/*灵感文专栏登陆*/
+body{position:relative}
+input:- webkit-autofill { -webkit-box-shadow: 0 0 0 1000px white inset; background-color:#fff;} 
+.dl-tan{position:fixed;top:0;left:0;width:100%;height:100%;background:#000;filter:alpha(opacity=75);-moz-opacity:0.75;-khtml-opacity:0.75;opacity:0.75;z-index:30006}
+.main2{position:fixed;top:20%;left:50%;margin-left:-185px;border-radius:5px;width:370px;height:auto;background:#fff;z-index:99999}
+.guanbi{position:absolute;top:15px;right:15px;display:block;display:block;width:12px;height:12px;background:url(http://img1.lotour.com/wapdl2016/ico-bx.jpg) no-repeat center;background-size:100% 100%;cursor:pointer}
+.lg-dl{width:320px;height:auto;margin:0 auto;padding:25px 0 20px 0}
+.lg-dl .zhuanlan{font:bold 18px/18px '微软雅黑';color:#333;margin-bottom:5px}
+.lg-dl .tip{height:20px;margin-bottom:5px}
+.lg-dl .psshow{background:url(http://img1.lotour.com/common/lg_icon.png) no-repeat 0px -68px;padding-left:20px;font:14px/20px '微软雅黑';color:#333}
+.lg-dl .tool label{float:left;padding-left:17px;font:14px/16px '微软雅黑';color:#999;background:url(http://img1.lotour.com/common/lg_icon.png) no-repeat 0px 2px;cursor:pointer}
+.lg-dl .inpbox{margin-bottom:12px;position:relative}
+.lg-dl .tl{width:288px}
+.lg-dl .txt{height:20px;padding:10px 15px;font:14px/20px '微软雅黑';color:#666;border-radius:5px;border:1px solid #d2d2d2;background:#fff;-webkit-box-shadow: 0 0 0 1000px white inset;box-sizing: content-box;}
+.lg-dl .wrong{border:1px solid #ffbd7b;box-shadow:0 0 5px #ffbd7b}
+.lg-dl .ck{float:left;width:150px}
+.lg-dl .code{float:right;width:125px;height:40px;border:1px solid #d2d2d2;border-radius:5px;cursor:pointer}
+.lg-dl .tool{margin-bottom:15px}
+.lg-dl .tool label.on{background-position:0px -18px}
+.lg-dl .tool a{float:right;color:#ec6909;font:14px/16px '微软雅黑'}
+.lg-dl .sub{margin-top:20px}
+.lg-dl .sub input{display:block;width:100%;border:1px solid #ec6909;height:40px;font:20px/34px \5FAE\8F6F\96C5\9ED1;color:#fff;text-align:center;background:#ec6909;border-radius:5px;cursor:pointer}
+.lg-dl .sub input:hover{background:#ec7b09;border:1px solid #ec7b09}
+.lg-dl .xieyi{font:12px/20px '微软雅黑';color:#999;margin-top:15px}
+.lg-dl .xieyi a{color:#666;text-decoration:underline}
+.jiaru{font:14px/20px '微软雅黑';color:#ec6909;text-align:center;margin-top:20px;cursor:pointer}
+.main2 .last-p{position:absolute;bottom:-50px;left:50%;margin-left:-65px;width:130px;height:25px;font:14px/25px '微软雅黑';color:#fff;text-align:center;background:url(http://img1.lotour.com/denglupc/touming.png) repeat center;border-radius:5px}
+.main2 .last-p a{color:#fff}
+.jiaru-zhl{display:none;width:175px;height:auto;margin-left:100px;padding:25px 0 20px 0}
+.jiaru-zhl .laiba{font:bold 30px/26px '微软雅黑';height:30px;color:#666;margin-bottom:10px}
+.jiaru-zhl .he{font:bold 18px/18px '微软雅黑';color:#666;margin-bottom:6px}
+.jiaru-zhl .smll{font:14px/18px '微软雅黑';color:#999}
+.jiaru-zhl .zhl-pic{width:130px;height:130px;margin:15px auto 10px}
+.jiaru-zhl .zhl-pic img{width:100%;height:100%}
+.jiaru-zhl .jiaqq{font:14px/25px '微软雅黑';color:#666;text-align:center}
+.layer-box .in .tool{padding-top:0px}
+
+/*导航一*/
+/*.zhuanl-dh{float:right;width:200px}
+header .header .hl nav li .ly em{background:url(http://img1.lotour.com/denglupc/daotoum.png) repeat center;!important;}
+header .header .hl nav li .ly a{background:none url(http://img1.lotour.com/denglupc/daotoum.png) repeat center;!important;}
+header .header .hl nav li .ly a:hover{background:#ec6909!important}
+.zhuanl-dh .yongh{position:relative;float:left;width:73px;height:28px;margin-top:8px;margin-right:15px}
+.zhuanl-dh .yongh .a{display:block;font:12px/28px '宋体';height:28px;overflow:hidden;padding-right:15px;position:relative;text-align:center;text-decoration:none;z-index:2;background:url(http://img1.lotour.net/index/pt.png) no-repeat right -20px;color:#2b2b2b}
+.zhuanl-dh .show .a{color:#fff;background-position:right -42px}
+.zhuanl-dh .yongh .ly{width:73px;border-radius:5px;color:#fff;display:none;font:12px/28px '宋体';position:absolute;left:0;top:0;width:73px;z-index:1}
+.zhuanl-dh .yongh .ly em{width:73px;background:url(http://img1.lotour.com/denglupc/daotoum.png) repeat center;!important;border-top-left-radius:5px;border-top-right-radius:5px;display:block;float:left;height:28px}
+.zhuanl-dh .yongh .ly a{background:url(http://img1.lotour.com/denglupc/daotoum.png) repeat center;!important;border-bottom:1px solid #eda559;color:#fff;display:block;float:right;font:12px/28px '宋体';height:28px;position:relative;text-align:center;text-decoration:none;width:100%}
+.zhuanl-dh .yongh .ly .edbr{border-bottom-left-radius:5px;border-bottom-right-radius:5px}
+.zhuanl-dh .yongh .ly a:hover{background:#ec6909!important}
+.zhuanl-dh .fabiao{display:block;float:left;width:78px;height:28px;margin-top:8px;border-radius:5px;border:1px solid #ff860d;font:13px/28px '微软雅黑';color:#ff860d;text-align:center}
+.zhuanl-dh .fabiao .fabdazuo{display:block;color:#ff860d}
+.zhuanl-dh .fabiao .fabdazuo:hover{background:#ff860d;color:#fff}
+
+.martop{margin-top:6px;width:auto}*/
+/*注册*/
+.layer-box .tk{color:#999;margin-bottom:50px;line-height:14px;font:12px/14px '宋体'}
+.layer-box .tk a{color:#666;text-decoration:underline}
+
+
+/*灵感登录*/
+.lg-zhuce{position:fixed;top:0;left:0;width:100%;height:100%;z-index:99999}
+.layer-box{position:fixed;left:50%;margin-left:-185px;top:20%;margin-top:0;width:370px;background:rgba(255,255,255,1)!important;background:#fff; border-radius:5px;box-shadow:1px 3px 3px rgba(0,0,0,0.3);z-index:99999}
+.layer-box .in{padding:0 25px;background:#fff}
+.layer-box .in .ty{margin-bottom:10px;position:relative}
+.layer-box .in .ty .login_coin{width:20px;height:15px;display:block;position: absolute;right: 10px;top: 14px;background: url(http://img1.lotour.com/denglupc/login_coin.png) no-repeat center;background-position: 0 0;cursor:pointer;}
+.layer-box .in .ty .login_coin.on{background-position: 0 -18px;}
+.disnone{display:none;}
+.layer-box .resent{background-image:linear-gradient(to bottom, #ffffff, #f2f2f2);border:1px solid #d7d7d7;border-radius:5px;color: #333;cursor: pointer;display:block;float:right;font:14px/34px '微软雅黑';height:36px;width:129px;}
+.layer-box .sps{position:absolute; right:10px;top:14px;cursor:pointer}
+.layer-box .zhuc-jia{font:bold 18px/19px \5FAE\8F6F\96C5\9ED1,"Microsoft YaHei"; color:#333;margin-top:25px}
+.layer-box .cha{display:block;position:absolute;right:13px;top:13px;width:12px;height:12px;background:url(http://img1.lotour.com/denglupc/dl-xx.png) no-repeat center;cursor:pointer}
+.layer-box .in .txt{background:#fff none repeat scroll 0 0;-webkit-box-shadow: 0 0 0 1000px white inset;border:1px solid #d2d2d2;border-radius:5px;color:#666;font:14px/26px 微软雅黑;height:26px;padding:7px 10px;box-sizing: content-box;}
+.layer-box .in .tl{width:300px}
+.layer-box .sps{top:14px}
+.layer-box .in .ck {float:left;width:158px}
+.layer-box .resent{height:42px}
+.layer-box .in .code {border:1px solid #d7d7d7;border-radius:5px;cursor:pointer;float:right;height:40px;width:128px}
+.layer-box .logintxt{position:absolute;left:50%;margin-left:-80px;bottom:-50px;font:14px/25px \5FAE\8F6F\96C5\9ED1; color:#fff;width:160px;text-align:center;background:url(http://img1.lotour.com/denglupc/touming.png) repeat center;border-radius:5px}
+.layer-box .logintxt a{display:block;color:#fff}
+.layer-box .lgdl-p{width:200px;margin-left:-100px}
+.layer-box .lgdl-p-bei{width:200px;margin-left:-100px}
+.layer-box .in .sub{margin-top:20px;margin-bottom:15px}
+.layer-box .in .sub input{display:block; width:100%; border:1px solid #ec6909;height:42px; font:20px/42px \5FAE\8F6F\96C5\9ED1; color:#fff; text-align:center;background:#ec6909; border-radius:5px;cursor:pointer}
+.layer-box .in .sub input:hover{background:#ec7b09;border:1px solid #ec7b09}
+.layer-box .in .tool {margin-bottom:15px}
+.layer-box .in .tool label.on {background-position:0 -18px}
+.layer-box .in .tool a {color:#fe860c;float:right;font:14px/16px '微软雅黑'}
+.layer-box .in .tool label {background:url(http://img1.lotour.com/common/lg_icon.png) no-repeat scroll 0 2px;color:#999;cursor:pointer;float:left;font:14px/16px '微软雅黑';padding-left:17px}
+.shejiao{width:100%;height:19px;margin-top:30px;background:url(http://img1.lotour.com/denglupc/shejiao.jpg) no-repeat center}
+.share-pc{width:320px;height:auto;margin:0 auto;padding:20px 0 40px 0}
+.share-lg{padding-bottom:20px}
+.share-pc a{display:block;float:left;width:36px;height:36px;border:100%;margin-right:20px}
+.share-pc a.share-01{background:url(http://img1.lotour.com/denglupc/share-01.png) no-repeat center;background-size:100% 100%}
+.share-pc a.share-02{background:url(http://img1.lotour.com/denglupc/share-02.png) no-repeat center;background-size:100% 100%}
+.share-pc a.share-03{background:url(http://img1.lotour.com/denglupc/share-03.png) no-repeat center;background-size:100% 100%}
+.share-pc a.share-04{background:url(http://img1.lotour.com/denglupc/share-04.png) no-repeat center;background-size:100% 100%}
+.share-pc a.share-05{background:url(http://img1.lotour.com/denglupc/share-05.png) no-repeat center;background-size:100% 100%}
+.share-pc a.share-06{background:url(http://img1.lotour.com/denglupc/share-06.png) no-repeat center;background-size:100% 100%;margin-right:0}
+
+.share-pc a.share-01:hover{background:url(http://img1.lotour.com/denglupc/share-01_act.png) no-repeat center;background-size:100% 100%}
+.share-pc a.share-02:hover{background:url(http://img1.lotour.com/denglupc/share-02_act.png) no-repeat center;background-size:100% 100%}
+.share-pc a.share-03:hover{background:url(http://img1.lotour.com/denglupc/share-03_act.png) no-repeat center;background-size:100% 100%}
+.share-pc a.share-04:hover{background:url(http://img1.lotour.com/denglupc/share-04_act.png) no-repeat center;background-size:100% 100%}
+.share-pc a.share-05:hover{background:url(http://img1.lotour.com/denglupc/share-05_act.png) no-repeat center;background-size:100% 100%}
+.share-pc a.share-06:hover{background:url(http://img1.lotour.com/denglupc/share-06_act.png) no-repeat center;background-size:100% 100%;margin-right:0}
+
+
+.share-last{font:14px/24px \5FAE\8F6F\96C5\9ED1; color:#999;width:100%;text-align:center;margin-bottom:15px}
+.share-last a{color:#ec6909}
+/*.layer-box .in .psshow{line-height:22px}*/
+.layer-box .in .ps{height:25px;margin-bottom:0;margin-top:7px}
+.layer-box .in .psshow{background:url(http://img1.lotour.com/common/lg_icon.png) no-repeat 0px -68px; padding-left:20px;font:14px/20px \5FAE\8F6F\96C5\9ED1; color:#333}
+/*灵感登录弹层*/
+.left-dl{position:absolute;top:29.7%;left:25%;width:250px;height:190px;background:url(http://img1.lotour.com/denglupc/zhuce_03.png) no-repeat center;background-size:100% 100%;z-index:999}
+.right-dl{position:absolute;top:30%;right:25%;width:250px;height:190px;background:url(http://img1.lotour.com/denglupc/zhuce_05.png) no-repeat center;background-size:100% 100%;z-index:999}
+
+/*兴趣*/
+#wrapper{position:absolute;z-index:1;top:105px;left:25px;width:910px;height:470px;overflow-y:scroll }
+#scroller {position:absolute;z-index:1;-webkit-tap-highlight-color:rgba(0,0,0,0);width:100%;-webkit-transform:translateZ(0);-moz-transform:translateZ(0);-ms-transform:translateZ(0);-o-transform:translateZ(0);transform:translateZ(0);-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-text-size-adjust:none;-moz-text-size-adjust:none;-ms-text-size-adjust:none;-o-text-size-adjust:none;text-size-adjust:none}
+.xingqu{position:fixed;top:15%;left:50%;margin-left:-482px;width:965px;height:670px;background:#fff;border-radius:5px;z-index:99999}
+.xingqu .xq-in{margin:25px 25px 30px 25px;height:615px}
+.xingqu .zhuc-xingqu{font:24px/26px \5FAE\8F6F\96C5\9ED1,"Microsoft YaHei"; color:#ec6909;margin-bottom:10px}
+.xingqu .cha{display:block;position:absolute;right:13px;top:13px;width:12px;height:12px;background:url(http://img1.lotour.com/denglupc/dl-xx.png) no-repeat center;cursor:pointer}
+.xingqu .xq-txt{font:18px/22px \5FAE\8F6F\96C5\9ED1,"Microsoft YaHei"; color:#666;margin-bottom:25px}
+.xingqu ul{width:100%}
+.xingqu li{position:relative;float:left;width:135px;height:128px;border-radius:5px;margin:0px 15px 15px 0;overflow:hidden}
+.xingqu li.mr0{margin-right:0}
+.xingqu li img{width:100%;height:100%}
+.xingqu li p{position:absolute;top:0;left:0;width:100%;height:100%;background:url(http://img1.lotour.com/wapdl2016/zhezhao.png) no-repeat center;background-size:100% 100%}
+.xingqu li p i{display:block;position:absolute;right:10px;top:10px;width:30px;height:30px;background:url(http://img1.lotour.com/denglupc/yuan-kong.png) no-repeat center;background-size:100% 100%}
+.xingqu li p span{position:absolute;bottom:0;left:10px;font:16px/30px '微软雅黑';color:#fff}
+.xingqu li p i.on{background:url(http://img1.lotour.com/denglupc/yuan-on.png) no-repeat center;background-size:100% 100%}
+.xingqu .mrt2{font:18px/40px '微软雅黑';color:#fff;text-align:center;cursor:pointer}
+.xingqu .off{background:#e6e6e8;color:#999}
+.xingqu .dl-fix{position:absolute;bottom:30px;left:25px;width:910px;height:40px;background:#ec6909;border-radius:5px}
+
+/*忘记密码*/
+.zhezhao{position:fixed;top:0;left:0;width:100%;height:100%;background:#000;filter:alpha(opacity=65);-moz-opacity:0.65;-khtml-opacity:0.65;opacity:0.65;z-index:99999}
+
+.layer-box-wj{position:fixed;left:50%;margin-left:-185px;top:44%;margin-top:-170px;width:370px;background:rgba(255,255,255,1)!important;background:#fff; border-radius:5px;overflow:hidden;box-shadow:1px 3px 3px rgba(0,0,0,0.3);z-index:99999}
+.layer-box-wj .yan,.layer-box-wj .faso{padding:0 25px;background:#fff;margin-top:17px}
+.layer-box-wj .cha{display:block;position:absolute;right:13px;top:13px;width:12px;height:12px;background:url(http://img1.lotour.com/denglupc/dl-xx.png) no-repeat center;cursor:pointer}
+.layer-box-wj .in .ps{padding-left:20px;height:25px;font:14px/20px \5FAE\8F6F\96C5\9ED1,"Microsoft YaHei"; color:#333;margin-top:7px}
+.layer-box-wj .in .psshow{background:url(http://img1.lotour.com/common/lg_icon.png) no-repeat 0px -68px; padding-left:20px;font:14px/20px \5FAE\8F6F\96C5\9ED1; color:#333}
+.layer-box-wj .in .ty{margin-bottom:10px;position:relative}
+.layer-box-wj .in .txt{background:#fff none repeat scroll 0 0;-webkit-box-shadow: 0 0 0 1000px white inset;border:1px solid #d2d2d2;border-radius:5px;color:#666;font:14px/26px 微软雅黑;height:26px;padding:7px 10px}
+.layer-box-wj .in .tl{width:300px}
+.layer-box-wj .in .ck{float:left;width:158px}
+.layer-box-wj .in .code{border:1px solid #d7d7d7;border-radius:5px;cursor:pointer;float:right;height:40px;width:128px}
+.layer-box-wj .sub{margin-bottom:20px;margin-top:20px}
+.layer-box-wj .wangji{margin-bottom:40px;margin-top:20px}
+.layer-box-wj .wanch{margin-top:20px}
+.layer-box-wj .in .sub input{display:block; width:100%;height:42px; border:1px solid #ec6909;font:20px/42px \5FAE\8F6F\96C5\9ED1; color:#fff; text-align:center;background:#ec6909; border-radius:5px;cursor:pointer}
+.layer-box-wj .yan,.layer-box-wj .faso{padding:0 25px;background:#fff;margin-top:17px}
+.lg-tt{ width:157px;height:41px;position:absolute;left:50%; margin-left:-78px;top:45%; margin-top:-250px;z-index:1000;background:url(http://img1.lotour.com/denglupc/logo-zhuce.png) no-repeat center;cursor:pointer}
+.shejiao{width:100%;height:19px;margin-top:28px;background:url(http://img1.lotour.com/denglupc/shejiao.jpg) no-repeat center}
+.layer-box-wj .sps{position:absolute; right:10px;top:14px;cursor:pointer}
+.layer-box-wj .resent{ width:128px; height:42px;display:block;float:right;border:1px solid #d2d2d2;border-radius:5px; cursor:pointer;background-image:-webkit-linear-gradient(to bottom, #ffffff, #f2f2f2);background-image:linear-gradient(to bottom,#ffffff, #f2f2f2);color:#333; font:14px/34px \5FAE\8F6F\96C5\9ED1}
+.wufa{font:14px/14px '微软雅黑';color:#999;text-align:right;cursor:pointer}
+.wufa-on{margin-bottom:30px}
+.wufa a{color:#999;display:block}
+.layer-box-wj .yifas{font:16px/16px \5FAE\8F6F\96C5\9ED1,"Microsoft YaHei"; color:#666;margin-top:20px}
+.layer-box-wj .yifas .tel{color:#ec6909}
+.layer-box-wj .mailtxt{display:none;padding:5px 0 15px;text-align:center}
+.layer-box-wj .mailtxt .wumail{font:13px/13px '微软雅黑';color:#999;margin-top:12px;text-align:left}
+.layer-box-wj .mailtxt .wumail span{display:block;float:left;width:13px;height:13px;border-radius:100%;font:bold 12px/13px '微软雅黑';color:#fff;text-align:center;background:#bbb;margin-right:10px;}
+.layer-box-wj .mailtxt .wumail a{color:#ff9900}
+
+
+@media screen and (max-width:1440px){
+	.left-dl{left:15%}
+    .right-dl{right:15%}
+	.xingqu{height:530px;top:5%}
+	.xingqu .xq-in{height:475px}
+	#wrapper{height:330px}
+	.layer-box{top:15%}
+}
+@media screen and (max-width:1280px){
+	.left-dl{left:10%}
+    .right-dl{right:10%}
+}
+
+@media screen and (max-width:1024px){
+	.left-dl{left:5%}
+    .right-dl{right:5%}
+	
+}
+
