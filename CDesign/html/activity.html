@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="../images/bitbug_favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/activity.css">
+	<title>个人中心</title>
+</head>
+<body>
+	<!-- 等待窗口 -->
+	<div class="loading">
+		<div class="pic">
+			<i></i>
+			<i></i>
+			<i></i>
+			<i></i>
+		</div>
+	</div>
+	
+	<header>
+		<div class="logo">
+			<img src="../images/logo2.png" alt="">
+		</div>
+		<div class="search">
+			<form class="form-inline my-2 my-lg-0">
+				<a href="index.html">首页</a>
+				<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+				<button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+			</form>
+			<div class="fudong">张中俊，你好</div>
+		</div>
+	</header>
+
+	<div class="main">
+		<div class="people-home-bg">
+			<div class="bg-image">
+				<!-- <img src="../images/30.jpg" alt="" class="peoplebg"> -->
+			</div>
+			<div class="data-wraper">
+		        <div class="data-wrap-box">
+		            <p class="data-list-box left">
+		                留言数
+		                <a href="#" title="人气" class="data-number">1</a>
+		            </p>
+		            <p class="data-list-box left">
+		                点赞数
+		                <a href="#" title="积分" class="data-number">0</a>
+		            </p>
+		            <p class="data-list-box right">
+		                关注
+		                <a href="#" title="关注" class="data-number">0</a>
+		            </p>
+		            <p class="data-list-box right">
+		                粉丝
+		                <a href="#" title="粉丝" class="data-number">0</a>
+		            </p>
+		        </div>
+    		</div>
+		</div>
+		<div class="home-information-wrap">
+			<div class="home-information-box">
+				<div class="information-headimg-box">
+					<img src="../images/31.png" alt="">
+				</div>
+				<div class="information-content-wrap text-center">
+					<p class="people-nick-name">年少轻狂</p>
+					<p class="user-background">四川 | 程序员</p>
+				</div>
+			</div>
+		</div>
+		<div class="subnav-content-wrap">
+			<div class="top-hull">
+				<div class="subnav-contentbox">
+					<div class="tab-nav-container">
+						<ul class="subnav-content text-center">
+							<li>
+								<a href="javascript:void(0)" @click="flag=1">个人资料</a>
+							</li>
+							<li><a href="javascript:void(0)" @click="flag=3">我发起的活动</a></li>
+							<li><a href="javascript:void(0)" @click="flag=2">我参加的活动</a></li>
+							<li><a href="javascript:void(0)" @click="flag=4">发起活动</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="contariner-wraper" >
+			<div class="center-section-wrap">
+				<div class="datum-item-box" v-show='flag==1'>
+					<div class="datum-title-box">
+						基本信息
+						<a href="javascript:void(0)" class="btn-default-main btn-small right">修改</a>
+					</div>
+					<div class="table-wrap">
+                        <table class="datum-table">
+                            <tbody>
+                            	<tr>
+                                	<th>用户名</th>
+                                    <td><input class="form-control" id="disabledInput1" type="text" placeholder="年少轻狂" disabled></td>
+                                </tr>
+                                <tr>
+                                    <th>性别</th>
+                                    <td><input class="form-control" id="disabledInput2" type="text" placeholder="男" disabled></td>
+                                </tr>
+                                <tr>
+                                    <th>家乡</th>
+                                    <td><input class="form-control" id="disabledInput3" type="text" placeholder="四川/成都" disabled></td>
+                                </tr>
+                                                
+                                <tr>
+                                    <th>现居</th>
+                                    <td><input class="form-control" id="disabledInput4" type="text" placeholder="四川/成都" disabled></td>
+                                </tr>
+                                <tr>
+                                    <th>学院</th>
+                                    <td><input class="form-control" id="disabledInput5" type="text" placeholder="计算机与软件工程学院" disabled></td>
+                                </tr>
+                                <tr>
+                                    <th>专业</th>
+                                    <td><input class="form-control" id="disabledInput6" type="text" placeholder="物联网工程" disabled></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+					<div></div>
+				</div>
+			</div>
+			<div class="center-section-wrap height1" v-show="flag==4">
+				<div class="col-md-12 col-sm-12 col-xs-12 clearfix">
+					<div class="chat-panel panel panel-default chat-boder chat-panel-head">
+						<div class="panel-heading">
+	                        <i class="glyphicon glyphicon-plus"></i>
+	                        发起活动
+	                    </div>
+	                    <div class="panel-body">
+	                    	<form role="form">
+	                    		<div class="form-group">
+									<label>活动名称</label>
+	                                    <input class="form-control" placeholder="为你的活动取一个漂亮的名字吧">
+	                    		</div>
+	                    		<div class="form-group">
+									<label>主办方</label>
+	                                    <input class="form-control" placeholder="活动主办方">
+	                    		</div>
+	                    		<div class="form-group">
+									<label>开始日期</label>
+	                                    <input type="date" class="form-control">
+	                    		</div>
+	                    		<div class="form-group">
+									<label>截止日期</label>
+	                                    <input type="date" class="form-control">
+	                    		</div>
+	                    		<div class="form-group">
+	                    			<label>活动内容</label>
+	                                <textarea class="form-control" rows="3" placeholder="请在这里输入你的活动内容"></textarea>
+	                    		</div>
+	                    		<div class="form-group">
+	                    			<label>相关文件</label>
+	                    			<input type="file">
+	                    		</div>
+	                    		<div class="form-group">
+	                    			<button type="button" class="btn btn-block" style="background-color: #07b168;">提交</button>
+	                    		</div>
+	                    	</form>
+	                    </div>
+					</div>
+				</div>
+			</div>
+			<div class="center-section-wrap height2" v-show="flag==2">
+				<div class="col-md-12 col-sm-12 col-xs-12">    
+	                <div class="chat-panel panel panel-default chat-boder chat-panel-head">
+	                    <div class="panel-heading">
+	                        <i class="glyphicon glyphicon-plus"></i>
+	                        我参与的活动
+	                        <div class="btn-group pull-right">
+	                            <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+	                            	<i class="glyphicon glyphicon-chevron-down"></i>
+	                            </button>
+	                            <ul class="dropdown-menu slidedown">
+	                                <li>
+	                                   	<a href="#">
+	                                        <i class="glyphicon glyphicon-calendar"></i>今天
+	                                    </a>
+	                                </li>
+	                                <li>
+	                                    <a href="#">
+	                                        <i class="glyphicon glyphicon-calendar"></i>一周内
+	                                    </a>
+	                                </li>
+	                                <li>
+	                                    <a href="#">
+	                                        <i class="glyphicon glyphicon-calendar"></i>一个月内
+	                                    </a>
+	                                </li>
+	                                <li>
+	                                    <a href="#">
+	                                        <i class="glyphicon glyphicon-asterisk"></i>所有
+	                                    </a>
+	                                </li>
+	                                    <li class="divider"></li>
+	                                <li>
+	                                    <a href="#">
+	                                        <i class="glyphicon glyphicon-remove-sign"></i>注销
+	                                    </a>
+	                                </li>
+	                            </ul>
+	                        </div>
+	                    </div>
+
+	                    <div class="panel-body">
+	                        <ul class="chat-box">
+	                            <li class="left clearfix">
+	                                <span class="chat-img pull-left">
+	                                    <img src="../images/35.jpg" alt="User" class="img-circle">
+	                                </span>
+	                                <div class="chat-body">
+	                                    <strong>网页设计大赛</strong>
+	                                    <small class="pull-right text-muted">
+	                                        <i class="glyphicon glyphicon-dashboard"></i>12 mins ago
+	                                    </small>    
+	                                    <p>
+	                                        本次大赛采取网友投票和专家评选相结合的方式进行评奖，其中网友投票总分30分，专家评选总分为70分，总成绩为二者之和，总
+	                                    </p>
+	                                </div>
+	                            </li>
+	                            <li class="right clearfix">
+	                                <span class="chat-img pull-right">
+	                                	<img src="../images/36.jpg" alt="User" class="img-circle">
+	                                </span>
+	                                <div class="chat-body clearfix">
+	                                    <small class=" text-muted">
+	                                        <i class="glyphicon glyphicon-dashboard"></i>13 mins ago
+	                                    </small>
+	                                    <strong class="pull-right">计算机设计大赛
+	                                    </strong>
+	                                    <p>
+	                                        根据高等学校创新能力提升计划、进一步深化高校教学改革、全面提高教学质量的精神，切实提高计算机教学质量，激励大学生学习计算机知识和技能的兴趣和潜能，培养其创新创业能力及团队合作意识，
+	                                    </p>
+	                                </div>
+	                            </li>
+	                            <li class="left clearfix">
+	                                <span class="chat-img pull-left">
+	                                    <img src="../images/35.jpg" alt="User" class="img-circle">
+	                                </span>
+	                                <div class="chat-body clearfix">
+	                                    <strong>计算机作品大赛</strong>
+	                                    <small class="pull-right text-muted">
+	                                        <i class="glyphicon glyphicon-dashboard"></i>14 mins ago
+	                                    </small>  
+	                                    <p>
+	                                        根据高等学校创新能力提升计划、进一步深化高校教学改革、全面提高教学质量的精神，切实提高计算机教学质量，激励大学生学习计算机知识和技能的兴趣和潜能，培养其创新创业能力及团队合作意识，运用信息技术解决实际问题的综合实践能力，以提高其综合素质，造就更多的德智体美全面发展、创新型、实用型、复合型人才，中国高等教育学会、教育部高等学校计算机类专业教学指
+	                                    </p>
+	                                </div>
+	                            </li>
+	                            <li class="right clearfix">
+	                                <span class="chat-img pull-right">
+	                                    <img src="../images/36.jpg" alt="User" class="img-circle">
+	                                </span>
+	                                <div class="chat-body clearfix">
+	                                    <small class=" text-muted">
+	                                        <i class="glyphicon glyphicon-dashboard"></i>15 mins ago
+	                                    </small>
+	                                    <strong class="pull-right">蓝桥杯
+	                                    </strong>  
+	                                    <p>
+	                                        蓝桥杯全国软件和信息技术专业人才大赛由工业和信息化部人才交流中心主办,包括北大、清华等在内的全国31个省市自治区1200多所院校参加,每年参赛人数超
+	                                    </p>
+	                                </div>
+	                            </li>
+	                            <li class="left clearfix">
+	                                <span class="chat-img pull-left">
+	                                    <img src="../images/35.jpg" alt="User" class="img-circle">
+	                                </span>
+	                                <div class="chat-body">          
+	                                    <strong>西华杯</strong>
+	                                    <small class="pull-right text-muted">
+	                                        <i class="glyphicon glyphicon-dashboard"></i>12 mins ago
+	                                    </small>      
+	                                    <p>
+	                                        近日，我校2017年“西华杯”大学生创新创业项目正式立项，包括哲学社会科学类、自然科学类、科技发明制作类等共计77项。项目负责人已成功签订《“西华杯”大学生创新创业项目任务书》，通过评
+	                                    </p>
+	                                </div>
+	                            </li>
+	                            <li class="right clearfix">
+	                                <span class="chat-img pull-right">
+	                                    <img src="../images/36.jpg" alt="User" class="img-circle">
+	                                </span>
+	                                <div class="chat-body clearfix">
+	                                    <small class=" text-muted">
+	                                        <i class="glyphicon glyphicon-dashboard"></i>13 mins ago
+	                                    </small>
+	                                    <strong class="pull-right">中星杯
+	                                    </strong>   
+	                                    <p>
+	                                        2017年5月21日，由信息技术学院计算机系承办、计算机作品协会协办的“中星杯”第十四届信息技术学院IT节暨“中星杯”泛珠三角大学生计算机作品赛校内赛
+	                                    </p>
+	                                </div>
+	                            </li>
+	                       	</ul>
+	                    </div>
+	                </div>      
+	            </div>	
+			</div>
+		</div>
+	</div>
+<div class="center-section-wrap height2" v-show="flag==3">
+				<div class="col-md-12 col-sm-12 col-xs-12">    
+	                <div class="chat-panel panel panel-default chat-boder chat-panel-head">
+	                    <div class="panel-heading">
+	                        <i class="glyphicon glyphicon-plus"></i>
+	                        我发起的活动
+	                        <div class="btn-group pull-right">
+	                            <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+	                            	<i class="glyphicon glyphicon-chevron-down"></i>
+	                            </button>
+	                            <ul class="dropdown-menu slidedown">
+	                                <li>
+	                                   	<a href="#">
+	                                        <i class="glyphicon glyphicon-calendar"></i>今天
+	                                    </a>
+	                                </li>
+	                                <li>
+	                                    <a href="#">
+	                                        <i class="glyphicon glyphicon-calendar"></i>一周内
+	                                    </a>
+	                                </li>
+	                                <li>
+	                                    <a href="#">
+	                                        <i class="glyphicon glyphicon-calendar"></i>一个月内
+	                                    </a>
+	                                </li>
+	                                <li>
+	                                    <a href="#">
+	                                        <i class="glyphicon glyphicon-asterisk"></i>所有
+	                                    </a>
+	                                </li>
+	                                    <li class="divider"></li>
+	                                <li>
+	                                    <a href="#">
+	                                        <i class="glyphicon glyphicon-remove-sign"></i>注销
+	                                    </a>
+	                                </li>
+	                            </ul>
+	                        </div>
+	                    </div>
+
+	                    <div class="panel-body">
+	                        <ul class="chat-box">
+	                            <li class="left clearfix">
+	                                <span class="chat-img pull-left">
+	                                    <img src="../images/35.jpg" alt="User" class="img-circle">
+	                                </span>
+	                                <div class="chat-body">
+	                                    <strong>网页设计大赛</strong>
+	                                    <p>
+	                                        本次大赛采取网友
+	                                </div>
+	                            </li>
+	                            <li class="left clearfix">
+	                                <span class="chat-img pull-left">
+	                                    <img src="../images/35.jpg" alt="User" class="img-circle">
+	                                </span>
+	                                <div class="chat-body">
+	                                    <strong>网页设计大赛</strong>
+	                                    <p>
+	                                        本次大赛采取网友投票和专家评选相结合的方式进行评奖，其中网友投票总分30分，专家评选总分为70分，总成绩为二者之和，总
+	                                    </p>
+	                                </div>
+	                            </li>
+	                            <li class="left clearfix">
+	                                <span class="chat-img pull-left">
+	                                    <img src="../images/35.jpg" alt="User" class="img-circle">
+	                                </span>
+	                                <div class="chat-body clearfix">
+	                                    <strong>女生节</strong>
+	                                    <small class="pull-right text-muted">
+	                                        <i class="glyphicon glyphicon-dashboard"></i>14 mins ago
+	                                    </small>  
+	                                    <p>
+	                                        女生节，起源于20世纪80年代末，一般定义在3月7日这一天，三八妇女节前一天。由山东大学在国内首先发起，后扩散到中国各高校，是一个关爱女生、展现高校女生风采的节日
+	                                    </p>
+	                                </div>
+	                            </li>
+	                            <li class="right clearfix">
+	                                <span class="chat-img pull-right">
+	                                    <img src="../images/36.jpg" alt="User" class="img-circle">
+	                                </span>
+	                                <div class="chat-body clearfix">
+	                                    <small class=" text-muted">
+	                                        <i class="glyphicon glyphicon-dashboard"></i>15 mins ago
+	                                    </small>
+	                                    <strong class="pull-right">西华杯
+	                                    </strong>  
+	                                    <p>
+	                                        近日，我校2017年“西华杯”大学生创新创业项目正式立项，包括哲学社会科学类、自然科学类、科技发明制作类等共计77项。项目负责人已成功签订《“西华杯”大学生创新创业项目任务书》，通过评
+	                                </div>
+	                            </li>
+	                            <li class="left clearfix">
+	                                <span class="chat-img pull-left">
+	                                    <img src="../images/35.jpg" alt="User" class="img-circle">
+	                                </span>
+	                                <div class="chat-body">          
+	                                    <strong>中星杯</strong>
+	                                    <small class="pull-right text-muted">
+	                                        <i class="glyphicon glyphicon-dashboard"></i>12 mins ago
+	                                    </small>      
+	                                    <p>
+	                                        2017年5月21日，由信息技术学院计算机系承办、计算机作品协会协办的“中星杯”第十四届信息技术学院IT节暨“中星杯”泛珠三角大学生计算机作品赛校内赛
+	                                    </p>
+	                                </div>
+	                            </li>
+	                            <li class="right clearfix">
+	                                <span class="chat-img pull-right">
+	                                    <img src="../images/36.jpg" alt="User" class="img-circle">
+	                                </span>
+	                                <div class="chat-body clearfix">
+	                                    <small class=" text-muted">
+	                                        <i class="glyphicon glyphicon-dashboard"></i>13 mins ago
+	                                    </small>
+	                                    <strong class="pull-right">电工杯
+	                                    </strong>   
+	                                    <p>
+	                                        全国大学生电工数学建模竞赛（以下简称竞赛）是中国电机工程学会电工数学专委会主办的面向全国大学生的科技活动，目的是提高学生的综合素质、增强创新意 识、培养学生应用数学知识解决实际工程问题的能力，激发学生学习数学的积极
+	                                    </p>
+	                                </div>
+	                            </li>
+	                       	</ul>
+	                    </div>
+	                </div>      
+	            </div>	
+			</div>
+		</div>
+	</div>
+
+	<footer class="fixed-bottom">
+		<p>微力实验室</p>
+		<p>Terms of Services | Privacy Policy | Refund Policy</p>
+	</footer>
+
+	<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+	<script src="../js/vue.js"></script>
+	<script src="../js/activity.js"></script>
+	<script type="text/javascript">
+		document.onreadystatechange=function(){
+			if (document.readyState=='complete') {
+				$('.loading').fadeOut();
+			}
+		}
+	</script>
+</body>
+</html>
