@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas绘图</title>
+	<style type="text/css" media="screen">
+		.canvas{
+			border: 1px solid #aaa;
+			display: block;
+			margin: 50px auto;
+		}
+	</style>
+</head>
+<body>
+	<!-- 默认宽高是300*150px -->
+	<canvas id="canvas" class="canvas">
+		当前浏览器不支持canvas，请更换浏览器
+	</canvas>
+	<script type="text/javascript">
+		window.onload = function(){
+			var canvas = document.getElementById("canvas");
+			canvas.width = 1024;
+			canvas.height = 500;
+			var context = canvas.getContext("2d");
+			context.beginPath();
+			context.moveTo(100,100);
+			context.lineTo(400,400);
+			context.lineTo(100,400);
+			context.lineTo(100,100);
+			context.closePath();
+
+			context.lineWidth = 5;
+			context.fillStyle = "#1B4CD7";
+			context.fill();
+			context.strokeStyle = "#fff000";
+			context.stroke();
+			// 描述线条颜色
+			
+			context.beginPath();
+			context.moveTo(200,100);
+			context.lineTo(500,400);
+			context.closePath();
+			context.strokeStyle = "black";
+			context.stroke();
+		}
+	</script>
+</body>
+</html>

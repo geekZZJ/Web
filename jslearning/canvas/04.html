@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>画一条线</title>
+</head>
+<body>
+	<canvas id="canvas" style="border: 1px solid #aaa;display: block;margin: 50px auto;">
+		当前浏览器不支持Canvas，请更换浏览器后再试
+	</canvas>
+
+	<script type="text/javascript">
+		window.onload = function(){
+			var canvas = document.getElementById("canvas");
+			canvas.width = 800;
+			canvas.height = 800;
+
+			var context = canvas.getContext("2d");
+
+			drawRect(context,100,100,400,400,10,"#058","red");
+			drawRect2(context,300,300,400,400,10,"#058","rgba(0,255,0,0.5)");
+			
+			//做方块的接口
+			function drawRect(cxt,x,y,width,height,borderWidth,borderColor,fillColor){
+				cxt.beginPath();
+				cxt.rect(x,y,width,height);
+				cxt.closePath();
+
+				cxt.lineWidth = borderWidth;
+				cxt.fillStyle = fillColor;
+				cxt.strokeStyle = borderColor;
+
+				cxt.fill();
+				cxt.stroke();
+			}
+
+
+			function drawRect2(cxt,x,y,width,height,borderWidth,borderColor,fillColor){
+
+				cxt.lineWidth = borderWidth;
+				cxt.fillStyle = fillColor;
+				cxt.strokeStyle = borderColor;
+
+				cxt.fillRect(x,y,width,height);
+				cxt.strokeRect(x,y,width,height);
+			}
+
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Image Gallery</title>
+	<style type="text/css">
+		*{
+			padding: 0px;
+			margin: 0px;
+		}
+		body{
+			font-family: "微软雅黑";
+			color: #333;
+			background-color: #ccc;
+			margin: 1em 10%;
+		}
+		h1{
+			color: #333;
+			background-color: transparent;
+		}
+		a{
+			color: #c60;
+			background-color: transparent;
+			font-weight: bold;
+			text-decoration: none;
+		}
+		ul{
+			padding: 0px;
+		}
+		li{
+			float: left;
+			padding: 1em;
+			list-style: none;
+		}
+		img{
+			display: block;
+			clear: both;
+		}
+		#imagegallery{
+			list-style: none;
+		}
+		#imagegallery li{
+			display : inline;
+		}
+		#imagegallery li a img{
+			border: 0;
+		}
+	</style>
+</head>
+<body>
+	<h1>Snapshots</h1>
+	<ul id="imagegallery">
+		<!-- <a href="http://www.baidu.com" onclick="return false;">Click me</a> -->
+		<!-- onclick返回false,链接的默认行为没有被触发 -->
+		<li>
+			<a href="images/bike.jpg" title="bike">bike</a>
+		</li>
+		<li>
+			<a href="images/city.jpg" title="city">city</a>
+		</li>
+		<li>
+			<a href="images/climb.jpg" title="climb">climb</a>
+		</li>
+		<li>
+			<a href="images/desk.jpg" title="desk">desk</a>
+		</li>
+	</ul>
+	<img src="images/mountain.jpg" id="placeholder" alt="my image gallery">
+	<p id="description">Choose an image.</p>
+	<script type="text/javascript">
+		// 关键代码
+		// 
+		// 
+		// 
+		/*function showPic(whichpic){
+			var source=whichpic.getAttribute("href");
+			var placeholder=document.getElementById("placeholder");
+			placeholder.setAttribute("src", source);
+			var title=whichpic.getAttribute("title");
+			var description=document.getElementById("description");
+			// description.setAttribute("name: DOMString", title);
+			description.firstChild.nodeValue=title;
+		}*/
+
+		// 关键代码
+		// 
+		// 
+		// 
+		// function countBodyChildren(){
+		// 	var body_element=document.getElementsByTagName("body")[0];
+		// 	alert(body_element.nodeType);
+		// }
+		// window.onload=countBodyChildren;
+		// alert(description.firstChild.nodeValue);
+		// childNodes[0]也是相同的道理
+		// 
+		// 
+		function prepareGallery(){
+			if (!document.getElementsByTagName) {
+				return false;
+			}
+			if (!document.getElementById) {
+				return false;
+			}
+			if (!document.getElementById("imagegallery")) {
+				return false;
+			}
+			var gallery = document.getElementById("imagegallery");
+		var links = gallery.getElementsByTagName("a");
+		for (var i = 0; i < links.length; i++) {
+			links[i].onclick = function(){
+				return !showPic(this);
+			}
+		}
+		}
+		function showPic(whichpic){
+			if (!document.getElementById("placeholder")) {
+				return false;
+			}
+			var source = whichpic.getAttribute("href");
+			var placeholder = document.getElementById("placeholder");
+			if (placeholder.nodeName != "IMG") {
+				return false;
+			}
+			placeholder.setAttribute("src",source);
+			if (document.getElementById("description")) {
+				var text = whichpic.getAttribute("title");
+				var description = document.getElementById("description");
+				if (description.firstChild.nodeType == 3) {
+					description.firstChild.nodeValue = text;
+				}
+			}
+			return true;
+
+		}
+		function addLoadEvent(func){
+			var oldonload = window.onload;
+			if (typeof window.onload != 'function') {
+				window.onload=func;
+			}
+			else{
+				window.onload=function(){
+					oldonload();
+					func();
+				}
+			}
+		}
+		addLoadEvent(prepareGallery);
+	</script>
+</body>
+</html>
+<!-- 通过创建匿名函数绑定到onload事件上，例如window.onload = function(){
+	firstFuntion();
+	secondFunction();
+} -->
