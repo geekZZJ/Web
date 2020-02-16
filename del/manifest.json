@@ -1,0 +1,11 @@
+{
+	"manifest_version":2,
+	"name":"DelSpa",
+	"description":"删除汉字前后的空格并删除两英文间多余的空格",
+	"version":"1.0",
+	"content_scripts":[
+		{
+			"matches":["http://139.219.103.151/*"],
+			"js":["demo.js"]
+		}]
+}
