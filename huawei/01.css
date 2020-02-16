@@ -1,0 +1,1419 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    font-size: 12px;
+    font-family: "微软雅黑";
+    color: #333;
+}
+.loading{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 9999;
+    background-color: #fff;
+}
+.loading .pic{
+    width: 64px;
+    height: 64px;
+    background-image: url('images/loading.gif');
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+}
+.top{
+    width: 1200px;
+    height: 30px;
+    margin: 0 auto;
+    line-height: 30px;
+    background-color: #fff;
+}
+.top .left{
+    float: left;
+}
+.top .left ul{
+    list-style: none;
+}
+.top .left li{
+    float: left;
+    padding: 0px 8px;
+}
+.top .left li a{
+    text-decoration: none;
+    color: #a4a4a4;
+}
+.top .left li a:hover{
+    color: #ca151d;
+}
+.top .right{
+    float: right;
+    /* margin-right: -18px; */
+}
+.top .right ul{
+    list-style: none;
+}
+.top .right li{
+    float: left;
+    padding: 0px 8px;
+}
+.top .right li a{
+    text-decoration: none;
+    color: #a4a4a4;
+}
+.top .left .re{
+    position: relative;
+}
+.MoreEm{
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    background-color: #fff;
+    border: 1px solid #ededed;
+    box-shadow: 0 2px 6px 0 rgba(121, 121, 121, 0.26);
+    z-index: 100;
+}
+.MoreW{
+    width: 144px;
+    padding: 9px 9px 10px 9px;
+    text-align: center;
+    line-height: 32px;
+}
+.MoreW dl{
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 5px;
+}
+.MoreEm .MoreW dl dt a{
+    color: #3a3a3a;
+}
+.MoreEm .code{
+    padding-top: 22px;
+    color: #717171;
+}
+.re:hover .MoreEm{
+    display: block;
+}
+.top .right .re{
+    position: relative;
+}
+.top .right .re .car{
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    background-color: #fff;
+    border: 1px solid #ededed;
+    z-index: 100;
+}
+.top .right .re .car .shopcar{
+    width: 460px;
+    text-align: center;
+    padding: 20px 0px;
+    line-height: 1;
+    font-size: 14px;
+    color: #a4a4a4;
+}
+.shopcar .icon-gouwuche{
+    font-size: 100px;
+    margin-bottom: 16px;
+}
+.top .right .shopcar a{
+    display: block;   /*a标签是行级元素，要把它变为块级元素*/
+    text-decoration: none;
+    width: 148px;
+    height: 38px;
+    line-height: 38px;
+    margin: 0 auto;
+    border-radius: 2px;
+    border: 1px solid #a4a4a4;
+    color: #3a3a3a;
+    margin-top: 20px;
+}
+.top .right .re:hover .car{
+    display: block;
+}
+
+/* header部分 */
+
+.header{
+    height: 50px;
+    padding: 10px 0px;
+    background-color: #fff;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.06);
+    position: relative;
+    font-family: "微软雅黑";
+    line-height: 1.5;
+}
+.header .layout{
+    width: 1200px;
+    margin: 0 auto;
+}
+.header .layout .left{
+    float: left;
+}
+.header .layout .left .logo{
+    float: left;
+    margin-right: 40px;
+    width: 240px;
+    height: 50px;
+}
+.header .layout .left .logo a{
+    float: left;
+}
+.header .layout .left .nav{
+    float: left;
+    max-width: 560px;
+    height: 40px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+.header .layout .left .nav ul{
+    list-style: none;
+}
+.header .layout .left .nav ul li{
+    float: left;
+    margin-right: 20px;
+}
+.header .layout .left .nav ul li a{
+    font-size: 16px;
+    color: #3a3a3a;
+    position: relative;
+    line-height: 40px;
+    display: block;
+    text-decoration: none;
+}
+.header .layout .left .nav ul li a:hover{
+    color: #ca141d;
+}
+.header .layout .left .nav .li1:hover .NavSub1{
+    display: block;
+}
+.header .layout .left .nav .li2:hover .NavSub2{
+    display: block;
+}
+.header .layout .left .nav .li3:hover .NavSub3{
+    display: block;
+}
+.header .layout .left .nav .li4:hover .NavSub4{
+    display: block;
+}
+.header .layout .left .nav .li5:hover .NavSub5{
+    display: block;
+}
+.header .layout .left .nav .li6:hover .NavSub6{
+    display: block;
+}
+.header .layout .left .nav .li1 .a1{
+    /* border-bottom: #ca141d;     为什么border加不上 */
+}
+.header .layout .left .NavSub{
+    z-index: 95;
+    position: absolute;
+    left: 0;
+    top: 70px;
+    min-width: 100%;
+    overflow: hidden;
+    border-top: 1px solid #ebebeb;
+    background-color: #fff;
+    box-shadow: 0 3px 3px 0 rgba(121, 121, 121, rgba(121, 121, 121, 0.26));
+}
+.header .layout .left .nav .NavSub1{
+    width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: #fff;
+    display: none;
+}
+.header .layout .left .nav .NavSub1 .title{
+    width: 1176px;
+    line-height: 30px;
+    padding: 5px 12px 0 0;
+    font-size: 14px;
+}
+.header .layout .left .nav .NavSub1 .title .t1{
+    float: left;
+    max-width: 170px;
+    margin-right: 15px;
+}
+.header .layout .left .nav .NavSub1 .title .t1 a{
+    font-size: 14px;
+    color: #3a3a3a;
+    text-decoration: none;
+}
+.header .layout .left .nav .NavSub1 .title .t1 a:hover{
+    color: #ca141d;
+}
+.header .layout .left .nav .NavSub1 .title .t2{
+    width: 942px;
+    max-height: 60px;
+    overflow: hidden;
+    float: left;
+}
+.header .layout .left .nav .NavSub1 .title .t2 a{
+    font-size: 14px;
+    padding: 0 15px;
+    color: #717171;
+    float: left;
+    text-decoration: none;
+}
+.header .layout .left .nav .NavSub1 .title .t2 a:hover{
+    color: #ca141d;
+}
+.header .layout .left .nav .NavSub1 .GridList{
+    width: 1236px;
+    list-style: none;
+    padding: 0 0 0 18px;
+    float: left;
+}
+.header .layout .left .nav .NavSub1 .GridList .GridItem{
+    margin: 0;
+    width: 120px;
+    height: 206px;
+    margin-right: 54px;
+    margin-bottom: 18px;
+    float: left;
+    z-index: 1;
+}
+.header .layout .left .nav .NavSub1 .GridList .GridItem a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+.header .layout .left .nav .NavSub1 .GridList .GridImg{
+    width: 120px;
+    height: 120px;
+    margin: 23px auto 0;
+}
+.header .layout .left .nav .NavSub1 .GridList .GridImg img{
+    width: 100%;
+    height: 100%;
+}
+.header .layout .left .nav .NavSub1 .GridList .title{
+    width: 120px;
+    padding: 0px;
+    height: 42px;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 16px 20px 2px;
+    overflow: hidden;
+    color: #3a3a3a;
+    display: table-cell;
+    vertical-align: bottom;
+}
+.header .layout .left .nav .NavSub1 .GridList .price{
+    margin: 0;
+    color: #ca141d;
+    font-size: 14px;
+    font-weight: 400;
+    overflow: hidden;
+}
+/* 第二个 */
+.header .layout .left .nav .NavSub2{
+    width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: #fff;
+    display: none;
+}
+.header .layout .left .nav .NavSub2 .title{
+    width: 1176px;
+    line-height: 30px;
+    padding: 5px 12px 0 0;
+    font-size: 14px;
+}
+.header .layout .left .nav .NavSub2 .title .t1{
+    float: left;
+    max-width: 170px;
+    margin-right: 15px;
+}
+.header .layout .left .nav .NavSub2 .title .t1 a{
+    font-size: 14px;
+    color: #3a3a3a;
+    text-decoration: none;
+}
+.header .layout .left .nav .NavSub2 .title .t1 a:hover{
+    color: #ca141d;
+}
+.header .layout .left .nav .NavSub2 .title .t2{
+    width: 942px;
+    max-height: 60px;
+    overflow: hidden;
+    float: left;
+}
+.header .layout .left .nav .NavSub2 .title .t2 a{
+    font-size: 14px;
+    padding: 0 15px;
+    color: #717171;
+    float: left;
+    text-decoration: none;
+}
+.header .layout .left .nav .NavSub2 .title .t2 a:hover{
+    color: #ca141d;
+}
+.header .layout .left .nav .NavSub2 .GridList{
+    width: 1236px;
+    list-style: none;
+    padding: 0 0 0 18px;
+    float: left;
+}
+.header .layout .left .nav .NavSub2 .GridList .GridItem{
+    margin: 0;
+    width: 120px;
+    height: 206px;
+    margin-right: 54px;
+    margin-bottom: 18px;
+    float: left;
+    z-index: 1;
+}
+.header .layout .left .nav .NavSub2 .GridList .GridItem a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+.header .layout .left .nav .NavSub2 .GridList .GridImg{
+    width: 120px;
+    height: 120px;
+    margin: 23px auto 0;
+}
+.header .layout .left .nav .NavSub2 .GridList .GridImg img{
+    width: 100%;
+    height: 100%;
+}
+.header .layout .left .nav .NavSub2 .GridList .title{
+    width: 120px;
+    padding: 0px;
+    height: 42px;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 16px 20px 2px;
+    overflow: hidden;
+    color: #3a3a3a;
+    display: table-cell;
+    vertical-align: bottom;
+}
+.header .layout .left .nav .NavSub2 .GridList .price{
+    margin: 0;
+    color: #ca141d;
+    font-size: 14px;
+    font-weight: 400;
+    overflow: hidden;
+}
+/* 第三个 */
+.header .layout .left .nav .NavSub3{
+    width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: #fff;
+    display: none;
+}
+.header .layout .left .nav .NavSub3 .title{
+    width: 1176px;
+    line-height: 30px;
+    padding: 5px 12px 0 0;
+    font-size: 14px;
+}
+.header .layout .left .nav .NavSub3 .title .t1{
+    float: left;
+    max-width: 170px;
+    margin-right: 15px;
+}
+.header .layout .left .nav .NavSub3 .title .t1 a{
+    font-size: 14px;
+    color: #3a3a3a;
+    text-decoration: none;
+}
+.header .layout .left .nav .NavSub3 .title .t1 a:hover{
+    color: #ca141d;
+}
+.header .layout .left .nav .NavSub3 .title .t2{
+    width: 942px;
+    max-height: 60px;
+    overflow: hidden;
+    float: left;
+}
+.header .layout .left .nav .NavSub3 .title .t2 a{
+    font-size: 14px;
+    padding: 0 15px;
+    color: #717171;
+    float: left;
+    text-decoration: none;
+}
+.header .layout .left .nav .NavSub3 .title .t2 a:hover{
+    color: #ca141d;
+}
+.header .layout .left .nav .NavSub3 .GridList{
+    width: 1236px;
+    list-style: none;
+    padding: 0 0 0 18px;
+    float: left;
+}
+.header .layout .left .nav .NavSub3 .GridList .GridItem{
+    margin: 0;
+    width: 120px;
+    height: 206px;
+    margin-right: 54px;
+    margin-bottom: 18px;
+    float: left;
+    z-index: 1;
+}
+.header .layout .left .nav .NavSub3 .GridList .GridItem a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+.header .layout .left .nav .NavSub3 .GridList .GridImg{
+    width: 120px;
+    height: 120px;
+    margin: 23px auto 0;
+}
+.header .layout .left .nav .NavSub3 .GridList .GridImg img{
+    width: 100%;
+    height: 100%;
+}
+.header .layout .left .nav .NavSub3 .GridList .title{
+    width: 120px;
+    padding: 0px;
+    height: 42px;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 16px 20px 2px;
+    overflow: hidden;
+    color: #3a3a3a;
+    display: table-cell;
+    vertical-align: bottom;
+}
+.header .layout .left .nav .NavSub3 .GridList .price{
+    margin: 0;
+    color: #ca141d;
+    font-size: 14px;
+    font-weight: 400;
+    overflow: hidden;
+}
+/* 第四个 */
+.header .layout .left .nav .NavSub4{
+    width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: #fff;
+    display: none;
+}
+.header .layout .left .nav .NavSub4 .title{
+    width: 1176px;
+    line-height: 30px;
+    padding: 5px 12px 0 0;
+    font-size: 14px;
+}
+.header .layout .left .nav .NavSub4 .title .t1{
+    float: left;
+    max-width: 170px;
+    margin-right: 15px;
+}
+.header .layout .left .nav .NavSub4 .title .t1 a{
+    font-size: 14px;
+    color: #3a3a3a;
+    text-decoration: none;
+}
+.header .layout .left .nav .NavSub4 .title .t1 a:hover{
+    color: #ca141d;
+}
+.header .layout .left .nav .NavSub4 .title .t2{
+    width: 942px;
+    max-height: 60px;
+    overflow: hidden;
+    float: left;
+}
+.header .layout .left .nav .NavSub4 .title .t2 a{
+    font-size: 14px;
+    padding: 0 15px;
+    color: #717171;
+    float: left;
+    text-decoration: none;
+}
+.header .layout .left .nav .NavSub4 .title .t2 a:hover{
+    color: #ca141d;
+}
+.header .layout .left .nav .NavSub4 .GridList{
+    width: 1236px;
+    list-style: none;
+    padding: 0 0 0 18px;
+    float: left;
+}
+.header .layout .left .nav .NavSub4 .GridList .GridItem{
+    margin: 0;
+    width: 120px;
+    height: 206px;
+    margin-right: 54px;
+    margin-bottom: 18px;
+    float: left;
+    z-index: 1;
+}
+.header .layout .left .nav .NavSub4 .GridList .GridItem a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+.header .layout .left .nav .NavSub4 .GridList .GridImg{
+    width: 120px;
+    height: 120px;
+    margin: 23px auto 0;
+}
+.header .layout .left .nav .NavSub4 .GridList .GridImg img{
+    width: 100%;
+    height: 100%;
+}
+.header .layout .left .nav .NavSub4 .GridList .title{
+    width: 120px;
+    padding: 0px;
+    height: 42px;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 16px 20px 2px;
+    overflow: hidden;
+    color: #3a3a3a;
+    display: table-cell;
+    vertical-align: bottom;
+}
+.header .layout .left .nav .NavSub4 .GridList .price{
+    margin: 0;
+    color: #ca141d;
+    font-size: 14px;
+    font-weight: 400;
+    overflow: hidden;
+}
+/* 第五个 */
+.header .layout .left .nav .NavSub5{
+    width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: #fff;
+    display: none;
+}
+.header .layout .left .nav .NavSub5 .title{
+    width: 1176px;
+    line-height: 30px;
+    padding: 5px 12px 0 0;
+    font-size: 14px;
+}
+.header .layout .left .nav .NavSub5 .title .t1{
+    float: left;
+    max-width: 170px;
+    margin-right: 15px;
+}
+.header .layout .left .nav .NavSub5 .title .t1 a{
+    font-size: 14px;
+    color: #3a3a3a;
+    text-decoration: none;
+}
+.header .layout .left .nav .NavSub5 .title .t1 a:hover{
+    color: #ca141d;
+}
+.header .layout .left .nav .NavSub5 .title .t2{
+    width: 942px;
+    max-height: 60px;
+    overflow: hidden;
+    float: left;
+}
+.header .layout .left .nav .NavSub5 .title .t2 a{
+    font-size: 14px;
+    padding: 0 15px;
+    color: #717171;
+    float: left;
+    text-decoration: none;
+}
+.header .layout .left .nav .NavSub5 .title .t2 a:hover{
+    color: #ca141d;
+}
+.header .layout .left .nav .NavSub5 .GridList{
+    width: 1236px;
+    list-style: none;
+    padding: 0 0 0 18px;
+    float: left;
+}
+.header .layout .left .nav .NavSub5 .GridList .GridItem{
+    margin: 0;
+    width: 120px;
+    height: 206px;
+    margin-right: 54px;
+    margin-bottom: 18px;
+    float: left;
+    z-index: 1;
+}
+.header .layout .left .nav .NavSub5 .GridList .GridItem a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+.header .layout .left .nav .NavSub5 .GridList .GridImg{
+    width: 120px;
+    height: 120px;
+    margin: 23px auto 0;
+}
+.header .layout .left .nav .NavSub5 .GridList .GridImg img{
+    width: 100%;
+    height: 100%;
+}
+.header .layout .left .nav .NavSub5 .GridList .title{
+    width: 120px;
+    padding: 0px;
+    height: 42px;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 16px 20px 2px;
+    overflow: hidden;
+    color: #3a3a3a;
+    display: table-cell;
+    vertical-align: bottom;
+}
+.header .layout .left .nav .NavSub5 .GridList .price{
+    margin: 0;
+    color: #ca141d;
+    font-size: 14px;
+    font-weight: 400;
+    overflow: hidden;
+}
+/* 第六个 */
+.header .layout .left .nav .NavSub6{
+    width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: #fff;
+    display: none;
+}
+.header .layout .left .nav .NavSub6 .title{
+    width: 1176px;
+    line-height: 30px;
+    padding: 5px 12px 0 0;
+    font-size: 14px;
+}
+.header .layout .left .nav .NavSub6 .title .t1{
+    float: left;
+    max-width: 170px;
+    margin-right: 15px;
+}
+.header .layout .left .nav .NavSub6 .title .t1 a{
+    font-size: 14px;
+    color: #3a3a3a;
+    text-decoration: none;
+}
+.header .layout .left .nav .NavSub6 .title .t1 a:hover{
+    color: #ca141d;
+}
+.header .layout .left .nav .NavSub6 .title .t2{
+    width: 942px;
+    max-height: 60px;
+    overflow: hidden;
+    float: left;
+}
+.header .layout .left .nav .NavSub6 .title .t2 a{
+    font-size: 14px;
+    padding: 0 15px;
+    color: #717171;
+    float: left;
+    text-decoration: none;
+}
+.header .layout .left .nav .NavSub6 .title .t2 a:hover{
+    color: #ca141d;
+}
+.header .layout .left .nav .NavSub6 .GridList{
+    width: 1236px;
+    list-style: none;
+    padding: 0 0 0 18px;
+    float: left;
+}
+.header .layout .left .nav .NavSub6 .GridList .GridItem{
+    margin: 0;
+    width: 120px;
+    height: 206px;
+    margin-right: 54px;
+    margin-bottom: 18px;
+    float: left;
+    z-index: 1;
+}
+.header .layout .left .nav .NavSub6 .GridList .GridItem a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+.header .layout .left .nav .NavSub6 .GridList .GridImg{
+    width: 120px;
+    height: 120px;
+    margin: 23px auto 0;
+}
+.header .layout .left .nav .NavSub6 .GridList .GridImg img{
+    width: 100%;
+    height: 100%;
+}
+.header .layout .left .nav .NavSub6 .GridList .title{
+    width: 120px;
+    padding: 0px;
+    height: 42px;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 16px 20px 2px;
+    overflow: hidden;
+    color: #3a3a3a;
+    display: table-cell;
+    vertical-align: bottom;
+}
+.header .layout .left .nav .NavSub6 .GridList .price{
+    margin: 0;
+    color: #ca141d;
+    font-size: 14px;
+    font-weight: 400;
+    overflow: hidden;
+}
+.header .layout .right{
+    float: right;
+}
+.header .layout .right .search{
+    position: relative;
+    margin-top: 14px;  
+}
+.header .layout .right .search .SearchForm{
+    line-height: 1;
+    border-bottom: 1px solid #ddd;
+    width: 330px;
+    height: 27px;
+    overflow: hidden;
+}
+.header .layout .right .search .SearchForm .text{
+    background-color: #fff;
+    border: 0;
+    color: #3a3a3a;
+    width: 299px;
+    padding-left: 11px;
+    height: 27px;
+    line-height: 27px;
+    outline: none;
+}
+.header .layout .right .search .SearchForm .button{
+    background-position: 0 -25px;
+    background-image: url(images/icon-common.png);
+    background-color: #fff;
+    width: 20px;
+    height: 33px;
+    border: 0;
+    text-indent: -9999px;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    font-size: 100%;
+}
+.header .layout .right .search .SearchKey{
+    position: absolute;
+    max-width: 280px;
+    right: 25px;
+    bottom: 8px;
+    z-index: 2;
+    white-space: nowrap;
+    text-align: right;
+    overflow: hidden;
+}
+.header .layout .right .search .SearchKey a{
+    color: #a4a4a4;
+    font-size: 12px;
+    margin-right: 10px;
+    padding: 4px 4px 1px;
+    background-color: #f5f5f5;
+    text-decoration: none;
+}
+.header .layout .right .search .SearchKey a:hover{
+    color: #ca141d;
+}
+.hr{
+    height: 10px;
+}
+.g{
+    width: 1200px;
+    margin: 0 auto;
+    zoom: 1;
+}
+.g .bca{
+    color: #bbb;
+    margin-left: 1px;
+    line-height: 1.5;
+    padding-top: 10px;
+}
+.g .bca a{
+    color: #666;
+    text-decoration: none;
+}
+.g .bca a:hover{
+    color: #333;
+}
+.g .bca span{
+    color: #333;
+}
+.layout{
+    width: 1200px;
+    margin: 0 auto;
+}
+.layout .pro{
+    border: 1px solid #dedede;
+}
+.layout .pro .pro-attr{
+    border-bottom: 1px solid #dedede;
+}
+.layout .pro .pro-attr .title{
+    float: left;
+    text-align: right;
+    width: 86px;
+    padding-top: 16px;
+}
+.layout .pro .pro-attr .default{
+    float: left;
+    padding: 16px 0 0 10px;
+}
+.layout .pro .pro-attr .default ul{
+    list-style: none;
+}
+.layout .pro .pro-attr .default .selected a{
+    color: #e01d20;
+    text-decoration: none;
+    display: inline-block;
+    vertical-align: top;
+}
+.layout .pro .pro-attr .value{
+    margin-left: 140px;
+    padding: 10px 0;
+}
+.layout .pro .pro-attr .value .expand{
+    margin-right: 80px;
+    overflow: hidden;
+    height: 30px;
+}
+.layout .pro .pro-attr .value .expand ul{
+    list-style: none;
+}
+.layout .pro .pro-attr .value .expand ul li{
+    float: left;
+    margin-right: 20px;
+    padding: 6px 0;
+    height: 18px;
+    white-space: nowrap;
+}
+.layout .pro .pro-attr .value .expand ul li a{
+    color: #999;
+    display: inline-block;
+    vertical-align: top;
+    text-decoration: none;
+}
+.layout .pro .pro-attr .value .expand ul li a:hover{
+    color: #666;
+}
+.layout .pro .pro-sort .title{
+    float: left;
+    text-align: right;
+    width: 86px;
+    padding-top: 16px;
+}
+.layout .pro .pro-sort .default{
+    float: left;
+    padding: 16px 0 0 10px;
+}
+.layout .pro .pro-sort .default ul{
+    list-style: none;
+}
+.layout .pro .pro-sort .default .selected a{
+    color: #e01d20;
+    text-decoration: none;
+    display: inline-block;
+    vertical-align: top;
+}
+.layout .pro .pro-sort .value{
+    margin-left: 140px;
+    padding: 10px 0;
+}
+.layout .pro .pro-sort .value .expand{
+    margin-right: 80px;
+    overflow: hidden;
+    height: 30px;
+}
+.layout .pro .pro-sort .value .expand ul{
+    list-style: none;
+}
+.layout .pro .pro-sort .value .expand ul li{
+    float: left;
+    margin-right: 20px;
+    padding: 6px 0;
+    height: 18px;
+    white-space: nowrap;
+}
+.layout .pro .pro-sort .value .expand ul li a{
+    color: #999;
+    display: inline-block;
+    vertical-align: top;
+    text-decoration: none;
+}
+.layout .pro .pro-sort .value .expand a{
+    position: relative;
+    padding-right: 12px;
+}
+.layout .pro .pro-sort .value .expand ul li a:hover{
+    color: #666;
+}
+.layout .pro .pro-sort .value .expand a s{
+    background-position: 0 -70px;
+    height: 10px;
+    margin-top: -5px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    font-size: 0;
+    line-height: 0;
+    overflow: hidden;
+    width: 8px;
+    background: transparent url(images/icon1.png) scroll no-repeat;
+}
+/* .layout .pro .pro-sort .value .expand .sort-eval s{
+    background-position: 0 -29px;
+    margin-top: -3px;
+    height: 8px;
+    background: transparent url(images/icon1.png) scroll no-repeat;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 8px;
+    font-size: 0;
+    line-height: 0;
+    overflow: hidden;
+} */
+.hr-20{
+    height: 20px;
+}
+.channel-list{
+    text-align: right;
+}
+.channel-list .pro-list{
+    width: 1220px;
+    padding-bottom: 20px;
+}
+.channel-list .pro-list ul{
+    list-style: none;
+}
+.channel-list .pro-list ul li{
+    float: left;
+    width: 20%;
+}
+.channel-list .pro-list ul li .pro-panels{
+    margin: 0 20px 20px 0;
+    border: 1px solid #dedede;
+    height: 362px;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+.channel-list .pro-list ul li .pro-panels .img{
+    padding: 38px 0 24px;
+    text-align: center;
+}
+.channel-list .pro-list ul li .pro-panels .img a{
+    text-decoration: none;
+    color: #333;
+}
+.channel-list .pro-list ul li .pro-panels .img a img{
+    vertical-align: top;
+    width: 180px;
+    height: 180px;
+}
+.channel-list .pro-list ul li .pro-panels .name{
+    line-height: 16px;
+    padding: 0 20px;
+    height: 48px;
+    overflow: hidden;
+}
+.channel-list .pro-list ul li .pro-panels .name a{
+    color: #666;
+    text-decoration: none;
+}
+.channel-list .pro-list ul li .pro-panels .name .red{
+    color: #ca141d;
+}
+.channel-list .pro-list ul li .pro-panels .price{
+    padding-top: 3px;
+    color: #e01d20;
+    line-height: 30px;
+}
+.channel-list .pro-list ul li .pro-panels .price b{
+    font-size: 20px;
+    font-weight: 400;
+}
+.channel-list .pro-list ul li .pro-panels .button{
+    position: absolute;
+    left: -1px;
+    width: 224px;
+    bottom: -1px;
+}
+.channel-list .pro-list ul li .pro-panels .button table{
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+.channel-list .pro-list ul li .pro-panels .button table tbody{
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+.channel-list .pro-list ul li .pro-panels .button td{
+    border: 1px solid #dedede;
+}
+.channel-list .pro-list ul li .pro-panels .button .cart{
+    color: #e01d20;
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-decoration: none;
+}
+.channel-list .pro-list ul li .pro-panels .button a:hover{
+    background-color: #e01d20;
+    color: #fff;
+}
+.channel-list .pro-list ul li .pro-panels .button .score{
+    color: #666;
+}
+.channel-list .pro-list ul li .pro-panels .tag{
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    right: 12px;
+    top: 180px;
+    z-index: 2;
+}
+.channel-list .pager{
+    display: inline-block;
+    overflow: hidden;
+}
+.channel-list .pager ul{
+    list-style: none;
+    font-size: 10px;
+}
+.channel-list .pager ul .link{
+    cursor: pointer;
+    width: 29px;
+    height: 29px;
+    overflow: hidden;
+    line-height: 64px;
+    padding: 0;
+    float: left;
+    background-color: #fafafa;
+    border: 1px solid #dddcdb;
+    color: #666;
+    margin: 0 0 0 10px;
+    background: transparent url(images/sprites3.png) no-repeat;
+}
+.channel-list .pager ul .first{
+    background-position: 10px -76px;
+}
+.channel-list .pager ul .first:hover{
+    background-color: #3a3a3a;
+    border: 1px solid #3a3a3a;
+}
+.channel-list .pager ul .pre{
+    background-position: -18px -76px;
+}
+.channel-list .pager ul .pre:hover{
+    background-color: #3a3a3a;
+    border: 1px solid #3a3a3a;
+}
+.channel-list .pager ul .next{
+    background-position: -72px -76px;
+
+}.channel-list .pager ul .next:hover{
+    background-color: #3a3a3a;
+    border: 1px solid #3a3a3a;
+}
+.channel-list .pager ul .last{
+    background-position: -44px -76px;
+}
+.channel-list .pager ul .last:hover{
+    background-color: #3a3a3a;
+    border: 1px solid #3a3a3a;
+}
+.channel-list .pager ul .number{
+    height: 28px;
+    line-height: 31px;
+    cursor: pointer;
+    color: #666;
+    margin: 0 0 0 10px;
+    overflow: hidden;
+    float: left;
+    font-size: 12px;
+    padding: 0 7px;
+    text-decoration: none;
+}
+.channel-list .pager ul a li:hover{
+    color: #ca151e;
+}
+.hr-40{
+    height: 40px;
+}
+.slogan{
+    border-top: 1px solid #eee;
+    line-height: 1.5;
+    background: #f0f0f0;
+    width: 100%;
+    min-width: 1200px;
+}
+.slogan-c{
+    /* position: absolute; */
+    padding: 46px 0 46px;
+    width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.slogan-c ul{
+    list-style: none;
+}
+.slogan-c ul li{
+    float: left;
+    line-height: 47px;
+    font-size: 18px;
+    color: #3a3a3a;
+    height: 47px;
+    width: 300px;
+    text-align: left;
+}
+.slogan-c ul li a{
+    text-decoration: none;
+    color: #333;
+}
+.slogan-c ul li i{
+    display: inline-block;
+    line-height: 47px;
+    width: 47px;
+    height: 47px;
+    margin-right: 16px;
+    vertical-align: middle;
+}
+.slogan-c .s1 i{
+    background: url(images/icon-common.png);
+    background-position: 0px -151px;
+}
+.slogan-c .s2 i{
+    background: url(images/icon-common.png);
+    background-position: -94px -151px;
+}
+.slogan-c .s3 i{
+    background: url(images/icon-common.png);
+    background-position: -141px -151px;
+}
+.slogan-c .s4 i{
+    background: url(images/icon-common.png);
+    background-position: -47px -151px;
+}
+.service{
+    border-top: 1px solid #eee;
+    background: #f0f0f0;
+    width: 100%;
+    min-width: 1200px;
+}
+.service-c{
+    border-top: 1px solid #e8e8e8;
+    padding: 26px 0 18px;
+    width: 1200px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.service-c .sl{
+    width: 944px;
+    min-height: 164px;
+    margin-top: 2px;
+    border-right: 1px solid #ebebeb;
+    float: left;
+}
+.service-c dt{
+    font-size: 14px;
+    color: #3a3a3a;
+}
+.service-c dt .line{
+    background: #a8a8a8;
+    width: 22px;
+    height: 2px;
+    margin: 2px 0 12px 0!important;
+}
+.service-c dt .title{
+    font-size: 14px!important;
+    padding-bottom: 12px;
+    color: #3a3a3a;
+    display: block;
+    border-left: none;
+    padding-left: 0;
+    line-height: 1.5!important;
+    margin-bottom: 0!important;
+}
+.service-c ol{
+    list-style: none;
+}
+.service-c ol li{
+    line-height: 24px;
+}
+.service-c ol li a{
+    text-decoration: none;
+    color: #666;
+}
+.service-c dl{
+    width: 16.66667%;
+    float: left;
+}
+.service-c dt .btn{
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: #b3b3b3;
+    border-radius: 3px;
+    margin-right: 2px;
+    color: #fff;
+    text-align: center;
+    line-height: 12px;
+}
+.service-c dt .disabled{
+    background: #ccc;
+}
+.service-c .sr{
+    width: 210px;
+    min-height: 164px;
+    margin-top: 2px;
+    padding-left: 40px;
+    float: left;
+}
+.service-c .sr dl{
+    float: left;
+    width: 210px;
+}
+.service-c .sr .s7 dt{
+    width: 210px;
+    font-size: 14px;
+    color: #3a3a3a;
+}
+.service-c .sr .s7 .line{
+    background: #a8a8a8;
+    width: 22px;
+    height: 2px;
+    margin: 2px 0 12px 0!important;
+}
+.service-c .sr .s7 dt .title{
+    font-size: 24px!important;
+    padding: 0;
+    color: #3a3a3a;
+    display: block;
+    border-left: none;
+    line-height: 1.5!important;
+    margin-bottom: 0!important;
+}
+.service-c .sr .s7 dd{
+    list-style: none;
+    line-height: 24px;
+}
+.ser-btn{
+    display: inline-block;
+    width: 161px;
+    height: 35px;
+    padding: 0;
+    margin-top: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    font-size: 14px!important;
+    line-height: 35px;
+    text-align: center;
+    color: #900!important;
+    cursor: pointer;
+    transition: all .4s;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.service-c .sr .s7 dd .primary i{
+    background: url(images/icon-common.png);
+    background-position: -101px -23px;
+    display: inline-block;
+    height: 18px;
+    width: 22px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+.service-c .sr .s7 dd .report i{
+    background: url(images/icon2.png);
+    background-position: -383px 0;
+    height: 20px;
+    position: relative;
+    top: -1px;
+    display: inline-block;
+    width: 22px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+.footer-c{
+    background: #e6e6e6;
+    width: 100%;
+    min-width: 1200px;
+    height: 120px;
+}
+.footer{
+    width: 1200px;
+    padding: 26px 0 34px;
+    margin: 0 auto;
+    color: #666;
+    line-height: 1.5;
+}
+.footer-warrant-area{
+    text-align: left;
+    color: #a4a4a4;
+    line-height: 20px;
+}
+.footer-warrant-logo{
+    width: 79px;
+    height: 16px;
+    padding: 20px 38px 0 0;
+    float: left;
+}
+.footer-warrant-logo a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #a4a4a4;
+}
+.footer-warrant-logo img{
+    vertical-align: top;
+    width: 79px;
+    height: 16px;
+}
+.footer .fl{
+    float: left;
+}
+.footer .fl a{
+    color: #a4a4a4;
+    text-decoration: none;
+}
+.footer-warrant-img{
+    float: right;
+    padding: 15px 0 0;
+}
+.footer-warrant-img a{
+    display: block;
+    width: 70px;
+    margin-left: 4px;
+    height: 24px;
+    float: left;
+}
+.footer-warrant-img img{
+    vertical-align: top;
+    width: 70px;
+    height: 24px;
+}
