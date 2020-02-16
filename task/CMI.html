@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CMI</title>
+</head>
+<body>
+	<p>二进制编码序列为：0 1 1 1 0 0 0 0 0 0 1 0 1 0 0 0 0 1</p>
+	<p>CMI码为</p>
+	<canvas id="cmi" height="400" width="1200" style="border: 1px solid #000;">
+		你的浏览器不支持canvas
+	</canvas>
+	<script type="text/javascript">
+		var cmi = document.getElementById("cmi");
+		var ctx = cmi.getContext("2d");
+		var arr = [0,1,1,1,0,0,0,0,0,0,1,0,1,0,0,0,0,1];
+		var count = 0;
+
+		for (var i = 0; i < arr.length; i++) {
+			if (arr[i] == 0) {
+				arr[i] = "01";
+			}
+			else if (arr[i] == 1) {
+				count++;
+				if (count%2 == 1) {
+					arr[i] = "11";
+				}else{
+					arr[i] = "00";
+				}
+			}
+		}
+
+		for (var i = 0; i < arr.length; i++) {
+			console.log(arr[i]);
+		}
+
+		ctx.beginPath();
+		ctx.strokeStyle = "#f00";
+		ctx.lineWidth = 2;
+		ctx.moveTo(0,200);
+		ctx.lineTo(1200,200);
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.strokeStyle = "#000";
+		ctx.arc(50,200,1,0,2*Math.PI);
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.moveTo(50,200);
+		ctx.lineTo(75,200);
+		ctx.lineTo(75,150);
+		ctx.lineTo(100,150);
+		ctx.lineTo(125,150);
+		ctx.lineTo(150,150);
+		ctx.lineTo(150,200);
+		ctx.lineTo(175,200);
+		ctx.lineTo(200,200);
+		ctx.lineTo(200,150);
+		ctx.lineTo(225,150);
+		ctx.lineTo(250,150);
+		ctx.lineTo(250,200);
+		ctx.lineTo(275,200);
+		ctx.lineTo(275,150);
+		ctx.lineTo(300,150);
+
+		ctx.lineTo(300,200);
+		ctx.lineTo(325,200);
+		ctx.lineTo(325,150);
+		ctx.lineTo(350,150);
+
+		ctx.lineTo(350,200);
+		ctx.lineTo(375,200);
+		ctx.lineTo(375,150);
+		ctx.lineTo(400,150);
+
+		ctx.lineTo(400,200);
+		ctx.lineTo(425,200);
+		ctx.lineTo(425,150);
+		ctx.lineTo(450,150);
+
+		ctx.lineTo(450,200);
+		ctx.lineTo(475,200);
+		ctx.lineTo(475,150);
+		ctx.lineTo(500,150);
+
+		ctx.lineTo(500,200);
+		ctx.lineTo(525,200);
+		ctx.lineTo(525,150);
+		ctx.lineTo(550,150);
+
+		ctx.lineTo(550,200);
+		ctx.lineTo(575,200);
+		ctx.lineTo(600,200);
+		ctx.lineTo(625,200);
+		ctx.lineTo(625,150);
+		ctx.lineTo(650,150);
+		ctx.lineTo(675,150);
+		ctx.lineTo(700,150);
+
+		ctx.lineTo(700,200);
+		ctx.lineTo(725,200);
+		ctx.lineTo(725,150);
+		ctx.lineTo(750,150);
+
+		ctx.lineTo(750,200);
+		ctx.lineTo(775,200);
+		ctx.lineTo(775,150);
+		ctx.lineTo(800,150);
+
+		ctx.lineTo(800,200);
+		ctx.lineTo(825,200);
+		ctx.lineTo(825,150);
+		ctx.lineTo(850,150);
+
+		ctx.lineTo(850,200);
+		ctx.lineTo(875,200);
+		ctx.lineTo(875,150);
+		ctx.lineTo(900,150);
+
+		ctx.lineTo(900,200);
+		ctx.lineTo(925,200);
+		ctx.lineTo(950,200);
+
+		ctx.lineTo(1200,200);
+
+		ctx.stroke();
+
+	</script>
+</body>
+</html>

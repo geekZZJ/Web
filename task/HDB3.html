@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HDB3</title>
+</head>
+<body>
+	<p>二进制编码序列为：0 1 1 1 0 0 0 0 0 0 1 0 1 0 0 0 0 1</p>
+	<p>HDB3码为</p>
+	<canvas id="hdb" height="400" width="1200" style="border: 1px solid #000;">
+		你的浏览器不支持canvas
+	</canvas>
+	<script type="text/javascript">
+		var hdb = document.getElementById("hdb");
+		var ctx = hdb.getContext("2d");
+		var arr = [0,1,1,1,0,0,0,0,0,0,1,0,1,0,0,0,0,1];
+		var count1 = 0;
+		var count2 = 0;
+
+		for(var i=0;i<arr.length;i++){
+			if (arr[i] == 1) {
+				count1++;
+				if (count1%2 == 0) {
+					arr[i] = -1;
+				}
+			}
+		}
+		for (var i = 0; i < arr.length; i++) {
+			if (arr[i]==arr[i+1]) {
+				if (arr[i+1]==arr[i+2]) {
+					if (arr[i+2]==arr[i+3]) {
+						if (arr[i-1]<0) {
+							arr[i+3] = "-V";
+						}
+						else{
+							arr[i+3] = "+V";
+						}
+					}
+				}
+			}
+		}
+		for (var i = 0; i < arr.length; i++) {
+			if (arr[i] == "+V") {
+				count2++;
+				if (count2%2 == 0) {
+					arr[i] = "-V";
+				}
+			}
+			else if (arr[i] == "-V") {
+				count2++;
+				if (count2%2 == 0) {
+					arr[i] = "+V";
+				}
+			}
+		}
+		for (var i = 0; i < arr.length; i++) {
+			if (arr[i]=="+V"||arr[i]=="-V") {
+				if ((arr[i]=="-V"&&arr[i-4]>0)||(arr[i]=="+V"&&arr[i-4]<0)) {
+					if (arr[i]=="+V") {
+						arr[i-3] = "+B"
+					}
+					else if (arr[i] == "-V") {
+						arr[i-3] = "-B";
+					}
+				}
+			}
+		}
+
+		for (var i = 0; i < arr.length; i++) {
+			console.log(arr[i]);
+		}
+
+		ctx.beginPath();
+		ctx.strokeStyle = "#f00";
+		ctx.lineWidth = 2;
+		ctx.moveTo(0,200);
+		ctx.lineTo(1200,200);
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.strokeStyle = "#000";
+		ctx.arc(50,200,1,0,2*Math.PI);
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.moveTo(50,200);
+		ctx.lineTo(100,200);
+		ctx.lineTo(100,150);
+		ctx.lineTo(150,150);
+		ctx.lineTo(150,250);
+		ctx.lineTo(200,250);
+		ctx.lineTo(200,150);
+		ctx.lineTo(250,150);
+		ctx.lineTo(250,200);
+		ctx.lineTo(300,200);
+		ctx.lineTo(350,200);
+		ctx.lineTo(400,200);
+		ctx.lineTo(400,150);
+		ctx.lineTo(450,150);
+		ctx.lineTo(450,200);
+		ctx.lineTo(500,200);
+		ctx.lineTo(550,200);
+		ctx.lineTo(550,250);
+		ctx.lineTo(600,250);
+		ctx.lineTo(600,200);
+		ctx.lineTo(650,200);
+		ctx.lineTo(650,150);
+		ctx.lineTo(700,150);
+		ctx.lineTo(700,250);
+		ctx.lineTo(750,250);
+		ctx.lineTo(750,200);
+		ctx.lineTo(800,200);
+		ctx.lineTo(850,200);
+		ctx.lineTo(850,250);
+		ctx.lineTo(900,250);
+		ctx.lineTo(950,250);
+		ctx.lineTo(950,200);
+		ctx.lineTo(1200,200);
+
+		ctx.stroke();
+
+	</script>
+</body>
+</html>
