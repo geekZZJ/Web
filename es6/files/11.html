@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>箭头函数</title>
+</head>
+<body>
+    <button id="btn1">测试箭头函数this1</button>
+    <button id="btn2">测试箭头函数this2</button>
+<script>
+
+    //没有形参的时候
+    let fun =()=>console.log('我是箭头函数');
+    fun();
+
+    //只有一个形参的时候
+    let fun2 = a =>console.log(a);
+    fun2('aaa');
+
+    //两个及两个以上的形参
+    let fun3 = (x,y) =>console.log(x,y);
+    fun3(25,36);
+
+    //函数体的情况
+    //函数体只有一条语句或者是表达式的时候{}可以省略
+    let fun4 = (x,y) =>x+y;
+    console.log(fun4(24,36));
+
+    //函数体不止一条语句的时候
+    let fun5 =(x,y) =>{
+        console.log(x,y);
+        return x+y;
+    }
+    console.log(fun5(35,49));
+
+
+
+    //测试箭头函数this
+    let btn1 = document.getElementById('btn1');
+    let btn2 = document.getElementById('btn2');
+    btn1.onclick = function () {
+        alert(this);
+    };
+    btn2.onclick = ()=>{
+        alert(this);
+    }
+</script>
+</body>
+</html>

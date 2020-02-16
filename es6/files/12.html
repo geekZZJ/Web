@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点点点运算符</title>
+</head>
+<body>
+<script>
+    function foo(...value) {
+        console.log(arguments);
+        console.log(value);
+        // arguments.callee();
+        // arguments.forEach(function (item,index) {
+        //     console.log(item,index);
+        // })
+        value.forEach(function (item,index) {
+            console.log(item,index);
+        })
+    }
+    foo(2,65,33,44);
+
+
+    let  arr = [1,6];
+    let arr1 = [2,3,4,5];
+    arr = [1,...arr1,6];
+    console.log(arr);
+    console.log(...arr);
+</script>
+</body>
+</html>
