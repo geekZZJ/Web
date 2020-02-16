@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue基础事件</title>
+</head>
+<body>
+	<div id="box">
+		<input type="button" name="" value="按钮" v-on:click="a=false">
+		<div style="width: 100px;height: 100px;background-color: red;" v-show="a"></div>
+	</div>
+<script type="text/javascript" src="vue.js"></script>
+<script type="text/javascript">
+	window.onload = function(){
+		var c = new Vue({
+			//放的是选择器
+			el:'#box',
+			data:{
+				a:true
+			}
+		});
+	}
+</script>
+</body>
+</html>

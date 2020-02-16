@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自定义指令</title>
+	<style type="text/css" media="screen">
+		[v-cloak]{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="box" v-cloak>
+		<span v-red>456121313</span>
+	</div>
+	<script type="text/javascript" src="vue.js"></script>
+	<script type="text/javascript">
+		Vue.directive('red',function(){
+			this.el.style.background = 'red';
+		});
+		window.onload = function(){
+			var vm = new Vue({
+				el:'#box',
+				data:{
+					msg:'a'
+				}
+			});
+		}
+	</script>
+</body>
+</html>

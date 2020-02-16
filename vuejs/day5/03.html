@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03</title>
+</head>
+<body>
+	<div id="box">
+		<input type="button" name="" value="添加" @click="add">
+		<ul>
+			<li v-for="val in list">{{val}}</li>
+		</ul>
+	</div>
+	<script type="text/javascript" src="vue.js"></script>
+	<script type="text/javascript">
+		window.onload = function(){
+			new Vue({
+				el:'#box',
+				data:{
+					list:['width','height','boeder']
+				},
+				methods:{
+					add(){
+						this.list.push('background');
+					}
+				}
+			})
+		}
+	</script>
+</body>
+</html>

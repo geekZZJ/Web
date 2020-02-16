@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue生命周期</title>
+</head>
+<body>
+<div id="app">
+    <button @click="destroyVM">destroy vm</button>
+    <p v-show="isShow">慕课网</p>
+</div>
+<script src="vue.js"></script>
+<script>
+    let app = new Vue({
+        el: '#app',
+        data: {
+            isShow: false
+        },
+
+        //初始化
+        beforeCreate(){
+          console.log('beforeCreate')
+        },
+        created(){
+            console.log('created')
+        },
+        beforeMount(){
+            console.log('beforeMount')
+        },
+        mounted(){
+            //初始化显示之后立即调用
+            this.intervalId = setInterval( () => {
+                console.log('---------')
+                this.isShow = !this.isShow
+            },1000)
+        },
+        //更新阶段
+        beforeUpdate(){
+            console.log('beforeUpdate')
+        },
+        updated(){
+            console.log('updated')
+        },
+        //死亡阶段
+
+        beforeDestroy(){
+          //清除定时器
+          clearInterval(this.intervalId)   //否则引起内存泄漏
+        },
+        destroyed(){
+          console.log('destroyed')
+        },
+
+
+
+        methods:{
+            destroyVM() {
+                //干掉VM
+                this.$destroy()
+            }
+        }
+    })
+</script>
+</body>
+</html>

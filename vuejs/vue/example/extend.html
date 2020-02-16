@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>extend扩展实例</title>
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+<h1>extend扩展实例</h1>
+<hr>
+<author></author>
+<script type="text/javascript">
+    let authorExtend = Vue.extend({
+        template:"<p><a :href='authorUrl'>{{authorName}}</a></p>",
+        data:function () {
+            return{
+                authorName:'年少轻狂',
+                authorUrl:"https://baidu.com"
+            }
+        }
+    })
+
+    new authorExtend().$mount("author")
+</script>
+</body>
+</html>

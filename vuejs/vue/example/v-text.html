@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-text实例</title>
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+<h1>v-text&v-html实例</h1>
+<hr>
+<div id="app">
+    <span>{{msg}}</span>=<span v-text="msg"></span>
+    <br>
+    <span v-html="dodo"></span>
+    <!--这种方式可能会引起xss攻击-->
+</div>
+<script type="text/javascript">
+    var app = new Vue({
+        el:'#app',
+        data:{
+            msg:'hello world!',
+            dodo:'<h1>hello world</h1>'
+        }
+    })
+</script>
+</body>
+</html>
