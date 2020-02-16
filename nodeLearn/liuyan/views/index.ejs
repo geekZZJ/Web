@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>聚餐建议</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        h1{
+            text-align: center;
+        }
+        .content{
+            width: 80%;
+            margin: 0 auto;
+        }
+        #chenggong,#shibai{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<h1>聚餐建议</h1>
+<div class="content">
+    <form>
+      <div class="form-group">
+        <label for="exampleInputEmail1">学号</label>
+        <input type="text" class="form-control" id="name" placeholder="学号">
+        <p class="help-block">学号填写错误建议无效</p>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">聚餐建议</label>
+        <textarea class="form-control" rows="3" id="leaveMess" placeholder="请输入你的建议..."></textarea>
+      </div>
+      <button type="button" class="btn btn-success" id="tijiao">提交</button>
+      <div class="alert alert-success" role="alert" id="chenggong">表单应成功提交</div>
+      <div class="alert alert-danger" role="alert" id="shibai">表单提交失败</div>
+    </form>
+    <br>
+<!--     <nav aria-label="Page navigation">
+      <ul class="pagination">
+        <li class="disabled">
+          <a href="javascript:void(0);" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li class="pagenum" data-page="1" class="active"><a href="javascript:void(0);">1</a></li>
+        <li class="pagenum" data-page="2"><a href="javascript:void(0);">2</a></li>
+        <li class="pagenum" data-page="3"><a href="javascript:void(0);">3</a></li>
+        <li class="pagenum" data-page="4"><a href="javascript:void(0);">4</a></li>
+        <li class="pagenum" data-page="5"><a href="javascript:void(0);">5</a></li>
+        <li>
+          <a href="javascript:void(0);" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+ -->    <br>
+    <div id="allliuyan"></div>
+</div>
+
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<script src="js/jquery-1.11.2.min.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/underscore.js"></script>
+
+<script type="text/template" id="moban">
+    <div class="list-group">
+      <a href="javascript:void(0);" class="list-group-item active">
+        <h4 class="list-group-item-heading">{{=xingming}}</h4>
+        <p class="list-group-item-text">{{=liuyan}}</p>
+        <p class="list-group-item-text">{{=shijian}}</p>
+      </a>
+    </div>
+</script>
+<script type="text/javascript">
+    $("#tijiao").click(function(){
+        if ($("#name").val() == "") {
+            $("#leaveMess").val("");
+            alert("请输入你的学号！");
+            throw SyntaxError();
+        }else if ($("#leaveMess").val() == "") {
+            $("#name").val("");
+            alert("请输入你的建议！");
+            throw SyntaxError();
+        }
+    })
+
+    // 给所有的页码按钮添加监听
+    $(".pagenum").click(function(){
+        // 重新发起请求
+        var page = parseInt($(this).attr("data-page"));
+        getData(page);
+    })
+
+    getData(1);
+    //ajax请求数据
+    function getData(page){
+        $.get("/du?page=" + (page-1),function(result){
+            console.log(result);
+            // var json = JSON.parse(result);
+            $("#allliuyan").html("");
+            for(var i = 0;i<result.result.length;i++){
+                var compiled = _.template($("#moban").html());
+                var html = compiled({liuyan: result.result[i].content,xingming : result.result[i].id,shijian:result.result[i].time});
+                $("#allliuyan").append($(html));
+            }
+        })
+    }
+    //ajax提交表单
+    $("#tijiao").click(function(){
+        $.post("/tijiao",{
+            "xingming":$("#name").val(),
+            "liuyan":$("#leaveMess").val()
+        },function(result){
+            if (result.result == -1) {
+                $("#shibai").fadeIn();
+            }else if (result.result == 1) {
+                //提交成功
+                $("#chenggong").fadeIn();
+                //数据库真的存储了，但是当前页面无法显示。
+                //这是因为需要刷新才能用ajax从/du中得到新的。所以我们先用一个假盒子凑出来
+                var compiled = _.template($("#moban").html());
+                var html = compiled({liuyan: $("#leaveMess").val(),xingming : $("#name").val(),shijian: new Date()});
+                $(html).insertBefore($("#allliuyan"));
+                $("#name").val("");
+                $("#leaveMess").val("");
+            }
+        });
+    })
+    $("#name").focus(function(){
+        $("#chenggong").hide();
+        $("shibai").hide();
+    })
+    
+</script>
+</body>
+</html>

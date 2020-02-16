@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <link rel="shortcut icon" href="/images/bitbug_favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/loading.css">
+    <link rel="stylesheet" type="text/css" href="/css/pcenter.css">
+	<title>个人中心</title>
+</head>
+<body>
+  <!-- 等待窗口 -->
+  <div class="loading">
+    <div class="pic">
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+    </div>
+  </div>
+
+  <header>
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/">俊贴吧</a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="/">主页<span class="sr-only">(current)</span></a></li>
+              <%
+                if(login){
+              %>
+              <li><a href="#">我的帖子</a></li>
+              <%
+                }else{
+              %>
+              <li></li>
+              <%
+                }
+              %>
+            </ul>
+            <%
+              if(!login){
+            %>
+            <ul class="nav navbar-nav navbar-right login">
+              <li><a href="/regist">注册</a><span>/</span><a href="javascript:void(0)" id="login">登录</a></li>
+            </ul>
+            <%
+              }else{
+            %>
+            <ul class="nav navbar-nav navbar-right login">
+              <li><a href="javascript:void(0)" title="">欢迎您！<%=username%></a></li>
+            </ul>
+            <%
+              }
+            %>
+            <form class="navbar-form navbar-right">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="请输入搜索内容">
+              </div>
+              <button type="submit" class="btn btn-default">搜索</button>
+            </form>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+  </header>
+
+  <div class="container1">
+    <div class="col-md-4">
+      <ul class="list-group">
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-xs-6 col-md-4">
+              <a href="javascript:void(0)" class="thumbnail">
+                <img src="/<%=headPic%>" alt="请上传个人头像">
+              </a>
+            </div>  
+            <div class="col-md-4"></div>
+          </div>
+        </li>
+        <li class="list-group-item">账号：&nbsp;&nbsp;<span><%=id1%></span></li>
+        <li class="list-group-item">用户名：&nbsp;&nbsp;<span><%=username%></span></li>
+        <li class="list-group-item">性别：&nbsp;&nbsp;<span><%=sex%></span></li>
+        <li class="list-group-item">电子邮箱：&nbsp;&nbsp;<span><%=email%></span></li>
+        <li class="list-group-item">
+          <form action="/setHeadPic" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="headPic">修改头像 </label>
+              <input type="file" id="headPic" name="headPic">
+              <p class="help-block">请选择你的头像图片</p>
+            </div>
+            <button type="submit" class="btn btn-default">上传</button>
+          </form>   
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-8">
+      <form class="bordered">
+        <div class="panel panel-default">
+          <div class="panel-heading">发帖</div>
+        </div>
+        <div class="form-group">
+          <label for="title">标题</label>
+          <input type="text" class="form-control" id="title" placeholder="请输入帖子标题">
+        </div>
+        <div class="form-group">
+          <label for="abstract">摘要</label>
+          <input type="text" class="form-control" id="abstract" placeholder="请输入帖子摘要">
+        </div>
+        <div class="form-group">
+          <label for="content">内容</label>
+          <textarea class="form-control" rows="4" id="content" placeholder="请输入帖子内容..."></textarea>
+        </div>
+        <button type="button" class="btn btn-default" id="published">发表</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="navbar-fixed-bottom">
+    <p>微力实验室</p>
+    <p>作者：张中俊</p>
+  </footer>
+
+  <script src="/js/jquery-1.11.2.min.js"></script>
+  <script src="/js/bootstrap.js"></script>
+  <script type="text/javascript">
+    document.onreadystatechange=function(){
+      if (document.readyState=='complete') {
+        $('.loading').fadeOut();
+      }
+    }
+
+    $("#published").click(function(){
+      //判断帖子内容
+      if ($.trim($("#title").val())=="") {
+        $("#title").focus();
+        alert("请输入帖子标题！");
+        throw SyntaxError();
+      }else if ($.trim($("#abstract").val())=="") {
+        $("#abstract").focus();
+        alert("请输入帖子摘要！");
+        throw SyntaxError();
+      }else if ($.trim($("#content").val())=="") {
+        $("#content").focus();
+        alert("请输入帖子内容！");
+        throw SyntaxError();
+      }else if ($("#title").val().length>20) {
+        $("#title").focus();
+        alert("帖子标题请少于20字！");
+        throw SyntaxError();
+      }else if ($("#abstract").val().length>20) {
+        $("#abstract").focus();
+        alert("帖子摘要请少于20字！");
+        throw SyntaxError();
+      }else if ($("#content").val().length>250) {
+        $("#content").focus();
+        alert("帖子标题请少于250字！");
+        throw SyntaxError();
+      }
+
+
+      $.post("/published",{
+        "title":$.trim($("#title").val()),
+        "abstract":$("#abstract").val(),
+        "content":$("#content").val()
+      },function(result){
+        if (result == 1) {
+          alert("发表成功！");
+          window.location = "/";
+        }else if (result == 2) {
+          alert("发表失败！");
+        }else if (result == -1) {}
+      })
+    })
+  </script>
+</body>
+</html>

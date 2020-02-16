@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>注册</title>
+</head>
+<body>
+	<div>
+		<p>登陆名：<input type="text" id="username"></p>
+		<p>密码：<input type="password" id="password"></p>
+		<p><input type="submit" value="注册" id="regist"></p>
+	</div>
+	<script type="text/javascript" src="/js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript">
+		//用ajax提交表单
+		$("#regist").click(function(){
+			$.get("/doregist",{
+				"dengluming":$("#username").val(),
+				"mima":$("#password").val()
+			},function(result){
+				if (result == 1) {
+					alert("注册成功");
+				}else{
+					alert("注册失败")
+				}
+			})
+		})
+	</script>
+</body>
+</html>

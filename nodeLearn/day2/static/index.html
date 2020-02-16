@@ -1,0 +1,59 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+<meta charset="utf-8"> 
+<title>test</title>
+    <script src="../../12.js"></script>
+</head>  
+<body>  
+<form action="http://127.0.0.1:3000/dopost" method="post" enctype="multipart/form-data">
+    <ul>  
+        <li>  
+            <label>姓名：</label>  
+            <input type="text" name="name" id="name" />  
+        </li>  
+        <li>  
+            <label>性别：</label>  
+            <input type="text" name="sex" id="sex" />  
+        </li>  
+        <li>  
+            <label>年龄：</label>  
+            <input type="text" name="age" id="age" />  
+        </li>
+        <li>
+            <label for="">爱好：</label>
+            <input type="checkbox" name="hobby" value="睡觉">睡觉
+            <input type="checkbox" name="hobby" value="足球">足球
+            <input type="checkbox" name="hobby" value="吃饭">吃饭
+        </li>
+        <li>  
+            <label>手机：</label>  
+            <input type="text" name="tel" id="tel" />  
+        </li>
+        <li>
+            <input type="file">
+        </li>
+        <li>  
+            <input type="submit" value="提交" id="ok_btn" />
+        </li>  
+    </ul>  
+</form>  
+<script>  
+$('#ok_btn').on('click',function(){  
+    var name = $.trim($('#name').val()),  
+        sex = $.trim($('#sex').val()),  
+        age = $.trim($('#age').val()),  
+        tel = $.trim($('#tel').val()),  
+        data = {name : name,sex : sex,age : age,tel : tel};  
+    $.ajax({  
+        type : 'POST',  
+        url : 'http://localhost:1337/hhh/jjj',  
+        data : data,  
+        success : function(data){  
+            console.log(data);  
+        }  
+    })  
+})  
+</script>  
+</body>  
+</html>
