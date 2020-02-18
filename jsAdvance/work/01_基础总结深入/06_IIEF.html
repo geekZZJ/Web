@@ -9,10 +9,30 @@
 1. 理解
   * 全称: Immediately-Invoked Function Expression
 2. 作用
+  *隐藏实现
+  *不会污染外部命名空间
 -->
 <script type="text/javascript">
+  (function () { //匿名函数
+      let a = 3
+      console.log(a + 3)
+  })()
+  let a = 4
+  console.log(a)
 
+  (function () {
+      let a = 1
+      function test () {
+          console.log(++a)
+      }
+      window.$ = function () {
+          return {
+              test: test
+          }
+      }
+  })()
+
+  $().test()
 </script>
-
 </body>
 </html>
