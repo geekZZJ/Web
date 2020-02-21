@@ -10,8 +10,8 @@
 		function foo(data){
 			console.log(this,data);
 		}
-		//foo.call(obj,33);//从第二个参数开始，依次传参
-		//foo.apply(obj,[33]);//第二个参数必须是数组，传入放在数组里
+		foo.call(obj,33);//从第二个参数开始，依次传参
+		foo.apply(obj,[33]);//第二个参数必须是数组，传入放在数组里
 
 		foo.bind(obj,33)();
 		//console.log(bar);

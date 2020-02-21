@@ -13,15 +13,37 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="11.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/environment/app/js/class/11.js">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="01.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/files/01.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1599" />
+            <state relative-caret-position="336">
+              <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+            </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>bin</find>
+      <find>bind</find>
+      <find>set</find>
+    </findStrings>
+    <dirStrings>
+      <dir>D:\HTML\es6\files</dir>
+    </dirStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/environment/app/js/class/course/lesson9.js" />
+        <option value="$PROJECT_DIR$/files/05.html" />
+        <option value="$PROJECT_DIR$/environment/app/js/class/14.js" />
+        <option value="$PROJECT_DIR$/files/01.html" />
+      </list>
+    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -35,469 +57,6 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
       <path value="$PROJECT_DIR$/environment/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_accepts@1.2.13@accepts/node_modules/mime-types/node_modules/mime-db/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_accepts@1.2.13@accepts/node_modules/mime-types/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_accepts@1.2.13@accepts/node_modules/negotiator/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_accepts@1.2.13@accepts/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_array-flatten@1.1.1@array-flatten/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_basic-auth@1.0.4@basic-auth/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_body-parser@1.13.3@body-parser/node_modules/bytes/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_body-parser@1.13.3@body-parser/node_modules/content-type/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_body-parser@1.13.3@body-parser/node_modules/debug/node_modules/ms/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_body-parser@1.13.3@body-parser/node_modules/debug/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_body-parser@1.13.3@body-parser/node_modules/depd/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_body-parser@1.13.3@body-parser/node_modules/http-errors/node_modules/inherits/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_body-parser@1.13.3@body-parser/node_modules/http-errors/node_modules/statuses/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_body-parser@1.13.3@body-parser/node_modules/http-errors/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_body-parser@1.13.3@body-parser/node_modules/iconv-lite/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_body-parser@1.13.3@body-parser/node_modules/on-finished/node_modules/ee-first/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_body-parser@1.13.3@body-parser/node_modules/on-finished/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_body-parser@1.13.3@body-parser/node_modules/qs/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_body-parser@1.13.3@body-parser/node_modules/raw-body/node_modules/bytes/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_body-parser@1.13.3@body-parser/node_modules/raw-body/node_modules/iconv-lite/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_body-parser@1.13.3@body-parser/node_modules/raw-body/node_modules/unpipe/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_body-parser@1.13.3@body-parser/node_modules/raw-body/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_body-parser@1.13.3@body-parser/node_modules/type-is/node_modules/media-typer/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_body-parser@1.13.3@body-parser/node_modules/type-is/node_modules/mime-types/node_modules/mime-db/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_body-parser@1.13.3@body-parser/node_modules/type-is/node_modules/mime-types/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_body-parser@1.13.3@body-parser/node_modules/type-is/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_body-parser@1.13.3@body-parser/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_bytes@2.1.0@bytes/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_bytes@2.4.0@bytes/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_commander@4.0.1@commander/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_content-disposition@0.5.1@content-disposition/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_content-type@1.0.4@content-type/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_cookie-parser@1.3.5@cookie-parser/node_modules/cookie-signature/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_cookie-parser@1.3.5@cookie-parser/node_modules/cookie/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_cookie-parser@1.3.5@cookie-parser/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_cookie-signature@1.0.6@cookie-signature/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_cookie@0.1.3@cookie/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_cookie@0.1.5@cookie/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_debug@2.2.0@debug/node_modules/ms/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_debug@2.2.0@debug/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_depd@1.0.1@depd/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_depd@1.1.2@depd/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_destroy@1.0.4@destroy/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_ee-first@1.1.1@ee-first/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_ejs@2.3.4@ejs/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_escape-html@1.0.3@escape-html/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_etag@1.7.0@etag/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/accepts/node_modules/mime-types/node_modules/mime-db/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/accepts/node_modules/mime-types/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/accepts/node_modules/negotiator/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/accepts/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/array-flatten/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/content-disposition/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/content-type/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/cookie-signature/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/cookie/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/debug/node_modules/ms/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/debug/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/depd/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/escape-html/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/etag/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/finalhandler/node_modules/debug/node_modules/ms/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/finalhandler/node_modules/debug/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/finalhandler/node_modules/escape-html/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/finalhandler/node_modules/on-finished/node_modules/ee-first/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/finalhandler/node_modules/on-finished/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/finalhandler/node_modules/unpipe/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/finalhandler/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/fresh/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/merge-descriptors/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/methods/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/on-finished/node_modules/ee-first/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/on-finished/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/parseurl/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/path-to-regexp/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/proxy-addr/node_modules/forwarded/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/proxy-addr/node_modules/ipaddr.js/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/proxy-addr/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/qs/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/range-parser/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/send/node_modules/debug/node_modules/ms/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/send/node_modules/debug/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/send/node_modules/depd/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/send/node_modules/destroy/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/send/node_modules/escape-html/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/send/node_modules/etag/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/send/node_modules/fresh/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/send/node_modules/http-errors/node_modules/inherits/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/send/node_modules/http-errors/node_modules/statuses/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/send/node_modules/http-errors/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/send/node_modules/mime/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/send/node_modules/ms/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/send/node_modules/on-finished/node_modules/ee-first/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/send/node_modules/on-finished/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/send/node_modules/range-parser/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/send/node_modules/statuses/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/send/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/serve-static/node_modules/escape-html/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/serve-static/node_modules/parseurl/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/serve-static/node_modules/send/node_modules/debug/node_modules/ms/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/serve-static/node_modules/send/node_modules/debug/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/serve-static/node_modules/send/node_modules/depd/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/serve-static/node_modules/send/node_modules/destroy/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/serve-static/node_modules/send/node_modules/escape-html/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/serve-static/node_modules/send/node_modules/etag/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/serve-static/node_modules/send/node_modules/fresh/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/serve-static/node_modules/send/node_modules/http-errors/node_modules/inherits/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/serve-static/node_modules/send/node_modules/http-errors/node_modules/statuses/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/serve-static/node_modules/send/node_modules/http-errors/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/serve-static/node_modules/send/node_modules/mime/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/serve-static/node_modules/send/node_modules/ms/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/serve-static/node_modules/send/node_modules/on-finished/node_modules/ee-first/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/serve-static/node_modules/send/node_modules/on-finished/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/serve-static/node_modules/send/node_modules/range-parser/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/serve-static/node_modules/send/node_modules/statuses/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/serve-static/node_modules/send/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/serve-static/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/type-is/node_modules/media-typer/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/type-is/node_modules/mime-types/node_modules/mime-db/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/type-is/node_modules/mime-types/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/type-is/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/utils-merge/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/node_modules/vary/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_express@4.13.4@express/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_finalhandler@0.4.1@finalhandler/node_modules/debug/node_modules/ms/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_finalhandler@0.4.1@finalhandler/node_modules/debug/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_finalhandler@0.4.1@finalhandler/node_modules/escape-html/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_finalhandler@0.4.1@finalhandler/node_modules/on-finished/node_modules/ee-first/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_finalhandler@0.4.1@finalhandler/node_modules/on-finished/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_finalhandler@0.4.1@finalhandler/node_modules/unpipe/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_finalhandler@0.4.1@finalhandler/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_forwarded@0.1.2@forwarded/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_fresh@0.3.0@fresh/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_http-errors@1.3.1@http-errors/node_modules/inherits/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_http-errors@1.3.1@http-errors/node_modules/statuses/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_http-errors@1.3.1@http-errors/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_iconv-lite@0.4.11@iconv-lite/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_iconv-lite@0.4.13@iconv-lite/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_inherits@2.0.4@inherits/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_ipaddr.js@1.0.5@ipaddr.js/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_media-typer@0.3.0@media-typer/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_merge-descriptors@1.0.1@merge-descriptors/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_methods@1.1.2@methods/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_mime-db@1.42.0@mime-db/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_mime-types@2.1.25@mime-types/node_modules/mime-db/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_mime-types@2.1.25@mime-types/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_mime@1.3.4@mime/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_mockjs@1.1.0@mockjs/node_modules/commander/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_mockjs@1.1.0@mockjs/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_mockjs@1.1.0@mockjs/test/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_morgan@1.6.1@morgan/node_modules/basic-auth/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_morgan@1.6.1@morgan/node_modules/debug/node_modules/ms/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_morgan@1.6.1@morgan/node_modules/debug/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_morgan@1.6.1@morgan/node_modules/depd/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_morgan@1.6.1@morgan/node_modules/on-finished/node_modules/ee-first/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_morgan@1.6.1@morgan/node_modules/on-finished/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_morgan@1.6.1@morgan/node_modules/on-headers/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_morgan@1.6.1@morgan/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_ms@0.7.1@ms/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_ms@0.7.2@ms/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_negotiator@0.5.3@negotiator/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_on-finished@2.3.0@on-finished/node_modules/ee-first/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_on-finished@2.3.0@on-finished/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_on-headers@1.0.2@on-headers/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_parseurl@1.3.3@parseurl/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_path-to-regexp@0.1.7@path-to-regexp/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_proxy-addr@1.0.10@proxy-addr/node_modules/forwarded/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_proxy-addr@1.0.10@proxy-addr/node_modules/ipaddr.js/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_proxy-addr@1.0.10@proxy-addr/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_qs@4.0.0@qs/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_range-parser@1.0.3@range-parser/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_raw-body@2.1.7@raw-body/node_modules/bytes/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_raw-body@2.1.7@raw-body/node_modules/iconv-lite/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_raw-body@2.1.7@raw-body/node_modules/unpipe/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_raw-body@2.1.7@raw-body/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_send@0.13.1@send/node_modules/debug/node_modules/ms/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_send@0.13.1@send/node_modules/debug/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_send@0.13.1@send/node_modules/depd/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_send@0.13.1@send/node_modules/destroy/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_send@0.13.1@send/node_modules/escape-html/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_send@0.13.1@send/node_modules/etag/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_send@0.13.1@send/node_modules/fresh/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_send@0.13.1@send/node_modules/http-errors/node_modules/inherits/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_send@0.13.1@send/node_modules/http-errors/node_modules/statuses/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_send@0.13.1@send/node_modules/http-errors/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_send@0.13.1@send/node_modules/mime/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_send@0.13.1@send/node_modules/ms/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_send@0.13.1@send/node_modules/on-finished/node_modules/ee-first/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_send@0.13.1@send/node_modules/on-finished/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_send@0.13.1@send/node_modules/range-parser/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_send@0.13.1@send/node_modules/statuses/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_send@0.13.1@send/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_send@0.13.2@send/node_modules/debug/node_modules/ms/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_send@0.13.2@send/node_modules/debug/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_send@0.13.2@send/node_modules/depd/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_send@0.13.2@send/node_modules/destroy/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_send@0.13.2@send/node_modules/escape-html/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_send@0.13.2@send/node_modules/etag/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_send@0.13.2@send/node_modules/fresh/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_send@0.13.2@send/node_modules/http-errors/node_modules/inherits/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_send@0.13.2@send/node_modules/http-errors/node_modules/statuses/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_send@0.13.2@send/node_modules/http-errors/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_send@0.13.2@send/node_modules/mime/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_send@0.13.2@send/node_modules/ms/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_send@0.13.2@send/node_modules/on-finished/node_modules/ee-first/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_send@0.13.2@send/node_modules/on-finished/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_send@0.13.2@send/node_modules/range-parser/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_send@0.13.2@send/node_modules/statuses/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_send@0.13.2@send/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_serve-favicon@2.3.2@serve-favicon/node_modules/etag/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_serve-favicon@2.3.2@serve-favicon/node_modules/fresh/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_serve-favicon@2.3.2@serve-favicon/node_modules/ms/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_serve-favicon@2.3.2@serve-favicon/node_modules/parseurl/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_serve-favicon@2.3.2@serve-favicon/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_serve-static@1.10.3@serve-static/node_modules/escape-html/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_serve-static@1.10.3@serve-static/node_modules/parseurl/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_serve-static@1.10.3@serve-static/node_modules/send/node_modules/debug/node_modules/ms/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_serve-static@1.10.3@serve-static/node_modules/send/node_modules/debug/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_serve-static@1.10.3@serve-static/node_modules/send/node_modules/depd/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_serve-static@1.10.3@serve-static/node_modules/send/node_modules/destroy/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_serve-static@1.10.3@serve-static/node_modules/send/node_modules/escape-html/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_serve-static@1.10.3@serve-static/node_modules/send/node_modules/etag/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_serve-static@1.10.3@serve-static/node_modules/send/node_modules/fresh/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_serve-static@1.10.3@serve-static/node_modules/send/node_modules/http-errors/node_modules/inherits/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_serve-static@1.10.3@serve-static/node_modules/send/node_modules/http-errors/node_modules/statuses/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_serve-static@1.10.3@serve-static/node_modules/send/node_modules/http-errors/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_serve-static@1.10.3@serve-static/node_modules/send/node_modules/mime/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_serve-static@1.10.3@serve-static/node_modules/send/node_modules/ms/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_serve-static@1.10.3@serve-static/node_modules/send/node_modules/on-finished/node_modules/ee-first/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_serve-static@1.10.3@serve-static/node_modules/send/node_modules/on-finished/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_serve-static@1.10.3@serve-static/node_modules/send/node_modules/range-parser/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_serve-static@1.10.3@serve-static/node_modules/send/node_modules/statuses/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_serve-static@1.10.3@serve-static/node_modules/send/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_serve-static@1.10.3@serve-static/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_statuses@1.2.1@statuses/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_statuses@1.5.0@statuses/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_type-is@1.6.18@type-is/node_modules/media-typer/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_type-is@1.6.18@type-is/node_modules/mime-types/node_modules/mime-db/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_type-is@1.6.18@type-is/node_modules/mime-types/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_type-is@1.6.18@type-is/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_unpipe@1.0.0@unpipe/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_utils-merge@1.0.0@utils-merge/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/_vary@1.0.1@vary/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/accepts/node_modules/mime-types/node_modules/mime-db/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/accepts/node_modules/mime-types/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/accepts/node_modules/negotiator/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/accepts/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/array-flatten/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/basic-auth/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/body-parser/node_modules/bytes/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/body-parser/node_modules/content-type/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/body-parser/node_modules/debug/node_modules/ms/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/body-parser/node_modules/debug/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/body-parser/node_modules/depd/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/body-parser/node_modules/http-errors/node_modules/inherits/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/body-parser/node_modules/http-errors/node_modules/statuses/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/body-parser/node_modules/http-errors/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/body-parser/node_modules/iconv-lite/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/body-parser/node_modules/on-finished/node_modules/ee-first/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/body-parser/node_modules/on-finished/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/body-parser/node_modules/qs/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/body-parser/node_modules/raw-body/node_modules/bytes/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/body-parser/node_modules/raw-body/node_modules/iconv-lite/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/body-parser/node_modules/raw-body/node_modules/unpipe/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/body-parser/node_modules/raw-body/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/body-parser/node_modules/type-is/node_modules/media-typer/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/body-parser/node_modules/type-is/node_modules/mime-types/node_modules/mime-db/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/body-parser/node_modules/type-is/node_modules/mime-types/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/body-parser/node_modules/type-is/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/body-parser/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/bytes/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/commander/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/content-disposition/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/content-type/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/cookie-parser/node_modules/cookie-signature/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/cookie-parser/node_modules/cookie/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/cookie-parser/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/cookie-signature/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/cookie/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/debug/node_modules/ms/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/debug/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/depd/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/destroy/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/ee-first/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/ejs/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/escape-html/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/etag/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/accepts/node_modules/mime-types/node_modules/mime-db/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/accepts/node_modules/mime-types/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/accepts/node_modules/negotiator/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/accepts/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/array-flatten/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/content-disposition/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/content-type/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/cookie-signature/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/cookie/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/debug/node_modules/ms/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/debug/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/depd/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/escape-html/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/etag/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/finalhandler/node_modules/debug/node_modules/ms/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/finalhandler/node_modules/debug/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/finalhandler/node_modules/escape-html/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/finalhandler/node_modules/on-finished/node_modules/ee-first/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/finalhandler/node_modules/on-finished/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/finalhandler/node_modules/unpipe/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/finalhandler/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/fresh/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/merge-descriptors/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/methods/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/on-finished/node_modules/ee-first/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/on-finished/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/parseurl/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/path-to-regexp/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/proxy-addr/node_modules/forwarded/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/proxy-addr/node_modules/ipaddr.js/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/proxy-addr/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/qs/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/range-parser/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/send/node_modules/debug/node_modules/ms/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/send/node_modules/debug/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/send/node_modules/depd/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/send/node_modules/destroy/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/send/node_modules/escape-html/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/send/node_modules/etag/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/send/node_modules/fresh/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/send/node_modules/http-errors/node_modules/inherits/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/send/node_modules/http-errors/node_modules/statuses/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/send/node_modules/http-errors/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/send/node_modules/mime/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/send/node_modules/ms/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/send/node_modules/on-finished/node_modules/ee-first/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/send/node_modules/on-finished/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/send/node_modules/range-parser/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/send/node_modules/statuses/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/send/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/serve-static/node_modules/escape-html/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/serve-static/node_modules/parseurl/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/debug/node_modules/ms/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/debug/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/depd/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/destroy/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/escape-html/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/etag/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/fresh/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/http-errors/node_modules/inherits/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/http-errors/node_modules/statuses/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/http-errors/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/mime/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/ms/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/on-finished/node_modules/ee-first/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/on-finished/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/range-parser/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/statuses/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/serve-static/node_modules/send/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/serve-static/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/type-is/node_modules/media-typer/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/type-is/node_modules/mime-types/node_modules/mime-db/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/type-is/node_modules/mime-types/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/type-is/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/utils-merge/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/node_modules/vary/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/express/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/finalhandler/node_modules/debug/node_modules/ms/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/finalhandler/node_modules/debug/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/finalhandler/node_modules/escape-html/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/finalhandler/node_modules/on-finished/node_modules/ee-first/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/finalhandler/node_modules/on-finished/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/finalhandler/node_modules/unpipe/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/finalhandler/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/forwarded/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/fresh/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/http-errors/node_modules/inherits/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/http-errors/node_modules/statuses/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/http-errors/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/iconv-lite/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/inherits/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/ipaddr.js/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/media-typer/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/merge-descriptors/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/methods/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/mime-db/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/mime-types/node_modules/mime-db/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/mime-types/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/mime/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/mockjs/node_modules/commander/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/mockjs/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/mockjs/test/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/morgan/node_modules/basic-auth/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/morgan/node_modules/debug/node_modules/ms/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/morgan/node_modules/debug/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/morgan/node_modules/depd/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/morgan/node_modules/on-finished/node_modules/ee-first/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/morgan/node_modules/on-finished/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/morgan/node_modules/on-headers/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/morgan/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/ms/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/negotiator/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/on-finished/node_modules/ee-first/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/on-finished/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/on-headers/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/parseurl/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/path-to-regexp/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/proxy-addr/node_modules/forwarded/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/proxy-addr/node_modules/ipaddr.js/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/proxy-addr/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/qs/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/range-parser/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/raw-body/node_modules/bytes/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/raw-body/node_modules/iconv-lite/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/raw-body/node_modules/unpipe/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/raw-body/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/send/node_modules/debug/node_modules/ms/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/send/node_modules/debug/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/send/node_modules/depd/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/send/node_modules/destroy/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/send/node_modules/escape-html/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/send/node_modules/etag/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/send/node_modules/fresh/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/send/node_modules/http-errors/node_modules/inherits/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/send/node_modules/http-errors/node_modules/statuses/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/send/node_modules/http-errors/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/send/node_modules/mime/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/send/node_modules/ms/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/send/node_modules/on-finished/node_modules/ee-first/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/send/node_modules/on-finished/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/send/node_modules/range-parser/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/send/node_modules/statuses/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/send/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/serve-favicon/node_modules/etag/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/serve-favicon/node_modules/fresh/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/serve-favicon/node_modules/ms/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/serve-favicon/node_modules/parseurl/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/serve-favicon/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/serve-static/node_modules/escape-html/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/serve-static/node_modules/parseurl/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/serve-static/node_modules/send/node_modules/debug/node_modules/ms/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/serve-static/node_modules/send/node_modules/debug/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/serve-static/node_modules/send/node_modules/depd/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/serve-static/node_modules/send/node_modules/destroy/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/serve-static/node_modules/send/node_modules/escape-html/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/serve-static/node_modules/send/node_modules/etag/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/serve-static/node_modules/send/node_modules/fresh/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/serve-static/node_modules/send/node_modules/http-errors/node_modules/inherits/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/serve-static/node_modules/send/node_modules/http-errors/node_modules/statuses/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/serve-static/node_modules/send/node_modules/http-errors/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/serve-static/node_modules/send/node_modules/mime/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/serve-static/node_modules/send/node_modules/ms/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/serve-static/node_modules/send/node_modules/on-finished/node_modules/ee-first/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/serve-static/node_modules/send/node_modules/on-finished/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/serve-static/node_modules/send/node_modules/range-parser/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/serve-static/node_modules/send/node_modules/statuses/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/serve-static/node_modules/send/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/serve-static/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/statuses/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/type-is/node_modules/media-typer/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/type-is/node_modules/mime-types/node_modules/mime-db/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/type-is/node_modules/mime-types/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/type-is/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/unpipe/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/utils-merge/package.json" />
-      <path value="$PROJECT_DIR$/environment/server/node_modules/vary/package.json" />
       <path value="$PROJECT_DIR$/environment/server/package.json" />
       <path value="$PROJECT_DIR$/es6-webpack/package.json" />
     </packageJsonPaths>
@@ -513,6 +72,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -534,27 +94,17 @@
             <path>
               <item name="es6" type="b2602c69:ProjectViewProjectNode" />
               <item name="es6" type="462c0819:PsiDirectoryNode" />
-              <item name="environment" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="es6" type="b2602c69:ProjectViewProjectNode" />
-              <item name="es6" type="462c0819:PsiDirectoryNode" />
-              <item name="environment" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="class" type="462c0819:PsiDirectoryNode" />
+              <item name="files" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/files" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -581,32 +131,46 @@
       <option name="presentableId" value="Default" />
       <updated>1581779344651</updated>
       <workItem from="1581779562843" duration="605000" />
+      <workItem from="1582124690620" duration="1349000" />
+      <workItem from="1582169614537" duration="369000" />
+      <workItem from="1582180575590" duration="4230000" />
+      <workItem from="1582268004978" duration="1114000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="605000" />
+    <option name="totallyTimeSpent" value="7667000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32954547" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.328125" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -616,19 +180,176 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/environment/app/js/class/12.js">
+    <entry file="file://$PROJECT_DIR$/files/01.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1191" />
+        <state relative-caret-position="336">
+          <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/environment/app/js/class/10.js">
+    <entry file="file://$PROJECT_DIR$/files/05.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1263" />
+        <state relative-caret-position="360">
+          <caret line="15" column="27" lean-forward="true" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/05.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="16" column="27" lean-forward="true" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environment/app/js/class/15.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-543" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environment/app/js/class/16.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1008" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environment/app/js/class/17.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-975" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environment/app/js/class/course/lesson2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1383" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environment/app/js/class/course/lesson3.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environment/app/js/class/course/lesson4.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1407" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environment/app/js/class/course/lesson5.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-432" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environment/app/js/class/course/lesson6.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environment/app/js/class/course/lesson8.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="29" column="10" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environment/app/js/class/course/lesson9.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environment/app/js/class/course/lesson10.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-29" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environment/app/js/class/course/lesson11.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environment/app/js/class/course/lesson12.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environment/app/js/class/course/lesson13.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-432" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environment/app/js/class/course/lesson14.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-543" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environment/app/js/class/course/lesson15.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-903" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environment/app/js/class/course/lesson16.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-327" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environment/app/js/class/6.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="13" column="9" lean-forward="true" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environment/app/js/class/7.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-711" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/environment/app/js/class/11.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1599" />
+        <state relative-caret-position="-183">
+          <caret line="59" column="8" lean-forward="true" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environment/app/js/class/10.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="67" column="18" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/05.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environment/app/js/class/13.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1248">
+          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environment/app/js/class/14.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="619">
+          <caret line="97" column="20" selection-start-line="97" selection-start-column="20" selection-end-line="97" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/01.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+        </state>
       </provider>
     </entry>
   </component>
