@@ -11,7 +11,33 @@
 3. 方法一般定义在原型中, 属性一般通过构造函数定义在对象本身上
 -->
 <script type="text/javascript">
+  function Fn() {
 
+  }
+  Fn.prototype.a = 'xxx'
+  let fn1 = new Fn()
+  console.log(fn1.a,fn1)
+
+  let fn2 = new Fn()
+  fn2.a = 'yyy'
+  console.log(fn1.a, fn2.a, fn2)
+
+  function Person(name,age) {
+      this.name = name
+      this.age = age
+  }
+
+  Person.prototype.setName = function (name) {
+      this.name = name
+  }
+
+  let p1 = new Person('Tom',12)
+  p1.setName('Bob')
+  console.log(p1)
+
+  let p2 = new Person('Jack',12)
+  p2.setName('Cat')
+  console.log(p2)
 </script>
 </body>
 </html>
