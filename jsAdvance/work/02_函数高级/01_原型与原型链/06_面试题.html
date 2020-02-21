@@ -24,23 +24,26 @@
 
   var c = new A()
   console.log(b.n, b.m, c.n, c.m)
-
+  //画图
 
   /*
    测试题2
    */
-  var F = function(){};
+  function F(){}
   Object.prototype.a = function(){
     console.log('a()')
-  };
+  }
   Function.prototype.b = function(){
     console.log('b()')
-  };
-  var f = new F();
+  }
+  var f = new F()
   f.a()
-  f.b()
+  // f.b()
   F.a()
   F.b()
+  console.log(f)
+  console.log(Object.prototype)
+  console.log(Function.prototype)
 
 </script>
 </body>
