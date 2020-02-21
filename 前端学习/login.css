@@ -1,0 +1,125 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+body{
+	background-image: url('images/login_bg.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-color: #121c2d;
+}
+.main .login{
+	width: 100%;
+	position: relative;
+}
+.main .login h1{
+	color: #fff;
+	font-size: 35px;
+	font-family: "微软雅黑";
+	font-weight: bold;
+	margin-top: 100px;
+	text-align: center;
+}
+.main .login .register{
+	width: 30%;
+	height: 300px;
+	background-color: #fff;
+	margin: 50px auto;
+	position: relative;
+}
+.main .login .register .top{
+	width: 100%;
+	height: 15px;
+	background-color: #2d3b8a;
+}
+.main .login .register .middle{
+	width: 100%;
+	position: relative;
+}
+.main .login .register .middle p{
+	font-size: 20px;
+	font-family: "微软雅黑";
+	font-weight: bold;
+	margin: 20px auto;
+	text-align: center;
+}
+.main .login .register .input{
+	width: 200px;
+	margin: 0 auto;
+}
+.main .login .register .input input{
+	border-radius: 3px;
+	height: 35px;
+	line-height: 35px;
+	width: 200px;
+	background-color: #dddddd;
+	border: 0px;
+}
+.main .middle .input1{
+	width: 200px;
+	position: relative;
+}
+.main .middle .username{
+	margin: 15px auto;
+}
+.main .middle .r1{
+	position: absolute;
+	top: 21px;
+	right: 2px;
+	font-size: 22px;
+	color: #7d7c7c;
+}
+.main .middle .input2{
+	width: 200px;
+	position: relative;
+}
+.main .middle .r2{
+	position: absolute;
+	right: 2px;
+	bottom: 28px;
+	font-size: 23px;
+	color: #7d7c7c;
+}
+.main .middle .psd{
+	margin-bottom: 25px;
+}
+.main .middle .sub{
+	width: 200px;
+	margin: 0 auto;
+	position: relative;
+}
+.main .middle .sub .shadow{
+	/* width: 100px; */
+}
+.main .middle .sub input{
+	width: 80px;
+	height: 35px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border: none;
+	background-color: rgba(188, 13, 14, 1.0);
+	color: #fff;
+	font-weight: bold;
+	cursor: pointer;
+}
+.main .middle .sub .jiao{
+	width: 20px;
+	height: 35px;
+	line-height: 33px;
+	display: inline-block;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	background-color: #1336ED;
+	text-align: center;
+	margin-left: -5px;
+	cursor: pointer;
+	font-weight: bolder;
+	color: #061775;
+}
+.main .login .register .bottom{
+	width: 100%;
+	height: 15px;
+	position: absolute;
+	bottom: 0px;
+	background-color: #2d3b8a;
+}
