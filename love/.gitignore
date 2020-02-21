@@ -3,6 +3,8 @@ node_modules/
 /dist/
 logs
 *.log
+*.jpg
+*.png
 
 
 #Editor directories and files
