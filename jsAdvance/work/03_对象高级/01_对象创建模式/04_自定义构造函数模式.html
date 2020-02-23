@@ -13,7 +13,28 @@
   * 问题: 每个对象都有相同的数据, 浪费内存
 -->
 <script type="text/javascript">
+  //定义类型
+  function Person(name,age) {
+      this.name = name
+      this.age = age
+      this.setName = function (name) {
+          this.name = name
+      }
+  }
 
+  var p1 = new Person('Tom',12)
+  p1.setName("Jack")
+  console.log(p1.name,p1.age)
+  console.log(p1 instanceof Person)
+
+  function Student(name,number) {
+      this.name = name
+      this.number = number
+  }
+
+  var s = new Student("张三",246)
+  console.log(s)
+  console.log(s instanceof Student)
 </script>
 </body>
 </html>
