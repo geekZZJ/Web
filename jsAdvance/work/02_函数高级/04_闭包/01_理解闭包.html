@@ -18,7 +18,13 @@
   * 内部函数引用了外部函数的数据(变量/函数)
 -->
 <script type="text/javascript">
-
+  function fn1() {
+      var a = 2
+      function fn2() { // 执行函数定义就会产生闭包(不用调用内部函数)
+          console.log(a)
+      }
+  }
+  fn1()
 </script>
 </body>
 </html>
