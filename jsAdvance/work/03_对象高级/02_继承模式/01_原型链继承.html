@@ -19,6 +19,33 @@
     1. 子类型的原型为父类型的一个实例对象
 -->
 <script type="text/javascript">
+  //父类型
+  function Supper() {
+      this.superProp = 'Supper property'
+  }
+
+  Supper.prototype.showSupperProp = function () {
+      console.log(this.superProp)
+  }
+  //子类型
+  function Sub() {
+      this.subProp = 'Sub property'
+  }
+
+  // 子类型的原型为父类型的一个实例对象
+  Sub.prototype = new Supper()
+  //让子类型的原型的constructor指向子类型
+  Sub.prototype.showSubProp = Sub
+  Sub.prototype.showSubProp = function () {
+      console.log(this.subProp)
+  }
+
+  var sub = new Sub()
+  sub.showSupperProp()
+  // sub.toString()
+  sub.showSubProp()
+
+  console.log(sub.constructor)
 
 </script>
 </body>
