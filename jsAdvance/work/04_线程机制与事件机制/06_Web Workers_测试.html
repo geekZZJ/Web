@@ -16,7 +16,21 @@
   * 不能跨域加载JS
   * 不是每个浏览器都支持这个新特性
 -->
+<input type="text" placeholder="数值" id="number">
+<button id="btn">计算</button>
 <script type="text/javascript">
+  function fibonacci(number) { //递归调用
+      //1 1 2 3 5 8
+      return number<=2 ? 1 : fibonacci(number-2) + fibonacci(number-1)
+  }
+
+  //console.log(fibonacci(6))
+  var input = document.getElementById('number')
+  document.getElementById('btn').onclick = function () {
+      var number = input.value
+      var result = fibonacci(number)
+      console.log(result)
+  }
 </script>
 </body>
 </html>
