@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>call|apply|bind</title>
+</head>
+<body>
+<script type="text/javascript">
+    var name = '小王',age=17
+    var obj = {
+        name: '小张',
+        objAge: this.age,
+        myFun: function () {
+            console.log(this.name,this.age)
+        },
+        myFun1: function (fm,t) {
+            console.log(`${this.name}年龄${this.age}来自${fm}去往${t}`)
+        }
+    }
+
+    var db = {
+        name: 'zzj',
+        age: 99
+    }
+    console.log(obj.objAge) //17
+    obj.myFun()  //小张 undefined
+
+    obj.myFun.call(db)   //zzj 99
+    obj.myFun.apply(db)  //zzj 99
+    obj.myFun.bind(db)()  //zzj 99
+
+    obj.myFun1.call(db,'成都','上海')  //zzj年龄99来自成都去往上海
+    obj.myFun1.apply(db,['成都','上海']) //zzj年龄99来自成都去往上海
+    obj.myFun1.bind(db,'成都','上海')()  //zzj年龄99来自成都去往上海
+    obj.myFun1.bind(db,['成都','上海'])()  //zzj年龄99来自成都,上海去往undefined
+
+    console.log('-------------------------------------')
+    var fav = '盲僧'
+    function shows() {
+        console.log(this.fav)
+    }
+
+    shows() //盲僧
+</script>
+</body>
+</html>
