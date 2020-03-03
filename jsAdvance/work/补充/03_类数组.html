@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类数组与数组</title>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<script type="text/javascript">
+    let elementList = document.querySelectorAll('div')
+    console.log(elementList instanceof Object)
+    // 方法一
+    /*let arr = Array.prototype.slice.call(elementList)
+    console.log(arr instanceof Array)*/
+
+    //方法二
+    /*let arr = [...elementList]
+    console.log(arr)
+    console.log(arr instanceof Array)*/
+
+    //方法三
+    let arr = Array.from(elementList)
+    console.log(arr)
+    console.log(arr instanceof Array)
+</script>
+</body>
+</html>
