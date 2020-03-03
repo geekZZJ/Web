@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>new的原理</title>
+</head>
+<body>
+<script type="text/javascript">
+    //构造函数和原生new操作符
+    function Person(name, age, job) {
+        this.name = name
+        this.age = age
+        this.job = job
+        this.sayName = function () {
+            alert(this.name)
+        }
+    }
+    let person1 = new Person("罗",23,"teacher")
+    let person2 = new Person("张",23,"worker")
+    console.log(person1.__proto__ === person2.__proto__)
+    console.log(person1.__proto__ === Person.prototype)
+    console.log(Person.prototype.constructor === Person)
+    // 因此person1.__proto__ === person2.__proto__ === Person.prototype
+
+    console.log('-------------------------------------------')
+
+    //构造函数和自己实现的New
+    function Student(name, age, number) {
+        this.name = name
+        this.age = age
+        this.number = number
+        this.sayName = function () {
+            alert(this.name)
+        }
+    }
+    let New = function (S) {
+        let o = {}
+        //console.log(arguments) //[ƒ, "zzj", 23, "246113"]
+        let args = Array.prototype.slice.call(arguments,1) //1执行的为slice方法
+        //console.log(args) //["zzj", 23, "246113"]
+        o.__proto__ = S.prototype
+        S.prototype.constructor = S
+        S.apply(o,args)
+        return o
+    }
+
+    let s1 = New(Student,'zzj',23,'246113')
+    let s2 = New(Student,'lhy',23,'246112')
+    console.log(s1.name)
+    console.log(s2.name)
+    console.log(s1.__proto__ === s2.__proto__)
+    console.log(s1.__proto__ === Student.prototype)
+</script>
+</body>
+</html>
