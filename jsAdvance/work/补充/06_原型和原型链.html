@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型和原型链</title>
+</head>
+<body>
+<script type="text/javascript">
+    function Person() {
+        
+    }
+    Person.prototype.name = 'Zhang'
+    let person1 = new Person()
+    let person2 = new Person()
+    console.log(person1.name)
+    console.log(person2.name)
+    console.log(person1.__proto__ === Person.prototype) //true
+    console.log(Person.prototype.constructor === Person) //true
+    console.log(person1.constructor === Person)  //true
+
+    console.log('----------------------')
+
+    function Student() {
+        
+    }
+    //原型属性
+    Student.prototype.name = 'Z'
+    let s1 = new Student()
+
+    //实例属性
+    s1.name = 'L'
+
+    console.log(s1.name) //L
+    console.log(s1.hasOwnProperty('name')) //true
+    console.log(Object.prototype.__proto__) //null
+    console.log(Object.prototype)
+</script>
+</body>
+</html>
