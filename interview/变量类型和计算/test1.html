@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变量类型和计算一</title>
+</head>
+<body>
+<script type="text/javascript">
+    //值类型
+    {
+        var a = 100
+        var b = a
+        a = 200
+        console.log(b) //100
+    }
+
+    //引用类型
+    {
+        var a = {age: 20}
+        var b = a
+        b.age = 21
+        console.log(a.age) //21
+    }
+</script>
+</body>
+</html>
