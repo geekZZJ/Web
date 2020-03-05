@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型和原型链</title>
+</head>
+<body>
+<script type="text/javascript">
+    //构造函数
+    {
+        function Foo(name,age) {
+            this.name = name
+            this.age = age
+            this.class = 'class-1'
+            //return this  默认有这一行
+        }
+
+        var f = new Foo('zhangsan',20)
+    }
+
+    //构造函数-扩展
+    {
+        var obj = {}
+        obj.a = 100
+        var arr = []
+        arr.a = 100
+        function fn() {
+
+        }
+        fn.a = 100
+
+        console.log(obj.__proto__)
+        console.log(arr.__proto)
+        console.log(fn.__proto__)
+
+        console.log(fn.prototype)
+
+        console.log(obj.__proto__ === Object.prototype)
+    }
+
+    {
+        //构造函数
+        function Foo(name,age) {
+            this.name = name
+        }
+
+        Foo.prototype.alertName = function () {
+            console.log(this.name)
+        }
+
+        //创建示例
+        var f = new Foo('zhangsan')
+        f.printName = function () {
+            console.log(this.name)
+        }
+
+        //测试
+        f.printName()
+        f.alertName()
+        f.toString() //要去f.__proto__.__proto__中查找
+    }
+    
+    {
+        //动物
+        function Animal() {
+            this.eat = function () {
+                console.log('animal eat')
+            }
+        }
+
+        //狗
+        function Dog() {
+            this.bark = function () {
+                console.log('dog bark')
+            }
+        }
+
+        Dog.prototype = new Animal()
+        var hashiqi = new Dog()
+    }
+</script>
+</body>
+</html>
