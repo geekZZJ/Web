@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闭包</title>
+</head>
+<body>
+<script type="text/javascript">
+    //函数作为返回值
+    /*function F1() {
+        var a = 100
+
+        //返回一个函数(函数作为返回值)
+        return function () {
+            console.log(a)
+        }
+    }
+
+    //f1得到一个函数
+    var f1 = F1()
+    var a = 200
+    f1() //100*/
+
+    console.log('----------')
+    //函数作为参数传递
+    function F1() {
+        // var a = 100
+
+        return function () {
+            console.log(a) //自由变量，父作用域寻找
+        }
+    }
+
+    //f1得到一个函数
+    var f1 = F1()
+
+    function F2(fn) {
+        var a = 200
+        fn()
+    }
+    F2(f1) //100,在申明的作用域中寻找
+</script>
+</body>
+</html>

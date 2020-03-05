@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>实际开发中闭包的应用</title>
+</head>
+<body>
+<script type="text/javascript">
+    //用于封装变量，收敛权限
+    function isFirstLoad() {
+        var _list = []
+        return function (id) {
+            if (_list.indexOf(id) >= 0) {
+                return false
+            }else {
+                _list.push(id)
+                return true
+            }
+        }
+    }
+
+    //使用
+    var firstLoad = isFirstLoad()
+    firstLoad(10) //true
+    firstLoad(10) //false
+    firstLoad(20) //true
+</script>
+</body>
+</html>

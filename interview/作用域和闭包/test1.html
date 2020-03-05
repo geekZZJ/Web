@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作用域</title>
+</head>
+<body>
+<script type="text/javascript">
+    //全局
+    console.log(a) //undefined
+    var a =1
+
+    fn('zhang')  //'zhang' 20
+    function fn(name) {
+        //函数
+        console.log(this)
+        console.log(arguments)
+        age = 20
+        console.log(name,age)
+        var age
+    }
+
+    //this
+    var a = {
+        name: 'A',
+        fn: function () {
+            console.log(this.name)
+        }
+    }
+
+    a.fn() //this =>  a
+    a.fn.call({name: 'B'})  //this => {name: 'B'}
+    var fn1 = a.fn
+    fn1() //this => window
+
+    console.log('----------------')
+
+    //作用域
+    //无块级作用域
+    if (true) {
+        var name = 'zhang'
+    }
+    console.log(name)
+
+    //函数和全局作用域
+    var a = 100
+    function fn() {
+        var a = 200
+        console.log(a)
+    }
+    console.log('global',a)
+    fn()
+
+    console.log('---------------')
+
+    //作用域链
+    var a = 100
+    function fn() {
+        var b = 200
+
+        //当前作用域没有定义的变量，及"自由变量"
+        console.log(a) //100
+
+        console.log(b) //200
+    }
+    fn()
+
+    console.log('------------')
+
+    var a = 100
+    function f1() {
+        var b = 200
+        function f2() {
+            var c = 300
+            console.log(a) //a是自由变量
+            console.log(b) //b是自由变量
+            console.log(c)
+        }
+        f2()
+    }
+    f1()
+</script>
+</body>
+</html>
