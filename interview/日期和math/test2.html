@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组</title>
+</head>
+<body>
+<script type="text/javascript">
+    //forEach
+    var arr = [1,2,4]
+    arr.forEach(function (item,index) {
+        //遍历数组的所有元素
+        console.log(index,item)
+    })
+
+    //every
+    var result = arr.every(function (item,index) {
+        //用来判断所有的数组元素，都满足一个条件
+        if (item < 4) {
+            return true
+        }
+    })
+    console.log(result) //false
+
+    //sort
+    var arr1 = [1,4,2,3,5]
+    var arr2 = arr1.sort(function (a, b) {
+        //console.log(a) //4 2 2 2 3 3 5 5
+        //console.log(b) //1 4 4 1 2 4 3 4
+        //从小到大排序
+        return a - b
+
+        //从大到小排序
+        // return b - a
+    })
+    console.log(arr2)
+
+    //map
+    var arr3 = [1,2,3,4]
+    var arr4 = arr3.map(function (item,index) {
+        //将元素重新组装，并返回
+        return '<b>' + item + '</<b>'
+    })
+    console.log(arr4)
+
+    //
+    var arr5 = [1,2,3]
+    var arr6 = arr5.filter(function (item,index) {
+        //通过某一个条件过滤数组
+        if (item >= 2) {
+            return true
+        }
+    })
+    console.log(arr6) //2,3
+</script>
+</body>
+</html>
