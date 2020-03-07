@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM结构操作</title>
+</head>
+<body>
+<div id="div1"></div>
+<p id="p2">456</p>
+<div id="div2">
+    <div id="div3">
+        <div>789</div>
+    </div>
+</div>
+<script type="text/javascript">
+    var div1 = document.getElementById('div1')
+    //添加新节点
+    var p1 = document.createElement('p')
+    p1.innerHTML = 'this is p1'
+    div1.appendChild(p1)
+
+    //移动已有节点
+    var p2 = document.getElementById('p2')
+    div1.appendChild(p2)
+
+    //获取父元素和子元素
+    var div3 = document.getElementById('div3')
+    var parent = div3.parentElement
+    var child = div3.childNodes
+    //删除节点
+    div3.removeChild(child[1])
+</script>
+</body>
+</html>

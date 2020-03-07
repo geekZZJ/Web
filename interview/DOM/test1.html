@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取DOM节点</title>
+</head>
+<body>
+<div id="div1" class="container" name="div">
+    <p>123</p>
+    <p>456</p>
+</div>
+<script type="text/javascript">
+    var div1 = document.getElementById('div1')
+    var divList = document.getElementsByName('div')
+    console.log(divList.length)
+    console.log(divList[0])
+    var containerList = document.getElementsByTagName('.container')
+
+    //property
+    var pList = document.querySelectorAll('p')
+    var p = pList[0]
+    console.log(p.style.width)
+    p.style.width = '100px'
+    console.log(p.className)
+    p.className = 'p1'
+
+    console.log(p.nodeName)
+    console.log(p.nodeType)
+
+    //Attribute
+    var pList = document.querySelectorAll('p')
+    var p = pList[0]
+    p.getAttribute('data-name')
+    p.setAttribute('data-name','imooc')
+    p.getAttribute('style')
+    p.setAttribute('style','font-size:30px')
+</script>
+</body>
+</html>
