@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>通用事件绑定</title>
+</head>
+<body>
+<a href="http://www.baidu.com" id="link1">链接</a>
+<button id="btn1">事件绑定</button>
+<script type="text/javascript">
+    var btn = document.getElementById('btn1')
+    btn.addEventListener('click',function (event) {
+        console.log('clicked')
+    })
+
+    function bindEvent(elem,type,fn) {
+        elem.addEventListener(type,fn)
+    }
+    var a = document.getElementById('link1')
+    bindEvent(a,'click',function (e) {
+        e.preventDefault()
+        console.log('clicked')
+    })
+</script>
+</body>
+</html>
