@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax</title>
+</head>
+<body>
+<script type="text/javascript">
+    var xhr = new XMLHttpRequest()
+    xhr.open('get','/api',true)
+    xhr.onreadystatechange = function () {
+        //这里是异步执行
+        if (xhr.readyState == 4) {
+            if (xhr.status == 200) {
+                console.log(xhr.responseText)
+            }
+        }
+    }
+    xhr.send(null)
+</script>
+</body>
+</html>
