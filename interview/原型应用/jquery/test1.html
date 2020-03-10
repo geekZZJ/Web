@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test1</title>
+</head>
+<body>
+<p>jquery test 1</p>
+<p>jquery test 2</p>
+<p>jquery test 3</p>
+
+<div id="div1">
+    <p>jquery test in div</p>
+</div>
+<script src="my-jquery.js"></script>
+<script>
+    var p = $('p')
+    p.css('font-size','40px') //css是原型方法
+    console.log(p.html()) //html是原型方法
+
+    var div1 = $('#div1')
+    div1.css('color','blue') //css是原型方法
+    console.log(div1.html()) //html是原型方法
+</script>
+</body>
+</html>
