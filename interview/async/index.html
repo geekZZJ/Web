@@ -20,7 +20,7 @@
     alert('hello')
     console.log(2)*/
 
-    $.ajax({
+    /*$.ajax({
         url: './data.json',
         success: function (result) {
             console.log(result)
@@ -32,7 +32,54 @@
     setTimeout(function () {
         console.log('c')
     }) //立刻放到异步队列中
-    console.log('d')
+    console.log('d')*/
+
+    /*var ajax = $.ajax({
+        url: './data.json',
+        success: function () {
+            console.log('success1')
+            console.log('success2')
+            console.log('success3')
+            console.log('success4')
+        },
+        error: function () {
+            console.log('error')
+        }
+    })*/
+
+    /*var ajax = $.ajax('./data.json')
+    ajax.done(function () {
+        console.log('success1')
+    }).fail(function () {
+        console.log('fail1')
+    }).done(function () {
+        console.log('success2')
+    }).fail(function () {
+        console.log('fail2')
+    }).done(function () {
+        console.log('success3')
+    }).fail(function () {
+        console.log('fail3')
+    }).done(function () {
+        console.log('success4')
+    }).fail(function () {
+        console.log('fail4')
+    })*/
+
+    /*var ajax = $.ajax('./data.json')
+    ajax.then(function () {
+        console.log('success 100')
+    },function () {
+        console.log('fail 100')
+    }).then(function () {
+        console.log('success 200')
+    },function () {
+        console.log('fail 200')
+    }).then(function () {
+        console.log('success 300')
+    },function () {
+        console.log('fail 300')
+    })*/
 </script>
 </body>
 </html>
