@@ -17,7 +17,43 @@
     }
     wait()*/
     //新增需求：要在执行完成之后进行某些特别复杂的操作，代码可能会很多，而且分好几个步骤
-    
+
+    function waitHandle() {
+        //定义
+        var dtd = $.Deferred()
+        var wait = function (dtd) {
+            var task = function () {
+                console.log('执行完成')
+                //成功
+                // dtd.resolve()
+                //失败
+                dtd.reject()
+            }
+            setTimeout(task,1000)
+            //wait返回
+            return dtd
+        }
+        //最终返回
+        return wait(dtd)
+    }
+    var w = waitHandle()
+    w.then(function () {
+        console.log('ok 1')
+    },function () {
+        console.log('err 1')
+    })
+    w.then(function () {
+        console.log('ok 2')
+    },function () {
+        console.log('err 2')
+    })
+    w.then(function () {
+        console.log('ok 2')
+    },function () {
+        console.log('err 2')
+    })
+
+    //开放封闭原则
 </script>
 </body>
 </html>

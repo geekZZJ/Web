@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>promise</title>
+</head>
+<body>
+<p>promise test</p>
+<script>
+    function loadImg(src) {
+        var promise = new Promise(function (resolve, reject) {
+            var img = document.createElement('img')
+            // throw new Error('自定义错误')
+            img.onload = function () {
+                resolve(img)
+            }
+            img.onerror = function () {
+                reject('图片加载失败')
+            }
+            img.src = src
+        })
+        return promise
+    }
+
+    /*var src = 'https://www.baidu.com/img/bd_logo2.png'
+    var result = loadImg(src)*/
+    /*result.then(function (img) {
+        console.log(1,img.width)
+        return img
+    },function () {
+        console.log('error 1')
+    }).then(function (img) {
+        console.log(2,img.height)
+    },function () {
+        console.log('erroe 2')
+    })*/
+
+    //异常捕获
+    /*result.then(function (img) {
+        console.log(1,img.width)
+        return img
+    }).then(function (img) {
+        console.log(2,img.height)
+    }).catch(function (ex) {
+        console.log(ex) //统一捕获异常
+    })*/
+
+    //多个串联
+    /*var src1 = 'https://www.baidu.com/img/bd_logo1.png'
+    var result1 = loadImg(src1)
+    var src2 = 'http://t7.baidu.com/it/u=3616242789,1098670747&fm=79&app=86&size=h300&n=0&g=4n&f=jpeg'
+    var result2 = loadImg(src2)
+
+    result1.then(function (img1) {
+        console.log('第一个图片加载完成',img1.width)
+        return result2
+    }).then(function (img2) {
+        console.log('第二个图片加载完成',img2.width)
+    }).catch(function (ex) {
+        console.log(ex)
+    })*/
+
+
+    var src1 = 'https://www.baidu.com/img/bd_logo1.png'
+    var result1 = loadImg(src1)
+    var src2 = 'http://t7.baidu.com/it/u=3616242789,1098670747&fm=79&app=86&size=h300&n=0&g=4n&f=jpeg'
+    var result2 = loadImg(src2)
+    //Promise.all接收一个promise对象的数组
+    //待全部完成之后，统一执行success
+    Promise.all([result1,result2]).then(datas => {
+        //接收到的datas是一个数组，依次包含了多个promise返回的内容
+        console.log(datas[0])
+        console.log(datas[1])
+    })
+
+    //Promise.race接收一个包含多个promise对象的数组
+    Promise.race([result1,result2]).then(data => {
+        //data即最先执行完成的promise的返回值
+        console.log(data)
+    })
+</script>
+</body>
+</html>
