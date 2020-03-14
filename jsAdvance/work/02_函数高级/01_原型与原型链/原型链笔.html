@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型链</title>
+</head>
+<body>
+<script>
+    let obj = {
+        a: 1,
+        b: 2
+    }
+    Object.prototype.c = 3
+    Object.defineProperty(obj, 'd', {
+        enumerable: false, //d不可枚举
+        value: 4
+    })
+    console.log(obj)
+    for (let key in obj) {
+        console.log(key)
+    }
+
+    // a b c
+</script>
+</body>
+</html>

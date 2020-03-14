@@ -14,6 +14,17 @@
   * 及时释放
 -->
 <script type="text/javascript">
+  function fn1() {
+      var arr = new Array[100000]
+      function fn2() {
+          console.log(arr.length)
+      }
+      return fn2
+  }
+  var f = fn1()
+  f()
+
+  f = null //让内部函数成为垃圾对象-->回收闭包
 </script>
 </body>
 </html>

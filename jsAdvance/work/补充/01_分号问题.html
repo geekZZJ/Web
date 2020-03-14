@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>01_分号问题</title>
+    <meta charset="UTF-8">
+    <title>01_分号问题</title>
 </head>
 <body>
 
@@ -18,28 +18,28 @@
 -->
 <script type="text/javascript">
 
-  // 情形一: 小括号开头的前一条语句
-  var a = 3
-  ;(function () {
+    // 情形一: 小括号开头的前一条语句
+    var a = 3
+    ;(function () {
 
-  })
-  /*
-  错误理解: 将3看成是函数调用
-   var a = 3(function () {
+    })
+    /*
+    错误理解: 将3看成是函数调用
+     var a = 3(function () {
 
-   })
-   */
+     })
+     */
 
-  // 情形二: 中方括号开头的前一条语句
-  var b = a
-  ;[1, 3, 5].forEach(function (item) {
-    console.log(item)
-  })
-  /*
-   错误理解:
-   a = b[5].forEach(function(e){
-   console.log(e)
-   })
+    // 情形二: 中方括号开头的前一条语句
+    var b = a
+    ;[1, 3, 5].forEach(function (item) {
+        console.log(item)
+    })
+
+    /*错误理解:
+    a = b[5].forEach(function(e){
+    console.log(e)
+    })*/
 </script>
 </body>
 </html>
