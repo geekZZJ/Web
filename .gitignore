@@ -1,6 +1,7 @@
 node_modules/
 logs
 *.log
+seven/
 
 
 #Editor directories and files
