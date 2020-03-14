@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>snabbdom</title>
+</head>
+<body>
+<div id="container"></div>
+<button id="btn-change">change</button>
+<script src="https://cdn.bootcss.com/snabbdom/0.7.4/snabbdom.js"></script>
+<script src="https://cdn.bootcss.com/snabbdom/0.7.4/snabbdom-class.js"></script>
+<script src="https://cdn.bootcss.com/snabbdom/0.7.4/snabbdom-props.js"></script>
+<script src="https://cdn.bootcss.com/snabbdom/0.7.4/snabbdom-style.js"></script>
+<script src="https://cdn.bootcss.com/snabbdom/0.7.4/snabbdom-eventlisteners.js"></script>
+<script src="https://cdn.bootcss.com/snabbdom/0.7.4/h.js"></script>
+<script>
+    var snabbdom = window.snabbdom
+
+    //定义patch
+    var patch = snabbdom.init([
+        snabbdom_class,
+        snabbdom_props,
+        snabbdom_style,
+        snabbdom_eventlisteners
+    ])
+
+    //定义h
+    var h = snabbdom.h
+
+    var container = document.getElementById('container')
+
+    //定义vnode
+    var vnode = h('ul#list',{},[
+        h('li.item',{},'Item 1'),
+        h('li.item',{},'Item 2')
+    ])
+    patch(container,vnode)
+
+    document.getElementById('btn-change').addEventListener('click',function () {
+        //生成newVnode
+        var newVnode = h('ul#list',{},[
+            h('li.item',{},'Item 1'),
+            h('li.item',{},'Item B'),
+            h('li.item',{},'Item 3')
+        ])
+        patch(vnode,newVnode)
+    })
+</script>
+</body>
+</html>

@@ -21,6 +21,59 @@
         b.age = 21
         console.log(a.age) //21
     }
+
+    //typeof
+    {
+        typeof undefined //undefined
+        typeof 'abc'  //string
+        typeof 123  //number
+        typeof true //boolean
+        typeof {}  //object
+        typeof []  //object
+        typeof null  //object
+        typeof console.log  //function
+    }
+
+    //强制类型转换
+    {
+        var a = 100 + 10 //110
+        var b = 100 + '10' //10010
+    }
+
+    {
+        100 == '100' //true
+        0 == '' //true
+        null == undefined //true
+    }
+
+    {
+        var a = true
+        if (a) {
+            //...
+        }
+        var b = 100
+        if (b) {
+            //...
+        }
+        var c = ''
+        if (c) {
+            //...
+        }
+    }
+
+    {
+        console.log(10 && 0) //0
+        console.log('' || 'abc') //'abc'
+        console.log(!window.abc) //true
+
+        //判断一个变量会被当做true/false
+        var a = 100
+        console.log(!!a)
+    }
+
+    //JSON 只不过是一个JS对象而已
+    console.log(JSON.stringify({a:10,b:20}))
+    console.log(JSON.parse('{"a":10,"b":20}'))
 </script>
 </body>
 </html>
