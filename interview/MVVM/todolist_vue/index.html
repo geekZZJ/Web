@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>todolist</title>
+    <script src="vue.js"></script>
 </head>
 <body>
 <div id="app">
     <div>
         <input type="text" v-model="title">
         <button @click="add">add</button>
-        <div>
-            <ul>
-                <li v-for="item in list">{{item}}</li>
-            </ul>
-        </div>
+    </div>
+    <div>
+        <ul>
+            <li v-for="item in list">{{item}}</li>
+        </ul>
     </div>
 </div>
-<script src="vue.js"></script>
 <script>
     var vm = new Vue({
         el:'#app',
@@ -35,6 +35,17 @@
             }
         }
     })
+    //v-model 是怎么实现的？
+    //通过双向数据绑定实现,get和set
+
+    //v-on:click 是怎么实现的？
+    //绑定实现
+
+    //v-for 是怎么实现的？
+    //vm._l返回一个数组
+
+
+    //记得对比test1.js来看
 </script>
 </body>
 </html>
