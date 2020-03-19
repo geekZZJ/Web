@@ -4,6 +4,8 @@ logs
 *.log
 *.png
 *.jpg
+/bootstrap
+/bootstrap-custom
 
 
 #Editor directories and files
