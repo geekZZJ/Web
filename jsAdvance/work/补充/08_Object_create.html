@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>new与Object.create</title>
+</head>
+<body>
+<script>
+    function Animal(name) {
+        this.name = name
+    }
+
+    var animal = new Animal('test')
+
+    var createAnimal1 = Object.create(Animal.prototype)
+    var createAnimal2 = Object.create(animal)
+    var createAnimal3 = Object.create(null)
+
+    console.log(createAnimal1)
+    console.log(createAnimal2)
+
+    console.log(createAnimal1.name) // 输出为 undefined
+    console.log(createAnimal2.name) //输出为 test
+    console.log(createAnimal3) // 输出为 {}
+</script>
+</body>
+</html>
