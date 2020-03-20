@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>onclick与addevent</title>
+</head>
+<body>
+<ul>
+    <li id="add_event">red</li>
+    <li id="on_click">yellow</li>
+</ul>
+<script>
+    var on_click = document.getElementById('on_click')
+    on_click.onclick = function () {
+        alert('我是click1')
+    }
+    on_click.onclick = function () {
+        alert('我是click2')
+    }
+    
+    var add_event = document.getElementById('add_event')
+    add_event.addEventListener('click',function () {
+        alert('add_event1')
+    })
+    add_event.addEventListener('click',function () {
+        alert('add_event2')
+    })
+</script>
+</body>
+</html>
