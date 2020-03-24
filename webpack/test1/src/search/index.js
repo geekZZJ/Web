@@ -3,17 +3,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import logo from './images/test.jpg'
-import './search.less'
+import './index.less'
 
-class Search extends React.Component{
+class Index extends React.Component{
     render(){
         return <div className="search-text">
-            Search Text<img src={logo} />
+            Index Text<img src={logo} />
         </div>
     }
 }
 
 ReactDOM.render(
-    <Search />,
+    <Index />,
     document.getElementById('root')
 )
