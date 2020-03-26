@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transition</title>
+    <style>
+        .container{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            transition: width 1s; /*过渡动画*/
+            transition-timing-function: ease-in;
+        }
+        .container:hover{
+            width: 800px;
+        }
+    </style>
+</head>
+<body>
+<div class="container"></div>
+</body>
+</html>
