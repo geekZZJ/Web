@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flex</title>
+    <style>
+        .c {
+            display: flex;
+        }
+        .c1 {
+            width: 300px;
+            background-color: red;
+            height: 50px;
+        }
+        .c3 {
+            width: 300px;
+            background-color: yellow;
+            height: 50px;
+        }
+        .c2 {
+            background-color: blue;
+            height: 50px;
+            flex: 1;
+        }
+        /*.item {
+            flex: 1;
+        }与下面等同
+        .item {
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 0%;
+        }*/
+    </style>
+</head>
+<body>
+<div class="c">
+    <div class="c1">左边</div>
+    <div class="c2">中间</div>
+    <div class="c3">右边</div>
+</div>
+</body>
+</html>

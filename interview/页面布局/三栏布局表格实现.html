@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格布局</title>
+    <style>
+        .container > div {
+            display: table-cell;
+        }
+        .left {
+            background-color: green;
+            min-width: 300px;
+        }
+        .center {
+            width: 100%;
+            background-color: red;
+        }
+        .right {
+            background-color: blue;
+            min-width: 300px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="left">left</div>
+    <div class="center">center</div>
+    <div class="right">right</div>
+</div>
+</body>
+</html>
