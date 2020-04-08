@@ -24,6 +24,31 @@
             margin: 5px auto 25px;
             background-color: red;
         }
+
+        .layout{
+            background-color: red;
+        }
+        .layout .left{
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        .layout .right{
+            height: 110px;
+            background-color: #ccc;
+            overflow: auto;
+        }
+
+        #float{
+            background-color: red;
+            /*overflow: auto;*/
+            float: left;
+        }
+        #float .float{
+            float: left;
+            font-size: 30px;
+        }
     </style>
 </head>
 <body>
@@ -38,6 +63,17 @@
         <p>2</p>
     </div>
     <p>3</p>
+</div>
+
+<!--BFC不与float重叠-->
+<div class="layout">
+    <div class="left"></div>
+    <div class="right"></div>
+</div>
+
+<!--BFC子元素即使是float也会参与高度计算-->
+<div id="float">
+    <div class="float">我是浮动元素</div>
 </div>
 </body>
 </html>
