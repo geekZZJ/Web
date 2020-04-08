@@ -8,14 +8,14 @@
 <script type="text/javascript">
     //构造函数
     {
-        function Foo(name,age) {
+        function Foo(name, age) {
             this.name = name
             this.age = age
             this.class = 'class-1'
             //return this  默认有这一行
         }
 
-        var f = new Foo('zhangsan',20)
+        var f = new Foo('zhangsan', 20)
     }
 
     //构造函数-扩展
@@ -24,9 +24,11 @@
         obj.a = 100
         var arr = []
         arr.a = 100
+
         function fn() {
 
         }
+
         fn.a = 100
 
         console.log(obj.__proto__)
@@ -40,7 +42,7 @@
 
     {
         //构造函数
-        function Foo(name,age) {
+        function Foo(name, age) {
             this.name = name
         }
 
@@ -59,7 +61,7 @@
         f.alertName()
         f.toString() //要去f.__proto__.__proto__中查找
     }
-    
+
     {
         //动物
         function Animal() {
