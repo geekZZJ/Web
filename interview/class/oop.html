@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面向对象</title>
+</head>
+<body>
+<script>
+    // 类的声明
+    function Animal() {
+        this.name = 'name'
+    }
+
+    /*
+    * ES6中的class的声明
+    * */
+    class Animal2 {
+        constructor() {
+            this.name = name
+        }
+    }
+
+    /*
+    * 实例化
+    * */
+    console.log(new Animal(), new Animal2())
+
+    /*
+    * 构造函数继承
+    * */
+    function Parent1() {
+        this.name = 'parent1'
+    }
+
+    Parent1.prototype.say = function () {
+        console.log(123)
+    }
+
+    function Child1() {
+        Parent1.call(this) //call和apply都可以
+        this.type = 'child1'
+    }
+
+    console.log(new Child1())
+    //不能继承父类原型链的上的属性和方法
+
+    /*
+    * 借助原型链实现继承
+    * */
+    function Parent2() {
+        this.name = 'parent2'
+        this.play = [1, 2, 3]
+    }
+
+    function Child2() {
+        this.type = 'child2'
+    }
+
+    Child2.prototype = new Parent2()
+    console.log(new Child2())
+
+    var s1 = new Child2()
+    var s2 = new Child2()
+    console.log(s1.play, s2.play)
+    s1.play.push(4)
+    //修改s1的原型链会修改s2的原型链
+
+    /*
+    * 组合继承
+    * */
+    function Parent3() {
+        this.name = 'parent3'
+        this.play = [1, 2, 3]
+    }
+
+    function Child3() {
+        Parent3.call(this)
+        this.type = 'child3'
+    }
+
+    Child3.prototype = new Parent3()
+    var s3 = new Child3()
+    var s4 = new Child3()
+    s3.play.push(4)
+    console.log(s3.play, s4.play)
+
+    /*
+    * 优化1
+    * */
+    function Parent4() {
+        this.name = 'parent4'
+        this.play = [1, 2, 3]
+    }
+
+    function Child4() {
+        Parent4.call(this)
+        this.type = 'child4'
+    }
+
+    Child4.prototype = Parent4.prototype
+    var s5 = new Child4()
+    var s6 = new Child4()
+    s5.play.push(4)
+    console.log(s5, s6)
+
+    //缺点：s5的构造函数是父类Parent
+
+    /*
+    * 优化2
+    * */
+    function Parent5() {
+        this.name = 'parent5'
+        this.play = [1, 2, 3]
+    }
+
+    function Child5() {
+        Parent5.call(this)
+        this.type = 'child4'
+    }
+
+    Child5.prototype = Object.create(Parent5.prototype)
+    Child5.prototype.constructor = Child5
+
+    var s7 = new Child5()
+    console.log(s7 instanceof Child5,s7 instanceof Parent5)
+    console.log(s7.constructor)
+    //完美方式
+</script>
+</body>
+</html>
