@@ -7,7 +7,7 @@
           <input type="text"
                  v-model="usernameModel" placeholder="请输入用户名">
         </div>
-        <!--<span class="g-form-error">{{ userErrors.errorText }}</span>-->
+        <span class="g-form-error">{{userErrors.errorText}}</span>
       </div>
       <div class="g-form-line">
         <span class="g-form-label">密码：</span>
@@ -15,14 +15,14 @@
           <input type="password"
                  v-model="passwordModel" placeholder="请输入密码">
         </div>
-        <!--<span class="g-form-error">{{ passwordErrors.errorText }}</span>-->
+        <span class="g-form-error">{{passwordErrors.errorText}}</span>
       </div>
       <div class="g-form-line">
         <div class="g-form-btn">
           <a class="button" @click="onLogin">登录</a>
         </div>
       </div>
-      <!--<p>{{ errorText }}</p>-->
+      <p>{{errorText}}</p>
     </div>
   </div>
 </template>
@@ -33,7 +33,8 @@ export default {
   data () {
     return {
       usernameModel: '',
-      passwordModel: ''
+      passwordModel: '',
+      errorText: ''
     }
   },
   computed: {
@@ -78,7 +79,25 @@ export default {
   },
   methods: {
     onLogin () {
-      console.log(this.usernameModel,this.passwordModel)
+      if (!this.userErrors.status || !this.passwordErrors.status) {
+        this.errorText = '部分选项未通过'
+      }
+      else {
+        this.errorText = ''
+        console.log(this.usernameModel,this.passwordModel)
+        let data = {
+          name: 'zzj'
+        }
+        this.$emit('has-log',data)
+        /*this.$http.post('api/login').then(
+          (data) => {
+            console.log(data)
+          },
+          (error) => {
+            console.log(error)
+          }
+        )*/
+      }
     }
   }
 }
