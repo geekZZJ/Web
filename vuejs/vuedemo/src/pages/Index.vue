@@ -171,7 +171,7 @@ export default {
   },
   methods: {
     doSomething () {
-      console.log('dosomething')
+      // console.log('dosomething')
     }
   }
 }
