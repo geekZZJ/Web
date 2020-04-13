@@ -18,9 +18,9 @@
 </template>
 
 <script>
-    export default {
-        name: 'RegForm'
-    }
+export default {
+  name: 'RegForm'
+}
 </script>
 
 <style scoped>

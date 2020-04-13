@@ -43,8 +43,7 @@ export default {
       if (!/@/g.test(this.usernameModel)) {
         status = false
         errorText = '不包含@'
-      }
-      else {
+      } else {
         status = true
         errorText = ''
       }
@@ -62,8 +61,7 @@ export default {
       if (!/^\w{1,6}$/g.test(this.passwordModel)) {
         status = false
         errorText = '密码不是1-6位'
-      }
-      else {
+      } else {
         status = true
         errorText = ''
       }
@@ -81,22 +79,21 @@ export default {
     onLogin () {
       if (!this.userErrors.status || !this.passwordErrors.status) {
         this.errorText = '部分选项未通过'
-      }
-      else {
+      } else {
         this.errorText = ''
-        console.log(this.usernameModel,this.passwordModel)
+        console.log(this.usernameModel, this.passwordModel)
         let data = {
           name: 'zzj'
         }
-        this.$emit('has-log',data)
-        /*this.$http.post('api/login').then(
+        this.$emit('has-log', data)
+        /* this.$http.post('api/login').then(
           (data) => {
             console.log(data)
           },
           (error) => {
             console.log(error)
           }
-        )*/
+        ) */
       }
     }
   }
