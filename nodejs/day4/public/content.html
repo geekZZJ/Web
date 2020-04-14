@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>新闻</title>
+	<style type="text/css" media="screen">
+		*{
+			padding: 0px; 
+			margin: 0px;
+		} 
+		header{
+			height: 50px;
+			background-color: #000;
+			opacity: 0.4;
+		}
+		.content{
+			padding: 10px;
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<header></header>
+	<div class="main"></div>
+	<script type="text/template" id="moban">
+		<div class="content">
+			<h1><%=biaoti%></h1>
+			<p>时间：<%=shijian%>作者：<%=zuozhe%></p>
+			<p><%= neirong%></p>
+			<a href="#" title="">详细信息</a>
+		</div>
+	</script>
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="underscore.js"></script>
+	<script type="text/javascript">
+		//得到模板
+		var mobanstring = $("#moban").html();
+
+		var compiled = _.template(mobanstring);
+
+		//模板函数
+		$.get("news",function(data,status){
+			for(var i = 0; i < data.length; i++){
+				var compiledString = compiled(data[i]);
+				$(".main").append($(compiledString));
+			}
+		});
+	</script>
+</body>
+</html>

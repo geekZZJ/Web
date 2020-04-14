@@ -1,0 +1,101 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+.login li a{
+	display: inline-block;
+}
+
+.login li span{
+	color: #fff;
+}
+
+.mark1{
+	display: none;
+	background-color: #000;
+	opacity: 0.9;
+	position: fixed;
+	z-index: 9997;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+}
+
+.form1{
+	display: none;
+	width: 450px;
+	margin: 0 auto;
+	background: transparent;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	background-color: #fff;
+	padding: 20px;
+	transform: translate(-50% , -50%);
+	border: 1px solid #fff;
+	border-radius: 8px;
+	z-index: 9999;
+}
+
+.form1 .toubu{
+	height: 50px;
+	line-height: 50px;
+	background: #337ab7;
+	opacity: 0.8;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	margin-bottom: 15px;
+	text-align: center;
+	color: #fff;
+	font-size: 20px;
+}
+
+.form1 .confirm{
+	position: relative;
+	padding: 10px 0;
+}
+
+.form1 .confirm input{
+	width: 260px;
+	display: block;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	color: #555;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+.form1 .confirm img{
+	width: 72px;
+	height: 27px;
+	border: 1px solid #C3BBBB;
+	position: absolute;
+	right: 10px;
+	top: 15px;
+}
+
+.tip-block{
+	display: block;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	color: #737373;
+}
+
+.err-block{
+	display: none;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	color: red;
+}
+
+
+footer{
+	background-color: #101010;
+	text-align: center;
+	font-size: 16px;
+	padding: 15px 0;
+	color: #fff;
+}

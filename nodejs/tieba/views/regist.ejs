@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <link rel="shortcut icon" href="/images/bitbug_favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/loading.css">
+    <link rel="stylesheet" type="text/css" href="/css/regist.css">
+	<title>注册</title>
+</head>
+<body>
+  <!-- 等待窗口 -->
+  <div class="loading">
+    <div class="pic">
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+    </div>
+  </div>
+  <header>
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/">俊贴吧</a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="/">主页<span class="sr-only">(current)</span></a></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+  </header>
+  <div class="container">
+    <h3>注册</h3>
+    <div class="form-group">
+      <label for="username">用户名：</label>
+      <input type="text" class="form-control" id="username" placeholder="请输入用户名">
+    </div>
+    <div class="alert alert-danger" role="alert" id="repeat">
+      用户名已存在，请更换！
+    </div>
+    <div class="form-group">
+      <label>性别：</label>
+      <label id="man"><input type="radio" name="sex" checked="checked" value="男">男</label>
+      <label><input type="radio" name="sex" value="女">女</label>
+    </div>
+    <div class="form-group">
+      <label for="email">电子邮箱：</label>
+      <input type="email" class="form-control" id="email" placeholder="请输入电子邮箱地址">
+    </div>
+    <div class="form-group">
+      <label for="psd">密码：</label>
+      <input type="password" class="form-control" id="psd" placeholder="请输入密码">
+    </div>
+    <div class="form-group">
+      <label for="checkpsd">确认密码：</label>
+      <input type="password" class="form-control" id="checkpsd" placeholder="请再次输入密码">
+    </div>
+    <button type="button" class="btn btn-primary btn-block" id="regist">注册</button>
+  </div>
+
+  <footer class="navbar-fixed-bottom">
+    <p>微力实验室</p>
+    <p>作者：张中俊</p>
+  </footer>
+	<script src="/js/jquery-1.11.2.min.js"></script>
+	<script src="/js/bootstrap.js"></script>
+  <script type="text/javascript">
+    document.onreadystatechange=function(){
+      if (document.readyState=='complete') {
+        $('.loading').fadeOut();
+      }
+    }
+    
+    //用ajax提交表单
+    $("#regist").click(function(){
+      //判断表单数据
+      if ($.trim($("#username").val())=="") {
+        $("#username").focus();
+        alert("请输入用户名！");
+        throw SyntaxError();
+      }else if ($("#email").val()=="") {
+        $("#email").focus();
+        alert("请输入电子邮箱！");
+        throw SyntaxError();
+      }else if ($.trim($("#psd").val())=="") {
+        $("#psd").focus();
+        alert("请输入密码！");
+        throw SyntaxError();
+      }else if ($("#checkpsd").val()=="") {
+        $("#checkpsd").focus();
+        alert("请确认密码！");
+        throw SyntaxError();
+      }else if ($("#username").val().length>=10) {
+        $("#username").focus();
+        alert("用户名请小于10位");
+        throw SyntaxError();
+      }else if (!$("#email").val().match(/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/)) {
+        $("#email").focus();
+        alert("电子邮箱格式不正确！");
+        throw SyntaxError();
+      }else if ($("#psd").val()!=$("#checkpsd").val()) {
+        $("#checkpsd").focus();
+        alert("两次密码不一致！");
+        $("#checkpsd").val("");
+        throw SyntaxError();
+      }else if ($("#psd").val().length<=5) {
+        $("#psd").focus();
+        alert("密码请大于5位！");
+        $("#checkpsd").val("");
+        throw SyntaxError();
+      }else if (($("#psd").val()).indexOf(" ")!=-1) {
+        $("#psd").focus();
+        alert("密码中不允许有空格");
+        $("#checkpsd").val("");
+        throw SyntaxError();
+      }
+
+      $.post("/doregist",{
+        "username":$.trim($("#username").val()),
+        "sex":$('input:radio[name="sex"]:checked').val(),
+        "email":$("#email").val(),
+        "password":$("#psd").val()
+        // "headPic":$("#username").val()
+      },function(result){
+        if (result == 1) {
+          alert("注册成功，你将自动跳转到首页！");
+          window.location = "/";
+        }else if(result == -1){
+          $("#repeat").fadeIn();
+          $("#username").focus(function(){
+            $("#repeat").fadeOut();
+          });
+        }else{
+          alert("注册失败")
+        }
+      })
+
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>留言板</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        h1{
+            text-align: center;
+        }
+        .content{
+            width: 80%;
+            margin: 0 auto;
+        }
+        #chenggong,#shibai{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<h1>我的留言本</h1>
+<div class="content">
+    <form>
+      <div class="form-group">
+        <label for="exampleInputEmail1">姓名</label>
+        <input type="text" class="form-control" id="name" placeholder="姓名">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">留言</label>
+        <textarea class="form-control" rows="3" id="leaveMess"></textarea>
+      </div>
+      <button type="button" class="btn btn-success" id="tijiao">提交</button>
+      <div class="alert alert-success" role="alert" id="chenggong">表单应成功提交</div>
+      <div class="alert alert-danger" role="alert" id="shibai">表单提交失败</div>
+    </form>
+    <div id="allliuyan"></div>
+</div>
+
+<script type="text/template" id="moban">
+    <div class="list-group">
+      <a href="#" class="list-group-item active">
+        <h4 class="list-group-item-heading">{{=xingming}}</h4>
+        <p class="list-group-item-text">{{=liuyan}}</p>
+      </a>
+    </div>
+</script>
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<script src="js/jquery-1.11.2.min.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="js/bootstrap.js"></script>\
+<script type="text/javascript" src="js/underscore.js"></script>
+<script type="text/javascript">
+    //ajax请求数据
+    $.get("/du",function(result){
+        var json = JSON.parse(result);
+        for(var i = 0;i<json.result.length;i++){
+            var compiled = _.template($("#moban").html());
+            var html = compiled({name: json.result[i].liuyan,xingming : json.result[i].xingming});
+            $("allliuyan").append($(html));
+        }
+    })
+    //ajax提交表单
+    $("#tijiao").click(function(){
+        $.post("/tijiao",{
+            "xingming":$("#name").val(),
+            "liuyan":$("#leaveMess").val()
+        },function(result){
+            if (result.result == -1) {
+                $("#shibai").fadeIn();
+            }else if (result.result == 1) {
+                $("#chenggong").fadeIn();
+                $("#name").val("");
+                $("#leaveMess").val("");
+            }
+        });
+    })
+    $("#name").focus(function(){
+        $("#chenggong").hide();
+        $("shibai").hide();
+    })
+    
+</script>
+</body>
+</html>
