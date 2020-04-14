@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>0.5pxborder</title>
+    <style>
+        .scale{
+            position: relative;
+        }
+        .scale:after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: #000;
+            width: 100%;
+            height: 1px;
+            transform: scaleY(0.5);
+        }
+        .scale1{
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .scale1:after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: 1px solid #000;
+            box-sizing: border-box;
+            width: 200%;
+            height: 200%;
+            transform: scale(0.5);
+            transform-origin: left top;
+        }
+    </style>
+</head>
+<body>
+    <div class="scale">底边框</div>
+    <br>
+    <div class="scale1">四条边框</div>
+</body>
+</html>
