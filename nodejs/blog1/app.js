@@ -85,7 +85,7 @@ const serverHandle = (req, res) => {
     // 解析session（使用redis）
     let needSetCookie = false
     let userId = req.cookie.userid
-    console.log("userId", userId)
+    // console.log("userId", userId)
     if (!userId) {
         needSetCookie = true
         userId = `${Date.now()}_${Math.random()}`
@@ -95,8 +95,7 @@ const serverHandle = (req, res) => {
 
     req.sessionId = userId
     get(req.sessionId).then(sessionData => {
-        console.log("req.sessionId userId", req.sessionId, userId)
-        console.log("sessionData", sessionData)
+        // console.log("req.sessionId userId", req.sessionId, userId)
         if (!sessionData) {
             // 初始化redis 中session的初始值
             set(req.sessionId, {})
