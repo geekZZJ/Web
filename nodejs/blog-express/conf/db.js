@@ -23,11 +23,11 @@ if (env === 'dev') {
 if (env === 'production') {
     //mysql
     MYSQL_CONF = {
-        host: 'test.vip',
+        host: 'localhost',
         user: 'root',
-        password: 'xhu-rtas-mysql',
+        password: '2461927976',
         port: '3306',
-        database: 'xhublog'
+        database: 'myblog'
     }
 
     //redis
