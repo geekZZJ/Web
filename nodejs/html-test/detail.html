@@ -73,6 +73,7 @@
     const urlParams = getUrlParams()
     const url = '/api/blog/detail?id=' + urlParams.id
     get(url).then(res => {
+        console.log(res)
         if (res.errno !== 0) {
             alert('数据错误')
             return
