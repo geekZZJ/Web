@@ -5,11 +5,11 @@ let MYSQL_CONF
 
 if (env === 'dev') {
     MYSQL_CONF = {
-        host: 'localhost',
+        host: '47.100.21.42',
         user: 'root',
-        password: '2461927976',
+        password: 'xhu-rtas-mysql',
         port: '3306',
-        database: 'myblog'
+        database: 'xhublog'
     }
 }
 if (env === 'production') {

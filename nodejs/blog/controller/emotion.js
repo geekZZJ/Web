@@ -1,5 +1,5 @@
 const {exec} = require('../db/mysql')
-const {nlp} = require('../conf/api')
+const {client} = require('../conf/api')
 
 
 const getId = () => {
@@ -14,16 +14,11 @@ const getComment = (id) => {
 }
 
 const calculate = (text) => {
-    const promise = new Promise((resolve, reject) => {
-        nlp.sentiment(text, data => {
-            resolve(data)
-        })
-    })
-    return promise
+    return client.sentimentClassify(text)
 }
 
 const updateScore = (id, aver) => {
-    let sql = `update emotion set grade='${aver}' where id=${id}`
+    let sql = `update emotion set grade='${aver}' where blog_id=${id}`
 
     return exec(sql)
 }

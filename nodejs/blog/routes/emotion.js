@@ -8,8 +8,13 @@ async function loopArray(comment, arr) {
         let content = comment[i].content
         const score = calculate(content)
         await score.then((data) => {
-            let temp = parseFloat(data.slice(2, 9))
+            console.log(content)
+            let temp = parseFloat(data.items[0].positive_prob.toFixed(5))
+            console.log(temp)
             arr.push(temp)
+        }).catch(ex => {
+            console.log(ex)
+            return
         })
     }
 }
@@ -19,17 +24,18 @@ const average = (arr) => {
     for (let i = 0; i < arr.length; i++) {
         sum += arr[i]
     }
-    console.log(sum)
     return (sum / arr.length) * 5
 }
+
 
 router.get('/list', function (req, res, next) {
     const result = getId()
     return result.then(listData => {
-        console.log(listData) //数组中每一项为对象
+        // console.log(listData) //数组中每一项为对象
         res.json(new SuccessModel(listData))
     })
 })
+
 
 router.get('/comments', function (req, res, next) {
     let id = req.query.id
@@ -40,17 +46,26 @@ router.get('/comments', function (req, res, next) {
             loopArray(comment, arr).then(() => {
                 console.log(arr)
                 let aver = average(arr)
-                console.log(aver)
                 const updateData = updateScore(id, aver)
-                return updateData.then(data => {
-                    console.log(data)
-                    res.json(new SuccessModel(null))
+                return updateData.then(() => {
+                    res.json(new SuccessModel(null, '请求成功'))
                 })
             })
         } else {
-            return
+            res.json(new SuccessModel(null, '无评论'))
         }
     })
 })
+
+
+router.get('/cal', function (req, res, next) {
+    var text = "苹果是一家伟大的公司"
+    const result = calculate(text)
+    return result.then(listData => {
+        // console.log(listData) //数组中每一项为对象
+        res.json(new SuccessModel(listData))
+    })
+})
+
 
 module.exports = router

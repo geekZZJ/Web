@@ -5,9 +5,10 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "cross-env NODE_ENV=dev nodemon ./bin/www",
-    "prd": "cross-env NODE_ENV=production nodemon ./bin/www"
+    "prd": "cross-env NODE_ENV=production pm2 start pm2.config.json"
   },
   "dependencies": {
+    "baidu-aip-sdk": "^2.4.6",
     "bosonnlp": "^0.1.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
