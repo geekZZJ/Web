@@ -16,7 +16,7 @@
 //     this.name = name;
 //     this.age = age;
 // }
-
+//
 // console.log(new Person('张三', 11));
 
 // 当用new关键字调用函数的时候 发生了什么 为什么会获得一个新的对象
