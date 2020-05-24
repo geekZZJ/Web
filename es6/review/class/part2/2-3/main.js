@@ -7,6 +7,7 @@ class AudioPlayer {
         this.songsList = []
         this.dom = null
         this.audio = new Audio()
+        this.status = 0
 
         this.getSongs()
         this.createElement()
