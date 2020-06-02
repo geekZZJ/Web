@@ -6,7 +6,7 @@
  * @update: 2020/6/1 22:31
  */
 
-const arr = [10, 20, 30, 40]
+// const arr = [10, 20, 30, 40]
 
 //会改变原数组
 /*const popRes = arr.pop()
@@ -40,3 +40,24 @@ console.log(shiftRes, arr)*/
 // forEach
 // some every
 // reduce
+
+
+// slice纯函数
+/*const arr1 = arr.slice()
+const arr2 = arr.slice(1, 4)
+const arr3 = arr.slice(2)
+const arr4 = arr.slice(-2)*/
+
+// splice非纯函数
+/*
+const spliceRes = arr.splice(1, 2, "a", "b", "c")
+console.log(spliceRes, arr)*/
+
+const res = [10, 20, 30, 40].map(parseInt)
+console.log(res)
+
+const arr = [10, 20, 30, 40]
+
+arr.map((num, index) => {
+  return parseInt(num, index)
+})
