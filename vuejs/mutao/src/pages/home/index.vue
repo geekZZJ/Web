@@ -10,6 +10,10 @@
         <header class="g-header-container">
             <home-header></home-header>
         </header>
+        <me-scroll>
+            <home-slider/>
+            <home-nav></home-nav>
+        </me-scroll>
         <home-slider></home-slider>
         <div class="g-backtop-container"></div>
         <router-view></router-view>
@@ -19,11 +23,15 @@
 <script>
   import HomeHeader from './header';
   import HomeSlider from './slider';
+  import MeScroll from 'base/scroll';
+  import HomeNav from './nav';
   export default {
     name: 'index',
     components: {
       HomeSlider,
-      HomeHeader
+      HomeHeader,
+      MeScroll,
+      HomeNav
     }
   };
 </script>

@@ -7,12 +7,13 @@
 */
 <template>
     <div class="slider-wapper">
+        <me-loading v-if="!sliders.length"></me-loading>
         <me-slider
                 :direction="direction"
                 :loop="loop"
                 :interval="interval"
                 :pagination="pagination"
-                v-if="sliders.length"
+                v-else
         >
             <swiper-slide
                     v-for="(item, index) in sliders"
@@ -31,12 +32,14 @@
   import {swiperSlide} from 'vue-awesome-swiper';
   import {sliderOptions} from './config';
   import {getHomeSlider} from 'api/home';
+  import MeLoading from 'base/loading';
 
   export default {
     name: 'HomeSlider',
     components: {
       MeSlider,
-      swiperSlide
+      swiperSlide,
+      MeLoading
     },
     data() {
       return {
