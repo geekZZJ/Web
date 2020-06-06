@@ -11,9 +11,12 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "babel-polyfill": "^6.26.0",
     "fastclick": "^1.0.6",
+    "swiper": "^5.4.2",
     "vue": "^2.5.2",
+    "vue-awesome-swiper": "^4.1.1",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
