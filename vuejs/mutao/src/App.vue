@@ -13,10 +13,8 @@
   import CTabbar from 'components/tabbar';
   export default {
     name: 'App',
-    components: {CTabbar}
+    components: {
+      CTabbar
+    }
   };
 </script>
-
-<style lang="scss">
-
-</style>

@@ -1,32 +1,20 @@
 /**
 * @name: index
 * @author: 张中俊
-* @date: 2020/6/3 16:25
+* @date: 2020/6/6 11:03
 * @description：index
-* @update: 2020/6/3 16:25
+* @update: 2020/6/6 11:03
 */
 <template>
-    <div class="home">
-        <header class="g-header-container">
-            <home-header></home-header>
-        </header>
-        <div>
-            <home-slider></home-slider>
-        </div>
-        <div class="g-backtop-container"></div>
+    <div>
+        home
         <router-view></router-view>
     </div>
 </template>
 
 <script>
-  import HomeHeader from './header';
-  import HomeSlider from './slider';
   export default {
-    name: 'index',
-    components: {
-      HomeHeader,
-      HomeSlider
-    }
+    name: 'index'
   };
 </script>
 

@@ -34,27 +34,22 @@ html {
   -webkit-font-smoothing: antialiased; // 字体抗锯齿
   -moz-osx-font-smoothing: grayscale;
 }
-
 input, select, textarea {
   border: none;
   -webkit-appearance: none; // 清除内阴影
   -webkit-user-select: auto !important; // 否则ios下输入框无法输入
 }
-
 textarea {
   overflow: auto;
   resize: none;
 }
-
 h1, h2, h3, h4, h5, h6 {
   font-size: 100%;
   font-weight: normal;
 }
-
 address, caption, cite, code, dfn, th, var, i, em {
   font-style: normal;
 }
-
 abbr, acronym { // 去掉firefox下此元素的边框
   border: none;
   font-variant: normal;
@@ -67,15 +62,12 @@ ul, ol {
 del {
   text-decoration: line-through;
 }
-
 ins, a {
   text-decoration: none;
 }
-
 a, img {
   -webkit-touch-callout: none; // 禁用长按页面时的弹出菜单(iOS下有效)
 }
-
 img {
   border: none;
   /*display: block;*/
@@ -90,7 +82,6 @@ table { // 去掉各table cell的边距并让其边重合
 blockquote, q {
   quotes: none;
 }
-
 blockquote:before, blockquote:after,
 q:before, q:after {
   content: '';
@@ -103,11 +94,9 @@ sub, sup {
   line-height: 0;
   vertical-align: baseline;
 }
-
 sup {
   top: -0.5em;
 }
-
 sub {
   bottom: -0.25em;
 }

@@ -1,9 +1,9 @@
 /**
 * @name: index
 * @author: 张中俊
-* @date: 2020/6/3 16:14
+* @date: 2020/6/6 10:51
 * @description：index
-* @update: 2020/6/3 16:14
+* @update: 2020/6/6 10:51
 */
 <template>
     <div class="g-tabbar">
@@ -13,7 +13,7 @@
         </router-link>
         <router-link class="g-tabbar-item" to="/category">
             <i class="iconfont icon-category"></i>
-            <span>分类</span>
+            <span>分类页</span>
         </router-link>
         <router-link class="g-tabbar-item" to="/cart">
             <i class="iconfont icon-cart"></i>
@@ -21,7 +21,7 @@
         </router-link>
         <router-link class="g-tabbar-item" to="/personal">
             <i class="iconfont icon-personal"></i>
-            <span>我的</span>
+            <span>个人中心</span>
         </router-link>
     </div>
 </template>
@@ -32,8 +32,9 @@
   };
 </script>
 
-<style scoped lang="scss">
-    @import '~assets/scss/mixins';
+<style lang="scss" scoped>
+    @import "~assets/scss/mixins";
+
     .router-link-active {
         color: $link-active-color;
     }
