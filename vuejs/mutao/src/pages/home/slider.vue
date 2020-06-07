@@ -56,7 +56,7 @@
     methods: {
       getSliders() {
         getHomeSlider().then(data => {
-          console.log(data);
+          // console.log(data);
           this.sliders = data;
         });
       }

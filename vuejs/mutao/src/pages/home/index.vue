@@ -10,9 +10,10 @@
         <header class="g-header-container">
             <home-header></home-header>
         </header>
-        <me-scroll>
+        <me-scroll :data="recommends">
             <home-slider/>
             <home-nav></home-nav>
+            <home-recommend @loaded="getRecommends"></home-recommend>
         </me-scroll>
         <home-slider></home-slider>
         <div class="g-backtop-container"></div>
@@ -25,13 +26,28 @@
   import HomeSlider from './slider';
   import MeScroll from 'base/scroll';
   import HomeNav from './nav';
+  import HomeRecommend from './recommend';
   export default {
     name: 'index',
     components: {
       HomeSlider,
       HomeHeader,
       MeScroll,
-      HomeNav
+      HomeNav,
+      HomeRecommend
+    },
+    data() {
+      return {
+        recommends: []
+      };
+    },
+    methods: {
+      updateScroll() {
+
+      },
+      getRecommends(recommends) {
+        this.recommends = recommends;
+      }
     }
   };
 </script>
