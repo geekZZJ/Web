@@ -6,7 +6,7 @@
 * @update: 2020/6/6 11:58
 */
 <template>
-    <swiper :options="swiperOption">
+    <swiper :options="swiperOption" :key="keyId">
         <slot></slot>
         <div class="swiper-pagination" v-if="pagination" slot="pagination"></div>
     </swiper>
@@ -45,11 +45,32 @@
       pagination: {
         type: Boolean,
         default: true
+      },
+      data: {
+        type: Array,
+        default: () => []
       }
     },
     data() {
       return {
-        swiperOption: {
+        keyId: Math.random()
+      };
+    },
+    watch: {
+      data(newData) {
+        if (newData.length === 0) {
+          return;
+        }
+        this.swiperOption.loop = newData.length === 1 ? false : this.loop;
+        this.keyId = Math.random();
+      }
+    },
+    created() {
+      this.init();
+    },
+    methods: {
+      init() {
+        this.swiperOption = {
           watchOverflow: true,
           direction: this.direction,
           autoplay: this.interval ? {
@@ -57,12 +78,12 @@
             disableOnInteraction: false
           } : false,
           slidesPerView: 1,
-          loop: this.loop,
+          loop: this.data.length <= 1 ? false : this.loop,
           pagination: {
             el: this.pagination ? '.swiper-pagination' : null
           }
-        }
-      };
+        };
+      }
     }
   };
 </script>
