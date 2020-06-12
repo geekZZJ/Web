@@ -13,11 +13,13 @@
         <me-scroll
                 :data="recommends"
                 pullDown
+                pullUp
                 @pull-down="pullToRefresh"
+                @pull-up="pullToLoadMore"
         >
             <home-slider ref="slider"/>
             <home-nav></home-nav>
-            <home-recommend @loaded="getRecommends"></home-recommend>
+            <home-recommend @loaded="getRecommends" ref="recommend"></home-recommend>
         </me-scroll>
         <home-slider></home-slider>
         <div class="g-backtop-container"></div>
@@ -31,6 +33,7 @@
   import MeScroll from 'base/scroll';
   import HomeNav from './nav';
   import HomeRecommend from './recommend';
+  import MeBacktop from 'base/backtop';
   export default {
     name: 'index',
     components: {
@@ -38,7 +41,8 @@
       HomeHeader,
       MeScroll,
       HomeNav,
-      HomeRecommend
+      HomeRecommend,
+      MeBacktop
     },
     data() {
       return {
@@ -55,6 +59,18 @@
       pullToRefresh(end) {
         this.$refs.slider.update().then(end);
         /* setTimeout(() => {
+          end();
+        }, 1000); */
+      },
+      pullToLoadMore(end) {
+        this.$refs.recommend.update().then(end).catch(err => {
+          if (err) {
+            console.log(err);
+          }
+          end();
+        });
+        /* setTimeout(() => {
+          console.log('上拉');
           end();
         }, 1000); */
       }

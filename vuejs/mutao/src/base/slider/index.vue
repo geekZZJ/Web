@@ -13,12 +13,12 @@
 </template>
 
 <script>
-  import {swiper} from 'vue-awesome-swiper';
+  import {Swiper} from 'vue-awesome-swiper';
 
   export default {
     name: 'MeSlider',
     components: {
-      swiper
+      Swiper
     },
     props: {
       direction: {
