@@ -20,7 +20,18 @@
 
 <script>
   export default {
-    name: 'MeBacktop'
+    name: 'MeBacktop',
+    props: {
+      visible: {
+        type: Boolean,
+        default: false
+      }
+    },
+    methods: {
+      backToTop() {
+        this.$emit('backtop');
+      }
+    }
   };
 </script>
 

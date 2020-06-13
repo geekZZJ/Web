@@ -8,7 +8,7 @@
 <template>
     <div class="home">
         <header class="g-header-container">
-            <home-header></home-header>
+            <home-header :class="{'header-transition': isHeaderTransition}" ref="header"></home-header>
         </header>
         <me-scroll
                 :data="recommends"
@@ -16,13 +16,19 @@
                 pullUp
                 @pull-down="pullToRefresh"
                 @pull-up="pullToLoadMore"
+                @scroll-end="scrollEnd"
+                @scroll="scroll"
+                @pull-down-transition-end="pullDownTransitionEnd"
+                ref="scroll"
         >
             <home-slider ref="slider"/>
             <home-nav></home-nav>
             <home-recommend @loaded="getRecommends" ref="recommend"></home-recommend>
         </me-scroll>
         <home-slider></home-slider>
-        <div class="g-backtop-container"></div>
+        <div class="g-backtop-container">
+            <me-backtop :visible="isBacktopVisible" @backtop="backToTop"></me-backtop>
+        </div>
         <router-view></router-view>
     </div>
 </template>
@@ -34,6 +40,7 @@
   import HomeNav from './nav';
   import HomeRecommend from './recommend';
   import MeBacktop from 'base/backtop';
+  import {HEADER_TRANSITION_HEIGHT} from './config';
   export default {
     name: 'index',
     components: {
@@ -46,9 +53,16 @@
     },
     data() {
       return {
-        recommends: []
+        recommends: [],
+        isBacktopVisible: false,
+        isHeaderTransition: false
       };
     },
+    /* created() {
+      setTimeout(() => {
+        this.isBacktopVisible = true;
+      }, 1000);
+    }, */
     methods: {
       updateScroll() {
 
@@ -73,6 +87,29 @@
           console.log('上拉');
           end();
         }, 1000); */
+      },
+      scrollEnd(translate, scroll, pulling) {
+        if (!pulling) {
+          this.changeHeaderStatus(translate);
+        }
+        this.isBacktopVisible = translate < 0 && -translate > scroll.height;
+      },
+      backToTop() {
+        this.$refs.scroll && this.$refs.scroll.scrollToTop();
+      },
+      changeHeaderStatus(translate) {
+        if (translate > 0) {
+          this.$refs.header.hide();
+          return;
+        }
+        this.$refs.header.show();
+        this.isHeaderTransition = -translate > HEADER_TRANSITION_HEIGHT;
+      },
+      scroll(translate) {
+        this.changeHeaderStatus(translate);
+      },
+      pullDownTransitionEnd() {
+        this.$refs.header.show();
       }
     }
   };

@@ -12,6 +12,8 @@ export const sliderOptions = {
   pagination: false
 };
 
+export const HEADER_TRANSITION_HEIGHT = 100;
+
 export const navItems = [
   // 原nav.uve的数据
   {

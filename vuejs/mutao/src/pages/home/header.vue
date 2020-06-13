@@ -6,7 +6,7 @@
 * @update: 2020/6/6 11:31
 */
 <template>
-    <me-navbar class="header">
+    <me-navbar class="header" v-show="visible">
         <i class="iconfont icon-scan" slot="left"></i>
         <div slot="center">搜索框</div>
         <i class="iconfont icon-msg" slot="right"></i>
@@ -19,6 +19,19 @@
     name: 'HomeHeader',
     components: {
       MeNavbar
+    },
+    data() {
+      return {
+        visible: true
+      };
+    },
+    methods: {
+      show() {
+        this.visible = true;
+      },
+      hide() {
+        this.visible = false;
+      }
     }
   };
 </script>
