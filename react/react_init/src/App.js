@@ -22,6 +22,15 @@ class App extends Component {
     })
   }
 
+  handleKeyUp(e) {
+    if (e.keyCode === 13) {
+      const list = [...this.state.list, this.state.inputValue];
+      this.setState({
+        list
+      })
+    }
+  }
+
   render() {
     return (
       <Fragment>
@@ -29,6 +38,7 @@ class App extends Component {
           type="text"
           value={this.state.inputValue}
           onChange={this.handleInputChange.bind(this)}
+          onKeyUp={this.handleKeyUp.bind(this)}
         />
         <ul>
           {
