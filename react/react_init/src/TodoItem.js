@@ -9,7 +9,11 @@ class TodoItem extends Component {
   }
 
   handleItemClick() {
-    console.log(this);
+    // 改变父组件中的list数据
+    // console.log(this);
+    // 子组件想要和父组件通信，要调用父组件传递过来的方法
+    const {deleteFunction, index} = this.props;
+    deleteFunction(index);
   }
 
   render() {

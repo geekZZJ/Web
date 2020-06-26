@@ -8,6 +8,7 @@ class App extends Component {
     super();
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleKeyUp = this.handleKeyUp.bind(this);
+    this.handleItemClick = this.handleItemClick.bind(this);
 
     this.state = {
       inputValue: 'hello',
@@ -38,21 +39,24 @@ class App extends Component {
   }
 
   // 删除某一项
-  /*handleItemClick(index) {
+  handleItemClick(index) {
     const list = [...this.state.list];
     list.splice(index, 1);
     // console.log(list);
     this.setState({
       list
     })
-  }*/
+  }
 
   getListItems() {
     return this.state.list.map((value, index) => {
       return (
         <TodoItem
           content={value}
-          key={index}>
+          key={index}
+          index={index}
+          deleteFunction={this.handleItemClick}
+        >
         </TodoItem>
       )
     })
