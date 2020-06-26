@@ -5,6 +5,7 @@ interface Point {
 }
 
 function demo(data: Point) {
+  console.log('TS');
   return Math.sqrt(data.x ** 2 + data.y ** 2);
 }
 
