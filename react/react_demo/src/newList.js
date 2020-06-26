@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {List} from 'antd';
+import {List, Typography} from 'antd';
 
 const data = [
   'Racing car sprays burning fuel into crowd.',
@@ -9,8 +9,9 @@ const data = [
   'Los Angeles battles huge wildfires.',
 ];
 
-class List extends Component {
+class NewList extends Component {
   render() {
+    console.log(this.props.match.params.id);
     return (
       <List
         header={<div>Header</div>}
@@ -27,4 +28,4 @@ class List extends Component {
   }
 }
 
-export default List;
+export default NewList;
