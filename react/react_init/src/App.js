@@ -1,11 +1,8 @@
 import React, {Component, Fragment} from 'react';
+import TodoItem from "./TodoItem";
 import './style.css';
 
-/*function App() {
-  return (
-    <div>TodoList</div>
-  );
-}*/
+
 class App extends Component {
   constructor() {
     super();
@@ -40,23 +37,23 @@ class App extends Component {
     }
   }
 
-  handleItemClick(index) {
+  // 删除某一项
+  /*handleItemClick(index) {
     const list = [...this.state.list];
     list.splice(index, 1);
     // console.log(list);
     this.setState({
       list
     })
-  }
+  }*/
 
   getListItems() {
     return this.state.list.map((value, index) => {
       return (
-        <li key={index}
-            onClick={this.handleItemClick.bind(this, index)}
-            dangerouslySetInnerHTML={{__html: value}}
-        >
-        </li>
+        <TodoItem
+          content={value}
+          key={index}>
+        </TodoItem>
       )
     })
   }
