@@ -1,3 +1,8 @@
+body {
+  height: 100%;
+  background-color: #f0f2f5;
+}
+
 .header {
   background-color: #fff;
   border-bottom: 1px solid #999;
@@ -5,10 +10,12 @@
 }
 
 .content {
-  min-height: 600px;
+  min-height: 550px;
+  margin: 10px;
 }
 
 .footer {
   text-align: center;
   border-top: 1px solid #999;
+  padding: 12px 50px;
 }
