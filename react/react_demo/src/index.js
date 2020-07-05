@@ -22,7 +22,7 @@ class App extends Component {
 
             <Switch>
               <Route path='/detail' component={Detail}></Route>
-              <Route path='/:id' component={List}></Route>
+              <Route path='/:id?' component={List}></Route>
             </Switch>
           </Content>
           <Footer className='footer'>@copyright zzj 2020</Footer>
