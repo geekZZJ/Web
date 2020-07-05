@@ -23,12 +23,29 @@ function f (x = 1, y = 2, z = 3) {
   })
   return num
 } */
-function sum (base, ...nums) {
+/* function sum (base, ...nums) {
   let num = 0
   nums.forEach(function (item) {
     num += item * 1
   })
   return base * 2 + num
+} */
+/* function sum (x = 1, y = 2, z = 3) {
+  return x + y + z
 }
 
-console.log(sum(1, 2, 3, 5))
+console.log(sum(...[4, 5, 6])) */
+
+/* let hello = () => {
+  console.log('hello world')
+}
+hello() */
+
+let test = {
+  name: 'test',
+  say: () => {
+    console.log(this.name, this)
+  }
+}
+
+test.say() // undefine
