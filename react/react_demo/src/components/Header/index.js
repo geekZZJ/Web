@@ -29,30 +29,35 @@ class AppHeader extends Component {
         },
         {
           id: 3,
-          icon: <WifiOutlined />,
-          title: 'VOA英语教学'
+          icon: <WifiOutlined/>,
+          title: 'VOA英文教学'
         },
         {
           id: 4,
-          icon: <TagsOutlined />,
-          title: 'VOA慢速英语'
+          icon: <TagsOutlined/>,
+          title: '走遍美国'
         },
         {
           id: 5,
-          icon: <SoundOutlined />,
-          title: 'VOA慢速英语'
+          icon: <SoundOutlined/>,
+          title: '空中英语教室'
         },
         {
           id: 6,
-          icon: <ShakeOutlined />,
-          title: 'VOA慢速英语'
+          icon: <ShakeOutlined/>,
+          title: '大家说英语'
         },
       ]
     }
   }
 
   componentDidMount() {
-
+    axios.get('http://www.dell-lee.com/react/api/header.json').then(res => {
+      console.log(res.data.data);
+      /*this.setState({
+        list:res.data.data
+      })*/
+    })
   }
 
   getMenuItems() {
