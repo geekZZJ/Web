@@ -12,10 +12,10 @@ let obj = {
 }
 console.log(obj)
 obj.hello() */
-let map = new Map()
+/* let map = new Map()
 map.set(1, 2)
 map.set(3, 5)
-map.set(1, 3)
+map.set(1, 3) */
 // map.delete(1)
 // map.clear()
 /* console.log(map.size)
@@ -28,6 +28,26 @@ console.log(map.keys(), map.values()) */
   console.log(value, key)
 }) */
 
-for (let [key, value] of map) {
+/* for (let [key, value] of map) {
   console.log(key, value)
+} */
+
+/* const target = {}
+const source = { b: 4, c: 5 }
+Object.assign(target, source)
+console.log('source', source) */
+
+const target = {}
+const source = {
+  a: {
+    b: {
+      c: {
+        d: 1
+      }
+    },
+    e: 2,
+    f: 3
+  }
 }
+Object.assign(target, source)
+console.log(target)
