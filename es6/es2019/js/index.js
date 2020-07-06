@@ -1,1 +1,1 @@
-import './lesson2-6'
+import './lesson2-7'
