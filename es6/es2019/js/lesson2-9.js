@@ -30,10 +30,31 @@ loadScript('./1.js', test) */
 /* loadScript('./1.js')
   .then(loadScript('./2.js'))
   .then(loadScript('./3.js')) */
-const p1 = Promise.resolve(1)
+/* const p1 = Promise.resolve(1)
 const p2 = Promise.resolve(2)
-const p3 = Promise.resolve(3)
+const p3 = Promise.resolve(3) */
 
-Promise.all([p1, p2, p3]).then(value => {
+/* Promise.all([p1, p2, p3]).then(value => {
+  console.log(value)
+}) */
+
+const p1 = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(function () {
+      resolve(1)
+    }, 1000)
+  })
+}
+
+const p2 = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(function () {
+      resolve(2)
+    }, 3000)
+  })
+}
+
+// 先到先得
+Promise.race([p1(), p2()]).then(value => {
   console.log(value)
 })
