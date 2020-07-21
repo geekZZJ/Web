@@ -3,11 +3,7 @@ node_modules/
 /dist/
 logs
 *.log
-*.png
-*.jpg
 课件/
-笔记/
-prepare/
 
 
 #Editor directories and files
