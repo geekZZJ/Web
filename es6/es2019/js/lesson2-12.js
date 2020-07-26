@@ -9,7 +9,7 @@ l.next()
 l.next()
 l.next() */
 
-function * gen () {
+/* function * gen () {
   let val
   val = yield 1
   console.log(val)
@@ -17,4 +17,14 @@ function * gen () {
 
 const l = gen()
 l.next()
-l.next()
+l.next() */
+
+function * gen () {
+  let val
+  val = yield [1, 2, 3]
+  console.log(val)
+}
+
+const l = gen()
+console.log(l.next(10))
+console.log(l.next(20))
