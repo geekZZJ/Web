@@ -18,7 +18,7 @@ console.log(select(/"([^"]*)"/g, str)) */
 
 function select (regExp, str) {
   const matches = []
-  for (const match of str.matchAll(regExp)) {
+  for (const match of str.matchAll(regExp))  {
     matches.push(match[1])
   }
   return matches
