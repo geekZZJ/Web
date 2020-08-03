@@ -5,6 +5,7 @@ import TodoItem from "./TodoItem";
 class TodoList extends Component {
   constructor(props) {
     super(props);
+    // 当组件的state或props发生改变的时候，render函数就会重新执行
     this.state = {
       inputValue: '',
       list: []
@@ -25,6 +26,9 @@ class TodoList extends Component {
                  className="input"
                  value={this.state.inputValue}
                  onChange={this.handleInputChange}
+                 ref={(input) => {
+                   this.input = input
+                 }}
           />
           <button onClick={this.handleBtnClick}>提交</button>
         </div>
@@ -41,6 +45,8 @@ class TodoList extends Component {
       inputValue: e.target.value
     })*/
     const value = e.target.value
+    // console.log(this.input.value)
+    // setState是异步的
     this.setState(() => {
       return {
         inputValue: value
