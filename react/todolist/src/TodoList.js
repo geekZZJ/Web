@@ -1,6 +1,7 @@
-import React, {Component} from "react"
+import React from "react"
 import {connect} from "react-redux";
 
+// 无状态组件
 const TodoList = (props)=>{
   const {inputValue, changeInputValue, handleClick, list} = props
   return (
