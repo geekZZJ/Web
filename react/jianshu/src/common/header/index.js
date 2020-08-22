@@ -17,7 +17,8 @@ import {actionCreators} from "./store"
 
 class Header extends Component {
   getListArea() {
-    if (this.props.focused) {
+    const {focused, list} = this.props
+    if (focused) {
       return (
         <SearchInfo>
           <SearchInfoTitle>
@@ -25,7 +26,7 @@ class Header extends Component {
             <SearchInfoSwitch>换一批</SearchInfoSwitch>
           </SearchInfoTitle>
           <SearchInfoList>
-            {this.props.list.map(item => {
+            {list.map(item => {
               return <SearchInfoItem key={item}>{item}</SearchInfoItem>
             })}
           </SearchInfoList>
@@ -37,6 +38,7 @@ class Header extends Component {
   }
 
   render() {
+    const {focused, handleInputFocus, handleInputBlur} = this.props
     return (
       <HeaderWrapper>
         <Logo/>
@@ -50,16 +52,16 @@ class Header extends Component {
           <SearchWrapper>
             <CSSTransition
               timeout={200}
-              in={this.props.focused}
+              in={focused}
               classNames="slide"
             >
               <NavSearch
-                className={this.props.focused ? "focused" : ""}
-                onFocus={this.props.handleInputFocus}
-                onBlur={this.props.handleInputBlur}
+                className={focused ? "focused" : ""}
+                onFocus={handleInputFocus}
+                onBlur={handleInputBlur}
               />
             </CSSTransition>
-            <i className={this.props.focused ? "focused iconfont" : "iconfont"}>&#xe616;</i>
+            <i className={focused ? "focused iconfont" : "iconfont"}>&#xe616;</i>
             {this.getListArea()}
           </SearchWrapper>
           <Addtion>
