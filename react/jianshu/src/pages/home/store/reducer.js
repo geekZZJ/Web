@@ -1,52 +1,19 @@
 import {fromJS} from "immutable"
 
 const defaultState = fromJS({
-  topicList: [
-    {
-      id: 1,
-      title: "社会热点",
-      imgUrl: "https://hbimg.huabanimg.com/64a1ca97d7e162355639d3d2fdf95511c77c4b9a30e1e-bZob2p_fw658/format/webp"
-    },
-    {
-      id: 2,
-      title: "手绘",
-      imgUrl: "https://hbimg.huabanimg.com/872b02eccfc415fcf87e2c5dc588c4e1638ea14f59c404-kwKUoB_fw658/format/webp"
-    }
-  ],
-  articleList: [
-    {
-      id: 1,
-      title: "绿地事件张雨婷：折射出女人的贪婪，男人的欺骗，欲望的无度",
-      desc: "虽然绿地事件已经在网络上发酵了几天，虽然现在还没有官方的正式回应，但是这个事件的社会影响力还是非常大的，因为通过这个事件所卷入的是我们大众生活中...",
-      imgUrl: "https://upload-images.jianshu.io/upload_images/1966045-27a4df5adf08fcfc.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240"
-    },
-    {
-      id: 2,
-      title: "绿地事件张雨婷：折射出女人的贪婪，男人的欺骗，欲望的无度",
-      desc: "虽然绿地事件已经在网络上发酵了几天，虽然现在还没有官方的正式回应，但是这个事件的社会影响力还是非常大的，因为通过这个事件所卷入的是我们大众生活中...",
-      imgUrl: "https://upload-images.jianshu.io/upload_images/1966045-27a4df5adf08fcfc.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240"
-    },
-    {
-      id: 3,
-      title: "绿地事件张雨婷：折射出女人的贪婪，男人的欺骗，欲望的无度",
-      desc: "虽然绿地事件已经在网络上发酵了几天，虽然现在还没有官方的正式回应，但是这个事件的社会影响力还是非常大的，因为通过这个事件所卷入的是我们大众生活中...",
-      imgUrl: "https://upload-images.jianshu.io/upload_images/1966045-27a4df5adf08fcfc.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240"
-    }
-  ],
-  recommendList: [
-    {
-      id:1,
-      imgUrl:"http://cdn2.jianshu.io/assets/web/banner-s-club-aa8bdf19f8cf729a759da42e4a96f366.png"
-    },
-    {
-      id: 2,
-      imgUrl: "http://cdn2.jianshu.io/assets/web/banner-s-7-1a0222c91694a1f38e610be4bf9669be.png"
-    }
-  ]
+  topicList: [],
+  articleList: [],
+  recommendList: []
 })
 
 export default (state = defaultState, action) => {
   switch (action.type) {
+    case "change_home_data":
+      return state.merge({
+        topicList: fromJS(action.topicList),
+        articleList: fromJS(action.articleList),
+        recommendList: fromJS(action.recommendList)
+      })
     default:
       return state
   }
