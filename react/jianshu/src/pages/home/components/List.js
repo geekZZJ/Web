@@ -1,9 +1,10 @@
-import React, {Component} from "react";
+import React, {PureComponent} from "react";
 import {ListInfo, ListItem, LoadMore} from "../style";
 import {connect} from "react-redux";
 import {actionCreator} from "../store"
+import {Link} from "react-router-dom"
 
-class List extends Component {
+class List extends PureComponent {
   render() {
     const {articleList, getMoreList, page} = this.props
     return (
@@ -11,13 +12,15 @@ class List extends Component {
         {
           articleList.map((item, index) => {
             return (
-              <ListItem key={index}>
-                <img className="pic" src={item.get("imgUrl")} alt={item.get("title")}/>
-                <ListInfo>
-                  <h3 className="title">{item.get("title")}</h3>
-                  <p className="desc">{item.get("desc")}</p>
-                </ListInfo>
-              </ListItem>
+              <Link key={index} to="/detail">
+                <ListItem>
+                  <img className="pic" src={item.get("imgUrl")} alt={item.get("title")}/>
+                  <ListInfo>
+                    <h3 className="title">{item.get("title")}</h3>
+                    <p className="desc">{item.get("desc")}</p>
+                  </ListInfo>
+                </ListItem>
+              </Link>
             )
           })
         }
