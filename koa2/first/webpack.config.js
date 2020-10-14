@@ -2,7 +2,7 @@
  * @Author: 张中俊
  * @Date: 2020-10-12 20:55:05
  * @LastEditors: 张中俊
- * @LastEditTime: 2020-10-12 22:58:11
+ * @LastEditTime: 2020-10-13 21:41:26
  * @Description:
  */
 const path = require("path");
@@ -39,5 +39,7 @@ const webpackconfig = {
     __dirname: true,
   },
 };
+
+console.log("webpack", webpackconfig);
 
 module.exports = webpackconfig;
