@@ -1,25 +1,25 @@
 /*
  * @Author: 张中俊
- * @Date: 2020-10-12 20:55:05
+ * @Date: 2020-10-17 14:40:37
  * @LastEditors: 张中俊
- * @LastEditTime: 2020-10-13 21:41:26
+ * @LastEditTime: 2020-10-17 15:52:23
  * @Description:
  */
 const path = require("path");
+const utils = require("./utils");
+const webpack = require("webpack");
 const nodeExternals = require("webpack-node-externals");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 const webpackconfig = {
   target: "node",
-  mode: "development",
   entry: {
-    server: path.join(__dirname, "src/index.js"),
+    server: path.join(utils.APP_PATH, "index.js"),
   },
   output: {
     filename: "[name].bundle.js",
-    path: path.join(__dirname, "./dist"),
+    path: utils.DIST_PATH,
   },
-  devtool: "eval-source-map",
   module: {
     rules: [
       {
@@ -32,14 +32,23 @@ const webpackconfig = {
     ],
   },
   externals: [nodeExternals()],
-  plugins: [new CleanWebpackPlugin()],
+  plugins: [
+    new CleanWebpackPlugin(),
+    new webpack.DefinePlugin({
+      "process.env": {
+        NODE_ENV:
+          process.env.NODE_ENV === "production" ||
+          process.env.NODE_ENV === "prod"
+            ? "'production'"
+            : "'development'",
+      },
+    }),
+  ],
   node: {
     global: true,
     __filename: true,
     __dirname: true,
   },
 };
-
-console.log("webpack", webpackconfig);
 
 module.exports = webpackconfig;

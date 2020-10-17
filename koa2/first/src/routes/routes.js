@@ -2,12 +2,10 @@
  * @Author: 张中俊
  * @Date: 2020-10-12 20:11:39
  * @LastEditors: 张中俊
- * @LastEditTime: 2020-10-12 20:21:41
+ * @LastEditTime: 2020-10-17 17:24:17
  * @Description:
  */
-const combineRouters = require("koa-combine-routers");
+import combineRouters from "koa-combine-routers";
+import demoRouter from "./demoRouter";
 
-const aroutes = require("./aRouter");
-const broutes = require("./bRouter");
-
-module.exports = combineRouters(aroutes, broutes);
+export default combineRouters(demoRouter);
