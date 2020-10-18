@@ -1,11 +1,11 @@
 /*
  * @Author: 张中俊
  * @Date: 2020-10-12 20:11:39
- * @LastEditors: 张中俊
- * @LastEditTime: 2020-10-17 17:24:17
+ * @LastEditors: zzj
+ * @LastEditTime: 2020-10-18 15:16:22
  * @Description:
  */
 import combineRouters from "koa-combine-routers";
-import demoRouter from "./demoRouter";
+import publicRouter from "./publicRouter";
 
-export default combineRouters(demoRouter);
+export default combineRouters(publicRouter);
