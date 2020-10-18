@@ -2,7 +2,7 @@
  * @Author: 张中俊
  * @Date: 2020-10-12 20:12:06
  * @LastEditors: zzj
- * @LastEditTime: 2020-10-18 15:44:46
+ * @LastEditTime: 2020-10-18 21:57:31
  * @Description:
  */
 import svgCaptcha from "svg-captcha";
@@ -16,7 +16,7 @@ class PublicController {
       color: true,
       noise: Math.floor(Math.random() * 5),
       width: 150,
-      height: 50,
+      height: 38,
     });
     ctx.body = {
       code: 200,
