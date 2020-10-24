@@ -4290,6 +4290,11 @@ node-releases@^1.1.61:
   resolved "https://registry.npm.taobao.org/node-releases/download/node-releases-1.1.63.tgz?cache=0&sync_timestamp=1602722571085&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fnode-releases%2Fdownload%2Fnode-releases-1.1.63.tgz#db6dbb388544c31e888216304e8fd170efee3ff5"
   integrity sha1-2227OIVEwx6IghYwTo/RcO/uP/U=
 
+nodemailer@^6.4.14:
+  version "6.4.14"
+  resolved "https://registry.npm.taobao.org/nodemailer/download/nodemailer-6.4.14.tgz#2ffb160b63ff0c15a979da75e1f82af85433d2a3"
+  integrity sha1-L/sWC2P/DBWpedp14fgq+FQz0qM=
+
 nodemon@^2.0.4:
   version "2.0.5"
   resolved "https://registry.npm.taobao.org/nodemon/download/nodemon-2.0.5.tgz?cache=0&sync_timestamp=1602609380421&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fnodemon%2Fdownload%2Fnodemon-2.0.5.tgz#df67fe1fd1312ddb0c1e393ae2cf55aacdcec2f3"
