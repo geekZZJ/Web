@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-10-18 19:44:25
  * @LastEditors: zzj
- * @LastEditTime: 2020-10-18 20:33:48
+ * @LastEditTime: 2020-10-25 15:17:52
  * @Description: 
 -->
 <template>
@@ -25,7 +25,6 @@
         </ul>
         <div
           class="layui-form layui-tab-content"
-          id="LAY_ucm"
           style="padding: 20px 0;"
         >
           <div class="layui-tab-item layui-show">
@@ -72,54 +71,48 @@
             <div class="layui-form layui-form-pane">
               <form method="post">
                 <div class="layui-form-item">
-                  <label
-                    for="L_email"
-                    class="layui-form-label"
-                  >邮箱</label>
+                  <label class="layui-form-label">邮箱</label>
                   <div class="layui-input-inline">
                     <input
                       type="text"
-                      id="L_email"
                       name="email"
-                      required
-                      lay-verify="required"
+                      placeholder="请输入邮箱地址"
                       autocomplete="off"
                       class="layui-input"
+                      v-model="username"
                     >
                   </div>
                 </div>
                 <div class="layui-form-item">
-                  <label
-                    for="L_vercode"
-                    class="layui-form-label"
-                  >人类验证</label>
+                  <label class="layui-form-label">验证码</label>
                   <div class="layui-input-inline">
                     <input
                       type="text"
-                      id="L_vercode"
                       name="vercode"
-                      required
-                      lay-verify="required"
-                      placeholder="请回答后面的问题"
+                      placeholder="请输入验证码"
                       autocomplete="off"
                       class="layui-input"
+                      v-model="code"
                     >
                   </div>
-                  <div class="layui-form-mid">
-                    <span style="color: #c00;">hello</span>
+                  <div>
+                    <span
+                      v-html="svg"
+                      @click="_getCode"
+                      class="svg"
+                    ></span>
                   </div>
                 </div>
                 <div class="layui-form-item">
                   <button
+                    type="button"
                     class="layui-btn"
                     alert="1"
-                    lay-filter="*"
-                    lay-submit
+                    @click="submit"
                   >提交</button>
                 </div>
               </form>
             </div>
-
           </div>
         </div>
       </div>
@@ -128,20 +121,49 @@
 </template>
 
 <script>
+import { getCode, forget } from "@/api/login";
 export default {
   name: "forget",
   components: {},
   data() {
-    return {};
+    return {
+      svg: "",
+      username: "",
+      code: "",
+    };
   },
   computed: {},
   watch: {},
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {},
   //生命周期 - 挂载完成（可以访问DOM元素）
-  mounted() {},
-  methods: {},
+  mounted() {
+    this._getCode();
+  },
+  methods: {
+    async _getCode() {
+      const result = await getCode();
+      console.log("result", result);
+      if (result.code === 200) {
+        this.svg = result.data;
+      }
+    },
+    async submit() {
+      const result = await forget({
+        username: this.username,
+        code: this.code,
+      });
+      console.log("result", result);
+      if (result.code === 200) {
+        alert("邮件发送成功");
+      }
+    },
+  },
 };
 </script>
 <style lang='scss' scoped>
+.svg {
+  position: relative;
+  cursor: pointer;
+}
 </style>
