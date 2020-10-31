@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-10-18 22:14:39
  * @LastEditors: zzj
- * @LastEditTime: 2020-10-25 15:34:10
+ * @LastEditTime: 2020-10-25 15:34:37
  * @Description:
  */
 "use strict";
@@ -22,7 +22,7 @@ async function send(sendInfo) {
     secureConnection: true,
     auth: {
       user: "2461927976@qq.com", // generated ethereal user
-      pass: "", // generated ethereal password
+      pass: "nvrobrhmdnpqdhii", // generated ethereal password
     },
   });
 
