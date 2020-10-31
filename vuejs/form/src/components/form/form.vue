@@ -2,7 +2,7 @@
  * @Author: 张中俊
  * @Date: 2020-10-17 11:06:12
  * @LastEditors: 张中俊
- * @LastEditTime: 2020-10-17 11:42:28
+ * @LastEditTime: 2020-10-17 12:18:02
  * @Description: 
 -->
 <template>
@@ -26,7 +26,11 @@ export default {
       default: () => {},
     },
   },
-
+  provide() {
+    return {
+      form: this,
+    };
+  },
   data() {
     return {
       fields: [],
@@ -36,7 +40,6 @@ export default {
   watch: {},
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {
-    console.log(this);
     this.$on("on-form-item-add", (field) => {
       if (field) this.fields.push(field);
     });
