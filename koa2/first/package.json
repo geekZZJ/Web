@@ -24,6 +24,7 @@
     "koa-router": "^9.4.0",
     "koa-static": "^5.0.0",
     "moment": "^2.29.1",
+    "mongoose": "^5.10.11",
     "nodemailer": "^6.4.14",
     "svg-captcha": "^1.4.0"
   },
