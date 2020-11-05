@@ -2,13 +2,13 @@
  * @Author: zzj
  * @Date: 2020-11-05 18:34:56
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-05 19:00:07
+ * @LastEditTime: 2020-11-05 19:03:31
  * @Description:
  */
 import redis from "redis";
 
 const options = {
-  host: "114.55.102.168",
+  host: "ip",
   port: "15001",
   password: "123456",
   detect_buffers: true,
