@@ -1,15 +1,17 @@
 <!--
  * @Author: 张中俊
  * @Date: 2020-10-15 20:07:14
- * @LastEditors: 张中俊
- * @LastEditTime: 2020-10-17 11:26:42
+ * @LastEditors: zzj
+ * @LastEditTime: 2020-11-06 15:22:33
  * @Description: 
 -->
 <template>
   <div class="home">
+    <h3>具有数据校验功能的表单组件——Form</h3>
     <i-form
       :model="formValidate"
       :rules="ruleValidate"
+      ref="form"
     >
       <i-form-item
         label="用户名"
@@ -24,6 +26,8 @@
         <i-input v-model="formValidate.mail"></i-input>
       </i-form-item>
     </i-form>
+    <button @click="handleSubmit">提交</button>
+    <button @click="handleReset">重置</button>
   </div>
 </template>
 
@@ -54,6 +58,20 @@ export default {
         ],
       },
     };
+  },
+  methods: {
+    handleSubmit() {
+      this.$refs.form.validate((valid) => {
+        if (valid) {
+          window.alert("提交成功");
+        } else {
+          window.alert("表单校验失败");
+        }
+      });
+    },
+    handleReset() {
+      this.$refs.form.resetFields();
+    },
   },
 };
 </script>

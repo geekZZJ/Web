@@ -2,14 +2,21 @@
  * @Author: 张中俊
  * @Date: 2020-10-17 11:06:26
  * @LastEditors: zzj
- * @LastEditTime: 2020-10-19 11:28:25
+ * @LastEditTime: 2020-11-06 15:09:38
  * @Description: 
 -->
 <template>
   <div>
-    <label v-if="label">{{ label }}</label>
+    <label
+      v-if="label"
+      :class="{ 'i-form-item-label-required': isRequired }"
+    >{{ label }}</label>
     <div>
       <slot></slot>
+      <div
+        v-if="validateState === 'error'"
+        class="i-form-item-message"
+      >{{ validateMessage }}</div>
     </div>
   </div>
 </template>
@@ -35,6 +42,7 @@ export default {
   inject: ["form"],
   data() {
     return {
+      isRequired: false, // 是否为必填
       validateState: "", // 校验状态
       validateMessage: "", // 校验不通过时的提示信息
     };
@@ -53,11 +61,20 @@ export default {
     // 如果没有传入 prop，则无需校验，也就无需缓存
     if (this.prop) {
       this.dispatch("iForm", "on-form-item-add", this);
+      // 设置初始值，以便在重置时恢复默认值
+      this.initialValue = this.fieldValue;
       this.setRules();
     }
   },
   methods: {
     setRules() {
+      let rules = this.getRules();
+      if (rules.length) {
+        rules.every((rule) => {
+          // 如果当前校验规则中有必填项，则标记出来
+          this.isRequired = rule.required;
+        });
+      }
       this.$on("on-form-blur", this.onFieldBlur);
       this.$on("on-form-change", this.onFieldChange);
     },
@@ -66,6 +83,12 @@ export default {
       let formRules = this.form.rules;
       formRules = formRules ? formRules[this.prop] : [];
       return [].concat(formRules || []);
+    },
+    // 重置数据
+    resetField() {
+      this.validateState = "";
+      this.validateMessage = "";
+      this.form.model[this.prop] = this.initialValue;
     },
     // 只支持 blur 和 change，所以过滤出符合要求的 rule 规则
     getFilteredRule(trigger) {
@@ -120,4 +143,11 @@ export default {
 };
 </script>
 <style lang='scss' scoped>
+.i-form-item-label-required:before {
+  content: "*";
+  color: red;
+}
+.i-form-item-message {
+  color: red;
+}
 </style>

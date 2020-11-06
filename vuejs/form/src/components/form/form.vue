@@ -1,8 +1,8 @@
 <!--
  * @Author: 张中俊
  * @Date: 2020-10-17 11:06:12
- * @LastEditors: 张中俊
- * @LastEditTime: 2020-10-17 12:18:02
+ * @LastEditors: zzj
+ * @LastEditTime: 2020-11-06 15:17:12
  * @Description: 
 -->
 <template>
@@ -49,7 +49,36 @@ export default {
   },
   //生命周期 - 挂载完成（可以访问DOM元素）
   mounted() {},
-  methods: {},
+  methods: {
+    // 公开方法：全部重置数据
+    resetFields() {
+      this.fields.forEach((field) => {
+        console.log("field", field);
+        field.resetField();
+      });
+    },
+    // 公开方法：全部校验数据，支持 Promise
+    validate(callback) {
+      return new Promise((resolve) => {
+        let valid = true;
+        let count = 0;
+        this.fields.forEach((field) => {
+          field.validate("", (errors) => {
+            if (errors) {
+              valid = false;
+            }
+            if (++count === this.fields.length) {
+              // 全部完成
+              resolve(valid);
+              if (typeof callback === "function") {
+                callback(valid);
+              }
+            }
+          });
+        });
+      });
+    },
+  },
 };
 </script>
 <style lang='scss' scoped>
