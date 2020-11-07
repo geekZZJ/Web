@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-10-17 20:17:44
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-07 14:30:43
+ * @LastEditTime: 2020-11-07 19:45:03
  * @Description:
  */
 import Vue from "vue";
@@ -14,9 +14,6 @@ import axios from "axios";
 import "@/utils/veevalidate";
 
 Vue.config.productionTip = false;
-
-axios.defaults.baseURL =
-  process.env.NODE_ENV !== "production" ? "http://localhost:3000" : "";
 
 new Vue({
   router,
