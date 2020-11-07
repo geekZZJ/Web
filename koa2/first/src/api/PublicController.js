@@ -1,8 +1,8 @@
 /*
- * @Author: 张中俊
+ * @Author: zzj
  * @Date: 2020-10-12 20:12:06
  * @LastEditors: zzj
- * @LastEditTime: 2020-10-18 21:57:31
+ * @LastEditTime: 2020-11-07 20:41:31
  * @Description:
  */
 import svgCaptcha from "svg-captcha";
