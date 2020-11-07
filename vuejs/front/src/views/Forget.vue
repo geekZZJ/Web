@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-10-18 19:44:25
  * @LastEditors: zzj
- * @LastEditTime: 2020-10-25 15:17:52
+ * @LastEditTime: 2020-11-07 18:07:24
  * @Description: 
 -->
 <template>
@@ -72,36 +72,54 @@
               <form method="post">
                 <div class="layui-form-item">
                   <label class="layui-form-label">邮箱</label>
-                  <div class="layui-input-inline">
-                    <input
-                      type="text"
-                      name="email"
-                      placeholder="请输入邮箱地址"
-                      autocomplete="off"
-                      class="layui-input"
-                      v-model="username"
-                    >
-                  </div>
+                  <ValidationProvider
+                    rules="required|email"
+                    name="email"
+                    v-slot="{ errors }"
+                  >
+                    <div class="layui-input-inline">
+                      <input
+                        type="text"
+                        name="email"
+                        placeholder="请输入邮箱地址"
+                        autocomplete="off"
+                        class="layui-input"
+                        v-model="username"
+                      >
+                    </div>
+                    <div class="layui-form-mid">
+                      <span style="color:#c00">{{ errors[0] }}</span>
+                    </div>
+                  </ValidationProvider>
                 </div>
                 <div class="layui-form-item">
                   <label class="layui-form-label">验证码</label>
-                  <div class="layui-input-inline">
-                    <input
-                      type="text"
-                      name="vercode"
-                      placeholder="请输入验证码"
-                      autocomplete="off"
-                      class="layui-input"
-                      v-model="code"
-                    >
-                  </div>
-                  <div>
-                    <span
-                      v-html="svg"
-                      @click="_getCode"
-                      class="svg"
-                    ></span>
-                  </div>
+                  <ValidationProvider
+                    rules="required|length:4"
+                    name="vercode"
+                    v-slot="{ errors }"
+                  >
+                    <div class="layui-input-inline">
+                      <input
+                        type="text"
+                        name="vercode"
+                        placeholder="请输入验证码"
+                        autocomplete="off"
+                        class="layui-input"
+                        v-model="vercode"
+                      >
+                    </div>
+                    <div>
+                      <span
+                        v-html="svg"
+                        @click="_getCode"
+                        class="svg"
+                      ></span>
+                    </div>
+                    <div class="layui-form-mid">
+                      <span style="color:#c00">{{ errors[0] }}</span>
+                    </div>
+                  </ValidationProvider>
                 </div>
                 <div class="layui-form-item">
                   <button
@@ -121,15 +139,16 @@
 </template>
 
 <script>
+import { ValidationProvider } from "vee-validate";
 import { getCode, forget } from "@/api/login";
 export default {
   name: "forget",
-  components: {},
+  components: { ValidationProvider },
   data() {
     return {
       svg: "",
       username: "",
-      code: "",
+      vercode: "",
     };
   },
   computed: {},

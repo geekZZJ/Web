@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-10-17 20:17:44
  * @LastEditors: zzj
- * @LastEditTime: 2020-10-18 21:54:19
+ * @LastEditTime: 2020-11-07 14:30:43
  * @Description:
  */
 import Vue from "vue";
@@ -10,6 +10,8 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import axios from "axios";
+
+import "@/utils/veevalidate";
 
 Vue.config.productionTip = false;
 
