@@ -2,15 +2,14 @@
  * @Author: zzj
  * @Date: 2020-11-05 18:34:56
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-05 19:03:31
+ * @LastEditTime: 2020-11-08 15:55:22
  * @Description:
  */
 import redis from "redis";
+import config from "./index";
 
 const options = {
-  host: "ip",
-  port: "15001",
-  password: "123456",
+  ...config.REDIS,
   detect_buffers: true,
   retry_strategy: function (options) {
     if (options.error && options.error.code === "ECONNREFUSED") {
@@ -34,7 +33,7 @@ const options = {
 
 const client = redis.createClient(options);
 
-const setValue = (key, value) => {
+const setValue = (key, value, time) => {
   if (
     typeof value === "undefined" ||
     typeof value === null ||
@@ -43,7 +42,11 @@ const setValue = (key, value) => {
     return;
   }
   if (typeof value === "string") {
-    client.set(key, value);
+    if (typeof time !== "undefined") {
+      client.set(key, value, "EX", time);
+    } else {
+      client.set(key, value);
+    }
   } else if (typeof value === "object") {
     Object.keys(value).forEach((item) => {
       client.hset(key, item, value[item], redis.print);

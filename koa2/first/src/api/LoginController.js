@@ -2,11 +2,13 @@
  * @Author: zzj
  * @Date: 2020-10-25 12:03:26
  * @LastEditors: zzj
- * @LastEditTime: 2020-10-25 12:17:11
+ * @LastEditTime: 2020-11-08 17:13:31
  * @Description:
  */
 import send from "../config/MailConfig";
 import moment from "moment";
+import jsonwebtoken from "jsonwebtoken";
+import config from "../config";
 
 class LoginController {
   constructor() {}
@@ -27,6 +29,15 @@ class LoginController {
     } catch (error) {
       console.log("error", error);
     }
+  }
+  async login(ctx) {
+    let token = jsonwebtoken.sign({ _id: "test" }, config.JWT_SECRET, {
+      expiresIn: "1d",
+    });
+    ctx.body = {
+      code: 200,
+      token,
+    };
   }
 }
 
