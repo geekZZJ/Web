@@ -2,12 +2,12 @@
  * @Author: zzj
  * @Date: 2020-11-08 15:56:10
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-08 16:02:32
+ * @LastEditTime: 2020-11-10 16:06:07
  * @Description:
  */
 export default (ctx, next) => {
   return next().catch((err) => {
-    if (401 == err.status) {
+    if (401 === err.status) {
       ctx.status = 401;
       ctx.body = {
         code: 401,

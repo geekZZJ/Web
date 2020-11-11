@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-10-12 20:10:59
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-08 17:15:12
+ * @LastEditTime: 2020-11-10 16:14:06
  * @Description:
  */
 import koa from "koa";
@@ -22,7 +22,7 @@ import ErrorHandle from "./common/ErrorHandle";
 const app = new koa();
 
 const jwt = JWT({ secret: config.JWT_SECRET }).unless({
-  path: [/^\/public/],
+  path: [/^\/public/, /\/login/],
 });
 
 const isDevMode = process.env.NODE_ENV === "production" ? false : true;

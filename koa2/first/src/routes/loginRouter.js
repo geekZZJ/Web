@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-10-25 12:22:55
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-08 17:00:52
+ * @LastEditTime: 2020-11-10 15:46:48
  * @Description:
  */
 import Router from "koa-router";
@@ -12,6 +12,6 @@ const router = new Router();
 
 router.prefix("/login");
 router.post("/forget", loginController.forget);
-router.get("/login", loginController.login);
+router.post("/login", loginController.login);
 
 export default router;

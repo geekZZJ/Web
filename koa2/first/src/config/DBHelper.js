@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-11-04 22:11:43
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-04 22:20:17
+ * @LastEditTime: 2020-11-11 10:49:01
  * @Description:
  */
 import mongoose from "mongoose";
@@ -16,21 +16,26 @@ mongoose.connect(config.DB_URL, {
   useUnifiedTopology: true,
 });
 
+const conn = mongoose.connection;
+
 /**
  * 连接成功
  */
-mongoose.connection.on("connected", () => {
+conn.on("connected", () => {
   console.log("mongoose connection open to" + config.DB_URL);
 });
 
 /**
  * 连接失败
  */
-mongoose.connection.on("error", (err) => {
-  console.log(`mongoose connection error ${error}`);
+conn.on("error", (err) => {
+  console.log(`mongoose connection error ${err}`);
 });
 
-mongoose.connection.on("disconnected", () => {
+/**
+ * 断开连接
+ */
+conn.on("disconnected", () => {
   console.log("mongoose connection disconnected");
 });
 
