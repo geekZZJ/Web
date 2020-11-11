@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-10-25 12:03:26
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-11 10:50:17
+ * @LastEditTime: 2020-11-11 16:13:34
  * @Description:
  */
 import send from "../config/MailConfig";
@@ -42,7 +42,6 @@ class LoginController {
       // 验证账号密码
       let checkUserPassword = false;
       const user = await User.findOne({ username: body.username });
-      console.log("user", user);
       if (user.password === body.password) {
         checkUserPassword = true;
       }

@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-11-08 15:56:10
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-10 16:06:07
+ * @LastEditTime: 2020-11-11 16:13:48
  * @Description:
  */
 export default (ctx, next) => {
@@ -14,7 +14,14 @@ export default (ctx, next) => {
         msg: "Protected resource, use Authorization header to get access",
       };
     } else {
-      throw err;
+      ctx.status = err.status || 500;
+      ctx.body = Object.assign(
+        {
+          code: 500,
+          msg: err.message,
+        },
+        process.env.NODE_ENV === "dev" ? { stack: err.stack } : {}
+      );
     }
   });
 };
