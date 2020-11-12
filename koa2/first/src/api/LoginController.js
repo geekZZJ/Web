@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-10-25 12:03:26
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-11 16:13:34
+ * @LastEditTime: 2020-11-12 16:39:13
  * @Description:
  */
 import send from "../config/MailConfig";
@@ -56,7 +56,7 @@ class LoginController {
         };
       } else {
         ctx.body = {
-          code: 200,
+          code: 500,
           msg: "用户名或密码不正确",
         };
       }
