@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-10-18 19:42:56
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-08 15:17:22
+ * @LastEditTime: 2020-11-12 22:21:17
  * @Description: 
 -->
 <template>
@@ -83,6 +83,7 @@
                       rules="required|length:4"
                       name="vercode"
                       v-slot="{ errors }"
+                      ref="vercodefield"
                     >
                       <div class="layui-input-inline">
                         <input
@@ -207,9 +208,24 @@ export default {
         vercode,
         sid: this.$store.state.sid,
       };
-      const res = await login(params);
-      if (res.code === 200) {
-        console.log("res", res);
+      try {
+        const res = await login(params);
+        if (res.code === 200) {
+          console.log("res", res);
+          this.username = "";
+          this.password = "";
+          this.vercode = "";
+          requestAnimationFrame(() => {
+            this.$refs.observer.reset();
+          });
+        } else if (res.code === 500) {
+          this.$alert("用户名密码校验失败");
+        } else if (res.code === 401) {
+          this.$refs.vercodefield.setErrors([res.msg]);
+        }
+      } catch (err) {
+        console.log("err", err);
+        this.$alert("服务器错误");
       }
     },
   },
