@@ -2,3 +2,4 @@ node_modules
 ./dist
 ./src/config/MailConfig.js
 .vscode
+./src/config/index.js

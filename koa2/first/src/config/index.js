@@ -2,13 +2,13 @@
  * @Author: zzj
  * @Date: 2020-11-04 15:17:41
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-12 11:02:53
+ * @LastEditTime: 2020-11-12 11:04:23
  * @Description:
  */
-const DB_URL = "mongodb://test:123456@ip:port/test";
+const DB_URL = "mongodb://test:123456@114.55.102.168:27017/test";
 const REDIS = {
-  host: "ip",
-  port: "port",
+  host: "114.55.102.168",
+  port: "15001",
   password: "123456",
 };
 const JWT_SECRET = "123456";
