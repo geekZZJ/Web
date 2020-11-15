@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-10-17 20:17:44
  * @LastEditors: zzj
- * @LastEditTime: 2020-10-18 19:46:27
+ * @LastEditTime: 2020-11-14 17:57:07
  * @Description:
  */
 import Vue from "vue";
@@ -21,6 +21,13 @@ const routes = [
     path: "/reg",
     name: "Reg",
     component: () => import(/* webpackChunkName: "reg" */ "@/views/Reg.vue"),
+    beforeEnter: (to, from, next) => {
+      if (from.name === "Login") {
+        next();
+      } else {
+        next("/login");
+      }
+    },
   },
   {
     path: "/forget",
