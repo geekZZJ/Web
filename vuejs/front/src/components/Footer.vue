@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-10-18 20:04:02
  * @LastEditors: zzj
- * @LastEditTime: 2020-10-18 21:12:44
+ * @LastEditTime: 2020-11-17 14:00:40
  * @Description: 
 -->
 <template>
@@ -10,21 +10,21 @@
     <p><a
         href="/"
         target="_blank"
-      >Imooc社区</a> 2017 &copy; <a
+      >Fly社区</a> 2020 &copy; <a
         href="/"
         target="_blank"
       >layui.com 出品</a></p>
     <p>
       <a
-        href="/jie/3147/"
+        href=""
         target="_blank"
       >付费计划</a>
       <a
-        href="/template/fly/"
+        href=""
         target="_blank"
-      >获取Imooc社区模版</a>
+      >获取Fly社区模版</a>
       <a
-        href="/jie/2461/"
+        href=""
         target="_blank"
       >微信公众号</a>
     </p>

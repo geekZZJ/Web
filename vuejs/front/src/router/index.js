@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-10-17 20:17:44
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-16 20:44:31
+ * @LastEditTime: 2020-11-17 14:52:44
  * @Description:
  */
 import Vue from "vue";
@@ -39,11 +39,28 @@ const routes = [
     path: "/",
     name: "Home",
     component: () => import(/* webpackChunkName: "home" */ "@/views/Home.vue"),
+    children: [
+      {
+        path: "",
+        name: "Index",
+        component: () =>
+          import(/* webpackChunkName: "index" */ "@/views/channels/Index.vue"),
+      },
+      {
+        path: "/index/:catalog",
+        name: "Template1",
+        component: () =>
+          import(
+            /* webpackChunkName: "template1" */ "@/views/channels/Template1.vue"
+          ),
+      },
+    ],
   },
 ];
 
 const router = new VueRouter({
   routes,
+  linkExactActiveClass: "layui-this",
 });
 
 export default router;
