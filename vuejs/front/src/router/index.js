@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-10-17 20:17:44
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-14 17:57:07
+ * @LastEditTime: 2020-11-16 20:44:31
  * @Description:
  */
 import Vue from "vue";
@@ -34,6 +34,11 @@ const routes = [
     name: "Forget",
     component: () =>
       import(/* webpackChunkName: "forget" */ "@/views/Forget.vue"),
+  },
+  {
+    path: "/",
+    name: "Home",
+    component: () => import(/* webpackChunkName: "home" */ "@/views/Home.vue"),
   },
 ];
 
