@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-11-17 10:47:09
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-17 14:56:00
+ * @LastEditTime: 2020-11-17 15:07:02
  * @Description: 
 -->
 <template>
@@ -14,7 +14,7 @@
           class="layui-hide-xs"
           to="/"
         >
-          <a href="/">首页</a>
+          <a href="/">首页1</a>
         </router-link>
         <router-link
           v-for="item in lists"
