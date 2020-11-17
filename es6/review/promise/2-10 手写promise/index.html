@@ -1,0 +1,30 @@
+<!--
+ * @Author: zzj
+ * @Date: 2020-11-17 22:05:21
+ * @LastEditors: zzj
+ * @LastEditTime: 2020-11-17 22:22:22
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>手写promise</title>
+</head>
+
+<body>
+  <script src="./main.js"></script>
+  <script>
+    new MyPromise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(1)
+      }, 0)
+    }).then(value => {
+      console.log(value)
+    })
+  </script>
+</body>
+
+</html>
