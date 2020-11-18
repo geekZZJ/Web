@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-11-17 22:05:46
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-17 22:39:20
+ * @LastEditTime: 2020-11-18 10:47:47
  * @Description:
  */
 const PENDING = "pending";
@@ -10,7 +10,6 @@ const RESOLVED = "resolved";
 const REJECTED = "rejected";
 
 function MyPromise(fn) {
-  console.log("this", this);
   const that = this;
   that.state = PENDING;
   that.value = null;
@@ -36,7 +35,6 @@ function MyPromise(fn) {
   }
   // 执行 fn 函数
   try {
-    debugger;
     fn(resolve, reject);
   } catch (e) {
     reject(e);
@@ -44,7 +42,6 @@ function MyPromise(fn) {
 }
 
 MyPromise.prototype.then = function (onFulfilled, onRejected) {
-  console.log("then", this);
   const that = this;
   onFulfilled = typeof onFulfilled === "function" ? onFulfilled : (v) => v;
   onRejected =
