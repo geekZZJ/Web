@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-11-17 10:47:09
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-17 15:07:02
+ * @LastEditTime: 2020-11-20 20:13:33
  * @Description: 
 -->
 <template>
@@ -14,7 +14,7 @@
           class="layui-hide-xs"
           to="/"
         >
-          <a href="/">首页1</a>
+          <a href="/">首页</a>
         </router-link>
         <router-link
           v-for="item in lists"
@@ -30,8 +30,10 @@
         <li class="layui-hide-xs layui-hide-sm layui-show-md-inline-block"><span class="fly-mid"></span></li>
 
         <!-- 用户登入后显示 -->
-        <li class="layui-hide-xs layui-hide-sm layui-show-md-inline-block"><a href="user/index.html">我发表的贴</a></li>
-        <li class="layui-hide-xs layui-hide-sm layui-show-md-inline-block"><a href="user/index.html#collection">我收藏的贴</a></li>
+        <template v-if="isLogin">
+          <li class="layui-hide-xs layui-hide-sm layui-show-md-inline-block"><a href="user/index.html">我发表的贴</a></li>
+          <li class="layui-hide-xs layui-hide-sm layui-show-md-inline-block"><a href="user/index.html#collection">我收藏的贴</a></li>
+        </template>
       </ul>
 
       <div class="fly-column-right layui-hide-xs">
@@ -91,6 +93,7 @@ export default {
           isNew: false,
         },
       ],
+      isLogin: this.$store.state.isLogin,
     };
   },
   computed: {},
