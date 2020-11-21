@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-11-17 11:31:31
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-21 15:48:05
+ * @LastEditTime: 2020-11-21 19:45:44
  * @Description: 
 -->
 <template>
@@ -51,6 +51,7 @@
     <list-item
       :lists=lists
       @nextpage="nextPage"
+      :isEnd="isEnd"
     ></list-item>
   </div>
 </template>
@@ -70,6 +71,8 @@ export default {
       limit: 20,
       catalog: "",
       lists: [],
+      isEnd: false,
+      isRepeat: false,
     };
   },
   computed: {},
@@ -82,6 +85,13 @@ export default {
   },
   methods: {
     async _getList() {
+      if (this.isRepeat) {
+        return;
+      }
+      if (this.isEnd) {
+        return;
+      }
+      this.isRepeat = true;
       const { catalog, page, limit, sort, tag, status } = this;
       let options = {
         catalog,
@@ -94,6 +104,19 @@ export default {
       };
       const result = await getList(options);
       console.log("result", result);
+      if (result.code === 200) {
+        // 加入请求锁，防止用户多次点击
+        this.isRepeat = false;
+        if (result.data.length < this.limit) {
+          this.isEnd = true;
+        }
+        this.lists = this.lists.concat(result.data);
+      } else {
+        if (err) {
+          this.isRepeat = false;
+          this.$alert(err.msg);
+        }
+      }
     },
     search(val) {
       switch (val) {

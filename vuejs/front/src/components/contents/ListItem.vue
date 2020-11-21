@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-11-20 20:49:56
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-21 16:02:02
+ * @LastEditTime: 2020-11-21 18:45:48
  * @Description: 
 -->
 <template>
@@ -10,15 +10,15 @@
     <ul class="fly-list">
       <li
         v-for="item in items"
-        :key="item"
+        :key="item.id"
       >
         <a
           href="user/home.html"
           class="fly-avatar"
         >
           <img
-            src="https://tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg"
-            alt="贤心"
+            :src="item.uid.pic"
+            :alt="item.uid.name"
           >
         </a>
         <h2>
@@ -30,19 +30,23 @@
             href="user/home.html"
             link
           >
-            <cite>{{item.uid}}</cite>
-            <i
+            <cite>{{item.uid.name}}</cite>
+            <!-- <i
               class="iconfont icon-renzheng"
               title="认证信息：XXX"
-            ></i>
-            <i class="layui-badge fly-badge-vip">VIP3</i>
+            ></i> -->
+            <i
+              class="layui-badge fly-badge-vip"
+              v-if="item.uid.isVip !== '0'"
+            >{{'VIP' + item.uid.isVip}}</i>
           </a>
           <span>{{item.created|moment}}</span>
-
           <span
             class="fly-list-kiss layui-hide-xs"
             title="悬赏飞吻"
-          ><i class="iconfont icon-kiss"></i> {{item.fav}}</span>
+          >
+            <i class="iconfont icon-kiss"></i>{{item.fav}}
+          </span>
           <span
             class="layui-badge fly-badge-accept layui-hide-xs"
             v-show="item.status!==0"
@@ -51,7 +55,7 @@
             <i
               class="iconfont icon-pinglun1"
               title="回答"
-            ></i> {{item.answer}}
+            ></i>{{item.answer}}
           </span>
         </div>
         <div
@@ -59,7 +63,7 @@
           v-show="item.tags.length>0"
         >
           <span
-            class="layui-badge layui-bg-red"
+            class="layui-badge"
             v-for="tag in item.tags"
             :key="tag"
             :class="tag.class"
@@ -71,12 +75,20 @@
       style="text-align: center"
       v-show="isShow"
     >
-      <div class="laypage-main">
+      <div
+        class="laypage-main"
+        v-if="!isEnd"
+      >
         <a
           class="laypage-next"
+          style="cursor: pointer"
           @click.prevent="more"
         >更多求解</a>
       </div>
+      <div
+        class="nomore gray"
+        v-else
+      >人家是有底线的</div>
     </div>
   </div>
 </template>
@@ -96,6 +108,10 @@ export default {
     isShow: {
       type: Boolean,
       default: true,
+    },
+    isEnd: {
+      type: Boolean,
+      default: false,
     },
   },
   data() {
@@ -127,6 +143,7 @@ export default {
             break;
         }
       });
+      return this.lists;
     },
   },
   watch: {},
@@ -152,4 +169,8 @@ export default {
 };
 </script>
 <style lang='scss' scoped>
+.nomore {
+  font-size: 16px;
+  padding: 30px 0;
+}
 </style>

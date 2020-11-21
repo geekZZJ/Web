@@ -2,13 +2,13 @@
  * @Author: zzj
  * @Date: 2020-11-17 14:15:39
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-21 16:02:28
+ * @LastEditTime: 2020-11-21 18:25:28
  * @Description: 
 -->
 <template>
   <div
     class="fly-panel"
-    v-show="lists.length"
+    v-show="lists.length>0"
   >
     <div class="fly-panel-title fly-filter">
       <a>置顶</a>
