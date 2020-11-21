@@ -2,11 +2,14 @@
  * @Author: zzj
  * @Date: 2020-11-17 14:15:39
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-20 21:00:49
+ * @LastEditTime: 2020-11-21 16:02:28
  * @Description: 
 -->
 <template>
-  <div class="fly-panel">
+  <div
+    class="fly-panel"
+    v-show="lists.length"
+  >
     <div class="fly-panel-title fly-filter">
       <a>置顶</a>
       <a
@@ -16,7 +19,10 @@
         style="color: #FF5722;"
       >去签到</a>
     </div>
-    <list-item></list-item>
+    <list-item
+      :lists="lists"
+      :isShow="false"
+    ></list-item>
   </div>
 </template>
 
@@ -26,7 +32,11 @@ export default {
   name: "top",
   components: { ListItem },
   data() {
-    return {};
+    return {
+      lists: [],
+      page: 0,
+      limit: 20,
+    };
   },
   computed: {},
   watch: {},

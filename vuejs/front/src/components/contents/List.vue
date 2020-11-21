@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-11-17 11:31:31
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-20 22:56:22
+ * @LastEditTime: 2020-11-21 15:48:05
  * @Description: 
 -->
 <template>
@@ -48,11 +48,15 @@
         >按热议</a>
       </span>
     </div>
-    <list-item></list-item>
+    <list-item
+      :lists=lists
+      @nextpage="nextPage"
+    ></list-item>
   </div>
 </template>
 
 <script>
+import { getList } from "@/api/content";
 import ListItem from "./ListItem.vue";
 export default {
   name: "list",
@@ -62,6 +66,10 @@ export default {
       status: "",
       tag: "",
       sort: "created",
+      page: 0,
+      limit: 20,
+      catalog: "",
+      lists: [],
     };
   },
   computed: {},
@@ -69,8 +77,24 @@ export default {
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {},
   //生命周期 - 挂载完成（可以访问DOM元素）
-  mounted() {},
+  mounted() {
+    this._getList();
+  },
   methods: {
+    async _getList() {
+      const { catalog, page, limit, sort, tag, status } = this;
+      let options = {
+        catalog,
+        page,
+        limit,
+        sort,
+        tag,
+        status,
+        isTop: 0,
+      };
+      const result = await getList(options);
+      console.log("result", result);
+    },
     search(val) {
       switch (val) {
         case 0:
@@ -96,6 +120,10 @@ export default {
           this.tag = "";
           break;
       }
+    },
+    nextPage() {
+      this.page++;
+      this._getList();
     },
   },
 };
