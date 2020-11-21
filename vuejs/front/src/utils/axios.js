@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-11-07 18:15:56
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-21 20:12:57
+ * @LastEditTime: 2020-11-21 20:26:37
  * @Description:
  */
 // 封装axios请求，返回重新封装的数据格式
@@ -56,7 +56,7 @@ class HttpRequest {
       (res) => {
         // Any status code that lie within the range of 2xx cause this function to trigger
         // Do something with response data
-        let key = `${config.url}&${config.method}`;
+        let key = `${res.url}&${res.method}`;
         this.removePending(key);
         if (res.status === 200) {
           return Promise.resolve(res.data);
