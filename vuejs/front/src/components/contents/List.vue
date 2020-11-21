@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-11-17 11:31:31
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-21 19:45:44
+ * @LastEditTime: 2020-11-21 20:14:54
  * @Description: 
 -->
 <template>
@@ -114,7 +114,7 @@ export default {
       } else {
         if (err) {
           this.isRepeat = false;
-          this.$alert(err.msg);
+          this.$alert(err.message);
         }
       }
     },

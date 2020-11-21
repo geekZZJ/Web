@@ -2,17 +2,19 @@
  * @Author: zzj
  * @Date: 2020-11-07 18:15:56
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-20 20:32:48
+ * @LastEditTime: 2020-11-21 20:12:57
  * @Description:
  */
 // 封装axios请求，返回重新封装的数据格式
 // 对错误的统一处理
 import axios from "axios";
 import errorHandle from "./errorHandle";
+const CancelToken = axios.CancelToken;
 
 class HttpRequest {
   constructor(baseUrl) {
     this.baseUrl = baseUrl;
+    this.pending = {};
   }
   // 获取axios配置
   getInsideConfig() {
@@ -23,12 +25,23 @@ class HttpRequest {
     };
     return config;
   }
+  removePending(key, isRequest = false) {
+    if (this.pending[key] && isRequest) {
+      this.pending[key]("取消重复请求");
+    }
+    delete this.pending[key];
+  }
   // 设定拦截器
   interceptors(instance) {
     // 请求拦截器
     instance.interceptors.request.use(
       (config) => {
         // Do something before request is sent
+        let key = `${config.url}&${config.method}`;
+        this.removePending(key, true);
+        config.cancelToken = new CancelToken((c) => {
+          this.pending[key] = c;
+        });
         return config;
       },
       (err) => {
@@ -43,6 +56,8 @@ class HttpRequest {
       (res) => {
         // Any status code that lie within the range of 2xx cause this function to trigger
         // Do something with response data
+        let key = `${config.url}&${config.method}`;
+        this.removePending(key);
         if (res.status === 200) {
           return Promise.resolve(res.data);
         } else {
