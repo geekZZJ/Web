@@ -7,7 +7,8 @@
     "start": "nodemon --exec babel-node src/index.js",
     "build": "cross-env NODE_ENV=prod webpack --config config/webpack.config.prod.js",
     "dev": "cross-env NODE_ENV=dev nodemon --exec babel-node --inspect src/index.js",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "commit": "cz"
   },
   "keywords": [],
   "author": "",
@@ -38,6 +39,7 @@
     "@babel/preset-env": "^7.11.5",
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
+    "commitizen": "^4.2.2",
     "cross-env": "^7.0.2",
     "nodemon": "^2.0.4",
     "rimraf": "^3.0.2",
@@ -46,5 +48,10 @@
     "webpack-cli": "^4.0.0",
     "webpack-merge": "^5.2.0",
     "webpack-node-externals": "^2.5.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   }
 }
