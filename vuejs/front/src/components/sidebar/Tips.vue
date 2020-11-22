@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-11-17 11:01:30
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-17 13:52:07
+ * @LastEditTime: 2020-11-22 14:14:20
  * @Description: 
 -->
 <template>
@@ -10,35 +10,15 @@
     <h3 class="fly-panel-title">温馨通道</h3>
     <div class="fly-panel-main layui-row">
       <ul class="layui-clear quick">
-        <li class="layui-col-xs6">
+        <li
+          class="layui-col-xs6"
+          v-for="(item,index) in lists"
+          :key="index"
+        >
           <a
-            href=""
+            :href="item.link"
             target="_blank"
-          >layui的GitHub及Gitee(码云)仓库，欢迎Star</a>
-        </li>
-        <li class="layui-col-xs6">
-          <a
-            href=""
-            target="_blank"
-          >layui的GitHub及Gitee(码云)仓库，欢迎Star</a>
-        </li>
-        <li class="layui-col-xs6">
-          <a
-            href=""
-            target="_blank"
-          >layui的GitHub及Gitee(码云)仓库，欢迎Star</a>
-        </li>
-        <li class="layui-col-xs6">
-          <a
-            href=""
-            target="_blank"
-          >layui的GitHub及Gitee(码云)仓库，欢迎Star</a>
-        </li>
-        <li class="layui-col-xs6">
-          <a
-            href=""
-            target="_blank"
-          >layui的GitHub及Gitee(码云)仓库，欢迎Star</a>
+          >{{item.title}}</a>
         </li>
       </ul>
     </div>
@@ -46,18 +26,32 @@
 </template>
 
 <script>
+import { getTips } from "@/api/content";
 export default {
   name: "tips",
   data() {
-    return {};
+    return {
+      lists: [],
+    };
   },
   computed: {},
   watch: {},
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {},
   //生命周期 - 挂载完成（可以访问DOM元素）
-  mounted() {},
-  methods: {},
+  mounted() {
+    this._getTips();
+  },
+  methods: {
+    async _getTips() {
+      const result = await getTips();
+      if (result.code === 200) {
+        this.lists = result.data;
+      } else {
+        this.$alert("服务器错误");
+      }
+    },
+  },
 };
 </script>
 <style lang='scss' scoped>

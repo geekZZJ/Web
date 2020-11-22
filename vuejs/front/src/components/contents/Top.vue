@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-11-17 14:15:39
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-21 18:25:28
+ * @LastEditTime: 2020-11-22 12:44:48
  * @Description: 
 -->
 <template>
@@ -28,6 +28,7 @@
 
 <script>
 import ListItem from "./ListItem.vue";
+import { getList } from "@/api/content";
 export default {
   name: "top",
   components: { ListItem },
@@ -35,7 +36,8 @@ export default {
     return {
       lists: [],
       page: 0,
-      limit: 20,
+      limit: 4,
+      catalog: "",
     };
   },
   computed: {},
@@ -43,8 +45,29 @@ export default {
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {},
   //生命周期 - 挂载完成（可以访问DOM元素）
-  mounted() {},
-  methods: {},
+  mounted() {
+    this._getList();
+  },
+  methods: {
+    async _getList() {
+      const { catalog, page, limit } = this;
+      let options = {
+        catalog,
+        page,
+        limit,
+        isTop: 1,
+      };
+      const result = await getList(options);
+      console.log("result", result);
+      if (result.code === 200) {
+        this.lists = this.lists.concat(result.data);
+      } else {
+        if (err) {
+          this.$alert(err.message);
+        }
+      }
+    },
+  },
 };
 </script>
 <style lang='scss' scoped>
