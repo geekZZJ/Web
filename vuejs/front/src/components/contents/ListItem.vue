@@ -2,15 +2,15 @@
  * @Author: zzj
  * @Date: 2020-11-20 20:49:56
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-21 18:45:48
+ * @LastEditTime: 2020-11-22 11:13:57
  * @Description: 
 -->
 <template>
   <div>
     <ul class="fly-list">
       <li
-        v-for="item in items"
-        :key="item.id"
+        v-for="(item,index) in items"
+        :key="index"
       >
         <a
           href="user/home.html"

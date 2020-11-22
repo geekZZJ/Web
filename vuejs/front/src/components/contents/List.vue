@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-11-17 11:31:31
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-21 20:14:54
+ * @LastEditTime: 2020-11-22 12:20:30
  * @Description: 
 -->
 <template>
@@ -73,17 +73,39 @@ export default {
       lists: [],
       isEnd: false,
       isRepeat: false,
+      current: "",
     };
   },
   computed: {},
-  watch: {},
+  watch: {
+    current(newVal, oldVal) {
+      this.init();
+    },
+    $route(newVal, oldVal) {
+      let catalog = this.$route.params["catalog"];
+      if (typeof catalog !== "undefined" && catalog !== "") {
+        this.catalog = catalog;
+      }
+      this.init();
+    },
+  },
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {},
   //生命周期 - 挂载完成（可以访问DOM元素）
   mounted() {
+    let catalog = this.$route.params["catalog"];
+    if (typeof catalog !== "undefined" && catalog !== "") {
+      this.catalog = catalog;
+    }
     this._getList();
   },
   methods: {
+    init() {
+      this.page = 0;
+      this.isEnd = false;
+      this.lists = [];
+      this._getList();
+    },
     async _getList() {
       if (this.isRepeat) {
         return;
@@ -119,6 +141,10 @@ export default {
       }
     },
     search(val) {
+      if (typeof val === "undefined" && this.current === "") {
+        return;
+      }
+      this.current = val;
       switch (val) {
         case 0:
           this.status = "0";
@@ -141,6 +167,7 @@ export default {
         default:
           this.status = "";
           this.tag = "";
+          this.current = "";
           break;
       }
     },
