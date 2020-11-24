@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-10-25 12:03:26
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-15 12:03:59
+ * @LastEditTime: 2020-11-24 22:15:28
  * @Description:
  */
 import send from "../config/MailConfig";
@@ -46,12 +46,18 @@ class LoginController {
         checkUserPassword = true;
       }
       if (checkUserPassword) {
+        const userObj = user.toJSON();
+        const arr = ["username", "password", "roles"];
+        arr.map((item) => {
+          delete userObj[item];
+        });
         // 验证通过，返回token
         let token = jsonwebtoken.sign({ _id: "test" }, config.JWT_SECRET, {
           expiresIn: "1d",
         });
         ctx.body = {
           code: 200,
+          data: userObj,
           token,
         };
       } else {
