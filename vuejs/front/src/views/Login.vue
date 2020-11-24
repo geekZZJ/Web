@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-10-18 19:42:56
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-14 18:01:52
+ * @LastEditTime: 2020-11-24 22:36:14
  * @Description: 
 -->
 <template>
@@ -212,12 +212,15 @@ export default {
         const res = await login(params);
         if (res.code === 200) {
           console.log("res", res);
+          this.$store.commit("setUserInfo", res.data);
+          this.$store.commit("setIsLogin", true);
           this.username = "";
           this.password = "";
           this.vercode = "";
           requestAnimationFrame(() => {
             this.$refs.observer.reset();
           });
+          this.$router.push({ name: "Index" });
         } else if (res.code === 500) {
           this.$alert("用户名密码校验失败");
         } else if (res.code === 401) {

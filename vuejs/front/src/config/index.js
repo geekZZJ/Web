@@ -2,12 +2,12 @@
  * @Author: zzj
  * @Date: 2020-11-07 19:43:19
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-21 17:54:28
+ * @LastEditTime: 2020-11-24 21:37:28
  * @Description:
  */
 export default {
   baseUrl: {
-    dev: "http://localhost:36742",
+    dev: "http://localhost:3000",
     pro: "",
   },
 };
