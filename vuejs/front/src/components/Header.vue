@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-10-18 20:01:52
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-25 13:58:35
+ * @LastEditTime: 2020-11-25 21:54:06
  * @Description: 
 -->
 <template>
@@ -13,7 +13,7 @@
         href="/"
       >
         <img
-          src="@/assets/images/logo.png"
+          src="@/assets/img/logo-2.png"
           alt="layui"
         >
       </a>
@@ -155,4 +155,9 @@ export default {
 };
 </script>
 <style lang='scss' scoped>
+.fly-logo {
+  left: -15px;
+  top: -10px;
+  margin-left: 15px;
+}
 </style>

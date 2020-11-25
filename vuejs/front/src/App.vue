@@ -2,7 +2,7 @@
  * @Author: 张中俊
  * @Date: 2020-10-17 20:17:44
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-21 18:38:40
+ * @LastEditTime: 2020-11-25 21:50:13
  * @Description: 
 -->
 <template>
@@ -30,9 +30,8 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "assets/layui/css/layui.css";
 @import "assets/css/global.css";
-@import "assets/layui/css/modules/layer/default/layer.css";
+
 .gray {
   color: #999;
 }
