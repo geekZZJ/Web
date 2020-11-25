@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-10-18 20:01:52
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-24 22:33:52
+ * @LastEditTime: 2020-11-25 13:58:35
  * @Description: 
 -->
 <template>
@@ -68,7 +68,11 @@
 
         <!-- 登入后的状态 -->
         <template v-else>
-          <li class="layui-nav-item">
+          <li
+            class="layui-nav-item"
+            @mouseover="show"
+            @mouseleave="hide"
+          >
             <a
               class="fly-nav-avatar"
               href="javascript:;"
@@ -80,11 +84,14 @@
               ></i> -->
               <i
                 class="layui-badge fly-badge-vip layui-hide-xs"
-                v-show="userInfo.isVip!==''"
+                v-show="userInfo.isVip!=='0'"
               >VIP{{userInfo.isVip}}</i>
               <img :src="userInfo.pic">
             </a>
-            <dl class="layui-nav-child">
+            <dl
+              class="layui-nav-child layui-anim layui-anim-upbit"
+              :class="{'layui-show':isHover}"
+            >
               <dd><a href="user/set.html"><i class="layui-icon">&#xe620;</i>基本设置</a></dd>
               <dd><a href="user/message.html"><i
                     class="iconfont icon-tongzhi"
@@ -113,7 +120,10 @@ export default {
   name: "Header",
   components: {},
   data() {
-    return {};
+    return {
+      isHover: false,
+      hoverCtrl: {},
+    };
   },
   computed: {
     isShow() {
@@ -128,7 +138,20 @@ export default {
   created() {},
   //生命周期 - 挂载完成（可以访问DOM元素）
   mounted() {},
-  methods: {},
+  methods: {
+    show() {
+      clearTimeout(this.hoverCtrl);
+      this.hoverCtrl = setTimeout(() => {
+        this.isHover = true;
+      }, 200);
+    },
+    hide() {
+      clearTimeout(this.hoverCtrl);
+      this.hoverCtrl = setTimeout(() => {
+        this.isHover = false;
+      }, 500);
+    },
+  },
 };
 </script>
 <style lang='scss' scoped>
