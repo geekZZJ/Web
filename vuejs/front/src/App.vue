@@ -2,7 +2,7 @@
  * @Author: 张中俊
  * @Date: 2020-10-17 20:17:44
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-25 21:50:13
+ * @LastEditTime: 2020-11-26 14:22:27
  * @Description: 
 -->
 <template>
@@ -34,5 +34,26 @@ export default {
 
 .gray {
   color: #999;
+}
+.pd20 {
+  padding: 20px;
+}
+
+.mt20 {
+  margin-top: -20px;
+}
+
+.pl0 {
+  padding-left: 0;
+}
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
 }
 </style>

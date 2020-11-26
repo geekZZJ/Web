@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-10-17 20:17:44
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-25 22:31:20
+ * @LastEditTime: 2020-11-26 14:05:03
  * @Description:
  */
 import Vue from "vue";
@@ -34,6 +34,12 @@ const routes = [
     name: "Forget",
     component: () =>
       import(/* webpackChunkName: "forget" */ "@/views/Forget.vue"),
+  },
+  {
+    path: "/user/:uid",
+    name: "User",
+    props: true,
+    component: () => import(/* webpackChunkName: "user" */ "@/views/User.vue"),
   },
   {
     path: "/",
@@ -78,12 +84,64 @@ const routes = [
           import(
             /* webpackChunkName: "set" */ "@/components/user/Settings.vue"
           ),
+        children: [
+          {
+            path: "",
+            name: "Info",
+            component: () =>
+              import(
+                /* webpackChunkName: "info" */ "@/components/user/common/MyInfo.vue"
+              ),
+          },
+          {
+            path: "pic",
+            name: "Pic",
+            component: () =>
+              import(
+                /* webpackChunkName: "uploadpic" */ "@/components/user/common/PicUpload.vue"
+              ),
+          },
+          {
+            path: "passwd",
+            name: "Passwd",
+            component: () =>
+              import(
+                /* webpackChunkName: "passwd" */ "@/components/user/common/Passwd.vue"
+              ),
+          },
+          {
+            path: "accounts",
+            name: "Accounts",
+            component: () =>
+              import(
+                /* webpackChunkName: "accounts" */ "@/components/user/common/Accounts.vue"
+              ),
+          },
+        ],
       },
       {
         path: "post",
         name: "Post",
         component: () =>
           import(/* webpackChunkName: "post" */ "@/components/user/Post.vue"),
+        children: [
+          {
+            path: "",
+            name: "MyPost",
+            component: () =>
+              import(
+                /* webpackChunkName: "mypost" */ "@/components/user/common/MyPost.vue"
+              ),
+          },
+          {
+            path: "mycollection",
+            name: "MyCollection",
+            component: () =>
+              import(
+                /* webpackChunkName: "mycollection" */ "@/components/user/common/MyCollection.vue"
+              ),
+          },
+        ],
       },
       {
         path: "msg",

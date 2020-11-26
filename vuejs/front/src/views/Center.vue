@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-11-25 14:04:29
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-25 22:30:47
+ * @LastEditTime: 2020-11-26 14:24:37
  * @Description: 
 -->
 <template>
@@ -16,7 +16,10 @@
         v-for="item in lists"
         :key="item.name"
       >
-        <router-link :to="{name:item.link}">
+        <router-link
+          :to="{name:item.link}"
+          :active-class="item.activeClass"
+        >
           <i
             class="layui-icon"
             :class="item.icon"
@@ -35,9 +38,20 @@ export default {
   data() {
     return {
       lists: [
-        { name: "我的主页", icon: "layui-icon-home", link: "UserCenter" },
-        { name: "基本设置", icon: "layui-icon-set", link: "Set" },
-        { name: "我的帖子", icon: "layui-icon-form", link: "Post" },
+        { name: "我的主页", icon: "layui-icon-home", link: "User" },
+        { name: "用户中心", icon: "layui-icon-friends", link: "UserCenter" },
+        {
+          name: "基本设置",
+          icon: "layui-icon-set",
+          link: "Info",
+          activeClass: "layui-this",
+        },
+        {
+          name: "我的帖子",
+          icon: "layui-icon-form",
+          link: "MyPost",
+          activeClass: "layui-this",
+        },
         { name: "我的消息", icon: "layui-icon-reply-fill", link: "Msg" },
         { name: "其他设置", icon: "layui-icon-component", link: "Others" },
       ],
