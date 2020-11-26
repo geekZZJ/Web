@@ -2,11 +2,14 @@
  * @Author: zzj
  * @Date: 2020-11-25 22:18:34
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-25 22:19:04
+ * @LastEditTime: 2020-11-26 15:18:47
  * @Description: 
 -->
 <template>
-  <div>user-others</div>
+  <div
+    class="flex fly-panel fly-panel-user"
+    pad20
+  >正在开发中</div>
 </template>
 
 <script>
@@ -26,4 +29,11 @@ export default {
 };
 </script>
 <style lang='scss' scoped>
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #333;
+}
 </style>
