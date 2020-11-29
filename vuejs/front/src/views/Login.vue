@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-10-18 19:42:56
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-24 22:36:14
+ * @LastEditTime: 2020-11-28 18:47:39
  * @Description: 
 -->
 <template>
@@ -211,9 +211,10 @@ export default {
       try {
         const res = await login(params);
         if (res.code === 200) {
-          console.log("res", res);
+          // console.log("res", res);
           this.$store.commit("setUserInfo", res.data);
           this.$store.commit("setIsLogin", true);
+          this.$store.commit("setToken", res.token);
           this.username = "";
           this.password = "";
           this.vercode = "";

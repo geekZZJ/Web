@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-10-18 20:01:52
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-25 21:54:06
+ * @LastEditTime: 2020-11-29 16:05:21
  * @Description: 
 -->
 <template>
@@ -103,8 +103,9 @@
                   >&#xe68e;</i>我的主页</a></dd>
               <hr style="margin: 5px 0;">
               <dd><a
-                  href="/user/logout/"
+                  href="javascript:void(0)"
                   style="text-align: center;"
+                  @click="logout"
                 >退出</a></dd>
             </dl>
           </li>
@@ -150,6 +151,19 @@ export default {
       this.hoverCtrl = setTimeout(() => {
         this.isHover = false;
       }, 500);
+    },
+    logout() {
+      this.$confirm(
+        "确定退出吗？",
+        () => {
+          localStorage.clear();
+          this.$store.commit("setToken", "");
+          this.$store.commit("setUserInfo", "");
+          this.$store.commit("setIsLogin", false);
+          this.$router.push("/");
+        },
+        () => {}
+      );
     },
   },
 };

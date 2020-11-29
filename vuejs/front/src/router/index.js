@@ -2,12 +2,13 @@
  * @Author: zzj
  * @Date: 2020-10-17 20:17:44
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-26 14:05:03
+ * @LastEditTime: 2020-11-29 15:48:07
  * @Description:
  */
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Login from "@/views/Login.vue";
+import store from "@/store";
 
 Vue.use(VueRouter);
 
@@ -66,6 +67,7 @@ const routes = [
     path: "/center",
     name: "Center",
     linkExactActiveClass: "layui-this",
+    meta: { requiresAuth: true },
     component: () =>
       import(/* webpackChunkName: "center" */ "@/views/Center.vue"),
     children: [
@@ -164,6 +166,30 @@ const routes = [
 const router = new VueRouter({
   routes,
   linkExactActiveClass: "layui-this",
+});
+
+router.beforeEach((to, from, next) => {
+  const token = localStorage.getItem("token");
+  const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+  if (token !== "" && token !== null) {
+    store.commit("setToken", token);
+    store.commit("setUserInfo", userInfo);
+    store.commit("setIsLogin", true);
+  }
+  if (
+    to.matched.some((record) => {
+      record.meta.requiresAuth;
+    })
+  ) {
+    const isLogin = store.state.isLogin;
+    if (isLogin) {
+      next();
+    } else {
+      next("/login");
+    }
+  } else {
+    next();
+  }
 });
 
 export default router;
