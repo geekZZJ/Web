@@ -2,13 +2,15 @@
  * @Author: zzj
  * @Date: 2020-10-17 20:17:44
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-29 15:48:07
+ * @LastEditTime: 2020-11-29 16:54:29
  * @Description:
  */
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Login from "@/views/Login.vue";
 import store from "@/store";
+import jwt from "jsonwebtoken";
+import moment from "moment";
 
 Vue.use(VueRouter);
 
@@ -44,7 +46,6 @@ const routes = [
   },
   {
     path: "/",
-    name: "Home",
     component: () => import(/* webpackChunkName: "home" */ "@/views/Home.vue"),
     children: [
       {
@@ -65,7 +66,6 @@ const routes = [
   },
   {
     path: "/center",
-    name: "Center",
     linkExactActiveClass: "layui-this",
     meta: { requiresAuth: true },
     component: () =>
@@ -81,7 +81,6 @@ const routes = [
       },
       {
         path: "set",
-        name: "Set",
         component: () =>
           import(
             /* webpackChunkName: "set" */ "@/components/user/Settings.vue"
@@ -123,7 +122,6 @@ const routes = [
       },
       {
         path: "post",
-        name: "Post",
         component: () =>
           import(/* webpackChunkName: "post" */ "@/components/user/Post.vue"),
         children: [
@@ -172,9 +170,14 @@ router.beforeEach((to, from, next) => {
   const token = localStorage.getItem("token");
   const userInfo = JSON.parse(localStorage.getItem("userInfo"));
   if (token !== "" && token !== null) {
-    store.commit("setToken", token);
-    store.commit("setUserInfo", userInfo);
-    store.commit("setIsLogin", true);
+    const payload = jwt.decode(token);
+    if (moment().isBefore(moment(payload.exp * 1000))) {
+      store.commit("setToken", token);
+      store.commit("setUserInfo", userInfo);
+      store.commit("setIsLogin", true);
+    } else {
+      localStorage.clear();
+    }
   }
   if (
     to.matched.some((record) => {

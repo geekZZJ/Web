@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-10-18 20:01:52
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-29 16:05:21
+ * @LastEditTime: 2020-11-29 16:26:25
  * @Description: 
 -->
 <template>
@@ -160,7 +160,7 @@ export default {
           this.$store.commit("setToken", "");
           this.$store.commit("setUserInfo", "");
           this.$store.commit("setIsLogin", false);
-          this.$router.push("/");
+          this.$router.push({ name: "Index" });
         },
         () => {}
       );

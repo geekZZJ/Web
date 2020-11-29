@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-10-18 19:42:56
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-28 18:47:39
+ * @LastEditTime: 2020-11-29 16:24:51
  * @Description: 
 -->
 <template>
@@ -219,7 +219,7 @@ export default {
           this.password = "";
           this.vercode = "";
           requestAnimationFrame(() => {
-            this.$refs.observer.reset();
+            this.$refs.observer && this.$refs.observer.reset();
           });
           this.$router.push({ name: "Index" });
         } else if (res.code === 500) {
