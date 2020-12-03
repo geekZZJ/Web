@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-11-06 16:48:59
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-09 16:27:21
+ * @LastEditTime: 2020-12-03 11:33:02
  * @Description:
  */
 // 由一个组件，向上找到最近的指定组件
@@ -56,9 +56,20 @@ function findComponentsDownward(context, componentName) {
   }, []);
 }
 
+// 由一个组件，找到指定组件的兄弟组件
+function findBrothersComponents(context, componentName, exceptMe = true) {
+  let res = context.$parent.$children.filter((item) => {
+    return item.$options.name === componentName;
+  });
+  let index = res.findIndex((item) => item._uid === context._uid);
+  if (exceptMe) res.splice(index, 1);
+  return res;
+}
+
 export {
   findComponentUpward,
   findComponentsUpward,
   findComponentDownward,
   findComponentsDownward,
+  findBrothersComponents,
 };
