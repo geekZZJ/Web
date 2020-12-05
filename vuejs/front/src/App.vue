@@ -2,7 +2,7 @@
  * @Author: 张中俊
  * @Date: 2020-10-17 20:17:44
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-26 15:30:59
+ * @LastEditTime: 2020-12-05 19:07:21
  * @Description: 
 -->
 <template>
@@ -61,5 +61,13 @@ export default {
 
 .text-right {
   text-align: right;
+}
+
+.orange {
+  color: #ff5722;
+}
+
+.pull-right {
+  float: right !important;
 }
 </style>
