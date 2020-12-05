@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-12-03 16:55:26
  * @LastEditors: zzj
- * @LastEditTime: 2020-12-05 14:52:35
+ * @LastEditTime: 2020-12-05 16:29:08
  * @Description: 
 -->
 <template>
@@ -63,6 +63,7 @@ export default {
       const checked = event.target.checked;
       this.currentValue = checked;
       const value = checked ? this.trueValue : this.falseValue;
+      // v-model自带value的prop和@input
       this.$emit("input", value);
       this.$emit("on-change", value);
       this.dispatch("iFormItem", "on-form-change", value);

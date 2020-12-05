@@ -2,12 +2,12 @@
  * @Author: zzj
  * @Date: 2020-10-15 20:07:14
  * @LastEditors: zzj
- * @LastEditTime: 2020-12-03 17:20:41
+ * @LastEditTime: 2020-12-05 16:30:18
  * @Description: 
 -->
 <template>
   <div>
-    <iCheckbox></iCheckbox>
+    <iCheckbox v-model="like">吃饭</iCheckbox>
   </div>
 </template>
 
@@ -17,7 +17,9 @@ export default {
   name: "Check",
   components: { iCheckbox },
   data() {
-    return {};
+    return {
+      like: true,
+    };
   },
   computed: {},
   watch: {},
