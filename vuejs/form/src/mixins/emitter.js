@@ -1,8 +1,8 @@
 /*
  * @Author: 张中俊
  * @Date: 2020-10-17 11:32:12
- * @LastEditors: 张中俊
- * @LastEditTime: 2020-10-17 11:33:07
+ * @LastEditors: zzj
+ * @LastEditTime: 2020-12-05 14:53:10
  * @Description:
  */
 function broadcast(componentName, eventName, params) {
@@ -17,6 +17,12 @@ function broadcast(componentName, eventName, params) {
 }
 export default {
   methods: {
+    /**
+     * 向上通信
+     * @param {*} componentName 传递到的组件名
+     * @param {*} eventName 事件名称
+     * @param {*} params 参数
+     */
     dispatch(componentName, eventName, params) {
       let parent = this.$parent || this.$root;
       let name = parent.$options.name;

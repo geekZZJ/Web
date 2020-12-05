@@ -2,7 +2,7 @@
  * @Author: 张中俊
  * @Date: 2020-10-15 20:07:14
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-06 15:22:33
+ * @LastEditTime: 2020-12-05 14:57:39
  * @Description: 
 -->
 <template>
@@ -25,6 +25,9 @@
       >
         <i-input v-model="formValidate.mail"></i-input>
       </i-form-item>
+      <i-form-item label="爱好">
+        <i-checkbox>游泳</i-checkbox>
+      </i-form-item>
     </i-form>
     <button @click="handleSubmit">提交</button>
     <button @click="handleReset">重置</button>
@@ -36,6 +39,7 @@
 import iForm from "@/components/form/form";
 import iFormItem from "@/components/form/form-item";
 import iInput from "@/components/input/input";
+import iCheckbox from "@/components/checkbox/checkbox.vue";
 
 export default {
   name: "Home",
@@ -43,6 +47,7 @@ export default {
     iForm,
     iFormItem,
     iInput,
+    iCheckbox,
   },
   data() {
     return {
