@@ -2,7 +2,7 @@
  * @Author: 张中俊
  * @Date: 2020-10-17 20:17:44
  * @LastEditors: zzj
- * @LastEditTime: 2020-12-05 19:07:21
+ * @LastEditTime: 2020-12-06 12:31:52
  * @Description: 
 -->
 <template>
@@ -38,13 +38,16 @@ export default {
 
 @for $i from 0 to 5 {
   .pd#{$i} {
-    padding: $i * 10 + px;
+    padding: $i * 10 + px !important;
   }
   .pl#{$i} {
-    padding-left: $i * 10 + px;
+    padding-left: $i * 10 + px !important;
   }
   .pr#{$i} {
-    padding-right: $i * 10 + px;
+    padding-right: $i * 10 + px !important;
+  }
+  .mr#{$i} {
+    margin-right: $i * 10 + px !important;
   }
 }
 
