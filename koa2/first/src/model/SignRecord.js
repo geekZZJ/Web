@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-12-06 15:13:44
  * @LastEditors: zzj
- * @LastEditTime: 2020-12-06 16:22:10
+ * @LastEditTime: 2020-12-07 20:09:35
  * @Description:
  */
 import mongoose from "../config/DBHelper";
@@ -14,7 +14,6 @@ const SignRecordSchema = new Schema({
   uid: { type: String, ref: "users" },
   created: { type: Date },
   favs: { type: Number },
-  lastSign: { type: Date },
 });
 
 SignRecordSchema.pre("save", function (next) {

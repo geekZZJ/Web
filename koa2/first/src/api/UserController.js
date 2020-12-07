@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-12-06 15:34:56
  * @LastEditors: zzj
- * @LastEditTime: 2020-12-06 18:14:01
+ * @LastEditTime: 2020-12-07 20:10:40
  * @Description:
  */
 import SignRecord from "../model/SignRecord";
@@ -30,16 +30,18 @@ class UserController {
           count: user.count,
           msg: "用户已经签到",
         };
+        return;
       } else {
         // 有上次的签到记录，并且不与今天相同
-        const count = user.count;
+        let count = user.count;
         // 用户签到可获得积分
         let fav = 0;
         // 用户连续签到
         if (
-          moment(record.lastSign).format("YYYY-MM-DD") ===
+          moment(record.created).format("YYYY-MM-DD") ===
           moment().subtract(1, "day").format("YYYY-MM-DD")
         ) {
+          count += 1;
           if (count < 5) {
             fav = 5;
           } else if (count >= 5 && count < 15) {
@@ -77,7 +79,6 @@ class UserController {
         newRecord = new SignRecord({
           uid: obj._id,
           favs: fav,
-          lastSign: record.created,
         });
         await newRecord.save();
       }
@@ -94,11 +95,10 @@ class UserController {
       newRecord = new SignRecord({
         uid: obj._id,
         favs: 5,
-        lastSign: moment().format("YYYY-MM-DD HH:mm:ss"),
       });
       await newRecord.save();
       result = {
-        favs: 5,
+        favs: user.favs + 5,
         count: 1,
       };
     }
