@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-11-06 16:48:59
  * @LastEditors: zzj
- * @LastEditTime: 2020-12-03 16:00:59
+ * @LastEditTime: 2020-12-08 11:01:00
  * @Description:
  */
 // 由一个组件，向上找到最近的指定组件
@@ -50,6 +50,7 @@ function findComponentDownward(context, componentName) {
 // 由一个组件，向下找到所有指定的组件
 function findComponentsDownward(context, componentName) {
   return context.$children.reduce((components, child) => {
+    // components为累计值，child为当前元素
     if (child.$options.name === componentName) components.push(child);
     const foundChilds = findComponentsDownward(child, componentName);
     return components.concat(foundChilds);

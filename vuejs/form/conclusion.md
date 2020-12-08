@@ -12,4 +12,4 @@ form/src/utils/assist.js
 
 ### checkbox 与 checkbox-group 实现
 
-复习了 checkbox
+复习了 checkbox、checkbox-group
