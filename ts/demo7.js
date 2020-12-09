@@ -16,13 +16,14 @@ var person = {
 };
 getPerson(person);
 setPerson(person, "lee");
-var User = /** @class */ (function () {
-    function User() {
+var User1 = /** @class */ (function () {
+    function User1() {
+        this.name = "dell";
     }
-    User.prototype.say = function () {
+    User1.prototype.say = function () {
         return "";
     };
-    return User;
+    return User1;
 }());
 var say = function (word) {
     return "say hi";

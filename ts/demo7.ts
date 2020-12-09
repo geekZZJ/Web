@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-12-02 17:10:33
  * @LastEditors: zzj
- * @LastEditTime: 2020-12-08 22:14:50
+ * @LastEditTime: 2020-12-09 22:26:57
  * @Description:
  */
 // interface和type类似，但不完全一致
@@ -45,8 +45,8 @@ getPerson(person);
 
 setPerson(person, "lee");
 
-class User implements Person {
-  name: "dell";
+class User1 implements Person {
+  name = "dell";
   say() {
     return "";
   }
