@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-12-11 22:04:34
  * @LastEditors: zzj
- * @LastEditTime: 2020-12-12 16:24:18
+ * @LastEditTime: 2020-12-12 18:14:39
  * @Description:
  */
 import fs from "fs";
@@ -26,6 +26,7 @@ interface Content {
 
 class Crawler {
   private url = "https://www.jianshu.com/";
+  private filePath = path.resolve(__dirname, "../data/blog.json");
 
   getBlogInfo(html: string) {
     const $ = cheerio.load(html);
@@ -48,21 +49,23 @@ class Crawler {
   }
 
   generateJsonContent(blogInfo: BlogResult) {
-    const filePath = path.resolve(__dirname, "../data/blog.json");
     let fileContent: Content = {};
-    if (fs.existsSync(filePath)) {
-      fileContent = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+    if (fs.existsSync(this.filePath)) {
+      fileContent = JSON.parse(fs.readFileSync(this.filePath, "utf-8"));
     }
     fileContent[blogInfo.time] = blogInfo.data;
     return fileContent;
   }
 
+  writeFile(content: string) {
+    fs.writeFileSync(this.filePath, content);
+  }
+
   async initSpiderProcess() {
-    const filePath = path.resolve(__dirname, "../data/blog.json");
     const html = await this.getRawHtml();
     const blogInfo = await this.getBlogInfo(html);
     const fileContent = this.generateJsonContent(blogInfo);
-    fs.writeFileSync(filePath, JSON.stringify(fileContent));
+    this.writeFile(JSON.stringify(fileContent));
   }
 
   constructor() {
