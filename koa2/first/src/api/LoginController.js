@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-10-25 12:03:26
  * @LastEditors: zzj
- * @LastEditTime: 2020-12-06 16:25:41
+ * @LastEditTime: 2020-12-13 12:23:10
  * @Description:
  */
 import send from "../config/MailConfig";
@@ -12,6 +12,7 @@ import bcrypt from "bcryptjs";
 import config from "../config";
 import { checkCode } from "../common/Utils";
 import User from "../model/User";
+import SignRecord from "../model/SignRecord";
 
 class LoginController {
   constructor() {}
@@ -55,6 +56,20 @@ class LoginController {
         let token = jsonwebtoken.sign({ _id: userObj._id }, config.JWT_SECRET, {
           expiresIn: "1d",
         });
+        // 加入isSign属性
+        const signRecord = await SignRecord.findByUid(userObj._id);
+        if (signRecord !== null) {
+          if (
+            moment(signRecord.created).format("YYYY-MM-DD") ===
+            moment().format("YYYY-MM-DD")
+          ) {
+            userObj.isSign = true;
+          } else {
+            userObj.isSign = false;
+          }
+        } else {
+          userObj.isSign = false;
+        }
         ctx.body = {
           code: 200,
           data: userObj,
