@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-12-06 15:34:56
  * @LastEditors: zzj
- * @LastEditTime: 2020-12-13 12:18:36
+ * @LastEditTime: 2020-12-13 14:49:05
  * @Description:
  */
 import SignRecord from "../model/SignRecord";
@@ -28,6 +28,7 @@ class UserController {
           code: 500,
           favs: user.favs,
           count: user.count,
+          lastSign: record.created,
           msg: "用户已经签到",
         };
         return;
@@ -106,6 +107,7 @@ class UserController {
       code: 200,
       msg: "请求成功",
       ...result,
+      lastSign: newRecord.created,
     };
   }
 }

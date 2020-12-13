@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-10-25 12:03:26
  * @LastEditors: zzj
- * @LastEditTime: 2020-12-13 12:23:10
+ * @LastEditTime: 2020-12-13 14:47:45
  * @Description:
  */
 import send from "../config/MailConfig";
@@ -67,6 +67,7 @@ class LoginController {
           } else {
             userObj.isSign = false;
           }
+          userObj.lastSign = signRecord.created;
         } else {
           userObj.isSign = false;
         }
