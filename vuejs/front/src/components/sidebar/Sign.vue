@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-11-17 11:01:42
  * @LastEditors: zzj
- * @LastEditTime: 2020-12-07 20:24:26
+ * @LastEditTime: 2020-12-13 14:37:19
  * @Description: 
 -->
 <template>
@@ -10,43 +10,43 @@
     <div class="fly-panel-title">
       签到
       <i class="fly-mid"></i>
-      <a
-        href="javascript:;"
-        class="fly-link"
-        @click="showInfo"
-      >说明</a>
+      <a href="javascript:;" class="fly-link" @click="showInfo">说明</a>
       <i class="fly-mid"></i>
-      <a
-        href="javascript:;"
-        class="fly-link"
-        @click="showTop"
-      >活跃榜<span class="layui-badge-dot"></span></a>
-      <span class="fly-signin-days">已连续签到<cite>16</cite>天</span>
+      <a href="javascript:;" class="fly-link" @click="showTop">
+        活跃榜
+        <span class="layui-badge-dot"></span>
+      </a>
+      <span class="fly-signin-days">
+        已连续签到
+        <cite>{{count}}</cite>天
+      </span>
     </div>
     <div class="fly-panel-main fly-signin-main">
-      <button class="layui-btn layui-btn-danger">今日签到</button>
-      <span>可获得<cite>5</cite>飞吻</span>
-
+      <template v-if="!isSign">
+        <button class="layui-btn layui-btn-danger" @click="sign">今日签到</button>
+        <span>
+          可获得
+          <cite>{{favs}}</cite>飞吻
+        </span>
+      </template>
       <!-- 已签到状态 -->
-      <!--
-          <button class="layui-btn layui-btn-disabled">今日已签到</button>
-          <span>获得了<cite>20</cite>飞吻</span>
-          -->
+      <template v-else>
+        <button class="layui-btn layui-btn-disabled">今日已签到</button>
+        <span>
+          获得了
+          <cite>{{favs}}</cite>飞吻
+        </span>
+      </template>
     </div>
-    <sign-info
-      :isShow="isShow"
-      @closeModal="close"
-    ></sign-info>
-    <sign-list
-      :isShow="showList"
-      @closeModal="close"
-    ></sign-list>
+    <sign-info :isShow="isShow" @closeModal="close"></sign-info>
+    <sign-list :isShow="showList" @closeModal="close"></sign-list>
   </div>
 </template>
 
 <script>
 import SignInfo from "./SignInfo.vue";
 import SignList from "./SignList.vue";
+import { userSign } from "@/api/user";
 export default {
   name: "sign",
   components: { SignInfo, SignList },
@@ -55,6 +55,9 @@ export default {
       isShow: false,
       showList: false,
       current: 0,
+      isSign: this.$store.state.userInfo.isSign
+        ? this.$store.state.userInfo.isSign
+        : false,
     };
   },
   computed: {},
@@ -64,9 +67,27 @@ export default {
   //生命周期 - 挂载完成（可以访问DOM元素）
   mounted() {},
   computed: {
+    favs() {
+      let count = parseInt(this.count);
+      let result = 0;
+      if (count < 5) {
+        result = 5;
+      } else if (count >= 5 && count < 15) {
+        result = 10;
+      } else if (count >= 15 && count < 30) {
+        result = 15;
+      } else if (count > 30 && count < 100) {
+        result = 20;
+      } else if (count >= 100 && count < 365) {
+        result = 30;
+      } else if (count >= 365) {
+        result = 50;
+      }
+      return result;
+    },
     count() {
       if (this.$store.state.userInfo !== {}) {
-        if (typeof this.$store.state.userInfo.count !== undefined) {
+        if (typeof this.$store.state.userInfo.count !== "undefined") {
           return this.$store.state.userInfo.count;
         } else {
           return 0;
@@ -74,6 +95,9 @@ export default {
       } else {
         return 0;
       }
+    },
+    isLogin() {
+      return this.$store.state.isLogin;
     },
   },
   methods: {
@@ -89,6 +113,24 @@ export default {
     },
     showTop() {
       this.showList = true;
+    },
+    async sign() {
+      if (!this.isLogin) {
+        this.$pop("shake", "请先登录");
+        return;
+      }
+      const result = await userSign();
+      let userInfo = this.$store.state.userInfo;
+      if (result.code === 200) {
+        this.isSign = true;
+        userInfo.favs = result.favs;
+        userInfo.count = result.count;
+        userInfo.isSign = true;
+        this.$store.commit("setUserInfo", userInfo);
+        this.$pop("", "签到成功");
+      } else {
+        this.$pop("", "您已经签到");
+      }
     },
   },
 };
