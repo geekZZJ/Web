@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-12-15 21:34:13
  * @LastEditors: zzj
- * @LastEditTime: 2020-12-16 09:44:13
+ * @LastEditTime: 2020-12-16 09:48:58
  * @Description:
  */
 import React, { Component } from "react";
@@ -26,7 +26,11 @@ class TopNav extends Component {
   render() {
     return (
       <Dropdown overlay={menu}>
-        <a href style={{ float: "right" }} onClick={(e) => e.preventDefault()}>
+        <a
+          href="#!"
+          style={{ float: "right" }}
+          onClick={(e) => e.preventDefault()}
+        >
           欢迎，admin <DownOutlined />
         </a>
       </Dropdown>

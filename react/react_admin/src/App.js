@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-12-15 15:15:35
  * @LastEditors: zzj
- * @LastEditTime: 2020-12-15 21:53:14
+ * @LastEditTime: 2020-12-16 10:18:17
  * @Description:
  */
 import React, { Component } from "react";
@@ -16,6 +16,10 @@ class App extends Component {
       <Router>
         <Layout1>
           <Route exact path="/" component={Home}></Route>
+          <Route path="/product" component={Home}></Route>
+          <Route path="/class" component={Home}></Route>
+          <Route path="/order" component={Home}></Route>
+          <Route path="/user" component={Home}></Route>
         </Layout1>
       </Router>
     );
