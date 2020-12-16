@@ -1,0 +1,13 @@
+.logo {
+  text-align: center;
+  height: 60px;
+  line-height: 60px;
+  background-color: #fff;
+  font-weight: bold;
+  font-size: 23px;
+}
+
+.header {
+  height: 60px !important;
+  background-color: #fff !important;
+}
