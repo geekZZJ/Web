@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-12-12 18:17:00
  * @LastEditors: zzj
- * @LastEditTime: 2020-12-17 13:47:06
+ * @LastEditTime: 2020-12-17 14:07:23
  * @Description:
  */
 import fs from "fs";
@@ -24,6 +24,15 @@ interface Content {
 }
 
 export default class Jianshu implements Analyzer {
+  private static instance: Jianshu;
+
+  static getInstance() {
+    if (!Jianshu.instance) {
+      Jianshu.instance = new Jianshu();
+    }
+    return Jianshu.instance;
+  }
+
   private getBlogInfo(html: string) {
     const $ = cheerio.load(html);
     const blogItems = $(".content");
@@ -39,7 +48,7 @@ export default class Jianshu implements Analyzer {
     };
   }
 
-  generateJsonContent(blogInfo: BlogResult, filePath: string) {
+  private generateJsonContent(blogInfo: BlogResult, filePath: string) {
     let fileContent: Content = {};
     if (fs.existsSync(filePath)) {
       fileContent = JSON.parse(fs.readFileSync(filePath, "utf-8"));
@@ -53,4 +62,6 @@ export default class Jianshu implements Analyzer {
     const fileContent = this.generateJsonContent(blogInfo, filePath);
     return JSON.stringify(fileContent);
   }
+
+  private constructor() {}
 }

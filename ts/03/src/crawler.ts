@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-12-11 22:04:34
  * @LastEditors: zzj
- * @LastEditTime: 2020-12-17 13:45:34
+ * @LastEditTime: 2020-12-17 14:09:18
  * @Description:
  */
 import fs from "fs";
@@ -17,16 +17,16 @@ export interface Analyzer {
 class Crawler {
   private filePath = path.resolve(__dirname, "../data/blog.json");
 
-  async getRawHtml() {
+  private async getRawHtml() {
     const result = await superagent.get(this.url);
     return result.text;
   }
 
-  writeFile(content: string) {
+  private writeFile(content: string) {
     fs.writeFileSync(this.filePath, content);
   }
 
-  async initSpiderProcess() {
+  private async initSpiderProcess() {
     const html = await this.getRawHtml();
     const fileContent = this.analyzer.analyze(html, this.filePath);
     this.writeFile(fileContent);
@@ -39,5 +39,6 @@ class Crawler {
 
 const url = "https://www.jianshu.com/";
 
-const jianshu = new Jianshu();
+// const jianshu = new Jianshu();
+const jianshu = Jianshu.getInstance();
 new Crawler(url, jianshu);
