@@ -2,22 +2,19 @@
  * @Author: zzj
  * @Date: 2020-11-26 11:17:55
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-26 11:19:14
+ * @LastEditTime: 2020-12-17 16:33:15
  * @Description: 
 -->
 <template>
   <div class="layui-form layui-form-pane layui-tab-item layui-show">
-    <validation-observer ref="observer">
+    <validation-observer ref="observer" v-slot="{validate}">
       <div class="layui-form-item">
         <validation-provider
           name="email"
           rules="required|email"
           v-slot="{errors}"
         >
-          <label
-            for="L_email"
-            class="layui-form-label"
-          >邮箱</label>
+          <label class="layui-form-label">邮箱</label>
           <div class="layui-input-inline">
             <input
               type="text"
@@ -39,22 +36,10 @@
         </validation-provider>
       </div>
       <div class="layui-form-item">
-        <validation-provider
-          name="name"
-          rules="required"
-          v-slot="{errors}"
-        >
-          <label
-            for="L_username"
-            class="layui-form-label"
-          >昵称</label>
+        <validation-provider name="name" rules="required" v-slot="{errors}">
+          <label class="layui-form-label">昵称</label>
           <div class="layui-input-inline">
-            <input
-              type="text"
-              name="name"
-              class="layui-input"
-              v-model="name"
-            />
+            <input type="text" name="name" class="layui-input" v-model="name" />
           </div>
           <div class="layui-form-mid">
             <span style="color: #c00;">{{errors[0]}}</span>
@@ -62,28 +47,15 @@
         </validation-provider>
       </div>
       <div class="layui-form-item">
-        <label
-          for="L_city"
-          class="layui-form-label"
-        >城市</label>
+        <label class="layui-form-label">城市</label>
         <div class="layui-input-inline">
-          <input
-            type="text"
-            v-model="location"
-            class="layui-input"
-          />
+          <input type="text" v-model="location" class="layui-input" />
         </div>
       </div>
       <div class="layui-form-item">
-        <label
-          for="L_city"
-          class="layui-form-label"
-        >性别</label>
+        <label class="layui-form-label">性别</label>
         <div class="layui-input-inline gray mt1 ml1">
-          <label
-            for="gender1"
-            class="mr1"
-          >
+          <label for="gender1" class="mr1">
             <input
               id="gender1"
               type="radio"
@@ -116,35 +88,39 @@
         </div>
       </div>
       <div class="layui-form-item layui-form-text">
-        <label
-          for="L_sign"
-          class="layui-form-label"
-        >签名</label>
+        <label class="layui-form-label">签名</label>
         <div class="layui-input-block">
           <textarea
             placeholder="随便写些什么刷下存在感"
-            v-model="regmark"
+            v-model="remark"
             class="layui-textarea"
             style="height: 80px;"
           ></textarea>
         </div>
       </div>
       <div class="layui-form-item">
-        <button
-          class="layui-btn"
-          @click="submit()"
-        >确认修改</button>
+        <button class="layui-btn" @click="validate().then(submit)">确认修改</button>
       </div>
     </validation-observer>
   </div>
 </template>
 
 <script>
+import { ValidationProvider, ValidationObserver } from "vee-validate";
 export default {
   name: "myinfo",
-  components: {},
+  components: {
+    ValidationProvider,
+    ValidationObserver,
+  },
   data() {
-    return {};
+    return {
+      gender: "",
+      username: "",
+      name: "",
+      location: "",
+      remark: "",
+    };
   },
   computed: {},
   watch: {},
@@ -152,7 +128,13 @@ export default {
   created() {},
   //生命周期 - 挂载完成（可以访问DOM元素）
   mounted() {},
-  methods: {},
+  methods: {
+    submit(validation) {
+      if (!validation) {
+        return;
+      }
+    },
+  },
 };
 </script>
 <style lang='scss' scoped>

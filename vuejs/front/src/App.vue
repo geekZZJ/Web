@@ -2,7 +2,7 @@
  * @Author: 张中俊
  * @Date: 2020-10-17 20:17:44
  * @LastEditors: zzj
- * @LastEditTime: 2020-12-06 12:31:52
+ * @LastEditTime: 2020-12-17 16:37:27
  * @Description: 
 -->
 <template>
@@ -40,6 +40,9 @@ export default {
   .pd#{$i} {
     padding: $i * 10 + px !important;
   }
+  .pt#{$i} {
+    padding-top: $i * 10 + px !important;
+  }
   .pl#{$i} {
     padding-left: $i * 10 + px !important;
   }
@@ -48,6 +51,12 @@ export default {
   }
   .mr#{$i} {
     margin-right: $i * 10 + px !important;
+  }
+  .mt#{$i} {
+    margin-top: $i * 10 + px !important;
+  }
+  .ml#{$i} {
+    margin-left: $i * 10 + px !important;
   }
 }
 
