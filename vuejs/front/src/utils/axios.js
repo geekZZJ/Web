@@ -2,13 +2,15 @@
  * @Author: zzj
  * @Date: 2020-11-07 18:15:56
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-21 20:26:37
+ * @LastEditTime: 2020-12-17 16:49:00
  * @Description:
  */
 // 封装axios请求，返回重新封装的数据格式
 // 对错误的统一处理
+import store from "@/store/index";
 import axios from "axios";
 import errorHandle from "./errorHandle";
+import publicConfig from "@/config";
 const CancelToken = axios.CancelToken;
 
 class HttpRequest {
@@ -37,6 +39,14 @@ class HttpRequest {
     instance.interceptors.request.use(
       (config) => {
         // Do something before request is sent
+        let isPublic = false;
+        publicConfig.publicPath.map((path) => {
+          isPublic = isPublic || path.test(config.url);
+        });
+        const token = store.state.token;
+        if (!isPublic && token) {
+          config.headers.Authorization = "Bearer " + token;
+        }
         let key = `${config.url}&${config.method}`;
         this.removePending(key, true);
         config.cancelToken = new CancelToken((c) => {

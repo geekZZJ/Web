@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-11-26 11:17:55
  * @LastEditors: zzj
- * @LastEditTime: 2020-12-17 16:33:15
+ * @LastEditTime: 2020-12-17 17:14:35
  * @Description: 
 -->
 <template>
@@ -92,7 +92,7 @@
         <div class="layui-input-block">
           <textarea
             placeholder="随便写些什么刷下存在感"
-            v-model="remark"
+            v-model="regmark"
             class="layui-textarea"
             style="height: 80px;"
           ></textarea>
@@ -107,6 +107,7 @@
 
 <script>
 import { ValidationProvider, ValidationObserver } from "vee-validate";
+import { updateUserInfo } from "@/api/user";
 export default {
   name: "myinfo",
   components: {
@@ -119,7 +120,7 @@ export default {
       username: "",
       name: "",
       location: "",
-      remark: "",
+      regmark: "",
     };
   },
   computed: {},
@@ -127,11 +128,30 @@ export default {
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {},
   //生命周期 - 挂载完成（可以访问DOM元素）
-  mounted() {},
+  mounted() {
+    let {
+      username,
+      name,
+      gender,
+      location,
+      regmark,
+    } = this.$store.state.userInfo;
+    this.username = username || "";
+    this.name = name || "";
+    this.gender = gender || "";
+    this.location = location || "";
+    this.regmark = regmark || "";
+  },
   methods: {
-    submit(validation) {
+    async submit(validation) {
       if (!validation) {
         return;
+      }
+      const { username, name, gender, location, regmark } = this;
+      const userInfo = { username, name, gender, location, regmark };
+      const result = await updateUserInfo(userInfo);
+      if (result.code === 200) {
+        this.$alert("更新成功");
       }
     },
   },

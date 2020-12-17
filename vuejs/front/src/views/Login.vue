@@ -2,19 +2,13 @@
  * @Author: zzj
  * @Date: 2020-10-18 19:42:56
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-29 16:24:51
+ * @LastEditTime: 2020-12-17 17:13:28
  * @Description: 
 -->
 <template>
   <div class="layui-container fly-marginTop">
-    <div
-      class="fly-panel fly-panel-user"
-      pad20
-    >
-      <div
-        class="layui-tab layui-tab-brief"
-        lay-filter="user"
-      >
+    <div class="fly-panel fly-panel-user" pad20>
+      <div class="layui-tab layui-tab-brief" lay-filter="user">
         <ul class="layui-tab-title">
           <li class="layui-this">登入</li>
           <li>
@@ -26,10 +20,7 @@
           id="LAY_ucm"
           style="padding: 20px 0;"
         >
-          <ValidationObserver
-            ref="observer"
-            v-slot="{validate}"
-          >
+          <ValidationObserver ref="observer" v-slot="{validate}">
             <div class="layui-tab-item layui-show">
               <div class="layui-form layui-form-pane">
                 <form method="post">
@@ -48,7 +39,7 @@
                           placeholder="请输入用户名"
                           autocomplete="off"
                           class="layui-input"
-                        >
+                        />
                       </div>
                       <div class="layui-form-mid">
                         <span style="color:#c00">{{ errors[0] }}</span>
@@ -70,7 +61,7 @@
                           placeholder="请输入密码"
                           autocomplete="off"
                           class="layui-input"
-                        >
+                        />
                       </div>
                       <div class="layui-form-mid">
                         <span style="color:#c00">{{ errors[0] }}</span>
@@ -93,14 +84,10 @@
                           placeholder="请输入验证码"
                           autocomplete="off"
                           class="layui-input"
-                        >
+                        />
                       </div>
                       <div>
-                        <span
-                          v-html="svg"
-                          @click="_getCode"
-                          class="svg"
-                        ></span>
+                        <span v-html="svg" @click="_getCode" class="svg"></span>
                       </div>
                       <div class="layui-form-mid">
                         <span style="color:#c00">{{ errors[0] }}</span>
@@ -120,13 +107,13 @@
                   <div class="layui-form-item fly-form-app">
                     <span>或者使用社交账号登入</span>
                     <a
-                      href=""
+                      href
                       onclick="layer.msg('正在通过QQ登入', {icon:16, shade: 0.1, time:0})"
                       class="iconfont icon-qq"
                       title="QQ登入"
                     ></a>
                     <a
-                      href=""
+                      href
                       onclick="layer.msg('正在通过微博登入', {icon:16, shade: 0.1, time:0})"
                       class="iconfont icon-weibo"
                       title="微博登入"
@@ -136,7 +123,6 @@
               </div>
             </div>
           </ValidationObserver>
-
         </div>
       </div>
     </div>
@@ -212,6 +198,7 @@ export default {
         const res = await login(params);
         if (res.code === 200) {
           // console.log("res", res);
+          res.data.username = this.username;
           this.$store.commit("setUserInfo", res.data);
           this.$store.commit("setIsLogin", true);
           this.$store.commit("setToken", res.token);
