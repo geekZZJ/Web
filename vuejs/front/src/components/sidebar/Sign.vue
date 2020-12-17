@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-11-17 11:01:42
  * @LastEditors: zzj
- * @LastEditTime: 2020-12-13 14:55:00
+ * @LastEditTime: 2020-12-17 15:13:37
  * @Description: 
 -->
 <template>
@@ -16,7 +16,7 @@
         活跃榜
         <span class="layui-badge-dot"></span>
       </a>
-      <span class="fly-signin-days">
+      <span class="fly-signin-days" v-show="isSign||isLogin">
         已连续签到
         <cite>{{count}}</cite>天
       </span>
@@ -47,6 +47,7 @@
 import SignInfo from "./SignInfo.vue";
 import SignList from "./SignList.vue";
 import { userSign } from "@/api/user";
+import moment from "moment"
 export default {
   name: "sign",
   components: { SignInfo, SignList },

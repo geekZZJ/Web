@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-10-17 20:17:44
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-29 16:54:29
+ * @LastEditTime: 2020-12-17 15:29:20
  * @Description:
  */
 import Vue from "vue";
@@ -158,6 +158,15 @@ const routes = [
           ),
       },
     ],
+  },
+  {
+    path: "/404",
+    component: () =>
+      import(/* webpackChunkName: "notfound" */ "@/views/NotFound.vue"),
+  },
+  {
+    path: "*",
+    redirect: "/404",
   },
 ];
 
