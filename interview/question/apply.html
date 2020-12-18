@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>apply</title>
+</head>
+
+<body>
+  <script src="./apply.js"></script>
+  <script>
+    let obj = {
+      name: "zzj",
+      sayName: function (from, to) {
+        console.log(this.name, this.age, from, to)
+      }
+    }
+
+    let person = {
+      name: "test",
+      age: 20
+    }
+
+    obj.sayName.myApply(person, ["北京", "上海"])
+  </script>
+</body>
+
+</html>
