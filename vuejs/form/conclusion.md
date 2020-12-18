@@ -2,6 +2,7 @@
 
 ### 自行实现 dispatch 和 broadcast 方法
 
+form/src/mixins/emitter.js
 复习了 dispatch
 
 ### form 表单验证
