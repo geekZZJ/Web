@@ -1,0 +1,29 @@
+<!--
+ * @Author: zzj
+ * @Date: 2020-12-19 17:18:52
+ * @LastEditors: zzj
+ * @LastEditTime: 2020-12-19 17:51:55
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>prototype</title>
+</head>
+
+<body>
+  <script>
+    function Foo() { }
+    let f1 = new Foo()
+    console.log(Foo.prototype.__proto__ === Object.prototype)
+    console.log(Object.prototype.constructor === Object)
+    console.log(Foo.__proto__ === Function.prototype)
+    console.log(Function.__proto__ === Function.prototype)
+    console.log(Object.__proto__ === Function.prototype)
+  </script>
+</body>
+
+</html>
