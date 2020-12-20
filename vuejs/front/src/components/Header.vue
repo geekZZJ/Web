@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-10-18 20:01:52
  * @LastEditors: zzj
- * @LastEditTime: 2020-12-17 15:32:15
+ * @LastEditTime: 2020-12-20 14:12:59
  * @Description: 
 -->
 <template>
@@ -82,9 +82,9 @@
               :class="{'layui-show':isHover}"
             >
               <dd>
-                <a href="user/set.html">
+                <router-link :to="{name:'Info'}">
                   <i class="layui-icon">&#xe620;</i>基本设置
-                </a>
+                </router-link>
               </dd>
               <dd>
                 <a href="user/message.html">

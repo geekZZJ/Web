@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-10-17 20:17:44
  * @LastEditors: zzj
- * @LastEditTime: 2020-12-17 15:29:20
+ * @LastEditTime: 2020-12-20 17:03:09
  * @Description:
  */
 import Vue from "vue";
@@ -19,6 +19,18 @@ const routes = [
     path: "/login",
     name: "Login",
     component: Login,
+  },
+  {
+    path: "/confirm",
+    name: "Confirm",
+    component: () =>
+      import(/* webpackChunkName: "confirm" */ "@/views/Confirm.vue"),
+  },
+  {
+    path: "/reset",
+    name: "Reset",
+    component: () =>
+      import(/* webpackChunkName: "reset" */ "@/views/Reset.vue"),
   },
   {
     path: "/reg",
