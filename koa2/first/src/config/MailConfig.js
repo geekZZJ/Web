@@ -2,11 +2,13 @@
  * @Author: zzj
  * @Date: 2020-10-18 22:14:39
  * @LastEditors: zzj
- * @LastEditTime: 2020-10-25 15:34:37
+ * @LastEditTime: 2020-12-20 16:55:25
  * @Description:
  */
 "use strict";
 import nodemailer from "nodemailer";
+import config from "../config";
+import qs from "qs";
 
 // async..await is not allowed in global scope, must use a wrapper
 async function send(sendInfo) {
@@ -33,16 +35,18 @@ async function send(sendInfo) {
   //   user: "zzj",
   // };
 
-  let url = "http://www.imooc.com";
+  const baseUrl = config.baseUrl;
+  const route = sendInfo.type === "email" ? "/confirm" : "/reset";
+  let url = `${baseUrl}/#${route}?` + qs.stringify(sendInfo.data);
 
   // send mail with defined transport object
   let info = await transporter.sendMail({
     from: '"认证邮件" <2461927976@qq.com>', // sender address
     to: sendInfo.email, // list of receivers
     subject:
-      sendInfo.user !== ""
+      sendInfo.user !== "" && sendInfo.type !== "email"
         ? `你好开发者，${sendInfo.user}!《前端全栈实践》注册码`
-        : "", // Subject line
+        : "确认修改邮件链接", // Subject line
     text: `您在《前端全栈实践》课程中注册，您的邀请码是${sendInfo.code}，邀请码的过期时间是${sendInfo.expire}`, // plain text body
     html: `
     <div style="border: 1px solid #dcdcdc;color: #676767;width: 600px; margin: 0 auto; padding-bottom: 50px;position: relative;">

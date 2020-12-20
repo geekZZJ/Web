@@ -2,13 +2,18 @@
  * @Author: zzj
  * @Date: 2020-12-06 15:34:56
  * @LastEditors: zzj
- * @LastEditTime: 2020-12-13 14:49:05
+ * @LastEditTime: 2020-12-20 17:30:15
  * @Description:
  */
 import SignRecord from "../model/SignRecord";
 import { getJWTPayload } from "../common/Utils";
 import User from "../model/User";
 import moment from "dayjs";
+import send from "../config/MailConfig";
+import { v4 as uuidv4 } from "uuid";
+import jsonwebtoken from "jsonwebtoken";
+import { setValue, getValue } from "../config/RedisConfig";
+import config from "../config";
 
 class UserController {
   async userSign(ctx) {
@@ -109,6 +114,75 @@ class UserController {
       ...result,
       lastSign: newRecord.created,
     };
+  }
+
+  async updateUserInfo(ctx) {
+    const { body } = ctx.request;
+    const obj = await getJWTPayload(ctx.header.authorization);
+    console.log(obj);
+    const user = await User.findOne({ _id: obj._id });
+    let msg = "";
+    if (body.username && body.username !== user.username) {
+      // 用户修改了邮箱
+      const tempUser = await User.findOne({ username: body.username });
+      if (tempUser && tempUser.password) {
+        ctx.body = {
+          code: 501,
+          msg: "邮箱已经注册",
+        };
+        return;
+      }
+      try {
+        const key = uuidv4();
+        setValue(
+          key,
+          jsonwebtoken.sign({ _id: obj._id }, config.JWT_SECRET, {
+            expiresIn: "30m",
+          })
+        );
+        const result = await send({
+          type: "email",
+          data: { username: body.username, key },
+          code: "",
+          expire: moment().add(30, "m").format("YYYY-MM-DD HH:mm:ss"),
+          email: user.username,
+          user: user.name,
+        });
+        msg = "邮件发送成功";
+      } catch (error) {
+        console.log("error", error);
+      }
+    }
+    const arr = ["username", "mobile", "password"];
+    arr.map((item) => {
+      delete body[item];
+    });
+    const result = await User.updateOne({ _id: obj._id }, body);
+    if (result.n === 1 && result.ok === 1) {
+      ctx.body = {
+        code: 200,
+        msg: msg === "" ? "修改成功" : msg,
+      };
+    } else {
+      ctx.body = {
+        code: 500,
+        msg: "修改失败",
+      };
+    }
+  }
+
+  // 更新用户名
+  async updateUsername(ctx) {
+    const body = ctx.query;
+    if (body.key) {
+      const token = await getValue(body.key);
+      const obj = getJWTPayload("Bearer " + token);
+      await User.updateOne({ _id: obj._id }, { username: body.username });
+      ctx.body = {
+        code: 200,
+        msg: "更新用户名成功",
+      };
+    }
   }
 }
 

@@ -2,11 +2,11 @@
  * @Author: zzj
  * @Date: 2020-10-12 20:12:06
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-11 10:50:42
+ * @LastEditTime: 2020-12-20 15:54:02
  * @Description:
  */
 import svgCaptcha from "svg-captcha";
-import { setValue, getValue } from "../config/RedisConfig";
+import { setValue } from "../config/RedisConfig";
 
 class PublicController {
   constructor() {}
