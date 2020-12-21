@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-11-26 11:17:55
  * @LastEditors: zzj
- * @LastEditTime: 2020-12-17 17:14:35
+ * @LastEditTime: 2020-12-21 21:43:52
  * @Description: 
 -->
 <template>
@@ -151,6 +151,10 @@ export default {
       const userInfo = { username, name, gender, location, regmark };
       const result = await updateUserInfo(userInfo);
       if (result.code === 200) {
+        this.$store.commit("setUserInfo", {
+          ...this.$store.state.userInfo,
+          ...{ username, name, gender, location, regmark },
+        });
         this.$alert("更新成功");
       }
     },

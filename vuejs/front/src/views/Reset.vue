@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-12-20 16:58:05
  * @LastEditors: zzj
- * @LastEditTime: 2020-12-20 17:00:41
+ * @LastEditTime: 2020-12-21 21:27:32
  * @Description: 
 -->
 <template>
@@ -12,7 +12,6 @@
 <script>
 export default {
   name: "reset",
-  components: {},
   data() {
     return {};
   },
