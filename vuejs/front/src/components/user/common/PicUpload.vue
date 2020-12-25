@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-11-26 11:19:39
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-26 11:20:29
+ * @LastEditTime: 2020-12-25 17:38:37
  * @Description: 
 -->
 <template>
@@ -10,10 +10,7 @@
     <div class="layui-form-item">
       <div class="avatar-add">
         <p>建议尺寸168*168，支持jpg、png、gif，最大不能超过50KB</p>
-        <label
-          for="pic"
-          class="layui-btn upload-img"
-        >
+        <label for="pic" class="layui-btn upload-img">
           <i class="layui-icon">&#xe67c;</i>上传头像
         </label>
         <input
@@ -31,11 +28,18 @@
 </template>
 
 <script>
+import { uploadImg } from "@/api/content";
+import { updateUserInfo } from "@/api/user";
 export default {
   name: "picupload",
-  components: {},
   data() {
-    return {};
+    return {
+      pic:
+        this.$store.state.userInfo && this.$store.state.userInfo.pic
+          ? this.$store.state.userInfo.pic
+          : "/img/bear-200-200.jpg",
+      formData: null,
+    };
   },
   computed: {},
   watch: {},
@@ -43,7 +47,24 @@ export default {
   created() {},
   //生命周期 - 挂载完成（可以访问DOM元素）
   mounted() {},
-  methods: {},
+  methods: {
+    async upload(e) {
+      let file = e.target.files;
+      let formData = new FormData();
+      if (file.length > 0) {
+        formData.append("file", file[0]);
+        this.formData = formData;
+      }
+      // 上传图片之后
+      const result = await uploadImg(this.formData);
+      // 更新用户基本信息
+      // const res = await updateUserInfo({ pic: this.pic });
+      // let user = this.$store.state.userInfo;
+      // user.pic = this.pic;
+      // this.$store.commit("setUserInfo", user);
+      // this.$alert("图片上传成功");
+    },
+  },
 };
 </script>
 <style lang='scss' scoped>

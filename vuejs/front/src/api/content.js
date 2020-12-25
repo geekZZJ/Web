@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-11-20 20:15:23
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-20 20:44:40
+ * @LastEditTime: 2020-12-25 17:27:17
  * @Description:
  */
 import axios from "@/utils/request";
@@ -44,4 +44,12 @@ const getTop = () => {
   return axios.get("/public/topWeek");
 };
 
-export { getList, getTips, getLinks, getTop };
+/**
+ * 上传图片
+ * @param {*} formData
+ */
+const uploadImg = (formData) => {
+  return axios.post("/content/upload", formData);
+};
+
+export { getList, getTips, getLinks, getTop, uploadImg };
