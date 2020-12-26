@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-10-12 20:10:59
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-10 16:14:06
+ * @LastEditTime: 2020-12-26 15:20:53
  * @Description:
  */
 import koa from "koa";
@@ -32,7 +32,13 @@ const isDevMode = process.env.NODE_ENV === "production" ? false : true;
 // app.use(router());
 
 const middleware = compose([
-  koaBody(),
+  koaBody({
+    multipart: true,
+    formidable: { keepExtensions: true, maxFieldsSize: 5 * 1024 * 1024 },
+    onError: (err) => {
+      console.log(err);
+    },
+  }),
   statics(path.join(__dirname, "/public")),
   cors(),
   jsonutil({ pretty: false, param: "pretty" }),

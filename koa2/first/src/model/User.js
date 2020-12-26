@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-11-04 22:21:17
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-24 22:09:29
+ * @LastEditTime: 2020-12-25 17:36:40
  * @Description:
  */
 import mongoose from "../config/DBHelper";
@@ -19,7 +19,7 @@ const UserSchema = new Schema({
   favs: { type: Number, default: 100 },
   gender: { type: String, default: "" },
   roles: { type: Array, default: ["user"] },
-  pic: { type: String, default: "/img/header.jpg" },
+  pic: { type: String, default: "/img/bear-200-200.jpg" },
   mobile: { type: String, match: /^1[3-9](\d{9})$/, default: "" },
   status: { type: String, default: "0" },
   regmark: { type: String, default: "" },
