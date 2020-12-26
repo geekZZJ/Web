@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-12-13 11:30:01
  * @LastEditors: zzj
- * @LastEditTime: 2020-12-20 17:40:58
+ * @LastEditTime: 2020-12-26 18:41:54
  * @Description:
  */
 import axios from "@/utils/request";
@@ -23,4 +23,9 @@ const updateUsername = (data) => {
   return axios.get("/public/resetEmail?" + qs.stringify(data));
 };
 
-export { userSign, updateUserInfo, updateUsername };
+// 修改用户密码
+const changePassword = (data) => {
+  return axios.post("/user/changepass", data);
+};
+
+export { userSign, updateUserInfo, updateUsername, changePassword };

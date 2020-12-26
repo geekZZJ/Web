@@ -2,16 +2,13 @@
  * @Author: zzj
  * @Date: 2020-11-26 11:21:03
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-26 11:21:40
+ * @LastEditTime: 2020-12-26 21:53:43
  * @Description: 
 -->
 <template>
   <div class="layui-form layui-form-pane layui-tab-item layui-show">
     <form>
-      <validation-observer
-        ref="observer"
-        v-slot="{ validate }"
-      >
+      <validation-observer ref="observer" v-slot="{ validate }">
         <div class="layui-form-item">
           <validation-provider
             name="oldpassword"
@@ -19,10 +16,7 @@
             v-slot="{errors}"
           >
             <div class="layui-row">
-              <label
-                for="L_nowpass"
-                class="layui-form-label"
-              >当前密码</label>
+              <label class="layui-form-label">当前密码</label>
               <div class="layui-input-inline">
                 <input
                   type="password"
@@ -43,16 +37,9 @@
             v-slot="{errors}"
           >
             <div class="layui-row">
-              <label
-                for="L_pass"
-                class="layui-form-label"
-              >新密码</label>
+              <label class="layui-form-label">新密码</label>
               <div class="layui-input-inline">
-                <input
-                  type="password"
-                  v-model="password"
-                  class="layui-input"
-                />
+                <input type="password" v-model="password" class="layui-input" />
               </div>
               <div class="layui-form-mid layui-word-aux">6到16个字符</div>
             </div>
@@ -62,21 +49,11 @@
           </validation-provider>
         </div>
         <div class="layui-form-item">
-          <validation-provider
-            v-slot="{ errors }"
-            vid="confirmation"
-          >
+          <validation-provider v-slot="{ errors }" vid="confirmation">
             <div class="layui-row">
-              <label
-                for="L_repass"
-                class="layui-form-label"
-              >确认密码</label>
+              <label class="layui-form-label">确认密码</label>
               <div class="layui-input-inline">
-                <input
-                  type="password"
-                  v-model="repassword"
-                  class="layui-input"
-                />
+                <input type="password" v-model="repassword" class="layui-input" />
               </div>
             </div>
             <div class="layui-row">
@@ -97,11 +74,17 @@
 </template>
 
 <script>
+import { ValidationProvider, ValidationObserver } from "vee-validate";
+import { changePassword } from "@/api/user";
 export default {
   name: "password",
-  components: {},
+  components: { ValidationProvider, ValidationObserver },
   data() {
-    return {};
+    return {
+      oldpassword: "",
+      password: "",
+      repassword: "",
+    };
   },
   computed: {},
   watch: {},
@@ -109,7 +92,30 @@ export default {
   created() {},
   //生命周期 - 挂载完成（可以访问DOM元素）
   mounted() {},
-  methods: {},
+  methods: {
+    async submit(validation) {
+      if (!validation) {
+        return;
+      }
+      if (this.password === this.oldpassword) {
+        this.$alert("新旧密码不能相同");
+        return;
+      }
+      const result = await changePassword({
+        oldpwd: this.oldpassword,
+        newpwd: this.password,
+      });
+      if (result.code === 200) {
+        this.$alert("密码修改成功");
+        this.oldpassword = "";
+        this.password = "";
+        this.repassword = "";
+        requestAnimationFrame(() => {
+          this.$refs.observer.reset();
+        });
+      }
+    },
+  },
 };
 </script>
 <style lang='scss' scoped>

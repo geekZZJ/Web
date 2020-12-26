@@ -2,14 +2,14 @@
  * @Author: zzj
  * @Date: 2020-11-26 11:19:39
  * @LastEditors: zzj
- * @LastEditTime: 2020-12-26 18:05:24
+ * @LastEditTime: 2020-12-26 18:12:20
  * @Description: 
 -->
 <template>
   <div class="layui-form layui-form-pane layui-tab-item layui-show">
     <div class="layui-form-item">
       <div class="avatar-add">
-        <p>建议尺寸168*168，支持jpg、png、gif，最大不能超过50KB</p>
+        <p>建议尺寸168*168，支持jpg、png、gif，最大不能超过5MB</p>
         <label for="pic" class="layui-btn upload-img">
           <i class="layui-icon">&#xe67c;</i>上传头像
         </label>
