@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-12-06 15:34:56
  * @LastEditors: zzj
- * @LastEditTime: 2020-12-26 18:09:04
+ * @LastEditTime: 2020-12-26 21:52:19
  * @Description:
  */
 import SignRecord from "../model/SignRecord";
@@ -14,8 +14,10 @@ import { v4 as uuidv4 } from "uuid";
 import jsonwebtoken from "jsonwebtoken";
 import { setValue, getValue } from "../config/RedisConfig";
 import config from "../config";
+import bcrypt from "bcrypt";
 
 class UserController {
+  // 用户签到
   async userSign(ctx) {
     const obj = await getJWTPayload(ctx.header.authorization);
     const record = await SignRecord.findByUid(obj._id);
@@ -116,10 +118,10 @@ class UserController {
     };
   }
 
+  // 更新用户信息
   async updateUserInfo(ctx) {
     const { body } = ctx.request;
     const obj = await getJWTPayload(ctx.header.authorization);
-    // console.log(obj);
     const user = await User.findOne({ _id: obj._id });
     let msg = "";
     if (body.username && body.username !== user.username) {
@@ -176,11 +178,31 @@ class UserController {
     const body = ctx.query;
     if (body.key) {
       const token = await getValue(body.key);
-      const obj = getJWTPayload("Bearer " + token);
+      const obj = await getJWTPayload("Bearer " + token);
       await User.updateOne({ _id: obj._id }, { username: body.username });
       ctx.body = {
         code: 200,
         msg: "更新用户名成功",
+      };
+    }
+  }
+
+  // 修改用户密码
+  async changePass(ctx) {
+    const { body } = ctx.request;
+    const obj = await getJWTPayload(ctx.header.authorization);
+    const user = await User.findOne({ _id: obj._id });
+    if (await bcrypt.compare(body.oldpwd, user.password)) {
+      const newpwd = await bcrypt.hash(body.newpwd, 5);
+      await User.updateOne({ _id: obj._id }, { $set: { password: newpwd } });
+      ctx.body = {
+        code: 200,
+        msg: "更新密码成功",
+      };
+    } else {
+      ctx.body = {
+        code: 500,
+        msg: "原密码输入错误，请重试",
       };
     }
   }
