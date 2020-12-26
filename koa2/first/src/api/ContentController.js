@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-12-06 15:30:10
  * @LastEditors: zzj
- * @LastEditTime: 2020-12-26 17:14:19
+ * @LastEditTime: 2020-12-26 17:56:03
  * @Description:
  */
 import fs from "fs";
@@ -87,6 +87,37 @@ class ContentController {
     await makeDir(dir);
     // 存储文件到指定路径
     // 给文件一个唯一的名称
+    const picname = uuidv4();
+    const destPath = `${dir}\\${picname}.${ext}`;
+    const reader = fs.createReadStream(file.path);
+    const upStream = fs.createWriteStream(destPath);
+    const filePath = `\\${moment().format("YYYYMMDD")}\\${picname}.${ext}`;
+    // 方法一
+    reader.pipe(upStream);
+
+    // 方法二
+    // let totalLength = 0;
+    // reader.on("data", (chunk) => {
+    //   totalLength += chunk.length;
+    //   console.log("reader.on -> totalLength", totalLength);
+    //   if (upStream.write(chunk) === false) {
+    //     reader.pause();
+    //   }
+    // });
+
+    // reader.on("drain", () => {
+    //   reader.resume();
+    // });
+
+    // reader.on("end", () => {
+    //   upStream.end();
+    // });
+
+    ctx.body = {
+      code: 200,
+      msg: "图片上传成功",
+      data: filePath,
+    };
   }
 }
 

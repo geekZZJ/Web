@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-12-06 15:34:56
  * @LastEditors: zzj
- * @LastEditTime: 2020-12-20 17:30:15
+ * @LastEditTime: 2020-12-26 18:09:04
  * @Description:
  */
 import SignRecord from "../model/SignRecord";
@@ -119,7 +119,7 @@ class UserController {
   async updateUserInfo(ctx) {
     const { body } = ctx.request;
     const obj = await getJWTPayload(ctx.header.authorization);
-    console.log(obj);
+    // console.log(obj);
     const user = await User.findOne({ _id: obj._id });
     let msg = "";
     if (body.username && body.username !== user.username) {
