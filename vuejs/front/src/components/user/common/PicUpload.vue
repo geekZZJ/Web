@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-11-26 11:19:39
  * @LastEditors: zzj
- * @LastEditTime: 2020-12-25 17:38:37
+ * @LastEditTime: 2020-12-26 18:05:24
  * @Description: 
 -->
 <template>
@@ -30,6 +30,7 @@
 <script>
 import { uploadImg } from "@/api/content";
 import { updateUserInfo } from "@/api/user";
+import config from "@/config";
 export default {
   name: "picupload",
   data() {
@@ -57,12 +58,20 @@ export default {
       }
       // 上传图片之后
       const result = await uploadImg(this.formData);
+      if (result.code === 200) {
+        const baseUrl =
+          process.env.NODE_ENV === "production"
+            ? config.baseUrl.pro
+            : config.baseUrl.dev;
+        this.pic = baseUrl + result.data;
+      }
       // 更新用户基本信息
-      // const res = await updateUserInfo({ pic: this.pic });
-      // let user = this.$store.state.userInfo;
-      // user.pic = this.pic;
-      // this.$store.commit("setUserInfo", user);
-      // this.$alert("图片上传成功");
+      const res = await updateUserInfo({ pic: this.pic });
+      const user = this.$store.state.userInfo;
+      user.pic = this.pic;
+      this.$store.commit("setUserInfo", user);
+      this.$alert("图片上传成功");
+      document.getElementById("pic").value = "";
     },
   },
 };
