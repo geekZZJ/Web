@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-12-27 13:05:06
  * @LastEditors: zzj
- * @LastEditTime: 2020-12-27 16:08:01
+ * @LastEditTime: 2020-12-27 16:48:31
  * @Description: 
 -->
 <template>
@@ -23,11 +23,7 @@
                 <validation-observer ref="observer" v-slot="{ validate }">
                   <div class="layui-row layui-col-space15 layui-form-item">
                     <div class="layui-col-md3">
-                      <validation-provider
-                        name="catalog"
-                        rules="is_not:请选择"
-                        v-slot="{errors}"
-                      >
+                      <validation-provider name="catalog" v-slot="{errors}">
                         <div class="layui-row">
                           <label class="layui-form-label">所在专栏</label>
                           <div class="layui-input-block">
@@ -84,7 +80,7 @@
                       </validation-provider>
                     </div>
                   </div>
-                  <!-- <Editor @changeContent="add" :initContent="content"></Editor> -->
+                  <Editor></Editor>
                   <div class="layui-form-item">
                     <div class="layui-inline">
                       <label class="layui-form-label">悬赏飞吻</label>
@@ -92,7 +88,6 @@
                         <div
                           class="layui-unselect layui-form-select"
                           :class="{'layui-form-selected': isSelect_fav}"
-                          @click="changeFav"
                         >
                           <div class="layui-select-title">
                             <input
