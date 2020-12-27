@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-10-18 19:42:56
  * @LastEditors: zzj
- * @LastEditTime: 2020-12-17 17:13:28
+ * @LastEditTime: 2020-12-27 15:51:08
  * @Description: 
 -->
 <template>
@@ -87,7 +87,11 @@
                         />
                       </div>
                       <div>
-                        <span v-html="svg" @click="_getCode" class="svg"></span>
+                        <span
+                          v-html="svg"
+                          @click="_getCode($store.state.sid)"
+                          class="svg"
+                        ></span>
                       </div>
                       <div class="layui-form-mid">
                         <span style="color:#c00">{{ errors[0] }}</span>
@@ -162,7 +166,6 @@ export default {
      */
     async _getCode(sid) {
       const result = await getCode(sid);
-      console.log("result", result);
       if (result.code === 200) {
         this.svg = result.data;
       }

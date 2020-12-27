@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-10-17 20:17:44
  * @LastEditors: zzj
- * @LastEditTime: 2020-12-20 17:03:09
+ * @LastEditTime: 2020-12-27 14:14:14
  * @Description:
  */
 import Vue from "vue";
@@ -179,6 +179,12 @@ const routes = [
   {
     path: "*",
     redirect: "/404",
+  },
+  {
+    path: "/add",
+    name: "Add",
+    component: () =>
+      import(/* webpackChunkName: "add" */ "@/components/contents/Add.vue"),
   },
 ];
 

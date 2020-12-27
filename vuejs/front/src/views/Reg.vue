@@ -2,19 +2,13 @@
  * @Author: zzj
  * @Date: 2020-10-18 19:43:06
  * @LastEditors: zzj
- * @LastEditTime: 2020-11-15 11:54:57
+ * @LastEditTime: 2020-12-27 15:51:55
  * @Description: 
 -->
 <template>
   <div class="layui-container fly-marginTop">
-    <div
-      class="fly-panel fly-panel-user"
-      pad20
-    >
-      <div
-        class="layui-tab layui-tab-brief"
-        lay-filter="user"
-      >
+    <div class="fly-panel fly-panel-user" pad20>
+      <div class="layui-tab layui-tab-brief" lay-filter="user">
         <ul class="layui-tab-title">
           <li>
             <router-link :to="{name:'Login'}">登入</router-link>
@@ -28,10 +22,7 @@
         >
           <div class="layui-tab-item layui-show">
             <div class="layui-form layui-form-pane">
-              <ValidationObserver
-                ref="observer"
-                v-slot="{validate}"
-              >
+              <ValidationObserver ref="observer" v-slot="{validate}">
                 <form method="post">
                   <div class="layui-form-item">
                     <label class="layui-form-label">用户名</label>
@@ -48,7 +39,7 @@
                           autocomplete="off"
                           class="layui-input"
                           placeholder="请输入邮箱地址"
-                        >
+                        />
                       </div>
                       <div class="layui-form-mid layui-word-aux">将会成为您唯一的登入名</div>
                       <div class="layui-form-mid">
@@ -71,7 +62,7 @@
                           class="layui-input"
                           v-model="name"
                           placeholder="请输入用户名"
-                        >
+                        />
                       </div>
                       <div class="layui-form-mid">
                         <span style="color:#c00">{{ errors[0] }}</span>
@@ -93,7 +84,7 @@
                           class="layui-input"
                           v-model="password"
                           placeholder="请输入密码"
-                        >
+                        />
                       </div>
                       <div class="layui-form-mid layui-word-aux">6到16个字符</div>
                       <div class="layui-form-mid">
@@ -116,7 +107,7 @@
                           class="layui-input"
                           v-model="repass"
                           placeholder="请确认密码"
-                        >
+                        />
                       </div>
                       <div class="layui-form-mid">
                         <span style="color:#c00">{{ errors[0] }}</span>
@@ -138,12 +129,12 @@
                           autocomplete="off"
                           class="layui-input"
                           v-model="vercode"
-                        >
+                        />
                       </div>
                       <div>
                         <span
                           v-html="svg"
-                          @click="_getCode"
+                          @click="_getCode($store.state.sid)"
                           class="svg"
                         ></span>
                       </div>
@@ -162,13 +153,13 @@
                   <div class="layui-form-item fly-form-app">
                     <span>或者直接使用社交账号快捷注册</span>
                     <a
-                      href=""
+                      href
                       onclick="layer.msg('正在通过QQ登入', {icon:16, shade: 0.1, time:0})"
                       class="iconfont icon-qq"
                       title="QQ登入"
                     ></a>
                     <a
-                      href=""
+                      href
                       onclick="layer.msg('正在通过微博登入', {icon:16, shade: 0.1, time:0})"
                       class="iconfont icon-weibo"
                       title="微博登入"
@@ -211,7 +202,6 @@ export default {
   methods: {
     async _getCode(sid) {
       const result = await getCode(sid);
-      console.log("result", result);
       if (result.code === 200) {
         this.svg = result.data;
       }
