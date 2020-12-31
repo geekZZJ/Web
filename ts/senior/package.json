@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node ./demo3.ts"
+    "dev": "ts-node ./src/page.ts"
   },
   "keywords": [],
   "author": "",
