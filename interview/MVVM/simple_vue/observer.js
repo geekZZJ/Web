@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-01-06 17:14:47
  * @LastEditors: zzj
- * @LastEditTime: 2021-01-06 17:36:32
+ * @LastEditTime: 2021-01-07 10:14:12
  * @Description: 实现 observer（可观察的）
  */
 
@@ -43,10 +43,10 @@ class Vue {
   }
 }
 
-let o = new Vue({
-  data: {
-    test: "I am test.",
-  },
-});
+// let o = new Vue({
+//   data: {
+//     test: "I am test.",
+//   },
+// });
 
-o._data.test = "hello,world."; /* 视图更新啦～ */
+// o._data.test = "hello,world.";
