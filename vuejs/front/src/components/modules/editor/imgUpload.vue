@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-01-08 09:43:30
  * @LastEditors: zzj
- * @LastEditTime: 2021-01-08 10:44:01
+ * @LastEditTime: 2021-01-08 15:14:47
  * @Description: 
 -->
 <template>
@@ -10,7 +10,6 @@
     <div
       class="layui-layer layui-layer-page layui-layer-border edit-content"
       v-show="isShow"
-      ref="wrap"
     >
       <div class="layui-layer-title">插入图片</div>
       <div class="layui-layer-content">
@@ -57,8 +56,7 @@ import config from "@/config";
 import { uploadImg } from "@/api/content";
 export default {
   name: "ImgUpload",
-  components: {},
-  props: ["isShow", "ctrl"],
+  props: ["isShow"],
   data() {
     return {
       pic: "",
@@ -69,36 +67,7 @@ export default {
   watch: {},
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {},
-  //生命周期 - 挂载完成（可以访问DOM元素）
-  mounted() {
-    this.$nextTick(() => {
-      document
-        .querySelector("body")
-        .addEventListener("click", this.handleBodyClick);
-    });
-  },
-  beforeDestroy() {
-    document
-      .querySelector("body")
-      .removeEventListener("click", this.handleBodyClick);
-  },
   methods: {
-    handleFaceClick(key) {
-      this.$emit("addEvent", key);
-    },
-    handleBodyClick(e) {
-      e.stopPropagation();
-      if (typeof this.ctrl === "undefined") {
-        return;
-      }
-      if (
-        !(this.ctrl.contains(e.target) || this.$refs.wrap.contains(e.target))
-      ) {
-        this.$emit("closeEvent");
-        this.pic = "";
-        this.formData = null;
-      }
-    },
     close() {
       this.$emit("closeEvent");
       this.pic = "";

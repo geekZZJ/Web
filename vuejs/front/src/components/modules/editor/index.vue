@@ -2,14 +2,14 @@
  * @Author: zzj
  * @Date: 2020-12-27 14:53:56
  * @LastEditors: zzj
- * @LastEditTime: 2021-01-08 10:16:18
+ * @LastEditTime: 2021-01-08 15:15:37
  * @Description: 
 -->
 <template>
   <div class="edit-wrap">
     <div class="layui-form-item layui-form-text">
       <div class="layui-input-block">
-        <div class="layui-unselect fly-edit">
+        <div class="layui-unselect fly-edit" ref="icons">
           <!-- 表情 -->
           <span @click="showFace" ref="face">
             <i class="iconfont icon-yxj-expression"></i>
@@ -17,7 +17,7 @@
           <span @click="showImg" ref="img">
             <i class="iconfont icon-tupian"></i>
           </span>
-          <span>
+          <span @click="showLink" ref="link">
             <i class="iconfont icon-lianjie"></i>
           </span>
           <span class="quote">"</span>
@@ -32,32 +32,42 @@
         <textarea class="layui-textarea fly-editor"></textarea>
       </div>
     </div>
-    <Face
-      :isShow="faceStatus"
-      :ctrl="this.$refs.face"
-      @closeEvent="()=>{this.faceStatus=false}"
-    ></Face>
-    <ImgUpload
-      :isShow="imgStatus"
-      :ctrl="this.$refs.img"
-      @closeEvent="()=>{this.imgStatus=false}"
-    ></ImgUpload>
+    <div ref="modal">
+      <Face
+        :isShow="faceStatus"
+        :ctrl="this.$refs.face"
+        @closeEvent="()=>{this.faceStatus=false}"
+      ></Face>
+      <ImgUpload
+        :isShow="imgStatus"
+        :ctrl="this.$refs.img"
+        @closeEvent="()=>{this.imgStatus=false}"
+      ></ImgUpload>
+      <LinkAdd
+        :isShow="linkStatus"
+        :ctrl="this.$refs.link"
+        @closeEvent="()=>{this.linkStatus=false}"
+      ></LinkAdd>
+    </div>
   </div>
 </template>
 
 <script>
 import Face from "./face";
 import ImgUpload from "./imgUpload";
+import LinkAdd from "./linkAdd";
 export default {
   name: "Editor",
   components: {
     Face,
     ImgUpload,
+    LinkAdd,
   },
   data() {
     return {
       faceStatus: false,
       imgStatus: false,
+      linkStatus: false,
     };
   },
   computed: {},
@@ -65,13 +75,40 @@ export default {
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {},
   //生命周期 - 挂载完成（可以访问DOM元素）
-  mounted() {},
+  mounted() {
+    this.$nextTick(() => {
+      document
+        .querySelector("body")
+        .addEventListener("click", this.handleBodyClick);
+    });
+  },
+  beforeDestroy() {
+    document
+      .querySelector("body")
+      .removeEventListener("click", this.handleBodyClick);
+  },
   methods: {
+    handleBodyClick(e) {
+      e.stopPropagation();
+      if (
+        !(
+          this.$refs.icons.contains(e.target) ||
+          this.$refs.modal.contains(e.target)
+        )
+      ) {
+        this.linkStatus = false;
+        this.faceStatus = false;
+        this.imgStatus = false;
+      }
+    },
     showFace() {
       this.faceStatus = !this.faceStatus;
     },
     showImg() {
       this.imgStatus = !this.imgStatus;
+    },
+    showLink() {
+      this.linkStatus = !this.linkStatus;
     },
   },
 };
