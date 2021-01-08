@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-12-27 14:53:56
  * @LastEditors: zzj
- * @LastEditTime: 2020-12-27 16:55:38
+ * @LastEditTime: 2021-01-08 10:16:18
  * @Description: 
 -->
 <template>
@@ -14,7 +14,7 @@
           <span @click="showFace" ref="face">
             <i class="iconfont icon-yxj-expression"></i>
           </span>
-          <span>
+          <span @click="showImg" ref="img">
             <i class="iconfont icon-tupian"></i>
           </span>
           <span>
@@ -37,19 +37,27 @@
       :ctrl="this.$refs.face"
       @closeEvent="()=>{this.faceStatus=false}"
     ></Face>
+    <ImgUpload
+      :isShow="imgStatus"
+      :ctrl="this.$refs.img"
+      @closeEvent="()=>{this.imgStatus=false}"
+    ></ImgUpload>
   </div>
 </template>
 
 <script>
 import Face from "./face";
+import ImgUpload from "./imgUpload";
 export default {
   name: "Editor",
   components: {
     Face,
+    ImgUpload,
   },
   data() {
     return {
       faceStatus: false,
+      imgStatus: false,
     };
   },
   computed: {},
@@ -61,6 +69,9 @@ export default {
   methods: {
     showFace() {
       this.faceStatus = !this.faceStatus;
+    },
+    showImg() {
+      this.imgStatus = !this.imgStatus;
     },
   },
 };
@@ -106,5 +117,10 @@ export default {
 }
 .edit-wrap {
   position: relative;
+}
+.edit-content {
+  position: absolute;
+  top: 45px;
+  left: 0;
 }
 </style>

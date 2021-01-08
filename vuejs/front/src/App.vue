@@ -2,7 +2,7 @@
  * @Author: 张中俊
  * @Date: 2020-10-17 20:17:44
  * @LastEditors: zzj
- * @LastEditTime: 2020-12-17 16:37:27
+ * @LastEditTime: 2021-01-08 10:04:07
  * @Description: 
 -->
 <template>
@@ -31,6 +31,7 @@ export default {
 </script>
 <style lang="scss">
 @import "assets/css/global.css";
+@import "assets/css/layui-layer/layer.css";
 
 .gray {
   color: #999;

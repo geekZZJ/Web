@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-12-27 16:14:56
  * @LastEditors: zzj
- * @LastEditTime: 2020-12-27 17:01:39
+ * @LastEditTime: 2021-01-08 09:50:18
  * @Description: 
 -->
 <template>
@@ -74,9 +74,4 @@ export default {
 };
 </script>
 <style lang='scss' scoped>
-.edit-content {
-  position: absolute;
-  top: 45px;
-  left: 0;
-}
 </style>
