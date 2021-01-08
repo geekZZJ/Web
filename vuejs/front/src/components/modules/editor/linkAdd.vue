@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-01-08 10:47:45
  * @LastEditors: zzj
- * @LastEditTime: 2021-01-08 15:21:49
+ * @LastEditTime: 2021-01-08 16:21:29
  * @Description: 
 -->
 <template>
@@ -44,7 +44,7 @@ export default {
   created() {},
   methods: {
     submit() {
-      this.$emit("addEvent");
+      this.$emit("addEvent", this.link);
       setTimeout(() => {
         this.link = "";
         this.$emit("closeEvent");

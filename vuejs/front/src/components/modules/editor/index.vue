@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-12-27 14:53:56
  * @LastEditors: zzj
- * @LastEditTime: 2021-01-08 15:15:37
+ * @LastEditTime: 2021-01-08 16:22:57
  * @Description: 
 -->
 <template>
@@ -29,7 +29,13 @@
             <i class="iconfont icon-yulan1"></i>
           </span>
         </div>
-        <textarea class="layui-textarea fly-editor"></textarea>
+        <textarea
+          class="layui-textarea fly-editor"
+          @focus="focusEvent"
+          @blur="blurEvent"
+          id="edit"
+          v-model="content"
+        ></textarea>
       </div>
     </div>
     <div ref="modal">
@@ -37,16 +43,19 @@
         :isShow="faceStatus"
         :ctrl="this.$refs.face"
         @closeEvent="()=>{this.faceStatus=false}"
+        @addEvent="addFace"
       ></Face>
       <ImgUpload
         :isShow="imgStatus"
         :ctrl="this.$refs.img"
         @closeEvent="()=>{this.imgStatus=false}"
+        @addEvent="addPic"
       ></ImgUpload>
       <LinkAdd
         :isShow="linkStatus"
         :ctrl="this.$refs.link"
         @closeEvent="()=>{this.linkStatus=false}"
+        @addEvent="addLink"
       ></LinkAdd>
     </div>
   </div>
@@ -68,6 +77,8 @@ export default {
       faceStatus: false,
       imgStatus: false,
       linkStatus: false,
+      content: "",
+      pos: "",
     };
   },
   computed: {},
@@ -88,6 +99,24 @@ export default {
       .removeEventListener("click", this.handleBodyClick);
   },
   methods: {
+    focusEvent() {
+      this.getPos();
+    },
+    blurEvent() {
+      this.getPos();
+    },
+    getPos() {
+      let cursorPos = 0;
+      let elem = document.getElementById("edit");
+      if (document.selection) {
+        let selectRange = document.selection.createRange();
+        selectRange.moveStart("character", -elem.value.length);
+        cursorPos = selectRange.text.length;
+      } else if (elem.selectionStart || elem.selectionStart === "0") {
+        cursorPos = elem.selectionStart;
+      }
+      this.pos = cursorPos;
+    },
     handleBodyClick(e) {
       e.stopPropagation();
       if (
@@ -109,6 +138,29 @@ export default {
     },
     showLink() {
       this.linkStatus = !this.linkStatus;
+    },
+    insert(val) {
+      if (typeof this.content === "undefined") {
+        return;
+      }
+      let tmp = this.content.split("");
+      tmp.splice(this.pos, 0, val);
+      this.content = tmp.join("");
+    },
+    addFace(item) {
+      const insertContent = `face${item}`;
+      this.insert(insertContent);
+      this.pos += insertContent.length;
+    },
+    addPic(item) {
+      const insertContent = `img[${item}]`;
+      this.insert(insertContent);
+      this.pos += insertContent.length;
+    },
+    addLink(item) {
+      const insertContent = `a(${item})[${item}]`;
+      this.insert(insertContent);
+      this.pos += insertContent.length;
     },
   },
 };

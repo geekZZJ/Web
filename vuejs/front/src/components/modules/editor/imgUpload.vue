@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-01-08 09:43:30
  * @LastEditors: zzj
- * @LastEditTime: 2021-01-08 15:14:47
+ * @LastEditTime: 2021-01-08 16:19:14
  * @Description: 
 -->
 <template>
@@ -92,7 +92,7 @@ export default {
       document.getElementById("uploadImg").value = "";
     },
     submit() {
-      this.$emit("addEvent", this.name);
+      this.$emit("addEvent", this.pic);
       setTimeout(() => {
         this.pic = "";
         this.formData = null;
