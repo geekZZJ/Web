@@ -1,0 +1,33 @@
+{
+  "name": "expressTs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:build": "tsc -w",
+    "dev:start": "nodemon node ./build/index.js",
+    "dev": "tsc && concurrently yarn:dev:*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cheerio": "^0.22.23",
+    "@types/express": "^4.17.9",
+    "@types/superagent": "^4.1.10",
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.6",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.2"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.17.1",
+    "superagent": "^6.1.0"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "data/*"
+    ]
+  }
+}
