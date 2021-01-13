@@ -2,10 +2,10 @@
  * @Author: zzj
  * @Date: 2021-01-10 18:23:31
  * @LastEditors: zzj
- * @LastEditTime: 2021-01-10 22:23:00
+ * @LastEditTime: 2021-01-13 21:57:11
  * @Description:
  */
-import express from "express";
+import express, { Request, Response, NextFunction } from "express";
 import router from "./router";
 import bodyParser from "body-parser";
 
@@ -14,6 +14,10 @@ import bodyParser from "body-parser";
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use((req: Request, res: Response, next: NextFunction) => {
+  req.teacherName = "dell";
+  next();
+});
 app.use(router);
 
 app.listen(7001, () => {

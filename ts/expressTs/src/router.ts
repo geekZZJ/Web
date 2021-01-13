@@ -2,11 +2,16 @@
  * @Author: zzj
  * @Date: 2021-01-10 21:46:47
  * @LastEditors: zzj
- * @LastEditTime: 2021-01-10 22:06:53
+ * @LastEditTime: 2021-01-13 22:03:07
  * @Description:
  */
 import { Router, Request, Response } from "express";
 
+interface RequestWithBody extends Request {
+  body: {
+    [key: string]: string | undefined;
+  };
+}
 const router = Router();
 
 router.get("/", (req: Request, res: Response) => {
@@ -22,12 +27,12 @@ router.get("/", (req: Request, res: Response) => {
   `);
 });
 
-router.post("/getData", (req: Request, res: Response) => {
-  console.log(req.body);
-  if (req.body.password === "123") {
+router.post("/getData", (req: RequestWithBody, res: Response) => {
+  const { password } = req.body;
+  if (password === "123") {
     res.send("bye world");
   } else {
-    res.send("error");
+    res.send(`${req.teacherName} error`);
   }
 });
 
