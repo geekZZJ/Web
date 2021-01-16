@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-01-10 21:46:47
  * @LastEditors: zzj
- * @LastEditTime: 2021-01-13 22:03:07
+ * @LastEditTime: 2021-01-16 15:08:17
  * @Description:
  */
 import { Router, Request, Response } from "express";
@@ -15,24 +15,38 @@ interface RequestWithBody extends Request {
 const router = Router();
 
 router.get("/", (req: Request, res: Response) => {
-  res.send(`
+  const isLogin = req.session ? req.session.login : false;
+  if (isLogin) {
+  } else {
+    res.send(`
     <html>
       <body>
-        <form method="post" action="/getData">
-          <input type="password" name="password" />
-          <button>提交</button>
-        </form>
+        <a href="/logout">退出</a>
       </body>
     </html>
   `);
+  }
 });
 
-router.post("/getData", (req: RequestWithBody, res: Response) => {
+router.get("/logout", (req: Request, res: Response) => {
+  if (req.session) {
+    req.session.login = undefined;
+  }
+  res.redirect("/");
+});
+
+router.post("/login", (req: RequestWithBody, res: Response) => {
   const { password } = req.body;
-  if (password === "123") {
-    res.send("bye world");
+  const isLogin = req.session ? req.session.login : false;
+  if (isLogin) {
+    res.send("已经登录过");
   } else {
-    res.send(`${req.teacherName} error`);
+    if (password === "123" && req.session) {
+      req.session.login = true;
+      res.send("登录成功");
+    } else {
+      res.send(`登录失败`);
+    }
   }
 });
 
