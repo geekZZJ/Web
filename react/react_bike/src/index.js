@@ -1,14 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+/*
+ * @Author: zzj
+ * @Date: 2021-01-19 22:22:24
+ * @LastEditors: zzj
+ * @LastEditTime: 2021-01-21 16:42:33
+ * @Description:
+ */
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import "antd/dist/antd.css";
+import Admin from "./Admin";
+import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Admin />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
