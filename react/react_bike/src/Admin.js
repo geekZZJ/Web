@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-01-21 16:17:24
  * @LastEditors: zzj
- * @LastEditTime: 2021-01-22 15:50:55
+ * @LastEditTime: 2021-01-23 21:33:42
  * @Description:
  */
 import "./style/common.less";
@@ -11,6 +11,7 @@ import React from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import NavLeft from "./components/NavLeft";
+import Home from "./pages/home";
 
 class Admin extends React.Component {
   render() {
@@ -21,7 +22,9 @@ class Admin extends React.Component {
         </Col>
         <Col span={20} className="main">
           <Header></Header>
-          <Row className="content">content</Row>
+          <Row className="content">
+            <Home></Home>
+          </Row>
           <Footer></Footer>
         </Col>
       </Row>
