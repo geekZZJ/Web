@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-01-21 16:16:01
  * @LastEditors: zzj
- * @LastEditTime: 2021-01-22 17:33:42
+ * @LastEditTime: 2021-01-23 16:17:19
  * @Description:
  */
 import React from "react";
@@ -13,9 +13,7 @@ import "./index.less";
 const { SubMenu } = Menu;
 
 class NavLeft extends React.Component {
-  state = {
-    menuTreeNode: null,
-  };
+  state = {};
 
   componentDidMount() {
     const menuTreeNode = this.renderMenu(MenuConfig);
