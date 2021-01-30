@@ -2,10 +2,11 @@
  * @Author: zzj
  * @Date: 2021-01-21 16:16:01
  * @LastEditors: zzj
- * @LastEditTime: 2021-01-23 16:17:19
+ * @LastEditTime: 2021-01-30 16:46:09
  * @Description:
  */
 import React from "react";
+import { NavLink } from "react-router-dom";
 import MenuConfig from "../../config/menuConfig";
 import { Menu } from "antd";
 import "./index.less";
@@ -32,7 +33,11 @@ class NavLeft extends React.Component {
           </SubMenu>
         );
       }
-      return <Menu.Item key={item.key}>{item.title}</Menu.Item>;
+      return (
+        <Menu.Item key={item.key}>
+          <NavLink to={item.key}>{item.title}</NavLink>
+        </Menu.Item>
+      );
     });
   };
 

@@ -2,19 +2,19 @@
  * @Author: zzj
  * @Date: 2021-01-19 22:22:24
  * @LastEditors: zzj
- * @LastEditTime: 2021-01-21 16:42:33
+ * @LastEditTime: 2021-01-28 22:18:21
  * @Description:
  */
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import "antd/dist/antd.css";
-import Admin from "./Admin";
 import reportWebVitals from "./reportWebVitals";
+import Router from "./router";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Admin />
+    <Router />
   </React.StrictMode>,
   document.getElementById("root")
 );

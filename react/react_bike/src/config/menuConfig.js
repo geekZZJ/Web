@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-01-22 16:06:42
  * @LastEditors: zzj
- * @LastEditTime: 2021-01-22 16:08:34
+ * @LastEditTime: 2021-01-30 16:58:46
  * @Description:
  */
 const menuList = [
@@ -16,7 +16,7 @@ const menuList = [
     children: [
       {
         title: "按钮",
-        key: "/ui/buttons",
+        key: "/admin/ui/buttons",
       },
       {
         title: "弹框",
