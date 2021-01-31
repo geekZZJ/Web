@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-01-22 16:06:42
  * @LastEditors: zzj
- * @LastEditTime: 2021-01-30 16:58:46
+ * @LastEditTime: 2021-01-31 11:43:08
  * @Description:
  */
 const menuList = [
@@ -20,7 +20,7 @@ const menuList = [
       },
       {
         title: "弹框",
-        key: "/ui/modals",
+        key: "/admin/ui/modals",
       },
       {
         title: "Loading",

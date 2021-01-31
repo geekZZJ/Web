@@ -2,11 +2,11 @@
  * @Author: zzj
  * @Date: 2021-01-30 16:39:35
  * @LastEditors: zzj
- * @LastEditTime: 2021-01-30 18:09:44
+ * @LastEditTime: 2021-01-31 11:36:37
  * @Description:
  */
 import React from "react";
-import { Card, Button } from "antd";
+import { Card, Button, Radio } from "antd";
 import {
   SearchOutlined,
   PlusOutlined,
@@ -16,9 +16,11 @@ import {
 } from "@ant-design/icons";
 import "./index.less";
 
+const plainOptions = ["大", "中", "小"];
 class Buttons extends React.Component {
   state = {
     loading: true,
+    size: "default",
   };
 
   handleCloseLoading = () => {
@@ -26,9 +28,16 @@ class Buttons extends React.Component {
       loading: false,
     });
   };
+
+  handleChange = (e) => {
+    this.setState({
+      size: e.target.value,
+    });
+  };
+
   render() {
     return (
-      <div>
+      <div style={{ width: "100%" }}>
         <Card title="基础按钮">
           <Button type="primary">Primary Button</Button>
           <Button>Default Button</Button>
@@ -64,7 +73,20 @@ class Buttons extends React.Component {
             关闭
           </Button>
         </Card>
-        <Card title="按钮组"></Card>
+        <Card title="按钮尺寸">
+          <Radio.Group onChange={this.handleChange} value={this.state.size}>
+            <Radio value="large">大</Radio>
+            <Radio value="default">中</Radio>
+            <Radio value="small">小</Radio>
+          </Radio.Group>
+          <Button type="primary" size={this.state.size}>
+            Primary Button
+          </Button>
+          <Button size={this.state.size}>Default Button</Button>
+          <Button type="dashed" size={this.state.size}>
+            Dashed Button
+          </Button>
+        </Card>
       </div>
     );
   }
