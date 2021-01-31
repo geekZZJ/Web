@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-01-30 16:39:35
  * @LastEditors: zzj
- * @LastEditTime: 2021-01-31 11:36:37
+ * @LastEditTime: 2021-01-31 14:27:50
  * @Description:
  */
 import React from "react";
@@ -16,7 +16,6 @@ import {
 } from "@ant-design/icons";
 import "./index.less";
 
-const plainOptions = ["大", "中", "小"];
 class Buttons extends React.Component {
   state = {
     loading: true,
