@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-01-22 16:06:42
  * @LastEditors: zzj
- * @LastEditTime: 2021-01-31 14:21:31
+ * @LastEditTime: 2021-01-31 14:40:57
  * @Description:
  */
 const menuList = [
@@ -28,7 +28,7 @@ const menuList = [
       },
       {
         title: "通知提醒",
-        key: "/ui/notification",
+        key: "/admin/ui/notifications",
       },
       {
         title: "全局Message",

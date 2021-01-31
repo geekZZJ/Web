@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-01-28 22:16:44
  * @LastEditors: zzj
- * @LastEditTime: 2021-01-31 13:58:26
+ * @LastEditTime: 2021-01-31 14:40:41
  * @Description:
  */
 import React from "react";
@@ -14,6 +14,7 @@ import Admin from "./admin";
 import Buttons from "./pages/ui/buttons";
 import Modals from "./pages/ui/modals";
 import Spins from "./pages/ui/spins";
+import Notifications from "./pages/ui/notifications";
 
 class IRouter extends React.Component {
   render() {
@@ -29,6 +30,10 @@ class IRouter extends React.Component {
                   <Route path="/admin/ui/buttons" component={Buttons}></Route>
                   <Route path="/admin/ui/modals" component={Modals}></Route>
                   <Route path="/admin/ui/spins" component={Spins}></Route>
+                  <Route
+                    path="/admin/ui/notifications"
+                    component={Notifications}
+                  ></Route>
                   <Route component={NoMatch}></Route>
                 </Switch>
               </Admin>
