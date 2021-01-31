@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-01-22 16:06:42
  * @LastEditors: zzj
- * @LastEditTime: 2021-01-31 12:07:41
+ * @LastEditTime: 2021-01-31 14:21:31
  * @Description:
  */
 const menuList = [
@@ -24,7 +24,7 @@ const menuList = [
       },
       {
         title: "Loading",
-        key: "/ui/loadings",
+        key: "/admin/ui/spins",
       },
       {
         title: "通知提醒",

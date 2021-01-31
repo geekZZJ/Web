@@ -79,7 +79,13 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "commit": "cz"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   },
   "eslintConfig": {
     "extends": [
@@ -156,5 +162,7 @@
       "react-app"
     ]
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "commitizen": "^4.2.3"
+  }
 }
