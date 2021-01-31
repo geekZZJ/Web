@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-01-19 22:22:24
  * @LastEditors: zzj
- * @LastEditTime: 2021-01-28 22:18:21
+ * @LastEditTime: 2021-01-31 12:21:47
  * @Description:
  */
 import React from "react";
@@ -12,12 +12,7 @@ import "antd/dist/antd.css";
 import reportWebVitals from "./reportWebVitals";
 import Router from "./router";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Router />
-  </React.StrictMode>,
-  document.getElementById("root")
-);
+ReactDOM.render(<Router />, document.getElementById("root"));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

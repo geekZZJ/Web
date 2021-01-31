@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-01-28 22:16:44
  * @LastEditors: zzj
- * @LastEditTime: 2021-01-31 11:42:16
+ * @LastEditTime: 2021-01-31 11:52:18
  * @Description:
  */
 import React from "react";
@@ -11,6 +11,7 @@ import App from "./App";
 import Login from "./pages/login";
 import Admin from "./admin";
 import Buttons from "./pages/ui/buttons";
+import Modals from "./pages/ui/modals";
 import NoMatch from "./pages/nomatch";
 
 class IRouter extends React.Component {
@@ -25,6 +26,7 @@ class IRouter extends React.Component {
               <Admin>
                 <Switch>
                   <Route path="/admin/ui/buttons" component={Buttons}></Route>
+                  <Route path="/admin/ui/modals" component={Modals}></Route>
                   <Route component={NoMatch}></Route>
                 </Switch>
               </Admin>

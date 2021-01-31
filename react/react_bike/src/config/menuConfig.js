@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-01-22 16:06:42
  * @LastEditors: zzj
- * @LastEditTime: 2021-01-31 11:43:08
+ * @LastEditTime: 2021-01-31 12:07:41
  * @Description:
  */
 const menuList = [
@@ -12,7 +12,7 @@ const menuList = [
   },
   {
     title: "UI",
-    key: "/ui",
+    key: "/admin/ui",
     children: [
       {
         title: "按钮",
