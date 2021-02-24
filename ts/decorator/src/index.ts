@@ -2,24 +2,28 @@
  * @Author: zzj
  * @Date: 2021-01-18 21:36:21
  * @LastEditors: zzj
- * @LastEditTime: 2021-01-18 21:58:40
- * @Description:类的装饰器
- * 装饰器通过@来使用,类装饰器接受的参数是构造函数
+ * @LastEditTime: 2021-02-24 15:34:46
+ * @Description:
  */
-function testDecorator(flag: Boolean) {
-  if (flag) {
-    return function (constructor: any) {
-      constructor.prototype.getName = () => {
-        console.log(123456);
-      };
+function testDecorator() {
+  return function <T extends new (...args: any[]) => {}>(constructor: T) {
+    return class extends constructor {
+      name = "lee";
+      getName() {
+        return this.name;
+      }
     };
-  } else {
-    return function (constructor: any) {};
-  }
+  };
 }
 
-@testDecorator(true)
-class Test {}
+const Test1 = testDecorator()(
+  class {
+    name: string;
+    constructor(name: string) {
+      this.name = name;
+    }
+  }
+);
 
-const test = new Test();
-(test as any).getName();
+const test1 = new Test1("dell");
+console.log(test1.getName());
