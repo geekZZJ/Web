@@ -1,29 +1,37 @@
 /*
  * @Author: zzj
- * @Date: 2021-01-18 21:36:21
+ * @Date: 2021-02-24 15:45:19
  * @LastEditors: zzj
- * @LastEditTime: 2021-02-24 15:34:46
+ * @LastEditTime: 2021-02-24 16:12:04
  * @Description:
  */
-function testDecorator() {
-  return function <T extends new (...args: any[]) => {}>(constructor: T) {
-    return class extends constructor {
-      name = "lee";
-      getName() {
-        return this.name;
-      }
-    };
+// 普通方法，target对应的是类的prototype
+// 静态方法，target对应的是类的构造函数
+function getNameDecorator(
+  target: any,
+  key: string,
+  descriptor: PropertyDescriptor
+) {
+  // console.log(target);
+  // console.log(key);
+  // descriptor.writable = true;
+  descriptor.value = function () {
+    return "abc";
   };
 }
-
-const Test1 = testDecorator()(
-  class {
-    name: string;
-    constructor(name: string) {
-      this.name = name;
-    }
+class Test2 {
+  name: string;
+  constructor(name: string) {
+    this.name = name;
   }
-);
+  @getNameDecorator
+  getName() {
+    return this.name;
+  }
+}
 
-const test1 = new Test1("dell");
-console.log(test1.getName());
+const test2 = new Test2("dell");
+// test2.getName = () => {
+//   return "123";
+// };
+console.log(test2.getName());
