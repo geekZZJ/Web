@@ -1,37 +1,35 @@
 /*
  * @Author: zzj
- * @Date: 2021-02-24 15:45:19
+ * @Date: 2021-02-24 16:33:51
  * @LastEditors: zzj
- * @LastEditTime: 2021-02-24 16:12:04
+ * @LastEditTime: 2021-02-24 16:48:11
  * @Description:
  */
-// 普通方法，target对应的是类的prototype
-// 静态方法，target对应的是类的构造函数
-function getNameDecorator(
-  target: any,
-  key: string,
-  descriptor: PropertyDescriptor
-) {
-  // console.log(target);
-  // console.log(key);
-  // descriptor.writable = true;
-  descriptor.value = function () {
-    return "abc";
+const userInfo: any = undefined;
+
+function catchError(msg: string) {
+  return function (target: any, key: string, descriptor: PropertyDescriptor) {
+    const fn = descriptor.value;
+    descriptor.value = function () {
+      try {
+        fn();
+      } catch (error) {
+        console.log(`${msg}不存在`);
+      }
+    };
   };
 }
-class Test2 {
-  name: string;
-  constructor(name: string) {
-    this.name = name;
-  }
-  @getNameDecorator
+
+class Test4 {
+  @catchError("userInfo.name")
   getName() {
-    return this.name;
+    return userInfo.name;
+  }
+  @catchError("userInfo.age")
+  getAge() {
+    return userInfo.age;
   }
 }
 
-const test2 = new Test2("dell");
-// test2.getName = () => {
-//   return "123";
-// };
-console.log(test2.getName());
+const test4 = new Test4();
+test4.getName();
