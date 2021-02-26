@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-02-26 10:26:46
  * @LastEditors: zzj
- * @LastEditTime: 2021-02-26 11:15:38
+ * @LastEditTime: 2021-02-26 11:28:49
  * @Description:
  */
 import React from "react";
@@ -20,8 +20,11 @@ class Gallery extends React.Component {
       ["21.png", "22.png", "23.png", "24.png", "25.png"],
     ];
     const imgList = imgs.map((list) => {
-      return list.map((item) => (
-        <Card cover={<img alt="example" src={`/gallery/${item}`} />}>
+      return list.map((item, index) => (
+        <Card
+          key={index}
+          cover={<img alt="example" src={`/gallery/${item}`} />}
+        >
           <Meta title="Europe Street beat" description="www.instagram.com" />
         </Card>
       ));
