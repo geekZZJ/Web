@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-01-22 16:06:42
  * @LastEditors: zzj
- * @LastEditTime: 2021-02-26 11:36:36
+ * @LastEditTime: 2021-02-26 15:01:39
  * @Description:
  */
 const menuList = [
@@ -50,15 +50,15 @@ const menuList = [
   },
   {
     title: "表单",
-    key: "/form",
+    key: "/admin/form",
     children: [
       {
         title: "登录",
-        key: "/form/login",
+        key: "/admin/form/login",
       },
       {
         title: "注册",
-        key: "/form/reg",
+        key: "/admin/form/reg",
       },
     ],
   },
