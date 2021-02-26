@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-01-22 16:06:42
  * @LastEditors: zzj
- * @LastEditTime: 2021-02-26 10:29:47
+ * @LastEditTime: 2021-02-26 11:36:36
  * @Description:
  */
 const menuList = [
@@ -44,7 +44,7 @@ const menuList = [
       },
       {
         title: "轮播图",
-        key: "/ui/carousel",
+        key: "/admin/ui/carousel",
       },
     ],
   },
