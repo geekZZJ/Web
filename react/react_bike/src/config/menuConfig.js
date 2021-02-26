@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-01-22 16:06:42
  * @LastEditors: zzj
- * @LastEditTime: 2021-02-13 21:05:08
+ * @LastEditTime: 2021-02-26 10:29:47
  * @Description:
  */
 const menuList = [
@@ -40,7 +40,7 @@ const menuList = [
       },
       {
         title: "图片画廊",
-        key: "/ui/gallery",
+        key: "/admin/ui/gallery",
       },
       {
         title: "轮播图",
