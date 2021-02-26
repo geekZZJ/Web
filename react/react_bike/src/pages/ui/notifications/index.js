@@ -2,12 +2,11 @@
  * @Author: zzj
  * @Date: 2021-01-31 14:36:19
  * @LastEditors: zzj
- * @LastEditTime: 2021-01-31 15:16:04
+ * @LastEditTime: 2021-01-31 15:20:16
  * @Description:
  */
 import React from "react";
 import { Card, Button, notification } from "antd";
-// import "./index.less";
 
 class Notifications extends React.Component {
   openNotification = (type, direction = "topRight") => {

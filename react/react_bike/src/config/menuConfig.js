@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-01-22 16:06:42
  * @LastEditors: zzj
- * @LastEditTime: 2021-01-31 14:40:57
+ * @LastEditTime: 2021-02-13 21:05:08
  * @Description:
  */
 const menuList = [
@@ -32,11 +32,11 @@ const menuList = [
       },
       {
         title: "全局Message",
-        key: "/ui/messages",
+        key: "/admin/ui/messages",
       },
       {
         title: "Tab页签",
-        key: "/ui/tabs",
+        key: "/admin/ui/tabs",
       },
       {
         title: "图片画廊",
