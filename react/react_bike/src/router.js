@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-01-28 22:16:44
  * @LastEditors: zzj
- * @LastEditTime: 2021-02-26 15:03:44
+ * @LastEditTime: 2021-02-27 17:13:06
  * @Description:
  */
 import React from "react";
@@ -20,6 +20,7 @@ import Tabs from "./pages/ui/tabs";
 import Gallery from "./pages/ui/gallery";
 import Carousels from "./pages/ui/carousels";
 import FormLogin from "./pages/form/login";
+import Register from "./pages/form/register";
 
 class IRouter extends React.Component {
   render() {
@@ -47,6 +48,7 @@ class IRouter extends React.Component {
                     component={Carousels}
                   ></Route>
                   <Route path="/admin/form/login" component={FormLogin}></Route>
+                  <Route path="/admin/form/reg" component={Register}></Route>
                   <Route component={NoMatch}></Route>
                 </Switch>
               </Admin>
