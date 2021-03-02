@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-01-06 14:40:31
  * @LastEditors: zzj
- * @LastEditTime: 2021-01-06 14:54:27
+ * @LastEditTime: 2021-03-02 11:25:39
  * @Description:手写instanceof
  */
 function myInstanceof(left, right) {
@@ -17,3 +17,14 @@ function myInstanceof(left, right) {
     left = left.__proto__;
   }
 }
+
+const instanceOf = (A, B) => {
+  let p = A;
+  while (p) {
+    if (p === B.prototype) {
+      return true;
+    }
+    p = p.__proto__;
+  }
+  return false;
+};
