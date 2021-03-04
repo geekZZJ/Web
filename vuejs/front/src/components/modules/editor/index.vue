@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-12-27 14:53:56
  * @LastEditors: zzj
- * @LastEditTime: 2021-01-08 16:22:57
+ * @LastEditTime: 2021-03-04 17:11:47
  * @Description: 
 -->
 <template>
@@ -25,7 +25,7 @@
             <i class="iconfont icon-emwdaima"></i>
           </span>
           <span>hr</span>
-          <span>
+          <span @click="showPreview" ref="preview">
             <i class="iconfont icon-yulan1"></i>
           </span>
         </div>
@@ -57,6 +57,12 @@
         @closeEvent="()=>{this.linkStatus=false}"
         @addEvent="addLink"
       ></LinkAdd>
+      <Preview
+        :isShow="previewStatus"
+        :ctrl="this.$refs.preview"
+        :content="content"
+        @closeEvent="()=>{this.previewStatus=false}"
+      ></Preview>
     </div>
   </div>
 </template>
@@ -65,18 +71,21 @@
 import Face from "./face";
 import ImgUpload from "./imgUpload";
 import LinkAdd from "./linkAdd";
+import Preview from "./preview";
 export default {
   name: "Editor",
   components: {
     Face,
     ImgUpload,
     LinkAdd,
+    Preview,
   },
   data() {
     return {
       faceStatus: false,
       imgStatus: false,
       linkStatus: false,
+      previewStatus: false,
       content: "",
       pos: "",
     };
@@ -138,6 +147,9 @@ export default {
     },
     showLink() {
       this.linkStatus = !this.linkStatus;
+    },
+    showPreview() {
+      this.previewStatus = !this.previewStatus;
     },
     insert(val) {
       if (typeof this.content === "undefined") {
