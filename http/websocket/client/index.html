@@ -1,0 +1,30 @@
+<!--
+ * @Author: zzj
+ * @Date: 2021-03-04 22:06:45
+ * @LastEditors: zzj
+ * @LastEditTime: 2021-03-04 22:27:51
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>socket</title>
+</head>
+
+<body>
+  <script>
+    let ws = new WebSocket("ws://127.0.0.1:3000")
+    ws.onopen = () => {
+      ws.send("hello from client")
+    }
+    ws.onmessage = (msg) => {
+      console.log(msg.data)
+    }
+  </script>
+</body>
+
+</html>
