@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-01-28 22:16:44
  * @LastEditors: zzj
- * @LastEditTime: 2021-03-03 16:59:31
+ * @LastEditTime: 2021-03-04 10:58:59
  * @Description:
  */
 import React from "react";
@@ -21,7 +21,8 @@ import Gallery from "./pages/ui/gallery";
 import Carousels from "./pages/ui/carousels";
 import FormLogin from "./pages/form/login";
 import Register from "./pages/form/register";
-import basicTable from "./pages/table/basicTable";
+import BasicTable from "./pages/table/basicTable";
+import HighTable from "./pages/table/highTable";
 
 class IRouter extends React.Component {
   render() {
@@ -52,8 +53,9 @@ class IRouter extends React.Component {
                   <Route path="/admin/form/reg" component={Register}></Route>
                   <Route
                     path="/admin/table/basic"
-                    component={basicTable}
+                    component={BasicTable}
                   ></Route>
+                  <Route path="/admin/table/high" component={HighTable}></Route>
                   <Route component={NoMatch}></Route>
                 </Switch>
               </Admin>
