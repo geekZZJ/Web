@@ -1,0 +1,36 @@
+<!--
+ * @Author: zzj
+ * @Date: 2021-03-07 11:53:18
+ * @LastEditors: zzj
+ * @LastEditTime: 2021-03-07 12:15:03
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>socket.io</title>
+</head>
+
+<body>
+  <input type="text" id="msg">
+  <button type="button" id="btn">发送</button>
+  <script src="https://cdn.bootcdn.net/ajax/libs/socket.io/3.0.0-rc4/socket.io.js"></script>
+  <script>
+    let socket = io()
+    document.getElementById("btn").addEventListener("click", function () {
+      const value = document.getElementById("msg").value
+      socket.emit("chatEvent", value)
+      document.getElementById("msg").value = ""
+    })
+
+    socket.on("serverMsg", function (msg) {
+      console.log(msg)
+    })
+  </script>
+</body>
+
+</html>
