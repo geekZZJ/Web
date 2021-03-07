@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-03-04 22:03:41
  * @LastEditors: zzj
- * @LastEditTime: 2021-03-07 14:19:14
+ * @LastEditTime: 2021-03-07 15:28:20
  * @Description:
  */
 const WebSocket = require("ws");
@@ -19,7 +19,7 @@ wss.on("connection", (ws) => {
     wss.clients.forEach((client) => {
       // 判断非自己的客户端
       if (ws !== client && client.readyState === WebSocket.OPEN) {
-        client.send("server:" + msg);
+        client.send(msg);
       }
     });
   });
