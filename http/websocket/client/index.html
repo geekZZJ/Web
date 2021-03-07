@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-03-04 22:06:45
  * @LastEditors: zzj
- * @LastEditTime: 2021-03-04 22:27:51
+ * @LastEditTime: 2021-03-07 15:10:45
  * @Description: 
 -->
 <!DOCTYPE html>
@@ -13,17 +13,57 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>socket</title>
+  <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.12/vue.min.js"></script>
 </head>
 
 <body>
+  <div id="app">
+    <ul>
+      <li v-for="(item,index) in lists" :key="index">{{item}}</li>
+    </ul>
+    <div class="ctrl">
+      <input type="text" v-model="message">
+      <button @click="send">按钮</button>
+    </div>
+  </div>
+
   <script>
-    let ws = new WebSocket("ws://127.0.0.1:3000")
-    ws.onopen = () => {
-      ws.send("hello from client")
-    }
-    ws.onmessage = (msg) => {
-      console.log(msg.data)
-    }
+    const app = new Vue({
+      el: "#app",
+      data: {
+        message: "",
+        lists: [],
+        ws: {}
+      },
+      mounted() {
+        this.ws = new WebSocket("ws://127.0.0.1:3000")
+        this.ws.onopen = this.onOpen
+        this.ws.onmessage = this.onMessage
+        this.ws.onclose = this.onClose
+        this.ws.onerror = this.onError
+      },
+      methods: {
+        onOpen: function () {
+          console.log("open " + this.ws.readyState)
+          // ws.send("hello from client")
+        },
+        onMessage: function (msg) {
+          console.log("msg", msg)
+          this.lists.push(msg.data)
+        },
+        onClose: function () {
+          console.log("close " + this.ws.readyState)
+        },
+        onError: function () {
+          console.log("error " + this.ws.readyState)
+        },
+        send: function () {
+          this.lists.push(this.message)
+          this.ws.send(this.message)
+          this.message = ""
+        }
+      }
+    })
   </script>
 </body>
 
