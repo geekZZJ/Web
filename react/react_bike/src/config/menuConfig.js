@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-01-22 16:06:42
  * @LastEditors: zzj
- * @LastEditTime: 2021-03-03 16:59:03
+ * @LastEditTime: 2021-03-08 10:15:51
  * @Description:
  */
 const menuList = [
@@ -108,15 +108,15 @@ const menuList = [
   },
   {
     title: "图标",
-    key: "/charts",
+    key: "/admin/charts",
     children: [
       {
         title: "柱形图",
-        key: "/charts/bar",
+        key: "/admin/charts/bar",
       },
       {
         title: "饼图",
-        key: "/charts/pie",
+        key: "/admin/charts/pie",
       },
       {
         title: "折线图",
