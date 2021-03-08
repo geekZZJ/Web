@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-01-28 22:16:44
  * @LastEditors: zzj
- * @LastEditTime: 2021-03-08 10:16:34
+ * @LastEditTime: 2021-03-08 10:52:47
  * @Description:
  */
 import React from "react";
@@ -25,6 +25,7 @@ import BasicTable from "./pages/table/basicTable";
 import HighTable from "./pages/table/highTable";
 import City from "./pages/city";
 import Bar from "./pages/echarts/bar";
+import Rich from "./pages/rich";
 
 class IRouter extends React.Component {
   render() {
@@ -60,6 +61,7 @@ class IRouter extends React.Component {
                   <Route path="/admin/table/high" component={HighTable}></Route>
                   <Route path="/admin/city" component={City}></Route>
                   <Route path="/admin/charts/bar" component={Bar}></Route>
+                  <Route path="/admin/rich" component={Rich}></Route>
                   <Route component={NoMatch}></Route>
                 </Switch>
               </Admin>

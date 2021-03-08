@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-01-22 16:06:42
  * @LastEditors: zzj
- * @LastEditTime: 2021-03-08 10:15:51
+ * @LastEditTime: 2021-03-08 10:51:27
  * @Description:
  */
 const menuList = [
@@ -78,7 +78,7 @@ const menuList = [
   },
   {
     title: "富文本",
-    key: "/rich",
+    key: "/admin/rich",
   },
   {
     title: "城市管理",
@@ -120,7 +120,7 @@ const menuList = [
       },
       {
         title: "折线图",
-        key: "/charts/line",
+        key: "/admin/charts/line",
       },
     ],
   },
