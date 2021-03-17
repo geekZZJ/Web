@@ -1,0 +1,60 @@
+<!--
+ * @Author: zzj
+ * @Date: 2021-03-17 21:42:20
+ * @LastEditors: zzj
+ * @LastEditTime: 2021-03-17 22:17:51
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>throttle</title>
+  <style>
+    #div1 {
+      border: 1px solid #ccc;
+      width: 200px;
+      height: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="div1" draggable="true"></div>
+  <script>
+    const div1 = document.getElementById("div1")
+
+    // let timer = null
+    // div1.addEventListener("drag", function (e) {
+    //   if (timer) {
+    //     return
+    //   }
+    //   timer = setTimeout(() => {
+    //     console.log(e.offsetX, e.offsetY)
+    //     timer = null
+    //   }, 100);
+    // })
+
+    function throttle(fn, delay = 100) {
+      let timer = null
+      return function () {
+        if (timer) {
+          return
+        }
+        timer = setTimeout(() => {
+          fn.apply(this, arguments)
+          timer = null
+        }, delay);
+      }
+    }
+
+    div1.addEventListener("drag", throttle(function (e) {
+      console.log(e.offsetX, e.offsetY)
+    }, 200))
+  </script>
+</body>
+
+</html>
