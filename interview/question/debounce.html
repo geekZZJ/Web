@@ -1,0 +1,54 @@
+<!--
+ * @Author: zzj
+ * @Date: 2021-03-17 21:42:20
+ * @LastEditors: zzj
+ * @LastEditTime: 2021-03-17 21:59:09
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>debounce</title>
+</head>
+
+<body>
+  <input type="text" id="input1">
+  <script>
+    const input1 = document.getElementById("input1")
+
+    // let timer = null
+    // input1.addEventListener("keyup", function () {
+    //   if (timer) {
+    //     clearTimeout(timer)
+    //   }
+    //   timer = setTimeout(() => {
+    //     console.log(input1.value)
+    //     timer = null
+    //   }, 500);
+    // })
+
+    // 防抖
+    function debounce(fn, delay = 500) {
+      let timer = null
+      return function () {
+        if (timer) {
+          clearTimeout(timer)
+        }
+        timer = setTimeout(() => {
+          fn.apply(this, arguments)
+          timer = null
+        }, delay);
+      }
+    }
+
+    input1.addEventListener("keyup", debounce(function () {
+      console.log(input1.value)
+    }, 600))
+  </script>
+</body>
+
+</html>
