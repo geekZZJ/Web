@@ -1,34 +1,34 @@
-/**
- * @name: isEqual
- * @author: 张中俊
- * @date: 2020/6/1 21:50
- * @description：isEqual
- * @update: 2020/6/1 21:50
+/*
+ * @Author: zzj
+ * @Date: 2020-06-01 21:50:49
+ * @LastEditors: zzj
+ * @LastEditTime: 2021-03-19 15:05:02
+ * @Description:
  */
 const obj1 = {
   a: 100,
   b: {
     x: 100,
-    y: 200
-  }
-}
+    y: 200,
+  },
+};
 
 const obj2 = {
   a: 100,
   b: {
     x: 100,
-    y: 200
-  }
-}
+    y: 200,
+  },
+};
 
-// console.log(obj1 === obj2)
+// console.log(obj1 === obj2); // false
 
 /**
  * 判断是否是对象或数组
  * @param obj
  */
 function isObject(obj) {
-  return typeof obj === "object" && obj !== null
+  return typeof obj === "object" && obj !== null;
 }
 
 /**
@@ -40,26 +40,26 @@ function isObject(obj) {
 function isEqual(obj1, obj2) {
   if (!isObject(obj1) || !isObject(obj2)) {
     // 值类型
-    return obj1 === obj2
+    return obj1 === obj2;
   }
   if (obj1 === obj2) {
-    return true
+    return true;
   }
   //两个都是引用类型
-  const obj1Keys = Object.keys(obj1)  //返回一个数组
-  const obj2Keys = Object.keys(obj2)
+  const obj1Keys = Object.keys(obj1); //返回一个数组
+  const obj2Keys = Object.keys(obj2);
 
   if (obj1Keys.length !== obj2Keys.length) {
-    return false
+    return false;
   }
   for (let key in obj1) {
     //比较当前key,value,递归
-    const res = isEqual(obj1[key], obj2[key])
+    const res = isEqual(obj1[key], obj2[key]);
     if (!res) {
-      return false
+      return false;
     }
   }
-  return true
+  return true;
 }
 
-console.log(isEqual(obj1, obj2))  //true
+console.log(isEqual(obj1, obj2)); //true
