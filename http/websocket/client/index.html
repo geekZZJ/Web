@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-03-04 22:06:45
  * @LastEditors: zzj
- * @LastEditTime: 2021-03-07 15:40:20
+ * @LastEditTime: 2021-03-20 22:29:55
  * @Description: 
 -->
 <!DOCTYPE html>
@@ -19,12 +19,14 @@
 <body>
   <div id="app">
     <div v-if="isShow">
-      <input type="text" v-model="name">
+      <p>昵称:<input type="text" v-model="name"></p>
+      <p>房间号:<input type="text" v-model="roomid"></p>
       <button @click="enter">进入聊天室</button>
     </div>
     <div v-else>
       <ul>
         <li v-for="(item,index) in lists" :key="index">{{item}}</li>
+        <li>在线人数{{num}}</li>
       </ul>
       <div class="ctrl">
         <input type="text" v-model="message">
@@ -41,7 +43,9 @@
         lists: [],
         ws: {},
         name: "",
-        isShow: true
+        isShow: true,
+        num: 0,
+        roomid: ""
       },
       mounted() {
         this.ws = new WebSocket("ws://127.0.0.1:3000")
@@ -59,7 +63,8 @@
           this.isShow = false
           this.ws.send(JSON.stringify({
             event: "enter",
-            message: this.name
+            message: this.name,
+            roomid: this.roomid
           }))
         },
         onOpen: function () {
@@ -67,13 +72,20 @@
           // ws.send("hello from client")
         },
         onMessage: function (msg) {
+          if (this.isShow) {
+            return
+          }
           const obj = JSON.parse(msg.data)
           if (obj.event === "enter") {
             this.lists.push(`欢迎${obj.message}加入聊天室`)
+          } else if (obj.event === "out") {
+            this.lists.push(`欢迎${obj.name}退出了聊天室`)
           } else {
-            this.lists.push(obj.message)
+            if (obj.name !== this.name) {
+              this.lists.push(`${obj.name}:${obj.message}`)
+            }
           }
-
+          this.num = obj.num
         },
         onClose: function () {
           console.log("close " + this.ws.readyState)
@@ -82,10 +94,11 @@
           console.log("error " + this.ws.readyState)
         },
         send: function () {
-          this.lists.push(this.message)
+          this.lists.push(`${this.name}:${this.message}`)
           this.ws.send(JSON.stringify({
-            "event": "message",
-            message: this.message
+            event: "message",
+            message: this.message,
+            name: this.name
           }))
           this.message = ""
         }
