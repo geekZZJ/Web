@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-03-21 15:16:17
  * @LastEditors: zzj
- * @LastEditTime: 2021-03-21 22:06:18
+ * @LastEditTime: 2021-03-27 12:54:59
  * @Description:
  */
 const path = require("path");
@@ -17,7 +17,7 @@ module.exports = {
   output: {
     path: resolve("dist"),
     publicPath: "/dist/",
-    filename: "[name].[chunkhash].js",
+    filename: "[name].[hash].js",
   },
   resolve: {
     alias: {
