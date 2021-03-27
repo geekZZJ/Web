@@ -2,23 +2,19 @@
  * @Author: zzj
  * @Date: 2021-03-21 14:51:53
  * @LastEditors: zzj
- * @LastEditTime: 2021-03-27 15:19:24
+ * @LastEditTime: 2021-03-27 15:30:59
  * @Description: 
 -->
 <template>
   <div id="app">
-    123!!!
-    <Hello></Hello>
+    <router-view />
   </div>
 </template>
 
 <script>
-import Hello from "./components/Hello.vue";
 export default {
   name: "App",
-  components: {
-    Hello,
-  },
+  components: {},
   data() {
     return {};
   },
