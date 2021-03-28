@@ -1,32 +1,33 @@
 <!--
  * @Author: zzj
- * @Date: 2021-03-27 17:20:42
+ * @Date: 2021-03-27 22:00:18
  * @LastEditors: zzj
- * @LastEditTime: 2021-03-27 17:23:27
+ * @LastEditTime: 2021-03-27 22:04:35
  * @Description: 
 -->
 <template>
   <div>
     <nuxt-link to="/create">create link</nuxt-link>
-    <nuxt-link to="/list">list link</nuxt-link>
     <nuxt-link to="/about">about link</nuxt-link>
+    <nuxt-link to="/">home link</nuxt-link>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Navbar',
+  name: "navbar",
   components: {},
   data() {
-    return {}
+    return {};
   },
   computed: {},
   watch: {},
-  // 生命周期 - 创建完成（可以访问当前this实例）
+  //生命周期 - 创建完成（可以访问当前this实例）
   created() {},
-  // 生命周期 - 挂载完成（可以访问DOM元素）
+  //生命周期 - 挂载完成（可以访问DOM元素）
   mounted() {},
   methods: {},
-}
+};
 </script>
-<style lang="scss" scoped></style>
+<style lang='scss' scoped>
+</style>

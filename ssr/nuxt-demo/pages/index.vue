@@ -1,8 +1,8 @@
 <!--
  * @Author: zzj
- * @Date: 2021-03-27 16:57:10
+ * @Date: 2021-03-27 21:48:10
  * @LastEditors: zzj
- * @LastEditTime: 2021-03-27 18:27:28
+ * @LastEditTime: 2021-03-28 11:04:30
  * @Description: 
 -->
 <template>
@@ -16,27 +16,43 @@
           target="_blank"
           rel="noopener noreferrer"
           class="button--green"
-          >Documentation</a
-        >
+        >Documentation</a>
         <a
           href="https://github.com/nuxt/nuxt.js"
           target="_blank"
           rel="noopener noreferrer"
           class="button--grey"
-          >GitHub</a
-        >
+        >GitHub</a>
+        <br />
+        {{posts}}
+        <!-- {{userAgent}} -->
       </div>
     </div>
   </div>
 </template>
 
 <script>
+// import ErrorHandle from "~/plugins/axios.js";
 export default {
-  asyncData({ $axios, store }) {
-    // console.log(store)
-    // console.log($axios)
+  async asyncData({ $axios }) {
+    const result = await $axios.$get("http://192.168.1.102:8080/db.json");
+    console.log(result);
+    return {
+      posts: result,
+    };
+    // ErrorHandle($axios, redirect);
   },
-}
+  // asyncData({ req }) {
+  //   return {
+  //     userAgent: req
+  //       ? req.headers["user-agent"]
+  //       : typeof navigator !== "undefined"
+  //       ? navigator.userAgent
+  //       : "no user agent",
+  //   };
+  //   // ErrorHandle($axios, redirect);
+  // },
+};
 </script>
 
 <style>
@@ -50,8 +66,8 @@ export default {
 }
 
 .title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;

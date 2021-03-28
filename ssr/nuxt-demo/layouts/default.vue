@@ -1,8 +1,8 @@
 <!--
  * @Author: zzj
- * @Date: 2021-03-27 16:57:10
+ * @Date: 2021-03-27 21:48:10
  * @LastEditors: zzj
- * @LastEditTime: 2021-03-27 17:28:24
+ * @LastEditTime: 2021-03-27 22:04:13
  * @Description: 
 -->
 <template>
@@ -13,18 +13,18 @@
 </template>
 
 <script>
-import Navbar from '~/components/Navbar'
+import Navbar from "~/components/Navbar";
 export default {
   components: {
     Navbar,
   },
-}
+};
 </script>
 
 <style>
 html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
