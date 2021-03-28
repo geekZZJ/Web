@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-03-04 22:06:45
  * @LastEditors: zzj
- * @LastEditTime: 2021-03-20 22:29:55
+ * @LastEditTime: 2021-03-28 16:00:22
  * @Description: 
 -->
 <!DOCTYPE html>
@@ -45,53 +45,78 @@
         name: "",
         isShow: true,
         num: 0,
-        roomid: ""
+        roomid: "",
+        handle: {}
       },
       mounted() {
-        this.ws = new WebSocket("ws://127.0.0.1:3000")
-        this.ws.onopen = this.onOpen
-        this.ws.onmessage = this.onMessage
-        this.ws.onclose = this.onClose
-        this.ws.onerror = this.onError
       },
       methods: {
-        enter: function () {
+        init() {
+          this.ws = new WebSocket("ws://127.0.0.1:3000")
+          this.ws.onopen = this.onOpen
+          this.ws.onmessage = this.onMessage
+          this.ws.onclose = this.onClose
+          this.ws.onerror = this.onError
+        },
+        enter() {
           if (this.name.trim() === "") {
             alert("用户民不得为空")
             return
           }
+          this.init()
           this.isShow = false
+
+        },
+        onOpen: function () {
+
+          // console.log("open " + this.ws.readyState)
+          // ws.send("hello from client")
+          // 发起鉴权请求
+          this.ws.send(JSON.stringify({ event: "auth", message: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6Imltb29jIiwiaWF0IjoxNTE2MjM5MDIyfQ.KQv-KO2KRPtFP1Hl9h3qyxiko8Czz_7vWVm-5JcyP7k" }))
           this.ws.send(JSON.stringify({
             event: "enter",
             message: this.name,
             roomid: this.roomid
           }))
         },
-        onOpen: function () {
-          console.log("open " + this.ws.readyState)
-          // ws.send("hello from client")
-        },
         onMessage: function (msg) {
           if (this.isShow) {
             return
           }
           const obj = JSON.parse(msg.data)
-          if (obj.event === "enter") {
-            this.lists.push(`欢迎${obj.message}加入聊天室`)
-          } else if (obj.event === "out") {
-            this.lists.push(`欢迎${obj.name}退出了聊天室`)
-          } else {
-            if (obj.name !== this.name) {
-              this.lists.push(`${obj.name}:${obj.message}`)
-            }
+          switch (obj.event) {
+            case "noauth":
+              break;
+            case "enter":
+              this.lists.push(`欢迎${obj.message}加入聊天室`);
+              break;
+            case "out":
+              this.lists.push(`欢迎${obj.name}退出了聊天室`)
+              break;
+            case "heartbeat":
+              this.checkServer()
+              this.ws.send(JSON.stringify({
+                event: "heartbeat",
+                message: "pong"
+              }))
+              break;
+            default:
+              if (obj.name !== this.name) {
+                this.lists.push(`${obj.name}:${obj.message}`)
+              }
+              break;
           }
           this.num = obj.num
         },
         onClose: function () {
           console.log("close " + this.ws.readyState)
+          this.ws.close()
         },
         onError: function () {
           console.log("error " + this.ws.readyState)
+          setTimeout(() => {
+            this.init()
+          }, 1000)
         },
         send: function () {
           this.lists.push(`${this.name}:${this.message}`)
@@ -101,6 +126,13 @@
             name: this.name
           }))
           this.message = ""
+        },
+        checkServer() {
+          clearTimeout(this.handle)
+          this.handle = setTimeout(() => {
+            this.onClose()
+            this.init()
+          }, 1000 + 500)
         }
       }
     })
