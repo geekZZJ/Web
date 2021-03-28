@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-03-27 21:48:10
  * @LastEditors: zzj
- * @LastEditTime: 2021-03-28 11:04:30
+ * @LastEditTime: 2021-03-28 12:10:51
  * @Description: 
 -->
 <template>
@@ -24,7 +24,7 @@
           class="button--grey"
         >GitHub</a>
         <br />
-        {{posts}}
+        <!-- {{posts}} -->
         <!-- {{userAgent}} -->
       </div>
     </div>
@@ -34,14 +34,14 @@
 <script>
 // import ErrorHandle from "~/plugins/axios.js";
 export default {
-  async asyncData({ $axios }) {
-    const result = await $axios.$get("http://192.168.1.102:8080/db.json");
-    console.log(result);
-    return {
-      posts: result,
-    };
-    // ErrorHandle($axios, redirect);
-  },
+  // async asyncData({ $axios }) {
+  //   const result = await $axios.$get("http://192.168.1.102:8081/db.json");
+  //   console.log(result);
+  //   return {
+  //     posts: result,
+  //   };
+  //   // ErrorHandle($axios, redirect);
+  // },
   // asyncData({ req }) {
   //   return {
   //     userAgent: req
