@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2020-10-17 20:17:44
  * @LastEditors: zzj
- * @LastEditTime: 2020-12-27 14:14:14
+ * @LastEditTime: 2021-03-30 11:29:26
  * @Description:
  */
 import Vue from "vue";
@@ -185,6 +185,12 @@ const routes = [
     name: "Add",
     component: () =>
       import(/* webpackChunkName: "add" */ "@/components/contents/Add.vue"),
+  },
+  {
+    path: "/echarts",
+    name: "Echarts",
+    component: () =>
+      import(/* webpackChunkName: "echarts" */ "@/views/Echarts.vue"),
   },
 ];
 
