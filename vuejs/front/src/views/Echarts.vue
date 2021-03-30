@@ -2,12 +2,13 @@
  * @Author: zzj
  * @Date: 2021-03-30 11:28:53
  * @LastEditors: zzj
- * @LastEditTime: 2021-03-30 14:25:04
+ * @LastEditTime: 2021-03-30 14:44:56
  * @Description: 
 -->
 <template>
   <div>
-    <div id="pie" style="height:300px;width:400px"></div>
+    <div id="pie" style="height:300px;width:40%;display:inline-block"></div>
+    <div id="bar" style="height:300px;width:60%;display:inline-block"></div>
   </div>
 </template>
 
@@ -35,6 +36,7 @@ export default {
   //生命周期 - 挂载完成（可以访问DOM元素）
   mounted() {
     this.generatePie();
+    this.generateBar();
   },
   methods: {
     generatePie() {
@@ -67,6 +69,33 @@ export default {
                 shadowColor: "rgba(0, 0, 0, 0.5)",
               },
             },
+          },
+        ],
+      };
+      myChart.setOption(option);
+    },
+    generateBar() {
+      let myChart = echarts.init(document.getElementById("bar"));
+      let option = {
+        xAxis: {
+          type: "category",
+          data: [
+            "星期一",
+            "星期二",
+            "星期三",
+            "星期四",
+            "星期五",
+            "星期六",
+            "星期日",
+          ],
+        },
+        yAxis: {
+          type: "value",
+        },
+        series: [
+          {
+            data: [120, 200, 150, 80, 70, 110, 130],
+            type: "bar",
           },
         ],
       };
