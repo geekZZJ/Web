@@ -2,19 +2,15 @@
  * @Author: zzj
  * @Date: 2021-03-30 16:39:35
  * @LastEditors: zzj
- * @LastEditTime: 2021-03-30 16:56:27
+ * @LastEditTime: 2021-04-01 10:46:16
  * @Description:
  */
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
-import "@/assets/icons/index"
-
-import { Button, Cell } from "mint-ui";
-
-Vue.component(Button.name, Button);
-Vue.component(Cell.name, Cell);
+import "@/plugins/mint-ui";
+import "@/plugins/common";
 
 Vue.config.productionTip = false;
 

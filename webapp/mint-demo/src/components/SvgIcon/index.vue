@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-03-31 15:04:03
  * @LastEditors: zzj
- * @LastEditTime: 2021-03-31 15:28:23
+ * @LastEditTime: 2021-04-01 10:52:55
  * @Description: 
 -->
 <template>
@@ -12,14 +12,19 @@
 </template>
 
 <script>
+const req = require.context("@/assets/icons/svg", false, /\.svg$/);
+const requireAll = (requireContext) =>
+  requireContext.keys().map(requireContext);
+requireAll(req);
+
 export default {
-  name: "Index",
+  name: "svg-icon",
   props: {
     icon: {
       type: String,
       required: true,
     },
-    class: {
+    className: {
       type: String,
       default: "",
     },
@@ -29,8 +34,8 @@ export default {
       return `#icon-${this.icon}`;
     },
     svgClass() {
-      if (this.class) {
-        return `svg-icon ${this.class}`;
+      if (this.className) {
+        return `svg-icon ${this.className}`;
       } else {
         return "svg-icon";
       }
