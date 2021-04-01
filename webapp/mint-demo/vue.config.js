@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-03-31 15:32:48
  * @LastEditors: zzj
- * @LastEditTime: 2021-03-31 16:10:47
+ * @LastEditTime: 2021-04-01 15:30:31
  * @Description:
  */
 const path = require("path");
@@ -27,5 +27,13 @@ module.exports = {
       .rule("images")
       .test(/\.(png|jpe?g|gif|webp|svg)(\?.*)?$/)
       .exclude.add(resolve("./src/assets/icons"));
+  },
+  css: {
+    loaderOptions: {
+      sass: {
+        // 这里的选项会传递给 css-loader
+        prependData: `@import "@/assets/styles/_variables.scss";`,
+      },
+    },
   },
 };
