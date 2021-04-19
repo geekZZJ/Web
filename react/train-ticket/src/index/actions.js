@@ -2,9 +2,10 @@
  * @Author: zzj
  * @Date: 2021-04-03 14:53:41
  * @LastEditors: zzj
- * @LastEditTime: 2021-04-04 15:50:44
+ * @LastEditTime: 2021-04-19 21:22:29
  * @Description:
  */
+import axios from "axios";
 export const ACTION_SET_FROM = "SET_FROM";
 export const ACTION_SET_TO = "SET_TO";
 export const ACTION_SET_ISCITYSELECTORVISIBLE = "SET_ISCITYSELECTORVISIBLE";
@@ -104,5 +105,25 @@ export function exchangeFromTo() {
     const { from, to } = getState();
     dispatch(setFrom(to));
     dispatch(setTo(from));
+  };
+}
+
+export function fetchCityData() {
+  return async (dispatch, getState) => {
+    const { isLoadingCityData } = getState();
+    if (isLoadingCityData) {
+      return;
+    }
+    dispatch(setIsLoadingCityData(true));
+    try {
+      const res = await axios.get(
+        `http://localhost:3000/rest/cities?${Date.now()}`
+      );
+      dispatch(setCityData(res.data));
+      dispatch(setIsLoadingCityData(false));
+    } catch (e) {
+      console.log(e);
+      dispatch(setIsLoadingCityData(false));
+    }
   };
 }

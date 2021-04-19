@@ -2,19 +2,27 @@
  * @Author: zzj
  * @Date: 2021-04-07 10:47:35
  * @LastEditors: zzj
- * @LastEditTime: 2021-04-07 14:11:12
+ * @LastEditTime: 2021-04-19 21:24:28
  * @Description:
  */
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import classnames from "classnames";
 import PropTypes from "prop-types";
 import "./CitySelector.css";
 
 export default function CitySelector(props) {
-  const { show, cityData, isLoading, onBack } = props;
+  const { show, cityData, isLoading, onBack, fetchCityData } = props;
   const [searchKey, setSearchKey] = useState("");
 
   const key = useMemo(() => searchKey.trim(), [searchKey]);
+
+  useEffect(() => {
+    if (!show || cityData || isLoading) {
+      return;
+    }
+    fetchCityData();
+    // eslint-disable-next-line
+  }, [show, cityData, isLoading]);
 
   return (
     <div className={classnames("city-selector", { hidden: !show })}>
@@ -58,4 +66,5 @@ CitySelector.propTypes = {
   cityData: PropTypes.object,
   isLoading: PropTypes.bool.isRequired,
   onBack: PropTypes.func.isRequired,
+  fetchCityData: PropTypes.func.isRequired,
 };

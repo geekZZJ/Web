@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-04-03 14:52:13
  * @LastEditors: zzj
- * @LastEditTime: 2021-04-07 14:04:36
+ * @LastEditTime: 2021-04-19 21:08:16
  * @Description:
  */
 import React, { useCallback, useMemo } from "react";
@@ -17,7 +17,12 @@ import Journey from "./Journey";
 import Submit from "./Submit";
 import CitySelector from "../common/CitySelector";
 
-import { exchangeFromTo, showCitySelector, hideCitySelector } from "./actions";
+import {
+  exchangeFromTo,
+  showCitySelector,
+  hideCitySelector,
+  fetchCityData,
+} from "./actions";
 
 function App(props) {
   const {
@@ -46,6 +51,7 @@ function App(props) {
     return bindActionCreators(
       {
         onBack: hideCitySelector,
+        fetchCityData,
       },
       dispatch
     );
