@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-04-03 14:53:41
  * @LastEditors: zzj
- * @LastEditTime: 2021-04-19 21:22:29
+ * @LastEditTime: 2021-04-19 22:06:55
  * @Description:
  */
 import axios from "axios";
@@ -83,6 +83,7 @@ export function setSelectedCity(city) {
     } else {
       dispatch(setTo(city));
     }
+    dispatch(hideCitySelector());
   };
 }
 

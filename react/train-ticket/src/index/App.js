@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-04-03 14:52:13
  * @LastEditors: zzj
- * @LastEditTime: 2021-04-19 21:08:16
+ * @LastEditTime: 2021-04-19 22:07:56
  * @Description:
  */
 import React, { useCallback, useMemo } from "react";
@@ -22,6 +22,7 @@ import {
   showCitySelector,
   hideCitySelector,
   fetchCityData,
+  setSelectedCity,
 } from "./actions";
 
 function App(props) {
@@ -52,6 +53,7 @@ function App(props) {
       {
         onBack: hideCitySelector,
         fetchCityData,
+        onSelect: setSelectedCity,
       },
       dispatch
     );
