@@ -2,10 +2,10 @@
  * @Author: zzj
  * @Date: 2021-04-07 10:47:35
  * @LastEditors: zzj
- * @LastEditTime: 2021-04-19 22:19:48
+ * @LastEditTime: 2021-04-20 16:54:25
  * @Description:
  */
-import React, { useState, useMemo, useEffect, memo } from "react";
+import React, { useState, useMemo, useEffect, memo, useCallback } from "react";
 import classnames from "classnames";
 import PropTypes from "prop-types";
 import "./CitySelector.css";
@@ -28,7 +28,9 @@ const CitySection = memo(function CitySection(props) {
   const { title, cities = [], onSelect } = props;
   return (
     <ul className="city-ul">
-      <li className="city-li">{title}</li>
+      <li className="city-li" data-cate={title}>
+        {title}
+      </li>
       {cities.map((city) => {
         return (
           <CityItem
@@ -48,8 +50,26 @@ CitySection.propTypes = {
   onSelect: PropTypes.func.isRequired,
 };
 
+const AlphaIndex = memo(function AlphaIndex(props) {
+  const { alpha, onClick } = props;
+  return (
+    <i className="city-index-item" onClick={() => onClick(alpha)}>
+      {alpha}
+    </i>
+  );
+});
+
+AlphaIndex.propTypes = {
+  alpha: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+};
+
+const alphabet = Array.from(new Array(26), (ele, index) => {
+  return String.fromCharCode(65 + index);
+});
+
 const CityList = memo(function CityList(props) {
-  const { sections, onSelect } = props;
+  const { sections, onSelect, toAlpha } = props;
   return (
     <div className="city-list">
       <div className="city-cate">
@@ -64,6 +84,17 @@ const CityList = memo(function CityList(props) {
           );
         })}
       </div>
+      <div className="city-index">
+        {alphabet.map((alpha) => {
+          return (
+            <AlphaIndex
+              key={alpha}
+              alpha={alpha}
+              onClick={toAlpha}
+            ></AlphaIndex>
+          );
+        })}
+      </div>
     </div>
   );
 });
@@ -71,6 +102,7 @@ const CityList = memo(function CityList(props) {
 CityList.propTypes = {
   sections: PropTypes.array.isRequired,
   onSelect: PropTypes.func.isRequired,
+  toAlpha: PropTypes.func.isRequired,
 };
 
 const CitySelector = memo(function CitySelector(props) {
@@ -87,13 +119,21 @@ const CitySelector = memo(function CitySelector(props) {
     // eslint-disable-next-line
   }, [show, cityData, isLoading]);
 
+  const toAlpha = useCallback((alpha) => {
+    document.querySelector(`[data-cate="${alpha}"]`).scrollIntoView();
+  }, []);
+
   const outputCitySections = () => {
     if (isLoading) {
       return <div>loading</div>;
     }
     if (cityData) {
       return (
-        <CityList sections={cityData.cityList} onSelect={onSelect}></CityList>
+        <CityList
+          sections={cityData.cityList}
+          onSelect={onSelect}
+          toAlpha={toAlpha}
+        ></CityList>
       );
     }
     return <div>error</div>;
