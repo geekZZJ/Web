@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-04-03 14:53:41
  * @LastEditors: zzj
- * @LastEditTime: 2021-04-20 21:59:54
+ * @LastEditTime: 2021-04-21 21:28:37
  * @Description:
  */
 import axios from "axios";
@@ -15,6 +15,7 @@ export const ACTION_SET_CITYDATA = "SET_CITYDATA";
 export const ACTION_SET_ISLOADINGCITYDATA = "SET_ISLOADINGCITYDATA";
 export const ACTION_SET_ISDATESELECTORVISIBLE = "SET_ISDATESELECTORVISIBLE";
 export const ACTION_SET_HIGHSPEED = "SET_ISDATESELECTORVISIBLE";
+export const ACTION_SET_DEPART_DATE = "SET_DEPART_DATE";
 
 export function setFrom(from) {
   return {
@@ -106,6 +107,13 @@ export function exchangeFromTo() {
     const { from, to } = getState();
     dispatch(setFrom(to));
     dispatch(setTo(from));
+  };
+}
+
+export function setDepartDate(departDate) {
+  return {
+    type: ACTION_SET_DEPART_DATE,
+    payload: departDate,
   };
 }
 

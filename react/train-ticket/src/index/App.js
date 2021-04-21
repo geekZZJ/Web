@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-04-03 14:52:13
  * @LastEditors: zzj
- * @LastEditTime: 2021-04-19 22:07:56
+ * @LastEditTime: 2021-04-21 21:39:58
  * @Description:
  */
 import React, { useCallback, useMemo } from "react";
@@ -23,6 +23,7 @@ import {
   hideCitySelector,
   fetchCityData,
   setSelectedCity,
+  showDateSelector,
 } from "./actions";
 
 function App(props) {
@@ -33,6 +34,7 @@ function App(props) {
     isCitySelectorVisible,
     cityData,
     isLoadingCityData,
+    departDate,
   } = props;
   const onBack = useCallback(() => {
     window.history.back();
@@ -60,6 +62,11 @@ function App(props) {
     // eslint-disable-next-line
   }, []);
 
+  const departDateCbs = useMemo(() => {
+    return bindActionCreators({ onClick: showDateSelector }, dispatch);
+    // eslint-disable-next-line
+  }, []);
+
   return (
     <div>
       <div className="header-wrapper">
@@ -67,7 +74,7 @@ function App(props) {
       </div>
       <form className="form">
         <Journey from={from} to={to} {...cbs}></Journey>
-        <DepartDate></DepartDate>
+        <DepartDate time={departDate} {...departDateCbs}></DepartDate>
         <HighSpeed></HighSpeed>
         <Submit></Submit>
       </form>

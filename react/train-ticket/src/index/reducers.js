@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-04-03 14:52:47
  * @LastEditors: zzj
- * @LastEditTime: 2021-04-04 15:54:51
+ * @LastEditTime: 2021-04-21 21:30:01
  * @Description:
  */
 import {
@@ -14,6 +14,7 @@ import {
   ACTION_SET_ISLOADINGCITYDATA,
   ACTION_SET_ISDATESELECTORVISIBLE,
   ACTION_SET_HIGHSPEED,
+  ACTION_SET_DEPART_DATE,
 } from "./actions";
 
 // eslint-disable-next-line
@@ -85,6 +86,15 @@ export default {
     const { type, payload } = action;
     switch (type) {
       case ACTION_SET_HIGHSPEED:
+        return payload;
+      default:
+    }
+    return state;
+  },
+  departDate(state = Date.now(), action) {
+    const { type, payload } = action;
+    switch (type) {
+      case ACTION_SET_DEPART_DATE:
         return payload;
       default:
     }

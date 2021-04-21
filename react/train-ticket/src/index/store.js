@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-04-03 14:53:52
  * @LastEditors: zzj
- * @LastEditTime: 2021-04-04 16:12:13
+ * @LastEditTime: 2021-04-21 21:14:53
  * @Description:
  */
 import { createStore, combineReducers, applyMiddleware } from "redux";
@@ -20,7 +20,7 @@ export default createStore(
     isLoadingCityData: false,
     isDateSelectorVisible: false,
     highSpeed: false,
-    // departDate: "",
+    departDate: Date.now(),
   },
   applyMiddleware(thunk)
 );
