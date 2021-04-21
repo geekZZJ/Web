@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-04-03 14:53:41
  * @LastEditors: zzj
- * @LastEditTime: 2021-04-19 22:06:55
+ * @LastEditTime: 2021-04-20 21:59:54
  * @Description:
  */
 import axios from "axios";
@@ -118,7 +118,7 @@ export function fetchCityData() {
     dispatch(setIsLoadingCityData(true));
     try {
       const res = await axios.get(
-        `http://localhost:3000/rest/cities?${Date.now()}`
+        `http://localhost:4000/rest/cities?${Date.now()}`
       );
       dispatch(setCityData(res.data));
       dispatch(setIsLoadingCityData(false));

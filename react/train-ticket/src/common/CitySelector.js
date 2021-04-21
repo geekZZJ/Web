@@ -2,13 +2,14 @@
  * @Author: zzj
  * @Date: 2021-04-07 10:47:35
  * @LastEditors: zzj
- * @LastEditTime: 2021-04-20 16:54:25
+ * @LastEditTime: 2021-04-21 10:07:42
  * @Description:
  */
 import React, { useState, useMemo, useEffect, memo, useCallback } from "react";
 import classnames from "classnames";
 import PropTypes from "prop-types";
 import "./CitySelector.css";
+import axios from "axios";
 
 const CityItem = memo(function CityItem(props) {
   const { name, onSelect } = props;
@@ -105,6 +106,54 @@ CityList.propTypes = {
   toAlpha: PropTypes.func.isRequired,
 };
 
+const SuggestItem = memo(function SuggestItem(props) {
+  const { name, onClick } = props;
+  return (
+    <li className="city-suggest-li" onClick={() => onClick(name)}>
+      {name}
+    </li>
+  );
+});
+
+SuggestItem.propTypes = {
+  name: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+};
+
+const Suggest = memo(function Suggest(props) {
+  const { searchKey, onSelect } = props;
+  const [results, setResult] = useState([]);
+  useEffect(() => {
+    (async function fetchData() {
+      const res = await axios.get(`http://localhost:4000/rest/search`);
+      const { result, sKey } = res.data;
+      if (sKey === searchKey) {
+        setResult(result);
+      }
+    })();
+  }, [searchKey]);
+  return (
+    <div className="city-suggest">
+      <ul className="city-suggest-ul">
+        {results.map((item) => {
+          return (
+            <SuggestItem
+              key={item.display}
+              name={item.display}
+              onClick={onSelect}
+            ></SuggestItem>
+          );
+        })}
+      </ul>
+    </div>
+  );
+});
+
+Suggest.propTypes = {
+  searchKey: PropTypes.string.isRequired,
+  onSelect: PropTypes.func.isRequired,
+};
+
 const CitySelector = memo(function CitySelector(props) {
   const { show, cityData, isLoading, onBack, fetchCityData, onSelect } = props;
   const [searchKey, setSearchKey] = useState("");
@@ -172,6 +221,9 @@ const CitySelector = memo(function CitySelector(props) {
           &#xf063;
         </i>
       </div>
+      {Boolean(key) && (
+        <Suggest searchKey={key} onSelect={(key) => onSelect(key)}></Suggest>
+      )}
       {outputCitySections()}
     </div>
   );
