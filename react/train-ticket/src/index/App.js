@@ -2,13 +2,14 @@
  * @Author: zzj
  * @Date: 2021-04-03 14:52:13
  * @LastEditors: zzj
- * @LastEditTime: 2021-04-21 21:39:58
+ * @LastEditTime: 2021-04-22 22:15:16
  * @Description:
  */
 import React, { useCallback, useMemo } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import "./App.css";
+import { h0 } from "../common/fp";
 
 import Header from "../common/Header";
 import DepartDate from "./DepartDate";
@@ -16,6 +17,7 @@ import HighSpeed from "./HighSpeed";
 import Journey from "./Journey";
 import Submit from "./Submit";
 import CitySelector from "../common/CitySelector";
+import DateSelector from "../common/DateSelector";
 
 import {
   exchangeFromTo,
@@ -24,6 +26,8 @@ import {
   fetchCityData,
   setSelectedCity,
   showDateSelector,
+  hideDateSelector,
+  setDepartDate,
 } from "./actions";
 
 function App(props) {
@@ -32,6 +36,7 @@ function App(props) {
     to,
     dispatch,
     isCitySelectorVisible,
+    isDateSelectorVisible,
     cityData,
     isLoadingCityData,
     departDate,
@@ -67,6 +72,23 @@ function App(props) {
     // eslint-disable-next-line
   }, []);
 
+  const dateSelectorCbs = useMemo(() => {
+    return bindActionCreators({ onBack: hideDateSelector }, dispatch);
+    // eslint-disable-next-line
+  }, []);
+
+  const onSelectDate = useCallback((day) => {
+    if (!day) {
+      return;
+    }
+    if (day < h0()) {
+      return;
+    }
+    dispatch(setDepartDate(day));
+    dispatch(hideDateSelector());
+    // eslint-disable-next-line
+  }, []);
+
   return (
     <div>
       <div className="header-wrapper">
@@ -84,6 +106,11 @@ function App(props) {
         isLoading={isLoadingCityData}
         {...citySelectorCbs}
       ></CitySelector>
+      <DateSelector
+        show={isDateSelectorVisible}
+        {...dateSelectorCbs}
+        onSelect={onSelectDate}
+      ></DateSelector>
     </div>
   );
 }
