@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-04-03 14:53:41
  * @LastEditors: zzj
- * @LastEditTime: 2021-04-21 21:28:37
+ * @LastEditTime: 2021-04-24 13:54:19
  * @Description:
  */
 import axios from "axios";
@@ -14,7 +14,7 @@ export const ACTION_SET_CURRENTSELECTINGLEFTCITY =
 export const ACTION_SET_CITYDATA = "SET_CITYDATA";
 export const ACTION_SET_ISLOADINGCITYDATA = "SET_ISLOADINGCITYDATA";
 export const ACTION_SET_ISDATESELECTORVISIBLE = "SET_ISDATESELECTORVISIBLE";
-export const ACTION_SET_HIGHSPEED = "SET_ISDATESELECTORVISIBLE";
+export const ACTION_SET_HIGHSPEED = "SET_HIGHSPEED";
 export const ACTION_SET_DEPART_DATE = "SET_DEPART_DATE";
 
 export function setFrom(from) {
@@ -45,7 +45,7 @@ export function setCityData(cityData) {
   };
 }
 
-export function toggleHighSpeed(highSpeed) {
+export function toggleHighSpeed() {
   return (dispatch, getState) => {
     const { highSpeed } = getState();
     dispatch({

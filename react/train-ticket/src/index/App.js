@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-04-03 14:52:13
  * @LastEditors: zzj
- * @LastEditTime: 2021-04-22 22:15:16
+ * @LastEditTime: 2021-04-24 14:03:29
  * @Description:
  */
 import React, { useCallback, useMemo } from "react";
@@ -28,6 +28,7 @@ import {
   showDateSelector,
   hideDateSelector,
   setDepartDate,
+  toggleHighSpeed,
 } from "./actions";
 
 function App(props) {
@@ -40,6 +41,7 @@ function App(props) {
     cityData,
     isLoadingCityData,
     departDate,
+    highSpeed,
   } = props;
   const onBack = useCallback(() => {
     window.history.back();
@@ -77,6 +79,11 @@ function App(props) {
     // eslint-disable-next-line
   }, []);
 
+  const highSpeedCbs = useMemo(() => {
+    return bindActionCreators({ toggle: toggleHighSpeed }, dispatch);
+    // eslint-disable-next-line
+  }, []);
+
   const onSelectDate = useCallback((day) => {
     if (!day) {
       return;
@@ -94,10 +101,10 @@ function App(props) {
       <div className="header-wrapper">
         <Header title="火车票" onBack={onBack}></Header>
       </div>
-      <form className="form">
+      <form className="form" action="./query.html">
         <Journey from={from} to={to} {...cbs}></Journey>
         <DepartDate time={departDate} {...departDateCbs}></DepartDate>
-        <HighSpeed></HighSpeed>
+        <HighSpeed highSpeed={highSpeed} {...highSpeedCbs}></HighSpeed>
         <Submit></Submit>
       </form>
       <CitySelector
