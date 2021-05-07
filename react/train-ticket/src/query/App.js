@@ -2,13 +2,14 @@
  * @Author: zzj
  * @Date: 2021-04-03 14:52:13
  * @LastEditors: zzj
- * @LastEditTime: 2021-05-05 18:41:20
+ * @LastEditTime: 2021-05-07 22:00:07
  * @Description:
  */
 import React, { useCallback, useEffect } from "react";
 import { connect } from "react-redux";
 import URI from "urijs";
 import "./App.css";
+import useNav from "../common/useNav";
 
 import Nav from "../common/Nav";
 import List from "./List";
@@ -26,6 +27,8 @@ import {
   setTrainTypes,
   setDepartStations,
   setArriveStations,
+  prevDate,
+  nextDate,
 } from "./actions";
 import dayjs from "dayjs";
 import { h0 } from "../common/fp";
@@ -65,7 +68,7 @@ function App(props) {
     if (!searchParsed) {
       return;
     }
-    const url = new URI("/rest/query")
+    const url = new URI("http://localhost:4000/rest/query")
       .setSearch("from", from)
       .setSearch("to", to)
       .setSearch("date", dayjs(departDate).format("YYYY-MM-DD"))
@@ -131,6 +134,13 @@ function App(props) {
     window.history.back();
   }, []);
 
+  const { isPrevDisabled, isNextDisabled, prev, next } = useNav(
+    departDate,
+    dispatch,
+    prevDate,
+    nextDate
+  );
+
   if (!searchParsed) {
     return null;
   }
@@ -140,7 +150,13 @@ function App(props) {
       <div className="header-wrapper">
         <Header title={`${from} - ${to}`} onBack={onBack}></Header>
       </div>
-      <Nav></Nav>
+      <Nav
+        date={departDate}
+        isNextDisabled={isNextDisabled}
+        isPrevDisabled={isPrevDisabled}
+        prev={prev}
+        next={next}
+      ></Nav>
       <List></List>
       <Bottom></Bottom>
     </div>
