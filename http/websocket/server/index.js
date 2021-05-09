@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-03-04 22:03:41
  * @LastEditors: zzj
- * @LastEditTime: 2021-03-28 15:49:00
+ * @LastEditTime: 2021-05-09 15:14:41
  * @Description:
  */
 const WebSocket = require("ws");
@@ -106,8 +106,9 @@ server.listen(3000);
 
 setInterval(() => {
   wss.clients.forEach((ws) => {
-    if (!ws.isAlive) {
+    if (!ws.isAlive && ws.roomid) {
       group[ws.roomid]--;
+      delete ws["roomid"];
       return ws.terminate();
     }
     // 主动发送心跳监测请求
