@@ -1,9 +1,35 @@
+/*
+ * @Author: zzj
+ * @Date: 2021-05-11 21:52:54
+ * @LastEditors: zzj
+ * @LastEditTime: 2021-05-12 16:09:36
+ * @Description:
+ */
 import styles from './index.less';
+import React, { Component } from 'react';
+import { Link } from 'umi';
+import { List } from 'antd-mobile';
 
-export default function IndexPage() {
-  return (
-    <div>
-      <h1 className={styles.title}>Page index</h1>
-    </div>
-  );
+const Item = List.Item;
+
+export default class Index extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <div>
+        <h1 className={styles.title}>Page index</h1>
+        <List>
+          <Item>
+            <Link to="/class/component-old">component-old</Link>
+          </Item>
+          <Item>
+            <Link to="/class/component-new">component-new</Link>
+          </Item>
+        </List>
+      </div>
+    );
+  }
 }
