@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-05-11 21:52:54
  * @LastEditors: zzj
- * @LastEditTime: 2021-05-12 16:09:36
+ * @LastEditTime: 2021-05-12 21:45:14
  * @Description:
  */
 import styles from './index.less';
@@ -26,7 +26,7 @@ export default class Index extends Component {
             <Link to="/class/component-old">component-old</Link>
           </Item>
           <Item>
-            <Link to="/class/component-new">component-new</Link>
+            <Link to="/class/lists">lists</Link>
           </Item>
         </List>
       </div>
