@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-05-13 11:25:56
  * @LastEditors: zzj
- * @LastEditTime: 2021-05-15 16:10:55
+ * @LastEditTime: 2021-05-15 16:36:47
  * @Description:
  */
 import { getLists } from '@/services/search';
@@ -17,7 +17,8 @@ export default {
     getLists(state, action) {
       return {
         ...state,
-        lists: Array(10).fill(action.payload),
+        // lists: Array(10).fill(action.payload),
+        lists: action.payload,
       };
     },
   },
