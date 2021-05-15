@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-05-11 21:52:53
  * @LastEditors: zzj
- * @LastEditTime: 2021-05-15 16:39:45
+ * @LastEditTime: 2021-05-15 16:41:34
  * @Description:
  */
 import { defineConfig } from 'umi';
@@ -16,6 +16,7 @@ export default defineConfig({
     { path: '/class/component-old', component: '@/pages/class/component-old' },
     { path: '/class/lists', component: '@/pages/class/lists' },
     { path: '/class/dva', component: '@/pages/class/dva' },
+    { path: '/class/context', component: '@/pages/class/context' },
   ],
   fastRefresh: {},
 });
