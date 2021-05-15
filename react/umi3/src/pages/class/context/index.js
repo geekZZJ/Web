@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-05-15 16:41:53
  * @LastEditors: zzj
- * @LastEditTime: 2021-05-15 17:20:23
+ * @LastEditTime: 2021-05-15 18:09:59
  * @Description:
  */
 import React, { Component } from 'react';
@@ -11,8 +11,9 @@ import Search from './search';
 import Lists from './lists';
 import { getLists } from '@/services/search';
 import Consumer from './consumer';
+import LazyLoad from '@/components/lazyLoad';
 
-export default class Dva extends Component {
+export default class Context extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -43,7 +44,8 @@ export default class Dva extends Component {
         value={{ state: this.state, dispatch: this.handleDispatch }}
       >
         <Search></Search>
-        <Lists></Lists>
+        {/* <Lists></Lists> */}
+        <LazyLoad component={import('./lists')}></LazyLoad>
         <Consumer></Consumer>
       </SearchContext.Provider>
     );

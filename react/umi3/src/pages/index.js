@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-05-11 21:52:54
  * @LastEditors: zzj
- * @LastEditTime: 2021-05-15 16:37:59
+ * @LastEditTime: 2021-05-15 17:43:51
  * @Description:
  */
 import styles from './index.less';
@@ -33,6 +33,9 @@ export default class Index extends Component {
           </Item>
           <Item>
             <Link to="/class/context">context</Link>
+          </Item>
+          <Item>
+            <Link to="/class/lazyload">lazyLoad</Link>
           </Item>
         </List>
       </div>
