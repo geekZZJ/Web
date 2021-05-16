@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-05-11 21:52:54
  * @LastEditors: zzj
- * @LastEditTime: 2021-05-16 15:00:04
+ * @LastEditTime: 2021-05-16 16:06:00
  * @Description:
  */
 import styles from './index.less';
@@ -39,6 +39,9 @@ export default class Index extends Component {
           </Item>
           <Item>
             <Link to="/class/modal">modal</Link>
+          </Item>
+          <Item>
+            <Link to="/class/refs">refs</Link>
           </Item>
         </List>
       </div>

@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-05-11 21:52:53
  * @LastEditors: zzj
- * @LastEditTime: 2021-05-16 15:14:56
+ * @LastEditTime: 2021-05-16 16:06:27
  * @Description:
  */
 import { defineConfig } from 'umi';
@@ -19,6 +19,7 @@ export default defineConfig({
     { path: '/class/context', component: '@/pages/class/context' },
     { path: '/class/lazyload', component: '@/pages/class/lazy-load' },
     { path: '/class/modal', component: '@/pages/class/modal' },
+    { path: '/class/refs', component: '@/pages/class/refs' },
   ],
   fastRefresh: {},
   dynamicImport: {},
