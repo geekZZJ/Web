@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-05-11 21:52:53
  * @LastEditors: zzj
- * @LastEditTime: 2021-05-16 17:53:02
+ * @LastEditTime: 2021-05-18 21:44:39
  * @Description:
  */
 import { defineConfig } from 'umi';
@@ -23,6 +23,7 @@ export default defineConfig({
     { path: '/class/refs', component: '@/pages/class/refs' },
     { path: '/function', component: '@/pages/function' },
     { path: '/function/hook', component: '@/pages/function/hook' },
+    { path: '/function/context', component: '@/pages/function/context' },
   ],
   fastRefresh: {},
   dynamicImport: {},
