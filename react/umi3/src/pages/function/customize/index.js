@@ -2,11 +2,11 @@
  * @Author: zzj
  * @Date: 2021-05-18 22:13:46
  * @LastEditors: zzj
- * @LastEditTime: 2021-05-19 21:35:00
+ * @LastEditTime: 2021-05-19 22:17:46
  * @Description:
  */
 import React, { useState, useEffect } from 'react';
-import { useTitleHook } from '@/hooks';
+import { useTitleHook, useHttpHook } from '@/hooks';
 
 export default function (props) {
   const [state, setState] = useState('customize');
@@ -14,6 +14,14 @@ export default function (props) {
   useTitleHook(state);
 
   useEffect(() => {}, []);
+
+  const [listRes, loading] = useHttpHook({
+    url: '/getListsAsync',
+    method: 'get',
+    watch: [state],
+  });
+
+  console.log(listRes, loading);
 
   const handleClick = () => {
     setState('changed');
