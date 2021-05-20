@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>canvas</title>
-    <style>
-        #canvas{
-            box-shadow: 4px 4px 12px rgba(0,0,0,0.5);
-            position: absolute;
-            left: 10%;
-            top: 5%;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>canvas</title>
+  <style>
+      #canvas {
+          box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.5);
+          position: absolute;
+          left: 10%;
+          top: 5%;
+      }
+  </style>
 </head>
 <body>
 <canvas id="canvas"></canvas>
 <script src="../utils.js"></script>
 <script>
-    const canvas = document.getElementById("canvas")
-    const ctx = canvas.getContext('2d')
+  const canvas = document.getElementById("canvas");
+  const ctx = canvas.getContext("2d");
 
-    let w = canvas.width = 800
-    let h = canvas.height = 600
+  let w = canvas.width = 800;
+  let h = canvas.height = 600;
 
-    let pos = c.getOffset(canvas)
+  let pos = c.getOffset(canvas);
 
-    canvas.onclick = function () {
-        console.log(pos.x,pos.y)
-    }
+  canvas.onclick = function () {
+    console.log(pos.x, pos.y);
+  };
 </script>
 </body>
 </html>
