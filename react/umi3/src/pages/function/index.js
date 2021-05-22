@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-05-16 16:58:41
  * @LastEditors: zzj
- * @LastEditTime: 2021-05-18 22:13:15
+ * @LastEditTime: 2021-05-22 17:04:43
  * @Description:
  */
 import React, { useState, useEffect } from 'react';
@@ -27,6 +27,10 @@ export default function (props) {
         <WhiteSpace></WhiteSpace>
         <Item>
           <Link to="/function/customize">customize</Link>
+        </Item>
+        <WhiteSpace></WhiteSpace>
+        <Item>
+          <Link to="/function/store">store</Link>
         </Item>
         <WhiteSpace></WhiteSpace>
       </List>
