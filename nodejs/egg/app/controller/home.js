@@ -2,26 +2,26 @@
  * @Author: zzj
  * @Date: 2021-05-22 18:33:11
  * @LastEditors: zzj
- * @LastEditTime: 2021-05-23 14:58:35
+ * @LastEditTime: 2021-05-23 15:41:53
  * @Description:
  */
-"use strict";
+'use strict';
 
-const Controller = require("egg").Controller;
-const info = require("../utils/info");
+const Controller = require('egg').Controller;
+// const info = require('../utils/info');
 
 class HomeController extends Controller {
   async index() {
     const { ctx } = this;
     // console.log(info(), ctx.request.url);
     console.log(ctx.info);
-    ctx.body = "hi, egg first app";
+    ctx.body = 'hi, egg first app';
   }
 
   async demo() {
     const { ctx } = this;
     console.log(ctx.info);
-    ctx.body = "demo page";
+    ctx.body = 'demo page';
   }
 }
 

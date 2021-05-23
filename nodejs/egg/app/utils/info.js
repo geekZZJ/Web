@@ -2,14 +2,15 @@
  * @Author: zzj
  * @Date: 2021-05-23 14:50:16
  * @LastEditors: zzj
- * @LastEditTime: 2021-05-23 14:52:42
+ * @LastEditTime: 2021-05-23 15:43:14
  * @Description:
  */
-const os = require("os");
+'use strict';
+const os = require('os');
 
 module.exports = () => {
   const data = {
-    memory: os.totalmem() / 1024 / 1024 / 1024 + "G",
+    memory: os.totalmem() / 1024 / 1024 / 1024 + 'G',
     platform: os.platform(),
     cpus: os.cpus().length,
   };

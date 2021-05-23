@@ -5,7 +5,7 @@
  * @LastEditTime: 2021-05-23 15:04:15
  * @Description:
  */
-"use strict";
+'use strict';
 
 // /** @type Egg.EggPlugin */
 // module.exports = {
@@ -15,9 +15,9 @@
 // }
 // };
 
-const path = require("path");
+const path = require('path');
 
 exports.info = {
   enable: true,
-  path: path.join(__dirname, "../lib/plugin/egg-info"),
+  path: path.join(__dirname, '../lib/plugin/egg-info'),
 };
