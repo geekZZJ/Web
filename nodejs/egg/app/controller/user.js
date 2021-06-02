@@ -2,21 +2,30 @@
  * @Author: zzj
  * @Date: 2021-05-23 15:17:27
  * @LastEditors: zzj
- * @LastEditTime: 2021-05-31 22:14:50
+ * @LastEditTime: 2021-06-02 21:45:19
  * @Description:
  */
-'use strict';
+"use strict";
 
-const Controller = require('egg').Controller;
+const Controller = require("egg").Controller;
 class UserController extends Controller {
   async index() {
     const { ctx } = this;
-    ctx.body = 'user index';
+    // ctx.body = 'user index';
+    await ctx.render(
+      "user.html",
+      {
+        id: 100,
+        name: "admin",
+        lists: ["java", "php", "python"],
+      },
+      { delimiter: "%" }
+    );
   }
 
   async lists() {
     const { ctx } = this;
-    await new Promise(resolve => {
+    await new Promise((resolve) => {
       setTimeout(() => {
         resolve();
       }, 1000);
@@ -43,8 +52,8 @@ class UserController extends Controller {
     console.log(ctx.request.body);
 
     const rule = {
-      name: { type: 'string' },
-      age: { type: 'number' },
+      name: { type: "string" },
+      age: { type: "number" },
     };
     ctx.validate(rule);
     ctx.body = {
