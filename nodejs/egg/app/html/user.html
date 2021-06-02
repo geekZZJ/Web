@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-06-02 21:31:14
  * @LastEditors: zzj
- * @LastEditTime: 2021-06-02 21:42:37
+ * @LastEditTime: 2021-06-02 22:09:17
  * @Description: 
 -->
 <!DOCTYPE html>
@@ -13,23 +13,27 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>user</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/user.css" />
 </head>
 
 <body>
-  user page
-  <br />
-  id:<%= id%>
+  <% include user-header.html %>
+    user page
     <br />
-    <%# 注释%>
-      name:<%= name%>
-        <br />
-        <ul>
-          <% for(let i=0;i<lists.length;i++){ %>
-            <li>
-              <%= lists[i]%>
-            </li>
-            <% } %>
-        </ul>
+    id:<%= id%>
+      <br />
+      <%# 注释%>
+        name:<%= name%>
+          <br />
+          <ul id="user">
+            <% for(let i=0;i<lists.length;i++){ %>
+              <li>
+                <%= lists[i]%>
+              </li>
+              <% } %>
+          </ul>
+          <img src="assets/img/xiaowu.jpeg" alt="xiaowu">
+          <script src="assets/js/user.js"></script>
 </body>
 
 </html>
