@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-05-22 18:33:11
  * @LastEditors: zzj
- * @LastEditTime: 2021-06-06 14:33:12
+ * @LastEditTime: 2021-06-06 16:00:12
  * @Description:
  */
 "use strict";
@@ -23,4 +23,6 @@ module.exports = (app) => {
   router.post("/user/add", controller.user.add);
   router.put("/user/edit", controller.user.edit);
   router.del("/user/del", controller.user.del);
+  router.get("/curl/get", controller.curl.curlGet);
+  router.post("/curl/post", controller.curl.curlPost);
 };
