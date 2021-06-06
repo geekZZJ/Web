@@ -2,25 +2,64 @@
  * @Author: zzj
  * @Date: 2021-05-23 15:17:27
  * @LastEditors: zzj
- * @LastEditTime: 2021-06-02 21:45:19
+ * @LastEditTime: 2021-06-06 14:59:24
  * @Description:
  */
 "use strict";
 
 const Controller = require("egg").Controller;
 class UserController extends Controller {
+  encode(str) {
+    return new Buffer(str).toString("base64");
+  }
+  decode(str) {
+    return new Buffer(str, "base64").toString();
+  }
   async index() {
     const { ctx } = this;
     // ctx.body = 'user index';
+    ctx.cookies.set("zh", "测试", {
+      encrypt: true,
+    });
+
+    const zh = ctx.cookies.get("zh", { encrypt: true });
+
+    ctx.cookies.set("base64", this.encode("中文"));
+    const base64 = this.decode(ctx.cookies.get("base64"));
+    console.log(base64);
+
+    const user = ctx.cookies.get("user");
     await ctx.render(
       "user.html",
       {
         id: 100,
         name: "admin",
         lists: ["java", "php", "python"],
+        user: user ? JSON.parse(user) : null,
       },
       { delimiter: "%" }
     );
+  }
+
+  async login() {
+    const { ctx } = this;
+    const body = ctx.request.body;
+    ctx.cookies.set("user", JSON.stringify(body), {
+      maxAge: 1000 * 60,
+      httpOnly: false,
+    });
+    ctx.body = {
+      status: 200,
+      data: body,
+    };
+  }
+
+  async logout() {
+    const { ctx } = this;
+    ctx.cookies.set("user", null);
+    ctx.body = {
+      status: 200,
+    };
   }
 
   async lists() {

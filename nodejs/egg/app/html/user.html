@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-06-02 21:31:14
  * @LastEditors: zzj
- * @LastEditTime: 2021-06-02 22:09:17
+ * @LastEditTime: 2021-06-06 14:26:42
  * @Description: 
 -->
 <!DOCTYPE html>
@@ -20,20 +20,30 @@
   <% include user-header.html %>
     user page
     <br />
+
+    <button onclick="login()">登录</button>
+    <button onclick="logout()">注销</button>
+    <br />
+
     id:<%= id%>
       <br />
       <%# 注释%>
-        name:<%= name%>
-          <br />
-          <ul id="user">
-            <% for(let i=0;i<lists.length;i++){ %>
-              <li>
-                <%= lists[i]%>
-              </li>
+
+        <% if(user){ %>
+          已经登录：<%= user.name %>
+            <% }else{ %>
+              未登录
               <% } %>
-          </ul>
-          <img src="assets/img/xiaowu.jpeg" alt="xiaowu">
-          <script src="assets/js/user.js"></script>
+                <br />
+                <ul id="user">
+                  <% for(let i=0;i<lists.length;i++){ %>
+                    <li>
+                      <%= lists[i]%>
+                    </li>
+                    <% } %>
+                </ul>
+                <img src="assets/img/xiaowu.jpeg" alt="xiaowu">
+                <script src="assets/js/user.js"></script>
 </body>
 
 </html>
