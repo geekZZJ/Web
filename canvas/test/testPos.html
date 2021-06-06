@@ -1,32 +1,42 @@
+<!--
+ * @Author: zzj
+ * @Date: 2019-01-09 02:53:32
+ * @LastEditors: zzj
+ * @LastEditTime: 2021-05-20 22:10:58
+ * @Description: 
+-->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>canvas</title>
   <style>
-      #canvas {
-          box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.5);
-          position: absolute;
-          left: 10%;
-          top: 5%;
-      }
+    #canvas {
+      box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.5);
+      position: absolute;
+      left: 10%;
+      top: 5%;
+    }
   </style>
 </head>
+
 <body>
-<canvas id="canvas"></canvas>
-<script src="../utils.js"></script>
-<script>
-  const canvas = document.getElementById("canvas");
-  const ctx = canvas.getContext("2d");
+  <canvas id="canvas"></canvas>
+  <script src="../utils.js"></script>
+  <script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
 
-  let w = canvas.width = 800;
-  let h = canvas.height = 600;
+    let w = canvas.width = 800;
+    let h = canvas.height = 600;
 
-  let pos = c.getOffset(canvas);
+    let pos = c.getOffset(canvas);
 
-  canvas.onclick = function () {
-    console.log(pos.x, pos.y);
-  };
-</script>
+    canvas.onclick = () => {
+      console.log(pos.x, pos.y);
+    };
+  </script>
 </body>
+
 </html>
