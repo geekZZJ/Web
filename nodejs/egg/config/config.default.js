@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-05-22 18:33:11
  * @LastEditors: zzj
- * @LastEditTime: 2021-06-02 22:03:22
+ * @LastEditTime: 2021-06-06 15:24:56
  * @Description:
  */
 /* eslint valid-jsdoc: "off" */
@@ -43,6 +43,13 @@ module.exports = (appInfo) => {
 
   config.ejs = {
     delimiter: "%",
+  };
+
+  config.session = {
+    key: "test",
+    httpOnly: true,
+    maxAge: 1000 * 5,
+    renew: false,
   };
 
   config.static = {

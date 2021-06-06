@@ -2,31 +2,36 @@
  * @Author: zzj
  * @Date: 2021-05-23 15:17:27
  * @LastEditors: zzj
- * @LastEditTime: 2021-06-06 14:59:24
+ * @LastEditTime: 2021-06-06 15:19:20
  * @Description:
  */
 "use strict";
 
 const Controller = require("egg").Controller;
 class UserController extends Controller {
-  encode(str) {
+  encode(str = "") {
     return new Buffer(str).toString("base64");
   }
-  decode(str) {
+  decode(str = "") {
     return new Buffer(str, "base64").toString();
   }
   async index() {
     const { ctx } = this;
+
+    const session = ctx.session.user;
+    console.log("session", session);
+    // console.log("zh", ctx.session.zh);
+
     // ctx.body = 'user index';
-    ctx.cookies.set("zh", "测试", {
-      encrypt: true,
-    });
+    // ctx.cookies.set("zh", "测试", {
+    //   encrypt: true,
+    // });
 
-    const zh = ctx.cookies.get("zh", { encrypt: true });
+    // const zh = ctx.cookies.get("zh", { encrypt: true });
 
-    ctx.cookies.set("base64", this.encode("中文"));
-    const base64 = this.decode(ctx.cookies.get("base64"));
-    console.log(base64);
+    // ctx.cookies.set("base64", this.encode("中文"));
+    // const base64 = this.decode(ctx.cookies.get("base64"));
+    // console.log(base64);
 
     const user = ctx.cookies.get("user");
     await ctx.render(
@@ -48,6 +53,11 @@ class UserController extends Controller {
       maxAge: 1000 * 60,
       httpOnly: false,
     });
+
+    // 保存session
+    ctx.session.user = body;
+    // ctx.session.zh = "中文";
+
     ctx.body = {
       status: 200,
       data: body,
@@ -57,6 +67,7 @@ class UserController extends Controller {
   async logout() {
     const { ctx } = this;
     ctx.cookies.set("user", null);
+    ctx.session.user = null;
     ctx.body = {
       status: 200,
     };
