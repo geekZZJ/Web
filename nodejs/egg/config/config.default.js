@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-05-22 18:33:11
  * @LastEditors: zzj
- * @LastEditTime: 2021-06-06 15:24:56
+ * @LastEditTime: 2021-06-10 17:08:33
  * @Description:
  */
 /* eslint valid-jsdoc: "off" */
@@ -24,7 +24,10 @@ module.exports = (appInfo) => {
   config.keys = appInfo.name + "_1621679575963_5162";
 
   // add your middleware config here
-  config.middleware = [];
+  config.middleware = ["httpLog"];
+  config.httpLog = {
+    type: "all",
+  };
   config.security = {
     csrf: {
       enable: false,
