@@ -3796,6 +3796,11 @@ js-base64@^2.1.8, js-base64@^2.1.9:
   resolved "https://registry.nlark.com/js-base64/download/js-base64-2.6.4.tgz?cache=0&sync_timestamp=1621703335082&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fjs-base64%2Fdownload%2Fjs-base64-2.6.4.tgz#f4e686c5de1ea1f867dbcad3d46d969428df98c4"
   integrity sha1-9OaGxd4eofhn28rT1G2WlCjfmMQ=
 
+js-base64@^3.6.1:
+  version "3.6.1"
+  resolved "https://registry.nlark.com/js-base64/download/js-base64-3.6.1.tgz?cache=0&sync_timestamp=1621703335082&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fjs-base64%2Fdownload%2Fjs-base64-3.6.1.tgz#555aae398b74694b4037af1f8a5a6209d170efbe"
+  integrity sha1-VVquOYt0aUtAN68filpiCdFw774=
+
 js-beautify@^1.6.14:
   version "1.13.13"
   resolved "https://registry.npm.taobao.org/js-beautify/download/js-beautify-1.13.13.tgz#756907d1728f329f2b84c42efd56ad17514620bf"

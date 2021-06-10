@@ -1,24 +1,18 @@
 <!--
  * @Author: zzj
- * @Date: 2021-06-07 22:29:25
+ * @Date: 2021-06-09 22:30:51
  * @LastEditors: zzj
- * @LastEditTime: 2021-06-10 10:58:53
+ * @LastEditTime: 2021-06-10 10:46:22
  * @Description: 
 -->
 <template>
-  <div class="test">
-    hello mpvue
-    <Icon src="/static/icons/home.svg" size="60" color="#02d199"></Icon>
-  </div>
+  <div>123</div>
 </template>
 
 <script>
-import Icon from "@/components/icon/index";
 export default {
-  name: "index",
-  components: {
-    Icon,
-  },
+  name: "tabbar",
+  components: {},
   data() {
     return {};
   },
@@ -32,12 +26,4 @@ export default {
 };
 </script>
 <style lang='scss' scoped>
-$color: red;
-.test {
-  color: $color;
-}
-.icon {
-  width: 40px;
-  height: 40px;
-}
 </style>
