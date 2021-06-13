@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-05-22 18:33:11
  * @LastEditors: zzj
- * @LastEditTime: 2021-06-13 16:03:28
+ * @LastEditTime: 2021-06-13 18:50:55
  * @Description:
  */
 "use strict";
@@ -35,4 +35,9 @@ exports.validate = {
 exports.ejs = {
   enable: true,
   package: "egg-view-ejs",
+};
+
+exports.mysql = {
+  enable: true,
+  package: "egg-mysql",
 };

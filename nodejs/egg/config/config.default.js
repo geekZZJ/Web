@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-05-22 18:33:11
  * @LastEditors: zzj
- * @LastEditTime: 2021-06-13 15:57:57
+ * @LastEditTime: 2021-06-13 18:45:10
  * @Description:
  */
 /* eslint valid-jsdoc: "off" */
@@ -42,6 +42,18 @@ module.exports = (appInfo) => {
       path.join(appInfo.baseDir, "app/html"),
       path.join(appInfo.baseDir, "app/view"),
     ].join(","),
+  };
+
+  config.mysql = {
+    app: true,
+    agent: false,
+    client: {
+      host: "localhost",
+      port: "3306",
+      user: "root",
+      password: "2461927976",
+      database: "egg",
+    },
   };
 
   config.ejs = {

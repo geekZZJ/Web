@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-05-23 15:17:27
  * @LastEditors: zzj
- * @LastEditTime: 2021-06-13 16:33:26
+ * @LastEditTime: 2021-06-13 18:48:10
  * @Description:
  */
 "use strict";
@@ -74,7 +74,8 @@ class UserController extends Controller {
   }
 
   async lists() {
-    const { ctx } = this;
+    const { ctx, app } = this;
+    console.log(app.mysql);
     await new Promise((resolve) => {
       setTimeout(() => {
         resolve();

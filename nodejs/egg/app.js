@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-05-23 14:37:20
  * @LastEditors: zzj
- * @LastEditTime: 2021-06-06 15:29:28
+ * @LastEditTime: 2021-06-13 18:51:54
  * @Description:
  */
 "use strict";
@@ -23,4 +23,6 @@ module.exports = (app) => {
       store[key] = null;
     },
   };
+
+  app.config.coreMiddleware.push("auth");
 };
