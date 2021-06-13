@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-05-22 18:33:11
  * @LastEditors: zzj
- * @LastEditTime: 2021-06-10 17:08:33
+ * @LastEditTime: 2021-06-13 15:57:57
  * @Description:
  */
 /* eslint valid-jsdoc: "off" */
@@ -58,6 +58,10 @@ module.exports = (appInfo) => {
   config.static = {
     prefix: "/assets/",
     dir: path.join(appInfo.baseDir, "app/assets"),
+  };
+
+  config.auth = {
+    exclude: ["/home", "/user"],
   };
 
   // add your user config here
