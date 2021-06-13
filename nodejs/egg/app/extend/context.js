@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-05-23 14:55:22
  * @LastEditors: zzj
- * @LastEditTime: 2021-05-23 14:57:06
+ * @LastEditTime: 2021-06-13 13:47:36
  * @Description:
  */
 // const os = require("os");
@@ -18,3 +18,14 @@
 //     return data;
 //   },
 // };
+
+module.exports = {
+  params(key) {
+    const method = this.request.method;
+    if (method === "GET") {
+      return key ? this.query[key] : this.query;
+    } else {
+      return key ? this.request.body[key] : this.request.body;
+    }
+  },
+};

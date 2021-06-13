@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-05-22 18:33:11
  * @LastEditors: zzj
- * @LastEditTime: 2021-06-06 16:00:12
+ * @LastEditTime: 2021-06-13 13:37:28
  * @Description:
  */
 "use strict";
@@ -13,6 +13,8 @@
 module.exports = (app) => {
   const { router, controller } = app;
   router.get("/", controller.home.index);
+  router.get("/newApplication", controller.home.newApplication);
+  router.get("/newContext", controller.home.newContext);
   router.get("/demo", controller.home.demo);
   router.get("/user", controller.user.index);
   router.post("/user/login", controller.user.login);

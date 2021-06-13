@@ -2,9 +2,11 @@
  * @Author: zzj
  * @Date: 2021-06-10 16:05:12
  * @LastEditors: zzj
- * @LastEditTime: 2021-06-10 17:05:39
+ * @LastEditTime: 2021-06-12 22:31:32
  * @Description:
  */
+"use strict";
+
 const dayjs = require("dayjs");
 const fs = require("fs");
 
