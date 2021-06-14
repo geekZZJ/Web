@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-05-23 15:17:27
  * @LastEditors: zzj
- * @LastEditTime: 2021-06-13 18:48:10
+ * @LastEditTime: 2021-06-14 17:58:22
  * @Description:
  */
 "use strict";
@@ -75,13 +75,15 @@ class UserController extends Controller {
 
   async lists() {
     const { ctx, app } = this;
-    console.log(app.mysql);
-    await new Promise((resolve) => {
-      setTimeout(() => {
-        resolve();
-      }, 1000);
-    });
-    ctx.body = [{ id: 123 }];
+    // console.log(app.mysql);
+    // await new Promise((resolve) => {
+    //   setTimeout(() => {
+    //     resolve();
+    //   }, 1000);
+    // });
+    const res = await ctx.service.user.lists();
+
+    ctx.body = res;
   }
 
   async detail() {
@@ -94,33 +96,43 @@ class UserController extends Controller {
 
   async detail2() {
     const { ctx } = this;
-    console.log(ctx.params);
-    ctx.body = ctx.params.id;
+    // console.log(ctx.params);
+    const res = await ctx.service.user.detail2(ctx.params.id);
+    ctx.body = res;
   }
 
   async add() {
     const { ctx } = this;
     console.log(ctx.request.body);
 
-    const rule = {
-      name: { type: "string" },
-      age: { type: "number" },
-    };
-    ctx.validate(rule);
+    // const rule = {
+    //   name: { type: "string" },
+    //   age: { type: "number" },
+    // };
+    // ctx.validate(rule);
+    const res = await ctx.service.user.add(ctx.request.body);
     ctx.body = {
       status: 200,
-      data: ctx.request.body,
+      data: res,
     };
   }
 
   async edit() {
     const { ctx } = this;
-    ctx.body = ctx.request.body;
+    const res = await ctx.service.user.edit(ctx.request.body);
+    ctx.body = {
+      status: 200,
+      data: res,
+    };
   }
 
   async del() {
     const { ctx } = this;
-    ctx.body = ctx.request.body.id;
+    const res = await ctx.service.user.delete(ctx.request.body.id);
+    ctx.body = {
+      status: 200,
+      data: res,
+    };
   }
 }
 
