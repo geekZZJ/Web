@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-05-22 18:33:11
  * @LastEditors: zzj
- * @LastEditTime: 2021-06-13 18:50:55
+ * @LastEditTime: 2021-06-14 18:21:20
  * @Description:
  */
 "use strict";
@@ -40,4 +40,9 @@ exports.ejs = {
 exports.mysql = {
   enable: true,
   package: "egg-mysql",
+};
+
+exports.sequelize = {
+  enable: true,
+  package: "egg-sequelize",
 };

@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-05-23 15:17:27
  * @LastEditors: zzj
- * @LastEditTime: 2021-06-14 17:58:22
+ * @LastEditTime: 2021-06-14 22:03:18
  * @Description:
  */
 "use strict";
@@ -81,7 +81,14 @@ class UserController extends Controller {
     //     resolve();
     //   }, 1000);
     // });
-    const res = await ctx.service.user.lists();
+    // const res = await ctx.service.user.lists();
+    const res = await ctx.model.User.findAll({
+      // where: {
+      //   id: 2,
+      // },
+      // limit: 1,
+      // offset: 1,
+    });
 
     ctx.body = res;
   }
@@ -89,9 +96,10 @@ class UserController extends Controller {
   async detail() {
     const { ctx } = this;
     // console.log(ctx.query);
-    const res = await ctx.service.user.detail(10);
-    console.log(res);
-    ctx.body = ctx.query.id;
+    // const res = await ctx.service.user.detail(10);
+    // console.log(res);
+    const res = await ctx.model.User.findByPk(ctx.query.id);
+    ctx.body = res;
   }
 
   async detail2() {
@@ -110,7 +118,8 @@ class UserController extends Controller {
     //   age: { type: "number" },
     // };
     // ctx.validate(rule);
-    const res = await ctx.service.user.add(ctx.request.body);
+    // const res = await ctx.service.user.add(ctx.request.body);
+    const res = await ctx.model.User.create(ctx.request.body);
     ctx.body = {
       status: 200,
       data: res,
@@ -119,7 +128,16 @@ class UserController extends Controller {
 
   async edit() {
     const { ctx } = this;
-    const res = await ctx.service.user.edit(ctx.request.body);
+    // const res = await ctx.service.user.edit(ctx.request.body);
+    const user = await ctx.model.User.findByPk(ctx.request.body.id);
+    if (!user) {
+      ctx.body = {
+        status: 404,
+        errMsg: "id不存在",
+      };
+      return;
+    }
+    const res = user.update(ctx.request.body);
     ctx.body = {
       status: 200,
       data: res,
@@ -128,7 +146,16 @@ class UserController extends Controller {
 
   async del() {
     const { ctx } = this;
-    const res = await ctx.service.user.delete(ctx.request.body.id);
+    // const res = await ctx.service.user.delete(ctx.request.body.id);
+    const user = await ctx.model.User.findByPk(ctx.request.body.id);
+    if (!user) {
+      ctx.body = {
+        status: 404,
+        errMsg: "id不存在",
+      };
+      return;
+    }
+    const res = user.destroy(ctx.request.body.id);
     ctx.body = {
       status: 200,
       data: res,

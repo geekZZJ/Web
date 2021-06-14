@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-05-22 18:33:11
  * @LastEditors: zzj
- * @LastEditTime: 2021-06-13 18:45:10
+ * @LastEditTime: 2021-06-14 18:23:53
  * @Description:
  */
 /* eslint valid-jsdoc: "off" */
@@ -53,6 +53,19 @@ module.exports = (appInfo) => {
       user: "root",
       password: "2461927976",
       database: "egg",
+    },
+  };
+
+  config.sequelize = {
+    dialect: "mysql",
+    host: "localhost",
+    port: "3306",
+    user: "root",
+    password: "2461927976",
+    database: "egg",
+    define: {
+      timestamps: false,
+      freezeTableName: true,
     },
   };
 
