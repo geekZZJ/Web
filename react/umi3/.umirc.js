@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-05-11 21:52:53
  * @LastEditors: zzj
- * @LastEditTime: 2021-05-22 17:07:05
+ * @LastEditTime: 2021-06-16 16:00:59
  * @Description:
  */
 import { defineConfig } from 'umi';
@@ -12,7 +12,15 @@ export default defineConfig({
     type: 'none',
   },
   routes: [
-    { path: '/', component: '@/pages/index' },
+    {
+      path: '/',
+      component: '@/pages/index',
+      routes: [
+        { path: '/', component: './home/index', title: '首页' },
+        { path: '/order', component: './order/index', title: '订单' },
+        { path: '/user', component: './user/index', title: '用户' },
+      ],
+    },
     { path: '/class', component: '@/pages/class' },
     { path: '/class/component-old', component: '@/pages/class/component-old' },
     { path: '/class/lists', component: '@/pages/class/lists' },

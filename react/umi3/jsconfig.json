@@ -4,7 +4,13 @@
     "paths": {
       "@/hooks": [
         "hooks/index"
-      ]
+      ],
+      "@/components": [
+        "components/index"
+      ],
+      "@/utils": [
+        "utils/index"
+      ],
     }
   }
 }
