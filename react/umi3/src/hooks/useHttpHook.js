@@ -2,67 +2,31 @@
  * @Author: zzj
  * @Date: 2021-05-19 21:40:56
  * @LastEditors: zzj
- * @LastEditTime: 2021-05-19 22:16:41
+ * @LastEditTime: 2021-06-27 11:31:12
  * @Description:
  */
 import { useState, useEffect } from 'react';
-import { Toast } from 'antd-mobile';
+import { Http } from '@/utils';
 
 export default function useHttpHook({
   url,
   method = 'post',
-  headers,
+  headers = {},
   body = {},
   watch = [],
 }) {
   const [result, setResult] = useState();
   const [loading, setLoading] = useState(false);
 
-  async function Http() {
-    setLoading(true);
-
-    const defaultHeader = {
-      'Content-type': 'application/json',
-    };
-
-    let params;
-    if (method.toUpperCase() === 'GET') {
-      params = undefined;
-    } else {
-      params = {
-        headers: {
-          ...defaultHeader,
-          headers,
-        },
-        method,
-        body: JSON.stringify(body),
-      };
-    }
-
-    return new Promise((resolve, reject) => {
-      fetch(`/api${url}`, params)
-        .then((res) => res.json())
-        .then((res) => {
-          if (res.status === 200) {
-            resolve(res.data);
-            setResult(res.data);
-          } else {
-            Toast.fail(res.errMsg);
-            reject(res.errMsg);
-          }
-        })
-        .catch((err) => {
-          Toast.fail(err);
-          reject(err);
-        })
-        .finally(() => {
-          setLoading(false);
-        });
-    });
-  }
-
   useEffect(() => {
-    Http();
+    Http({
+      url,
+      method,
+      headers,
+      body,
+      setResult,
+      setLoading,
+    });
   }, watch);
 
   return [result, loading];
