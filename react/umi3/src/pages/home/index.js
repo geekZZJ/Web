@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-06-16 14:43:51
  * @LastEditors: zzj
- * @LastEditTime: 2021-06-27 11:12:23
+ * @LastEditTime: 2021-06-28 21:50:41
  * @Description:
  */
 import React, { useEffect } from 'react';
@@ -18,6 +18,10 @@ export default function (props) {
     url: '/commons/cities',
   });
 
+  const [houses, housesLoading] = useHttpHook({
+    url: '/house/hot',
+  });
+
   return (
     <div className="home">
       {/* 登录 */}
@@ -25,7 +29,7 @@ export default function (props) {
       {/* 搜索 */}
       <Search cities={cities} citiesLoading={citiesLoading} />
       {/* 热门民宿 */}
-      <Hot />
+      <Hot houses={houses} />
     </div>
   );
 }

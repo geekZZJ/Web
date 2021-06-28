@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-05-19 21:40:56
  * @LastEditors: zzj
- * @LastEditTime: 2021-06-27 11:31:12
+ * @LastEditTime: 2021-06-28 20:53:37
  * @Description:
  */
 import { useState, useEffect } from 'react';
@@ -16,7 +16,7 @@ export default function useHttpHook({
   watch = [],
 }) {
   const [result, setResult] = useState();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     Http({
