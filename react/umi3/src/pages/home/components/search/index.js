@@ -2,12 +2,13 @@
  * @Author: zzj
  * @Date: 2021-06-20 22:25:55
  * @LastEditors: zzj
- * @LastEditTime: 2021-06-28 21:52:48
+ * @LastEditTime: 2021-06-28 22:20:26
  * @Description:
  */
 import React, { useState, useEffect } from 'react';
 import { Picker, List, Calendar, Button } from 'antd-mobile';
 import dayjs from 'dayjs';
+import { history } from 'umi';
 
 export default function (props) {
   const [selectedCity, setSelectedCity] = useState(['1001']);
@@ -19,6 +20,17 @@ export default function (props) {
 
   const handleCityChange = (value) => {
     setSelectedCity(value);
+  };
+
+  const handleClick = () => {
+    history.push({
+      pathname: '/search',
+      query: {
+        code: selectedCity,
+        startTime: times.split('~')[0],
+        endTime: times.split('~')[1],
+      },
+    });
   };
 
   const handleDateConfirm = (startDateTime, endDateTime) => {
@@ -42,7 +54,6 @@ export default function (props) {
             value={selectedCity}
             cols={1}
             onChange={handleCityChange}
-            // onOk={v => this.setState({ sValue: v })}
           >
             <List.Item>可选城市</List.Item>
           </Picker>
@@ -54,7 +65,7 @@ export default function (props) {
         <p className="search-time_right">{times}</p>
       </div>
       {/* 点击按钮 */}
-      <Button type="warning" size="large">
+      <Button type="warning" size="large" onClick={handleClick}>
         搜索民宿
       </Button>
       <Calendar

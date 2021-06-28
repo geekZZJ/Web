@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-05-11 21:52:53
  * @LastEditors: zzj
- * @LastEditTime: 2021-06-16 16:00:59
+ * @LastEditTime: 2021-06-28 22:14:58
  * @Description:
  */
 import { defineConfig } from 'umi';
@@ -19,6 +19,7 @@ export default defineConfig({
         { path: '/', component: './home/index', title: '首页' },
         { path: '/order', component: './order/index', title: '订单' },
         { path: '/user', component: './user/index', title: '用户' },
+        { path: '/search', component: './search/index', title: '搜索' },
       ],
     },
     { path: '/class', component: '@/pages/class' },
