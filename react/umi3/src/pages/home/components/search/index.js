@@ -2,11 +2,11 @@
  * @Author: zzj
  * @Date: 2021-06-20 22:25:55
  * @LastEditors: zzj
- * @LastEditTime: 2021-06-28 22:20:26
+ * @LastEditTime: 2021-07-04 22:22:07
  * @Description:
  */
 import React, { useState, useEffect } from 'react';
-import { Picker, List, Calendar, Button } from 'antd-mobile';
+import { Picker, List, Calendar, Button, Toast } from 'antd-mobile';
 import dayjs from 'dayjs';
 import { history } from 'umi';
 
@@ -23,14 +23,18 @@ export default function (props) {
   };
 
   const handleClick = () => {
-    history.push({
-      pathname: '/search',
-      query: {
-        code: selectedCity,
-        startTime: times.split('~')[0],
-        endTime: times.split('~')[1],
-      },
-    });
+    if (times.includes('~')) {
+      history.push({
+        pathname: '/search',
+        query: {
+          code: selectedCity,
+          startTime: times.split('~')[0],
+          endTime: times.split('~')[1],
+        },
+      });
+    } else {
+      Toast.fail('请选择时间');
+    }
   };
 
   const handleDateConfirm = (startDateTime, endDateTime) => {
