@@ -2,7 +2,7 @@
  * @Author: zzj
  * @Date: 2021-05-11 21:52:53
  * @LastEditors: zzj
- * @LastEditTime: 2021-06-28 22:14:58
+ * @LastEditTime: 2021-07-05 11:36:55
  * @Description:
  */
 import { defineConfig } from 'umi';
@@ -20,6 +20,7 @@ export default defineConfig({
         { path: '/order', component: './order/index', title: '订单' },
         { path: '/user', component: './user/index', title: '用户' },
         { path: '/search', component: './search/index', title: '搜索' },
+        { path: '/observer', component: './observer', title: 'observer' },
       ],
     },
     { path: '/class', component: '@/pages/class' },
