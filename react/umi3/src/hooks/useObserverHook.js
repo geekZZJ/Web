@@ -2,23 +2,26 @@
  * @Author: zzj
  * @Date: 2021-07-05 15:02:08
  * @LastEditors: zzj
- * @LastEditTime: 2021-07-05 15:08:04
+ * @LastEditTime: 2021-07-14 21:45:27
  * @Description:
  */
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 let observer;
 export default function useObserverHook(ele, callback, watch = []) {
   useEffect(() => {
-    observer = new IntersectionObserver((entries) => {
-      callback && callback(entries);
-    });
-    observer.observe(document.querySelector(ele));
+    const node = document.querySelector(ele);
+    if (node) {
+      observer = new IntersectionObserver((entries) => {
+        callback && callback(entries);
+      });
+      observer.observe(node);
+    }
 
     return () => {
-      if (observer) {
+      if (observer && node) {
         // 解绑元素
-        observer.unobserve(document.querySelector(ele));
+        observer.unobserve(node);
         // 停止监听
         observer.disconnect();
       }
