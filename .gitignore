@@ -2,7 +2,7 @@ node_modules/
 logs
 *.log
 seven/
-
+.DS_Store
 
 #Editor directories and files
 .idea
