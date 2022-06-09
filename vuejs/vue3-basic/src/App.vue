@@ -1,7 +1,9 @@
 <template>
   <div>{{ count }}</div>
   <div>{{ double }}</div>
+  <div>{{ greeting }}</div>
   <button @click="increase">+1</button>
+  <button @click="updateGreeting">欢迎</button>
 </template>
 
 <script lang="ts">
@@ -13,7 +15,8 @@ import {
   toRefs,
   onMounted,
   onUpdated,
-  onRenderTriggered
+  onRenderTriggered,
+  watch,
 } from "vue";
 interface DataProps {
   count: number;
@@ -47,9 +50,19 @@ export default defineComponent({
         return data.count * 2;
       }),
     });
+    const greeting = ref("");
+    const updateGreeting = () => {
+      greeting.value += "hello";
+    };
+    watch([greeting, () => data.count], (newVal, oldVal) => {
+      console.log(newVal, oldVal);
+      document.title = greeting.value + data.count;
+    });
     const refData = toRefs(data);
     return {
       ...refData,
+      greeting,
+      updateGreeting,
     };
   },
 });
