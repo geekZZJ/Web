@@ -2,6 +2,7 @@
   <div>{{ count }}</div>
   <div>{{ double }}</div>
   <div>{{ greeting }}</div>
+  <h1>x:{{ x }} y:{{ y }}</h1>
   <button @click="increase">+1</button>
   <button @click="updateGreeting">欢迎</button>
 </template>
@@ -13,11 +14,12 @@ import {
   computed,
   reactive,
   toRefs,
-  onMounted,
   onUpdated,
   onRenderTriggered,
   watch,
 } from "vue";
+import useMousePos from "./hooks/useMousePos";
+
 interface DataProps {
   count: number;
   double: number;
@@ -32,15 +34,14 @@ export default defineComponent({
     //   return count.value * 2;
     // });
     // const increase = () => count.value++;
-    onMounted(() => {
-      console.log("mounted");
-    });
+
     onUpdated(() => {
       console.log("updated");
     });
     onRenderTriggered((event) => {
       console.log(event);
     });
+
     const data: DataProps = reactive({
       count: 0,
       increase: () => {
@@ -50,19 +51,23 @@ export default defineComponent({
         return data.count * 2;
       }),
     });
+    const { x, y } = useMousePos();
     const greeting = ref("");
     const updateGreeting = () => {
       greeting.value += "hello";
     };
+
     watch([greeting, () => data.count], (newVal, oldVal) => {
       console.log(newVal, oldVal);
       document.title = greeting.value + data.count;
     });
     const refData = toRefs(data);
     return {
-      ...refData,
+      ...refData, 
       greeting,
       updateGreeting,
+      x,
+      y,
     };
   },
 });
