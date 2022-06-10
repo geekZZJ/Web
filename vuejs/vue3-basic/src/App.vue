@@ -3,6 +3,8 @@
   <div>{{ double }}</div>
   <div>{{ greeting }}</div>
   <h1>x:{{ x }} y:{{ y }}</h1>
+  <h1 v-if="loading">loading...</h1>
+  <img v-if="loaded" :src="result[0].url" alt="" />
   <button @click="increase">+1</button>
   <button @click="updateGreeting">欢迎</button>
 </template>
@@ -19,11 +21,24 @@ import {
   watch,
 } from "vue";
 import useMousePos from "./hooks/useMousePos";
+import useUrlLoader from "./hooks/useUrlLoader";
 
 interface DataProps {
   count: number;
   double: number;
   increase: () => void;
+}
+
+interface DogResult {
+  message: string;
+  status: string;
+}
+
+interface CatResult {
+  id: string;
+  url: string;
+  width: number;
+  height: number;
 }
 
 export default defineComponent({
@@ -52,6 +67,14 @@ export default defineComponent({
       }),
     });
     const { x, y } = useMousePos();
+    const { result, loaded, loading } = useUrlLoader<CatResult[]>(
+      "https://api.thecatapi.com/v1/images/search?limit=1"
+    );
+    watch(result, () => {
+      if (result.value) {
+        console.log("value", result.value[0].url);
+      }
+    });
     const greeting = ref("");
     const updateGreeting = () => {
       greeting.value += "hello";
@@ -63,11 +86,14 @@ export default defineComponent({
     });
     const refData = toRefs(data);
     return {
-      ...refData, 
+      ...refData,
       greeting,
       updateGreeting,
       x,
       y,
+      result,
+      loaded,
+      loading,
     };
   },
 });
