@@ -7,6 +7,8 @@
   <img v-if="loaded" :src="result[0].url" alt="" />
   <button @click="increase">+1</button>
   <button @click="updateGreeting">欢迎</button>
+  <Modal :is-open="modalIsOpen" @close-modal="onModalClose">My Modal</Modal>
+  <button @click="openModal">打开modal</button>
 </template>
 
 <script lang="ts">
@@ -22,6 +24,7 @@ import {
 } from "vue";
 import useMousePos from "./hooks/useMousePos";
 import useUrlLoader from "./hooks/useUrlLoader";
+import Modal from "./components/Modal.vue"
 
 interface DataProps {
   count: number;
@@ -43,6 +46,9 @@ interface CatResult {
 
 export default defineComponent({
   name: "App",
+  components:{
+    Modal
+  },
   setup() {
     // const count = ref(0);
     // const double = computed(() => {
@@ -85,6 +91,13 @@ export default defineComponent({
       document.title = greeting.value + data.count;
     });
     const refData = toRefs(data);
+    const modalIsOpen = ref(false);
+    const openModal = () => {
+      modalIsOpen.value = true;
+    };
+    const onModalClose = () => {
+      modalIsOpen.value = false;
+    };
     return {
       ...refData,
       greeting,
@@ -94,9 +107,10 @@ export default defineComponent({
       result,
       loaded,
       loading,
+      modalIsOpen,
+      openModal,
+      onModalClose
     };
   },
 });
 </script>
-
-<style></style>
