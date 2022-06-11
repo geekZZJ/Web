@@ -2,6 +2,16 @@
   <div>{{ count }}</div>
   <div>{{ double }}</div>
   <div>{{ greeting }}</div>
+  <p>{{error}}</p>
+  <Suspense>
+    <template #default>
+      <!-- <AsyncShow /> -->
+      <DogShow></DogShow>
+    </template>
+    <template #fallback>
+      <div>Loading...</div>
+    </template>
+  </Suspense>
   <h1>x:{{ x }} y:{{ y }}</h1>
   <h1 v-if="loading">loading...</h1>
   <img v-if="loaded" :src="result[0].url" alt="" />
@@ -21,10 +31,13 @@ import {
   onUpdated,
   onRenderTriggered,
   watch,
+  onErrorCaptured,
 } from "vue";
 import useMousePos from "./hooks/useMousePos";
 import useUrlLoader from "./hooks/useUrlLoader";
-import Modal from "./components/Modal.vue"
+import Modal from "./components/Modal.vue";
+// import AsyncShow from "./components/AsyncShow.vue";
+import DogShow from "./components/DogShow.vue";
 
 interface DataProps {
   count: number;
@@ -46,8 +59,10 @@ interface CatResult {
 
 export default defineComponent({
   name: "App",
-  components:{
-    Modal
+  components: {
+    Modal,
+    // AsyncShow,
+    DogShow,
   },
   setup() {
     // const count = ref(0);
@@ -56,6 +71,11 @@ export default defineComponent({
     // });
     // const increase = () => count.value++;
 
+    const error = ref(null);
+    onErrorCaptured((e: any) => {
+      error.value = e;
+      return true;
+    });
     onUpdated(() => {
       console.log("updated");
     });
@@ -109,7 +129,8 @@ export default defineComponent({
       loading,
       modalIsOpen,
       openModal,
-      onModalClose
+      onModalClose,
+      error
     };
   },
 });
