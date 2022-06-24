@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>脉冲运动</title>
+    <style>
+      body,
+      html {
+        margin: 0;
+        height: 100%;
+      }
+      #canvas {
+        box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <script src="../utils.js"></script>
+    <script src="../components//Ball.js"></script>
+    <script>
+      const canvas = document.getElementById("canvas");
+      const ctx = canvas.getContext("2d");
+
+      const W = (canvas.width = 800);
+      const H = (canvas.height = 600);
+
+      const ball = new Ball({
+        x: W / 2,
+        y: H / 2,
+        r: 50,
+      }).render(ctx);
+
+      let angle = 0;
+      let initScale = 1;
+
+      const SWING = 0.5;
+
+      function move() {
+        window.requestAnimationFrame(move);
+        ctx.clearRect(0, 0, W, H);
+
+        ball.scaleX = ball.scaleY = initScale + Math.sin(angle) * SWING;
+        angle += 0.05;
+        angle %= Math.PI * 2;
+        ball.render(ctx);
+      }
+
+      move();
+    </script>
+  </body>
+</html>
