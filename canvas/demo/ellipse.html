@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>椭圆运动</title>
+    <style>
+      body,
+      html {
+        margin: 0;
+        height: 100%;
+      }
+      #canvas {
+        box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <script src="../components//Ball.js"></script>
+    <script>
+      const canvas = document.getElementById("canvas");
+      const ctx = canvas.getContext("2d");
+
+      const W = (canvas.width = 800);
+      const H = (canvas.height = 600);
+
+      const ball = new Ball({
+        x: W / 2,
+        y: H / 2,
+        r: 35,
+      }).render(ctx);
+
+      let angle = 0;
+      let speed = 0.02;
+      let rx = 200;
+      let ry = 80;
+
+      function move() {
+        window.requestAnimationFrame(move);
+
+        ctx.clearRect(0, 0, W, H);
+
+        ctx.save();
+        ctx.translate(W / 2, H / 2);
+        ctx.scale(1, 0.4);
+        ctx.beginPath();
+        ctx.arc(0, 0, rx, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.restore();
+
+        ball.x = W / 2 + rx * Math.cos(angle);
+        ball.y = H / 2 + ry * Math.sin(angle);
+
+        angle = (angle + speed) % (Math.PI * 2);
+        ball.render(ctx);
+      }
+
+      move();
+    </script>
+  </body>
+</html>
