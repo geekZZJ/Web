@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>rotateArrow</title>
+    <title>箭头跟随鼠标移动</title>
     <style>
       body,
       html {
@@ -19,7 +19,7 @@
   <body>
     <canvas id="canvas"></canvas>
     <script src="../utils.js"></script>
-    <script src="../components/Arrow.js"></script>
+    <script src="../components//Arrow.js"></script>
     <script>
       const canvas = document.getElementById("canvas");
       const ctx = canvas.getContext("2d");
@@ -27,23 +27,34 @@
       const W = (canvas.width = 800);
       const H = (canvas.height = 600);
 
-      const mouse = c.getOffset(canvas);
-
       const arrow = new Arrow({
         x: W / 2,
         y: H / 2,
-        w: 180,
+        w: 140,
         h: 60,
       }).render(ctx);
 
-      canvas.onmousemove = function () {
-        const dx = mouse.x - arrow.x;
-        const dy = mouse.y - arrow.y;
-        arrow.rotation = Math.atan2(dy, dx);
+      const mouse = c.getOffset(canvas);
+      const speed = 3;
 
+      function move() {
+        window.requestAnimationFrame(move);
         ctx.clearRect(0, 0, W, H);
+
+        let dx = mouse.x - arrow.x;
+        let dy = mouse.y - arrow.y;
+        let angle = Math.atan2(dy, dx);
+
+        let vx = speed * Math.cos(angle);
+        let vy = speed * Math.sin(angle);
+
+        arrow.x += vx;
+        arrow.y += vy;
+        arrow.rotation = angle;
         arrow.render(ctx);
-      };
+      }
+
+      move();
     </script>
   </body>
 </html>
