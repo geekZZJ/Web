@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>单轴加速度</title>
+    <style>
+      body,
+      html {
+        margin: 0;
+        height: 100%;
+      }
+      #canvas {
+        box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.5);
+        background-color: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <script src="../components//Ball.js"></script>
+    <script>
+      const canvas = document.getElementById("canvas");
+      const ctx = canvas.getContext("2d");
+
+      const W = (canvas.width = 800);
+      const H = (canvas.height = 600);
+
+      const balls = [];
+
+      for (let i = 0; i < 10; i++) {
+        balls.push(
+          new Ball({
+            x: Math.random() * W,
+            y: Math.random() * H,
+            r: Math.random() * 20 + 30,
+            fillStyle: `rgb(${55 + ~~(Math.random() * 200)},${
+              55 + ~~(Math.random() * 200)
+            },${55 + ~~(Math.random() * 200)})`,
+            vx: (Math.random() - 0.5) * 3,
+            vy: (Math.random() - 0.5) * 3,
+            id: "ball:" + i,
+          })
+        );
+      }
+
+      function ballMove(ball, index) {
+        ball.x += ball.vx;
+        ball.y += ball.vy;
+
+        if (
+          ball.x - ball.r >= W ||
+          ball.x + ball.r <= 0 ||
+          ball.y - ball.r >= H ||
+          ball.y + ball.r <= 0
+        ) {
+          balls.splice(index, 1);
+          if (balls.length) {
+            console.log(`${ball.id}`);
+          } else {
+            console.log("都被删除");
+          }
+        }
+        ball.render(ctx);
+      }
+
+      function move() {
+        window.requestAnimationFrame(move);
+        ctx.clearRect(0, 0, W, H);
+
+        let l = balls.length;
+        while (l--) {
+          ballMove(balls[[l]], l);
+        }
+      }
+
+      move();
+    </script>
+  </body>
+</html>
