@@ -1,10 +1,3 @@
-/*
- * @Author: zzj
- * @Date: 2019-01-05 22:29:08
- * @LastEditors: zzj
- * @LastEditTime: 2021-05-20 22:10:07
- * @Description:
- */
 let c = {};
 
 // 获取鼠标在元素上的坐标
@@ -33,4 +26,20 @@ c.toRad = function (angle) {
 // 弧度转角度
 c.toAngle = function (rad) {
   return (rad * 180) / Math.PI;
+};
+
+// 生成随机数
+c.rp = function (arr, int) {
+  const max = Math.max(...arr);
+  const min = Math.min(...arr);
+  const num = Math.random() * (max - min) + min;
+  return int ? Math.round(num) : num;
+};
+
+// 返回随机颜色
+c.createColor = function () {
+  return `rgb(${c.rp([55, 255], true)},${c.rp([55, 255], true)},${c.rp(
+    [55, 255],
+    true
+  )})`;
 };
