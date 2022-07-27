@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>超出边界归位</title>
+    <style>
+      body,
+      html {
+        margin: 0;
+        height: 100%;
+      }
+      #canvas {
+        box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.5);
+        background-color: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <script src="../utils.js"></script>
+    <script src="../components//Ball.js"></script>
+    <script>
+      const canvas = document.getElementById("canvas");
+      const ctx = canvas.getContext("2d");
+
+      const W = (canvas.width = 800);
+      const H = (canvas.height = 600);
+
+      const balls = [];
+      let g = 0.05;
+
+      for (let i = 0; i < 100; i++) {
+        balls.push(
+          new Ball({
+            x: W / 2,
+            y: H,
+            r: Math.random() > 0.9 ? c.rp([25, 40]) : c.rp([15, 30]),
+            fillStyle: c.createColor(),
+            vx: c.rp([-3, 3]),
+            vy: c.rp([0, -10]),
+          })
+        );
+      }
+
+      function ballMove(ball) {
+        ball.x += ball.vx;
+        ball.y += ball.vy;
+
+        ball.vy += g;
+
+        if (
+          ball.x - ball.r >= W ||
+          ball.x + ball.r <= 0 ||
+          ball.y - ball.r >= H ||
+          ball.y + ball.r <= 0
+        ) {
+          balls.x = W / 2;
+          ball.y = H;
+          vx = c.rp([-3, 3]);
+          vy = c.rp([0, -10]);
+        }
+        ball.render(ctx);
+      }
+
+      function move() {
+        window.requestAnimationFrame(move);
+        ctx.clearRect(0, 0, W, H);
+
+        balls.forEach((item) => {
+          ballMove(item);
+        });
+      }
+
+      move();
+    </script>
+  </body>
+</html>
