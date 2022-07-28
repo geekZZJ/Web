@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>摩擦力</title>
+    <style>
+      body,
+      html {
+        margin: 0;
+        height: 100%;
+      }
+      #canvas {
+        box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.5);
+        background-color: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <script src="../components//Ball.js"></script>
+    <script src="../utils.js"></script>
+    <script>
+      const canvas = document.getElementById("canvas");
+      const ctx = canvas.getContext("2d");
+
+      const W = (canvas.width = 800);
+      const H = (canvas.height = 600);
+
+      let angle = c.toRad(30);
+      let speed = c.rp([30, 50]);
+      let friction = 2.5;
+
+      const ball = new Ball({
+        x: 100,
+        y: 100,
+        r: 40,
+      }).render(ctx);
+
+      function move() {
+        window.requestAnimationFrame(move);
+        ctx.clearRect(0, 0, W, H);
+
+        speed = speed > friction ? speed - friction : 0;
+        let vx = Math.cos(angle) * speed;
+        let vy = Math.sin(angle) * speed;
+
+        ball.x += vx;
+        ball.y += vy;
+
+        ball.render(ctx)
+      }
+
+      move();
+    </script>
+  </body>
+</html>
