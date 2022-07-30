@@ -35,6 +35,8 @@
       let vy = -10;
       let g = 0.2;
       let bounce = -0.7;
+      let startX = 0;
+      let startY = 0;
 
       const ball = new Ball({
         x: W / 2,
@@ -48,6 +50,8 @@
           isMouseMove = true;
           dx = mouse.x - ball.x;
           dy = mouse.y - ball.y;
+          startX = ball.x;
+          startY = ball.y;
           canvas.addEventListener("mousemove", moveBallFn);
           canvas.addEventListener("mouseup", upBallFn);
         }
@@ -85,11 +89,20 @@
         }
       }
 
+      function setSpeed() {
+        vx = ball.x - startX;
+        vy = ball.y - startY;
+        startX = ball.x;
+        startY = ball.y;
+      }
+
       function move() {
         window.requestAnimationFrame(move);
         ctx.clearRect(0, 0, W, H);
         if (!isMouseMove) {
           bounceMove();
+        } else {
+          setSpeed();
         }
 
         ball.render(ctx);
