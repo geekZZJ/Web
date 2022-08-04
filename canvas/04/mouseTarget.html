@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>以鼠标为目标点</title>
+    <style>
+      body,
+      html {
+        margin: 0;
+        height: 100%;
+      }
+      #canvas {
+        background-color: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <script src="../components/Arrow.js"></script>
+    <script src="../utils.js"></script>
+    <script>
+      const canvas = document.getElementById("canvas");
+      const ctx = canvas.getContext("2d");
+
+      const W = (canvas.width = 800);
+      const H = (canvas.height = 600);
+
+      let easing = 0.05;
+      const mouse = c.getOffset(canvas);
+
+      const arrow = new Arrow({
+        x: W / 2,
+        y: H / 2,
+        w: 120,
+        h: 50,
+      }).render(ctx);
+
+      function drawFrame() {
+        window.requestAnimationFrame(drawFrame);
+        ctx.clearRect(0, 0, W, H);
+
+        const dx = mouse.x - arrow.x;
+        const dy = mouse.y - arrow.y;
+
+        const angle = Math.atan2(dy, dx);
+        arrow.x += dx * easing;
+        arrow.y += dy * easing;
+        arrow.rotation = angle;
+
+        arrow.render(ctx);
+      }
+
+      drawFrame();
+    </script>
+  </body>
+</html>
