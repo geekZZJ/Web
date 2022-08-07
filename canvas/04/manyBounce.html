@@ -29,45 +29,40 @@
 
       let spring = 0.03;
       const mouse = c.getOffset(canvas);
-      let ball1_dragging = false;
-      let ball2_dragging = false;
       const springLength = 200;
       const friction = 0.9;
+      const balls = [];
+      let draggedBall = null;
 
-      const ball1 = new Ball({
-        x: c.rp([50, W - 50]),
-        y: c.rp([50, H - 50]),
-        r: 20,
-      });
-
-      const ball2 = new Ball({
-        x: c.rp([50, W - 50]),
-        y: c.rp([50, H - 50]),
-        r: 20,
-      });
+      for (let i = 0; i < 8; i++) {
+        balls.push(
+          new Ball({
+            x: c.rp([50, W - 50]),
+            y: c.rp([50, H - 50]),
+            r: 20,
+          })
+        );
+      }
 
       canvas.addEventListener("mousedown", () => {
-        if (ball1.isPoint(mouse)) {
-          ball1_dragging = true;
-        }
-        if (ball2.isPoint(mouse)) {
-          ball2_dragging = true;
+        for (const itemBall of balls) {
+          if (itemBall.isPoint(mouse)) {
+            itemBall.dragged = true;
+            draggedBall = itemBall;
+          }
         }
       });
 
       canvas.addEventListener("mousemove", () => {
-        if (ball1_dragging) {
-          ball1.x = mouse.x;
-          ball1.y = mouse.y;
-        }
-        if (ball2_dragging) {
-          ball2.x = mouse.x;
-          ball2.y = mouse.y;
+        if (draggedBall) {
+          draggedBall.x = mouse.x;
+          draggedBall.y = mouse.y;
         }
       });
 
       canvas.addEventListener("mouseup", () => {
-        ball1_dragging = ball2_dragging = false;
+        draggedBall.dragged = false;
+        draggedBall = null;
       });
 
       function springTo(b1, b2) {
@@ -75,10 +70,11 @@
         const dy = b2.y - b1.y;
         const angle = Math.atan2(dy, dx);
         let targetX = b2.x - springLength * Math.cos(angle);
-        let targetY = b2.y - springLength * Math.cos(angle);
+        let targetY = b2.y - springLength * Math.sin(angle);
 
         b1.vx += (targetX - b1.x) * spring;
         b1.vy += (targetY - b1.y) * spring;
+
         b1.vx *= friction;
         b1.vy *= friction;
 
@@ -90,23 +86,25 @@
         window.requestAnimationFrame(drawFrame);
         ctx.clearRect(0, 0, W, H);
 
-        if (!ball1_dragging) {
-          springTo(ball1, ball2);
-        }
-
-        if (!ball2_dragging) {
-          springTo(ball2, ball1);
-        }
-
         ctx.beginPath();
         ctx.lineWidth = 3;
-        ctx.strokeStyle = "rgb(255,255,255)";
-        ctx.lineTo(ball1.x, ball1.y);
-        ctx.lineTo(ball2.x, ball2.y);
+        ctx.strokeStyle = "#fff";
+        for (const itemBall of balls) {
+          ctx.lineTo(itemBall.x, itemBall.y);
+        }
+        ctx.closePath();
         ctx.stroke();
 
-        ball1.render(ctx);
-        ball2.render(ctx);
+        balls.forEach((item, i) => {
+          if (!item.dragged) {
+            let arrTemp = balls.slice();
+            arrTemp.splice(i, 1);
+            for (const itemBall of arrTemp) {
+              springTo(item, itemBall);
+            }
+          }
+          item.render(ctx);
+        });
       }
 
       drawFrame();
