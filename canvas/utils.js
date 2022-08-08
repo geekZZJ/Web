@@ -43,3 +43,10 @@ c.createColor = function () {
     true
   )})`;
 };
+
+// 矩形之间的碰撞检测
+c.rectDuang = function (rect1, rect2) {
+  const { x: x1, y: y1, w: w1, h: h1 } = rect1;
+  const { x: x2, y: y2, w: w2, h: h2 } = rect2;
+  return x1 + w1 >= x2 && x1 <= x2 + w2 && y1 + h1 >= y2 && y1 <= y2 + h2;
+};
