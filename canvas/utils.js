@@ -50,3 +50,8 @@ c.rectDuang = function (rect1, rect2) {
   const { x: x2, y: y2, w: w2, h: h2 } = rect2;
   return x1 + w1 >= x2 && x1 <= x2 + w2 && y1 + h1 >= y2 && y1 <= y2 + h2;
 };
+
+// 求亮点间的距离
+c.getDist = function (x1, y1, x2, y2) {
+  return Math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2);
+};
