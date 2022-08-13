@@ -55,3 +55,21 @@ c.rectDuang = function (rect1, rect2) {
 c.getDist = function (x1, y1, x2, y2) {
   return Math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2);
 };
+
+// 对小球进行边界反弹处理
+c.checkBallBounce = function (ball, W, H, bounce) {
+  if (ball.x - ball.r <= 0) {
+    ball.x = ball.r;
+    ball.vx *= bounce;
+  } else if (ball.x + ball.r >= W) {
+    ball.x = W - ball.r;
+    ball.vx *= bounce;
+  }
+  if (ball.y - ball.r <= 0) {
+    ball.y = ball.r;
+    ball.vy *= bounce;
+  } else if (ball.y + ball.r >= H) {
+    ball.y = H - ball.r;
+    ball.vy *= bounce;
+  }
+};

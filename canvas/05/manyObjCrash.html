@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>多物体碰撞</title>
+    <style>
+      body,
+      html {
+        margin: 0;
+        height: 100%;
+      }
+      #canvas {
+        background-color: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <script src="../utils.js"></script>
+    <script src="../components/Ball.js"></script>
+    <script>
+      const canvas = document.getElementById("canvas");
+      const ctx = canvas.getContext("2d");
+
+      const W = (canvas.width = 800);
+      const H = (canvas.height = 600);
+
+      // const mouse = c.getOffset(canvas);
+      const balls = [];
+      const bounce = -0.5;
+      const num = 300;
+      const spring = 0.02;
+
+      for (let i = 0; i < num; i++) {
+        balls.push(
+          new Ball({
+            x: c.rp([0, W]),
+            y: c.rp([0, H]),
+            vx: c.rp([-3, 3]),
+            vy: c.rp([-3, 3]),
+            r: 10,
+            fillStyle: c.createColor(),
+          })
+        );
+      }
+
+      // 对小球进行运动处理
+      function moveBall(ball, i) {
+        // 边界处理
+        c.checkBallBounce(ball, W, H, bounce);
+        // 设置小球最新坐标点
+        ball.x += ball.vx;
+        ball.y += ball.vy;
+      }
+
+      // 对每个小球进行绘制
+      function renderBall(ball) {
+        ball.render(ctx);
+      }
+
+      function drawFrame() {
+        window.requestAnimationFrame(drawFrame);
+        ctx.clearRect(0, 0, W, H);
+
+        balls.forEach(moveBall);
+        balls.forEach(renderBall);
+      }
+
+      drawFrame();
+    </script>
+  </body>
+</html>
