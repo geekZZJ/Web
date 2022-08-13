@@ -27,11 +27,13 @@
       const W = (canvas.width = 800);
       const H = (canvas.height = 600);
 
-      // const mouse = c.getOffset(canvas);
+      const mouse = c.getOffset(canvas);
       const balls = [];
       const bounce = -0.5;
       const num = 300;
       const spring = 0.02;
+      let firstBallR = 100;
+      let bigBall = false;
 
       for (let i = 0; i < num; i++) {
         balls.push(
@@ -40,14 +42,33 @@
             y: c.rp([0, H]),
             vx: c.rp([-3, 3]),
             vy: c.rp([-3, 3]),
-            r: 10,
+            r: !i ? firstBallR : 10,
             fillStyle: c.createColor(),
           })
         );
       }
 
+      canvas.addEventListener("mousemove", () => {
+        balls[0].x = mouse.x;
+        balls[0].y = mouse.y;
+      });
+
+      canvas.addEventListener("click", () => {
+        firstBallR = firstBallR < H / 2 ? firstBallR + 50 : 100;
+        balls[0].r = firstBallR;
+      });
+
+      canvas.addEventListener("mouseover", () => {
+        bigBall = true;
+      });
+
+      canvas.addEventListener("mouseout", () => {
+        bigBall = false;
+      });
+
       // 对小球进行运动处理
       function moveBall(ball, i) {
+        if (!i) return;
         // 边界处理
         c.checkBallBounce(ball, W, H, bounce);
         // 设置小球最新坐标点
@@ -55,8 +76,31 @@
         ball.y += ball.vy;
       }
 
+      // 小球间的碰撞检测
+      function checkHit(ballA, i) {
+        if (!i && !bigBall) return;
+        for (let j = i + 1; j < num; j++) {
+          const ballB = balls[j];
+          const dx = ballB.x - ballA.x;
+          const dy = ballB.y - ballA.y;
+          const dist = c.getDist(ballB.x, ballB.y, ballA.x, ballA.y);
+          const minDist = ballA.r + ballB.r;
+          if (dist < minDist) {
+            const tx = ballA.x + (dx / dist) * minDist;
+            const ty = ballA.y + (dy / dist) * minDist;
+            const ax = (tx - ballB.x) * spring;
+            const ay = (ty - ballB.y) * spring;
+            ballA.vx -= ax;
+            ballA.vy -= ay;
+            ballB.vx += ax;
+            ballB.vy += ay;
+          }
+        }
+      }
+
       // 对每个小球进行绘制
-      function renderBall(ball) {
+      function renderBall(ball, i) {
+        if (!i) return;
         ball.render(ctx);
       }
 
@@ -64,6 +108,7 @@
         window.requestAnimationFrame(drawFrame);
         ctx.clearRect(0, 0, W, H);
 
+        balls.forEach(checkHit);
         balls.forEach(moveBall);
         balls.forEach(renderBall);
       }

@@ -44,7 +44,7 @@
         fillStyle: "rgba(238,27,27)",
       });
 
-      document.addEventListener("mousedown", () => {
+      canvas.addEventListener("mousedown", () => {
         if (b1.isPoint(mouse)) {
           activeBall = b1;
         }
@@ -53,14 +53,14 @@
         }
       });
 
-      document.addEventListener("mousemove", () => {
+      canvas.addEventListener("mousemove", () => {
         if (activeBall) {
           activeBall.x = mouse.x;
           activeBall.y = mouse.y;
         }
       });
 
-      document.addEventListener("mouseup", () => {
+      canvas.addEventListener("mouseup", () => {
         activeBall = null;
       });
 

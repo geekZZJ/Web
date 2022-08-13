@@ -42,7 +42,7 @@
         return box;
       }
 
-      document.addEventListener("keydown", (e) => {
+      canvas.addEventListener("keydown", (e) => {
         switch (e.keyCode) {
           case 37:
             activeBox.x += -15;
@@ -58,7 +58,7 @@
         }
       });
 
-      document.addEventListener("keyup", () => {
+      canvas.addEventListener("keyup", () => {
         g = 0.02;
       });
 
