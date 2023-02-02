@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bfs</title>
+  </head>
+  <body>
+    <script>
+      const tree = {
+        val: "a",
+        children: [
+          {
+            val: "b",
+            children: [
+              {
+                val: "d",
+                children: [],
+              },
+              {
+                val: "e",
+                children: [],
+              },
+            ],
+          },
+          {
+            val: "c",
+            children: [
+              {
+                val: "f",
+                children: [],
+              },
+              {
+                val: "g",
+                children: [],
+              },
+            ],
+          },
+        ],
+      };
+
+      const bfs = (node) => {
+        const nodes = [];
+        const stack = [];
+        if (node) {
+          stack.push(node);
+          while (stack.length) {
+            const item = stack.shift();
+            const children = item.children;
+            nodes.push(item);
+            for (let i = 0; i < children.length; i++) {
+              stack.push(children[i]);
+            }
+          }
+        }
+        return nodes;
+      };
+
+      const result = bfs(tree);
+      console.log(result);
+    </script>
+  </body>
+</html>
