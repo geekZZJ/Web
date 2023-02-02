@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>深拷贝</title>
+  </head>
+  <body>
+    <script>
+      const target = {
+        field1: 1,
+        field2: undefined,
+        field3: {
+          child: "child",
+        },
+        field4: [2, 4, 8],
+      };
+      target.target = target;
+
+      function clone(target, map = new WeakMap()) {
+        if (typeof target === "object" && target !== null) {
+          let cloneTarget = Array.isArray(target) ? [] : {};
+          if (map.get(target)) {
+            return map.get(target);
+          }
+          // 防止循环引用
+          map.set(target, cloneTarget);
+          for (const key in target) {
+            // 保证 key 不是原型属性
+            if (target.hasOwnProperty(key)) {
+              cloneTarget[key] = clone(target[key], map);
+            }
+          }
+          return cloneTarget;
+        } else {
+          return target;
+        }
+      }
+
+      console.log(clone(target));
+    </script>
+  </body>
+</html>
